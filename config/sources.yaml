@@ -46,3 +46,48 @@ sources:
     address_regex: 'posizione del cantiere\s+(.{5,80}?)\s+Capitolato'
     image_regex: '/uploads/building/banner/'
     description_regex: 'Consegna cantiere.*?Max\s*€\s*:\s*[\d.]+'
+
+  # ---------------------------------------------------------------- reti in franchising (scraper/sources/franchise.py)
+  - id: tecnocasa
+    name: Tecnocasa (13 agenzie in provincia)
+    kind: agenzia
+    adapter: tecnocasa
+    website: https://www.tecnocasa.it/annunci/immobili/friuli-venezia-giulia/trieste.html
+    delay: 1.5
+
+  - id: remax
+    name: RE/MAX Enterprise Trieste
+    kind: agenzia
+    adapter: remax
+    website: https://www.remax.it/trova/ricerca/vendita/Trieste
+    delay: 1.5
+
+  - id: gabetti
+    name: Gabetti Trieste
+    kind: agenzia
+    adapter: gabetti
+    website: https://www.gabetti.it/vendita/provincia-ts
+    delay: 1.5
+
+  - id: engelvoelkers
+    name: Engel & Völkers Trieste
+    kind: agenzia
+    adapter: engelvoelkers
+    website: https://www.engelvoelkers.com/it/it/shops/trieste
+    shop: Trieste
+    delay: 1.5
+
+  - id: limmobiliare
+    name: L'Immobiliare.com Trieste (Di Casa in Casa)
+    kind: agenzia
+    adapter: limmobiliare
+    website: https://trieste.limmobiliare.com/
+    id_agenzia: "9031010"
+    delay: 1.5
+
+  - id: doveit
+    name: Dove.it
+    kind: agenzia
+    adapter: doveit
+    website: https://www.dove.it/vendita-case/trieste
+    delay: 1.5

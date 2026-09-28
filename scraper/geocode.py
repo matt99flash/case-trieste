@@ -10,7 +10,7 @@ from curl_cffi import requests as creq
 
 from .zones import norm
 
-CACHE_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "geocache.json")
+CACHE_FILE = os.path.join(os.environ.get("CASE_DATA_DIR") or os.path.join(os.path.dirname(os.path.dirname(__file__)), "data"), "geocache.json")
 MAX_PER_RUN = 80
 STREET = re.compile(r"\b(via|viale|piazza|piazzale|largo|strada|salita|androna|riva|scala|passeggio|galleria|corso|vicolo|"
                     r"localit[aà]|loc\.|borgo|frazione|contrada|rotonda|campo|str\.)\b", re.I)
@@ -93,8 +93,8 @@ def enrich(listings: list[dict], geocoder: Geocoder):
             if ll:
                 d["lat"], d["lon"] = ll
                 d["geo"] = "indirizzo"
-        elif d.get("lat") is not None:
-            d.setdefault("geo", "fonte")
+        elif d.get("lat") is not None and not d.get("geo"):
+            d["geo"] = "fonte"
         if d.get("town") == "Trieste" and d.get("lat") is not None:
             if BOX[0] <= d["lat"] <= BOX[2] and BOX[1] <= d["lon"] <= BOX[3]:
                 d["zone"] = zone_from_point(d["lat"], d["lon"])

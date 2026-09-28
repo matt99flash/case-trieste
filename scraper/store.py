@@ -3,7 +3,8 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs", "data")
+# CASE_DATA_DIR permette prove in una cartella separata senza toccare i dati veri
+DATA_DIR = os.environ.get("CASE_DATA_DIR") or os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs", "data")
 LISTINGS_FILE = os.path.join(DATA_DIR, "listings.json")
 EVENTS_FILE = os.path.join(DATA_DIR, "events.json")
 SOURCES_FILE = os.path.join(DATA_DIR, "sources.json")
@@ -117,11 +118,18 @@ class Store:
                     self._event("new", rec, price=d.get("price"))
             else:
                 old_price, was_status, was_sold = rec.get("price"), rec.get("status"), rec.get("sold")
+                full = lid in (detail_ids or set())
                 for k in LISTING_FIELDS:
                     v = d.get(k)
                     # non cancellare dati noti se il giro corrente non li ha letti
-                    if v not in (None, [], {}, "") or k in ("sold", "price"):
-                        rec[k] = v
+                    if v in (None, [], {}, "") and k not in ("sold", "price"):
+                        continue
+                    # un giro "solo elenco" ha spesso dati ridotti (1 foto, testo tagliato): non peggiorare la scheda
+                    if not full and k in ("images", "description") and rec.get(k) and len(v or "") < len(rec[k]):
+                        continue
+                    if not full and k == "features" and rec.get(k):
+                        v = {**rec[k], **v}
+                    rec[k] = v
                 if d.get("price") is None and old_price is not None and lid not in (detail_ids or set()):
                     rec["price"] = old_price  # prezzo non letto in questo giro: mantieni
                 new_price = rec.get("price")

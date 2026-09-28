@@ -33,9 +33,22 @@ def log(src, msg):
 
 
 def load_sources() -> list[dict]:
-    with open(os.path.join(ROOT, "config", "sources.yaml"), encoding="utf-8") as f:
-        cfg = yaml.safe_load(f) or {}
-    return [s for s in cfg.get("sources", []) if s.get("enabled", True)]
+    """config/sources.yaml + tutti i file config/sources.d/*.yaml (una lista `sources:` ciascuno)."""
+    files = [os.path.join(ROOT, "config", "sources.yaml")]
+    d = os.path.join(ROOT, "config", "sources.d")
+    if os.path.isdir(d):
+        files += sorted(os.path.join(d, f) for f in os.listdir(d) if f.endswith((".yaml", ".yml")))
+    out, seen = [], set()
+    for path in files:
+        with open(path, encoding="utf-8") as f:
+            cfg = yaml.safe_load(f) or {}
+        for s in cfg.get("sources") or []:
+            if s["id"] in seen:
+                raise SystemExit(f"id fonte duplicato: {s['id']} ({path})")
+            seen.add(s["id"])
+            if s.get("enabled", True):
+                out.append(s)
+    return out
 
 
 def run_source(cfg, adapters, store, time_budget):
