@@ -20,6 +20,7 @@
     <a href="#annunci" data-tab="annunci">Annunci</a>
     <a href="#mappa" data-tab="mappa">Mappa</a>
     <a href="#preferiti" data-tab="preferiti">Preferiti <span id="fav-count" class="pill"></span></a>
+    <a href="#notifiche" data-tab="notifiche">Notifiche</a>
     <a href="#fonti" data-tab="fonti">Fonti</a>
   </nav>
 </header>
@@ -85,6 +86,51 @@
     </section>
     <section id="tab-preferiti" class="tab" hidden>
       <div id="favs" class="grid"></div>
+    </section>
+    <section id="tab-notifiche" class="tab" hidden>
+      <div class="panel">
+        <h2>Cosa ti arriva sul telefono</h2>
+        <p class="muted small">Scegli quali novità ricevere con l'app ntfy. La dashboard continua a mostrarti tutto: questi limiti valgono solo per le notifiche.</p>
+        <p id="n-current" class="current"></p>
+        <form id="notify-form" class="nform" autocomplete="off">
+          <label class="check full switch"><input type="checkbox" name="enabled" checked> <b>Notifiche attive</b></label>
+          <fieldset class="field full"><legend>Avvisami per</legend><div class="chips" id="n-events"></div></fieldset>
+          <fieldset class="field">
+            <legend>Prezzo (€)</legend>
+            <div class="range"><input type="number" name="price_min" placeholder="min" step="5000" min="0"><input type="number" name="price_max" placeholder="max" step="5000" min="0"></div>
+          </fieldset>
+          <fieldset class="field">
+            <legend>Superficie (mq)</legend>
+            <div class="range"><input type="number" name="mq_min" placeholder="min" step="5" min="0"><input type="number" name="mq_max" placeholder="max" step="5" min="0"></div>
+          </fieldset>
+          <label class="field">Locali (minimo)
+            <select name="rooms_min"><option value="">Qualsiasi</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+          </label>
+          <label class="field">Parole chiave
+            <input type="search" name="keywords" placeholder="es. terrazzo">
+          </label>
+          <fieldset class="field full"><legend>Tipologia</legend><div class="chips" id="n-types"></div></fieldset>
+          <fieldset class="field full"><legend>Stato</legend><div class="chips" id="n-conditions"></div></fieldset>
+          <fieldset class="field full"><legend>Comune <span class="muted">(nessuno = tutti)</span></legend><div class="chips" id="n-towns"></div></fieldset>
+          <fieldset class="field full"><legend>Zona di Trieste <span class="muted">(nessuna = tutte)</span></legend><div class="chips" id="n-zones"></div></fieldset>
+          <fieldset class="field full"><legend>Deve avere</legend><div class="chips" id="n-features"></div></fieldset>
+          <fieldset class="field full"><legend>Venditore <span class="muted">(nessuno = tutti)</span></legend><div class="chips" id="n-kinds"></div></fieldset>
+          <label class="check full"><input type="checkbox" name="include_noprice" checked> Avvisami anche per annunci senza prezzo</label>
+          <label class="field">Oltre quante novità insieme ricevo un unico riepilogo
+            <select name="max_single"><option>1</option><option>3</option><option selected>5</option><option>10</option><option>20</option></select>
+          </label>
+          <p id="n-preview" class="full preview"></p>
+          <div class="full nactions">
+            <button type="button" id="n-copy" class="btn ghost">Usa i filtri della pagina Annunci</button>
+            <button type="button" id="n-save" class="btn">Salva</button>
+          </div>
+          <div class="full help small">
+            <b>Come funziona il salvataggio:</b> toccando <i>Salva</i> si apre GitHub con le impostazioni già scritte.
+            Tocca il pulsante verde <i>Create</i> (o <i>Submit new issue</i>). Entro un paio di minuti ricevi su ntfy la conferma
+            "Impostazioni notifiche salvate". Serve essere collegati a GitHub con il tuo account.
+          </div>
+        </form>
+      </div>
     </section>
     <section id="tab-fonti" class="tab" hidden>
       <p class="muted small">Ogni fonte è il sito diretto di un'agenzia, di un costruttore o di Subito (privati). Il controllo avviene ogni 2 ore circa, dalle 7 alle 23.</p>

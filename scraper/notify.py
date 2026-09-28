@@ -1,49 +1,69 @@
 """Notifiche sul telefono tramite ntfy (app gratuita): nuovi annunci, variazioni di prezzo, venduti."""
+import json
 import os
 
-import yaml
 from curl_cffi import requests as creq
 
 from .parse_utils import TYPE_LABELS
 
-CONFIG = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config", "notify.yaml")
+# Impostazioni modificabili dalla dashboard (sezione "Notifiche"): vedi scraper/settings.py
+CONFIG = os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs", "notify.json")
+DEFAULT = {"enabled": True, "events": ["new", "price_down", "price_up", "removed", "sold"],
+           "filters": {"types": ["appartamento", "attico", "villa", "casa"]}, "max_single": 5}
 
 LABEL = {"new": ("🆕", "Nuovo"), "price_down": ("📉", "Ribasso"), "price_up": ("📈", "Rialzo"),
          "removed": ("✅", "Non più online (venduto/ritirato)"), "sold": ("✅", "Venduto / sotto offerta")}
 
 
 def load_config() -> dict:
-    with open(CONFIG, encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+    try:
+        with open(CONFIG, encoding="utf-8") as f:
+            return {**DEFAULT, **json.load(f)}
+    except FileNotFoundError:
+        return dict(DEFAULT)
 
 
 def _eur(v):
     return f"€ {v:,.0f}".replace(",", ".") if v else "prezzo n.d."
 
 
-def _matches(rec: dict, flt: dict) -> bool:
+def _matches(rec: dict, flt: dict, kind: str) -> bool:
     p, mq = rec.get("price"), rec.get("mq")
+    if not p and not flt.get("include_noprice", True):
+        return False
     if flt.get("price_max") and p and p > flt["price_max"]:
         return False
     if flt.get("price_min") and p and p < flt["price_min"]:
         return False
-    if flt.get("mq_min") and mq and mq < flt["mq_min"]:
+    if flt.get("mq_min") and (not mq or mq < flt["mq_min"]):
         return False
-    if flt.get("rooms_min") and rec.get("rooms") and rec["rooms"] < flt["rooms_min"]:
+    if flt.get("mq_max") and mq and mq > flt["mq_max"]:
         return False
-    if flt.get("types") and rec.get("type") not in flt["types"]:
+    if flt.get("rooms_min") and (not rec.get("rooms") or rec["rooms"] < flt["rooms_min"]):
+        return False
+    if flt.get("types") and (rec.get("type") or "altro") not in flt["types"]:
+        return False
+    if flt.get("conditions") and (rec.get("condition") or "nd") not in flt["conditions"]:
         return False
     if flt.get("towns") and rec.get("town") not in flt["towns"]:
         return False
-    if flt.get("zones") and rec.get("town") == "Trieste" and rec.get("zone") not in flt["zones"]:
+    if flt.get("zones") and rec.get("town") == "Trieste" and (rec.get("zone") or "nd") not in flt["zones"]:
         return False
-    if flt.get("require_price") and not p:
+    if flt.get("features") and any((rec.get("features") or {}).get(f) is not True for f in flt["features"]):
         return False
+    if flt.get("kinds") and kind not in flt["kinds"]:
+        return False
+    if flt.get("keywords"):
+        blob = " ".join(str(rec.get(k) or "") for k in ("title", "description", "address", "zone")).lower()
+        if not all(w.lower() in blob for w in flt["keywords"].split()):
+            return False
     return True
 
 
 def select_events(store) -> list[tuple[dict, dict]]:
     cfg = load_config()
+    if not cfg.get("enabled", True):
+        return []
     wanted = set(cfg.get("events") or LABEL)
     flt = cfg.get("filters") or {}
     groups = {}
@@ -54,7 +74,8 @@ def select_events(store) -> list[tuple[dict, dict]]:
         if ev["type"] not in wanted:
             continue
         rec = store.listings.get(ev["id"])
-        if not rec or not _matches(rec, flt):
+        kind = "privato" if rec and rec.get("private") else store.sources.get(ev["source"], {}).get("kind", "agenzia")
+        if not rec or not _matches(rec, flt, kind):
             continue
         members = groups.get(rec.get("group", rec["id"]), [rec])
         others_active = [m for m in members if m["id"] != rec["id"] and m["status"] == "active"]

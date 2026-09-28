@@ -37,6 +37,7 @@ async function load() {
   const get = async f => { const r = await fetch(`data/${f}?t=${Date.now()}`); if (!r.ok) throw new Error(f); return r.json(); };
   const [l, e, s] = await Promise.all([get("listings.json"), get("events.json").catch(() => ({ events: [] })), get("sources.json").catch(() => ({ sources: {} }))]);
   S.updated = l.updated;
+  S.notify = await fetch(`notify.json?t=${Date.now()}`).then(r => r.ok ? r.json() : null).catch(() => null);
   S.sources = s.sources || {};
   S.events = (e.events || []).slice().reverse();
   S.listings = l.listings || [];
@@ -320,14 +321,127 @@ function openDetail(gid) {
   dlg.scrollTop = 0;
 }
 
+// ------------------------------------------------------------------ impostazioni notifiche
+
+const NDEFAULT = { enabled: true, events: ["new", "price_down", "price_up", "removed", "sold"], max_single: 5,
+  filters: { types: DEFAULT_TYPES, include_noprice: true } };
+const NEV = { new: "Nuovo annuncio", price_down: "Ribasso di prezzo", price_up: "Rialzo di prezzo", removed: "Non più online (venduto/ritirato)", sold: "Segnato come venduto" };
+let NDRAFT = null;
+
+function repoInfo() {
+  const gh = location.hostname.endsWith(".github.io");
+  return { owner: gh ? location.hostname.split(".")[0] : "matt99flash", repo: gh ? (location.pathname.split("/")[1] || "case-trieste") : "case-trieste" };
+}
+
+function nChips(id, name, entries, selected) {
+  $(id).innerHTML = entries.map(([v, label]) => `<label class="chip"><input type="checkbox" name="${name}" value="${esc(v)}" ${selected.includes(v) ? "checked" : ""}><span>${esc(label)}</span></label>`).join("");
+}
+
+function fillNotifyForm(cfg) {
+  const f = cfg.filters || {}, form = $("#notify-form");
+  form.elements.enabled.checked = cfg.enabled !== false;
+  nChips("#n-events", "events", Object.entries(NEV), cfg.events || []);
+  nChips("#n-types", "types", Object.entries(TYPE_LABELS), f.types || []);
+  nChips("#n-conditions", "conditions", Object.entries(COND_LABELS), f.conditions || []);
+  nChips("#n-towns", "towns", Object.keys(TOWN_CENTER).map(t => [t, t]), f.towns || []);
+  nChips("#n-zones", "zones", Object.keys(ZONE_CENTER).map(z => [z, z]).concat([["nd", "Zona non indicata"]]), f.zones || []);
+  nChips("#n-features", "features", Object.entries(FEATURES), f.features || []);
+  nChips("#n-kinds", "kinds", Object.entries(KINDS), f.kinds || []);
+  for (const k of ["price_min", "price_max", "mq_min", "mq_max", "rooms_min"]) form.elements[k].value = f[k] ?? "";
+  form.elements.keywords.value = f.keywords || "";
+  form.elements.include_noprice.checked = f.include_noprice !== false;
+  form.elements.max_single.value = String(cfg.max_single || 5);
+}
+
+function readNotifyForm() {
+  const form = $("#notify-form"), fd = new FormData(form), num = k => fd.get(k) ? Number(fd.get(k)) : null;
+  const filters = { price_min: num("price_min"), price_max: num("price_max"), mq_min: num("mq_min"), mq_max: num("mq_max"),
+    rooms_min: num("rooms_min"), types: fd.getAll("types"), conditions: fd.getAll("conditions"), towns: fd.getAll("towns"),
+    zones: fd.getAll("zones"), features: fd.getAll("features"), kinds: fd.getAll("kinds"),
+    keywords: (fd.get("keywords") || "").trim() || null, include_noprice: form.elements.include_noprice.checked };
+  for (const k of Object.keys(filters)) if (filters[k] === null || (Array.isArray(filters[k]) && !filters[k].length)) delete filters[k];
+  return { enabled: form.elements.enabled.checked, events: fd.getAll("events"), max_single: Number(fd.get("max_single")) || 5, filters };
+}
+
+function notifyMatches(r, f) {
+  if (!r.price && f.include_noprice === false) return false;
+  if (f.price_min && r.price && r.price < f.price_min) return false;
+  if (f.price_max && r.price && r.price > f.price_max) return false;
+  if (f.mq_min && (!r.mq || r.mq < f.mq_min)) return false;
+  if (f.mq_max && r.mq && r.mq > f.mq_max) return false;
+  if (f.rooms_min && (!r.rooms || r.rooms < f.rooms_min)) return false;
+  if (f.types?.length && !f.types.includes(r.type || "altro")) return false;
+  if (f.conditions?.length && !f.conditions.includes(r.condition || "nd")) return false;
+  if (f.towns?.length && !f.towns.includes(r.town)) return false;
+  if (f.zones?.length && r.town === "Trieste" && !f.zones.includes(r.zone || "nd")) return false;
+  if (f.features?.some(x => r.features?.[x] !== true)) return false;
+  if (f.kinds?.length && !f.kinds.includes(r.kind)) return false;
+  if (f.keywords) {
+    const blob = [r.title, r.description, r.address, r.zone].join(" ").toLowerCase();
+    if (!f.keywords.toLowerCase().split(/\s+/).every(w => blob.includes(w))) return false;
+  }
+  return true;
+}
+
+function describeNotify(cfg) {
+  if (cfg.enabled === false) return "Notifiche sospese.";
+  const f = cfg.filters || {}, b = [];
+  if (f.price_min || f.price_max) b.push("prezzo " + (f.price_min ? "da " + eur(f.price_min) + " " : "") + (f.price_max ? "fino a " + eur(f.price_max) : ""));
+  if (f.mq_min || f.mq_max) b.push("superficie " + (f.mq_min ? "da " + f.mq_min + " " : "") + (f.mq_max ? "fino a " + f.mq_max + " " : "") + "mq");
+  if (f.rooms_min) b.push(`almeno ${f.rooms_min} locali`);
+  if (f.towns?.length) b.push("comuni: " + f.towns.join(", "));
+  if (f.zones?.length) b.push("zone: " + f.zones.map(z => z === "nd" ? "non indicata" : z).join(", "));
+  if (f.features?.length) b.push("con " + f.features.map(x => FEATURES[x].toLowerCase()).join(", "));
+  if (f.types?.length) b.push(f.types.map(t => TYPE_LABELS[t]).join(", "));
+  return (b.length ? b.join(" · ") : "nessun limite") + ". Avvisi per: " + (cfg.events || []).map(e => NEV[e].toLowerCase()).join(", ") + ".";
+}
+
+function updateNotifyPreview() {
+  const cfg = readNotifyForm();
+  const n = houses(false).filter(h => h.members.some(m => notifyMatches(m, cfg.filters))).length;
+  const oldest = S.events.length ? new Date(S.events[S.events.length - 1].ts) : new Date();
+  const days = Math.max(1, (Date.now() - oldest) / 864e5);
+  const recent = S.events.filter(e => e.type === "new" && S.byId.get(e.id) && notifyMatches(S.byId.get(e.id), cfg.filters)).length;
+  $("#n-preview").textContent = `Con questi limiti corrispondono ${n.toLocaleString("it-IT")} immobili oggi in vendita` +
+    (S.events.length ? ` · circa ${(Math.round(recent / days * 10) / 10).toLocaleString("it-IT")} nuovi annunci al giorno.` : ".");
+}
+
+function renderNotify() {
+  const saved = S.notify || NDEFAULT;
+  $("#n-current").innerHTML = `<b>Impostazioni attuali:</b> ${esc(describeNotify(saved))}`;
+  if (!NDRAFT) { NDRAFT = true; fillNotifyForm(saved); }
+  updateNotifyPreview();
+}
+
+function copyDashboardFilters() {
+  const cur = readNotifyForm();
+  fillNotifyForm({ ...cur, filters: {
+    price_min: F.pmin ? Number(F.pmin) : null, price_max: F.pmax ? Number(F.pmax) : null,
+    mq_min: F.mqmin ? Number(F.mqmin) : null, mq_max: F.mqmax ? Number(F.mqmax) : null, rooms_min: F.rooms ? Number(F.rooms) : null,
+    types: F.types, conditions: F.conditions, towns: F.towns, zones: F.zones, features: F.features, kinds: F.kinds,
+    keywords: F.q || null, include_noprice: F.noprice } });
+  updateNotifyPreview();
+}
+
+function saveNotify() {
+  const cfg = readNotifyForm();
+  if (!cfg.events.length && cfg.enabled) { alert("Scegli almeno un tipo di novità, oppure disattiva le notifiche."); return; }
+  const { owner, repo } = repoInfo();
+  const when = new Date().toLocaleString("it-IT", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  const body = "Richiesta inviata dalla dashboard. Tocca **Create** per salvarla: verrà applicata in automatico.\n\n" +
+    describeNotify(cfg) + "\n\n```json\n" + JSON.stringify(cfg) + "\n```";
+  const url = `https://github.com/${owner}/${repo}/issues/new?title=${encodeURIComponent("Impostazioni notifiche " + when)}&body=${encodeURIComponent(body)}`;
+  window.open(url, "_blank", "noopener");
+}
+
 // ------------------------------------------------------------------ navigazione
 
 function showTab() {
   const tab = (location.hash.slice(1) || "annunci").split("/")[0];
-  const valid = ["novita", "annunci", "mappa", "preferiti", "fonti"].includes(tab) ? tab : "annunci";
+  const valid = ["novita", "annunci", "mappa", "preferiti", "notifiche", "fonti"].includes(tab) ? tab : "annunci";
   document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("active", a.dataset.tab === valid));
   document.querySelectorAll(".tab").forEach(s => s.hidden = s.id !== "tab-" + valid);
-  $("#filters").hidden = valid === "fonti";
+  $("#filters").hidden = valid === "fonti" || valid === "notifiche";
   render(valid);
 }
 
@@ -337,6 +451,7 @@ function render(tab) {
   else if (tab === "mappa") renderMap();
   else if (tab === "preferiti") renderFavs();
   else if (tab === "fonti") renderSources();
+  else if (tab === "notifiche") renderNotify();
   else renderGrid();
   $("#fav-count").textContent = S.favs.size || "";
 }
@@ -358,6 +473,9 @@ function bind() {
     e.currentTarget.setAttribute("aria-expanded", open);
   });
   $("#more").addEventListener("click", () => { S.shown += 60; renderGrid(); });
+  $("#notify-form").addEventListener("input", () => updateNotifyPreview());
+  $("#n-copy").addEventListener("click", copyDashboardFilters);
+  $("#n-save").addEventListener("click", saveNotify);
   $("#ev-days").addEventListener("change", renderEvents);
   $("#ev-types").addEventListener("change", () => {
     store.set("evtypes", [...document.querySelectorAll("#ev-types input:checked")].map(i => i.value));

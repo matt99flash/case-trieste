@@ -1,0 +1,66 @@
+name: Salva impostazioni notifiche
+
+# La dashboard apre una issue "Impostazioni notifiche ..." con i filtri scelti.
+# Viene accettata solo se aperta dal proprietario del progetto.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: controllo-annunci
+  cancel-in-progress: false
+
+jobs:
+  salva:
+    if: startsWith(github.event.issue.title, 'Impostazioni notifiche') && github.event.issue.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Applica
+        id: applica
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          python -m scraper.settings > esito.txt
+          cat esito.txt
+
+      - name: Salva
+        run: |
+          git config user.name "case-trieste-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/notify.json
+          if ! git diff --cached --quiet; then
+            git commit -q -m "Impostazioni notifiche aggiornate"
+            git pull -q --rebase && git push -q
+          fi
+
+      - name: Chiudi la richiesta
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }} \
+            --comment "✅ Impostazioni salvate. $(cat esito.txt | tail -1) Puoi chiudere questa pagina."
+
+  ignora:
+    if: startsWith(github.event.issue.title, 'Impostazioni notifiche') && github.event.issue.user.login != github.repository_owner
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }} --reason "not planned"

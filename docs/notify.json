@@ -1,0 +1,6 @@
+{
+ "enabled": true,
+ "events": ["new", "price_down", "price_up", "removed", "sold"],
+ "max_single": 5,
+ "filters": {"types": ["appartamento", "attico", "villa", "casa"], "include_noprice": true}
+}
