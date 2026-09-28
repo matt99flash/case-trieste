@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T17:22:59+00:00",
+ "updated": "2026-09-28T19:22:44+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -7,6 +7,20 @@
    "id": "tecnocasa:61247745",
    "source": "tecnocasa",
    "price": 220000
+  },
+  {
+   "ts": "2026-09-28T19:22:44+00:00",
+   "type": "new",
+   "id": "subito-privati:662526015",
+   "source": "subito-privati",
+   "price": null
+  },
+  {
+   "ts": "2026-09-28T19:22:44+00:00",
+   "type": "new",
+   "id": "subito-privati:662526112",
+   "source": "subito-privati",
+   "price": null
   }
  ]
 }
