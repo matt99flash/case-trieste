@@ -1,0 +1,77 @@
+{
+ "updated": "2026-09-28T13:17:32+00:00",
+ "sources": {
+  "palazzo-haggi": {
+   "name": "Palazzo Haggi (San Vito)",
+   "last_run": "2026-09-28T13:17:32+00:00",
+   "last_count": 5,
+   "stats": {
+    "requests": 1,
+    "seconds": 1,
+    "outside": 0,
+    "details": 0,
+    "partial_errors": 0
+   },
+   "last_ok": "2026-09-28T13:17:32+00:00",
+   "first_ok": "2026-09-28T13:17:32+00:00",
+   "last_error": null,
+   "fail_streak": 0,
+   "kind": "costruttore",
+   "website": "https://www.palazzohaggi.com/"
+  },
+  "subito-privati": {
+   "name": "Subito.it – privati",
+   "last_run": "2026-09-28T13:17:32+00:00",
+   "last_count": 66,
+   "stats": {
+    "requests": 3,
+    "seconds": 3,
+    "outside": 0,
+    "details": 0,
+    "partial_errors": 0
+   },
+   "last_ok": "2026-09-28T13:17:32+00:00",
+   "first_ok": "2026-09-28T13:17:32+00:00",
+   "last_error": null,
+   "fail_streak": 0,
+   "kind": "privato",
+   "website": "https://www.subito.it/annunci-friuli-venezia-giulia/vendita/appartamenti/trieste/?advt=0"
+  },
+  "toro-costruzioni": {
+   "name": "Toro Costruzioni",
+   "last_run": "2026-09-28T13:17:32+00:00",
+   "last_count": 4,
+   "stats": {
+    "requests": 8,
+    "seconds": 8,
+    "outside": 0,
+    "details": 0,
+    "partial_errors": 0
+   },
+   "last_ok": "2026-09-28T13:17:32+00:00",
+   "first_ok": "2026-09-28T13:17:32+00:00",
+   "last_error": null,
+   "fail_streak": 0,
+   "kind": "costruttore",
+   "website": "https://torocostruzionisrl.com/soluzioni-in-vendita/"
+  },
+  "cantieri-tirabora": {
+   "name": "Cantieri Tirabora (nuove costruzioni)",
+   "last_run": "2026-09-28T13:17:32+00:00",
+   "last_count": 21,
+   "stats": {
+    "requests": 22,
+    "seconds": 21,
+    "outside": 0,
+    "details": 0,
+    "partial_errors": 0
+   },
+   "last_ok": "2026-09-28T13:17:32+00:00",
+   "first_ok": "2026-09-28T13:17:32+00:00",
+   "last_error": null,
+   "fail_streak": 0,
+   "kind": "costruttore",
+   "website": "https://cantieritirabora.it/cantieri_attivi/"
+  }
+ }
+}
