@@ -1,4 +1,12 @@
 {
- "updated": "2026-09-28T15:26:07+00:00",
- "events": []
+ "updated": "2026-09-28T17:22:59+00:00",
+ "events": [
+  {
+   "ts": "2026-09-28T17:22:59+00:00",
+   "type": "removed",
+   "id": "tecnocasa:61247745",
+   "source": "tecnocasa",
+   "price": 220000
+  }
+ ]
 }
