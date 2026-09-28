@@ -1,9 +1,9 @@
 {
- "updated": "2026-09-28T13:47:32+00:00",
+ "updated": "2026-09-28T15:26:07+00:00",
  "sources": {
   "palazzo-haggi": {
    "name": "Palazzo Haggi (San Vito)",
-   "last_run": "2026-09-28T13:47:32+00:00",
+   "last_run": "2026-09-28T15:26:07+00:00",
    "last_count": 5,
    "stats": {
     "requests": 1,
@@ -12,7 +12,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-28T13:47:32+00:00",
+   "last_ok": "2026-09-28T15:26:07+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -21,7 +21,7 @@
   },
   "subito-privati": {
    "name": "Subito.it – privati",
-   "last_run": "2026-09-28T13:47:32+00:00",
+   "last_run": "2026-09-28T15:26:07+00:00",
    "last_count": 66,
    "stats": {
     "requests": 3,
@@ -30,7 +30,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-28T13:47:32+00:00",
+   "last_ok": "2026-09-28T15:26:07+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -39,16 +39,16 @@
   },
   "toro-costruzioni": {
    "name": "Toro Costruzioni",
-   "last_run": "2026-09-28T13:47:32+00:00",
+   "last_run": "2026-09-28T15:26:07+00:00",
    "last_count": 4,
    "stats": {
     "requests": 8,
-    "seconds": 7,
+    "seconds": 8,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-28T13:47:32+00:00",
+   "last_ok": "2026-09-28T15:26:07+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -57,7 +57,7 @@
   },
   "cantieri-tirabora": {
    "name": "Cantieri Tirabora (nuove costruzioni)",
-   "last_run": "2026-09-28T13:47:32+00:00",
+   "last_run": "2026-09-28T15:26:07+00:00",
    "last_count": 21,
    "stats": {
     "requests": 22,
@@ -66,7 +66,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-28T13:47:32+00:00",
+   "last_ok": "2026-09-28T15:26:07+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -75,16 +75,16 @@
   },
   "doveit": {
    "name": "Dove.it",
-   "last_run": "2026-09-28T13:47:32+00:00",
+   "last_run": "2026-09-28T15:26:07+00:00",
    "last_count": 0,
    "stats": {
     "requests": 1,
-    "seconds": 1,
+    "seconds": 2,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-28T13:47:32+00:00",
+   "last_ok": "2026-09-28T15:26:07+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -93,16 +93,16 @@
   },
   "gabetti": {
    "name": "Gabetti Trieste",
-   "last_run": "2026-09-28T13:47:32+00:00",
+   "last_run": "2026-09-28T15:26:07+00:00",
    "last_count": 15,
    "stats": {
     "requests": 2,
-    "seconds": 3,
+    "seconds": 4,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-28T13:47:32+00:00",
+   "last_ok": "2026-09-28T15:26:07+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -111,16 +111,16 @@
   },
   "engelvoelkers": {
    "name": "Engel & Völkers Trieste",
-   "last_run": "2026-09-28T13:47:32+00:00",
+   "last_run": "2026-09-28T15:26:07+00:00",
    "last_count": 11,
    "stats": {
-    "requests": 12,
-    "seconds": 17,
+    "requests": 1,
+    "seconds": 1,
     "outside": 0,
-    "details": 11,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-28T13:47:32+00:00",
+   "last_ok": "2026-09-28T15:26:07+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -129,16 +129,16 @@
   },
   "limmobiliare": {
    "name": "L'Immobiliare.com Trieste (Di Casa in Casa)",
-   "last_run": "2026-09-28T13:47:32+00:00",
+   "last_run": "2026-09-28T15:26:07+00:00",
    "last_count": 13,
    "stats": {
-    "requests": 17,
-    "seconds": 24,
+    "requests": 4,
+    "seconds": 5,
     "outside": 7,
-    "details": 13,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-28T13:47:32+00:00",
+   "last_ok": "2026-09-28T15:26:07+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -147,7 +147,7 @@
   },
   "remax": {
    "name": "RE/MAX Enterprise Trieste",
-   "last_run": "2026-09-28T13:47:32+00:00",
+   "last_run": "2026-09-28T15:26:07+00:00",
    "last_count": 31,
    "stats": {
     "requests": 33,
@@ -158,23 +158,23 @@
    },
    "last_ok": "2026-09-28T13:47:32+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
-   "last_error": null,
-   "fail_streak": 0,
+   "last_error": "Timeout: Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details. (https://cms.remax.it/api/v1/units)",
+   "fail_streak": 1,
    "kind": "agenzia",
    "website": "https://www.remax.it/trova/ricerca/vendita/Trieste"
   },
   "tecnocasa": {
    "name": "Tecnocasa (13 agenzie in provincia)",
-   "last_run": "2026-09-28T13:47:32+00:00",
-   "last_count": 62,
+   "last_run": "2026-09-28T15:26:07+00:00",
+   "last_count": 61,
    "stats": {
-    "requests": 69,
-    "seconds": 103,
+    "requests": 7,
+    "seconds": 10,
     "outside": 0,
-    "details": 62,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-28T13:47:32+00:00",
+   "last_ok": "2026-09-28T15:26:07+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
