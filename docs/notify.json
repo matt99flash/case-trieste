@@ -1,6 +1,26 @@
 {
  "enabled": true,
- "events": ["new", "price_down", "price_up", "removed", "sold"],
+ "events": [
+  "new",
+  "price_down"
+ ],
  "max_single": 5,
- "filters": {"types": ["appartamento", "attico", "villa", "casa"], "include_noprice": true}
+ "filters": {
+  "price_max": 200000,
+  "mq_min": 70,
+  "types": [
+   "appartamento",
+   "attico",
+   "villa",
+   "casa"
+  ],
+  "towns": [
+   "Trieste"
+  ],
+  "features": [
+   "elevator",
+   "terrace"
+  ],
+  "include_noprice": true
+ }
 }
