@@ -1,0 +1,19 @@
+# Quali novità ti arrivano come notifica sul telefono.
+# (La dashboard mostra sempre tutto; qui scegli solo cosa ti "suona".)
+
+# Tipi di novità: new = nuovo annuncio, price_down = ribasso, price_up = rialzo,
+# removed = non più online (venduto/ritirato), sold = segnato come venduto dall'agenzia
+events: [new, price_down, price_up, removed, sold]
+
+filters:
+  price_min: null
+  price_max: null        # es. 250000
+  mq_min: null           # es. 60
+  rooms_min: null        # es. 3
+  types: [appartamento, attico, villa, casa]   # escludi box, terreni, negozi
+  towns: []              # vuoto = tutta la provincia; es. [Trieste, Muggia]
+  zones: []              # vuoto = tutto il comune di Trieste; es. ["San Vito / Campi Elisi", "Roiano"]
+  require_price: false
+
+# Oltre questo numero di novità in un giro, arriva un'unica notifica di riepilogo
+max_single: 5

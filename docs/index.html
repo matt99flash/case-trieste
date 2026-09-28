@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Trieste</title>
+<meta name="description" content="Annunci di case in vendita a Trieste, raccolti direttamente dai siti delle agenzie.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Case in vendita · Trieste</h1>
+    <p id="updated" class="muted">Caricamento…</p>
+  </div>
+  <nav class="tabs" role="tablist">
+    <a href="#novita" data-tab="novita">Novità</a>
+    <a href="#annunci" data-tab="annunci">Annunci</a>
+    <a href="#mappa" data-tab="mappa">Mappa</a>
+    <a href="#preferiti" data-tab="preferiti">Preferiti <span id="fav-count" class="pill"></span></a>
+    <a href="#fonti" data-tab="fonti">Fonti</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside id="filters" class="filters">
+    <button id="filters-toggle" class="filters-toggle" aria-expanded="false">Filtri <span id="filters-active" class="pill"></span></button>
+    <form id="filter-form" class="filters-body" autocomplete="off">
+      <label class="field full">Cerca
+        <input type="search" name="q" placeholder="es. vista mare, via Rossetti, rif. 123">
+      </label>
+      <fieldset class="field">
+        <legend>Prezzo (€)</legend>
+        <div class="range"><input type="number" name="pmin" placeholder="min" step="5000" min="0"><input type="number" name="pmax" placeholder="max" step="5000" min="0"></div>
+      </fieldset>
+      <fieldset class="field">
+        <legend>Superficie (mq)</legend>
+        <div class="range"><input type="number" name="mqmin" placeholder="min" step="5" min="0"><input type="number" name="mqmax" placeholder="max" step="5" min="0"></div>
+      </fieldset>
+      <label class="field">Locali (minimo)
+        <select name="rooms"><option value="">Qualsiasi</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+      </label>
+      <label class="field">Ordina per
+        <select name="sort">
+          <option value="recent">Più recenti</option>
+          <option value="price_asc">Prezzo crescente</option>
+          <option value="price_desc">Prezzo decrescente</option>
+          <option value="ppm_asc">€/mq più basso</option>
+          <option value="mq_desc">Più grandi</option>
+          <option value="drop">Maggior ribasso</option>
+        </select>
+      </label>
+      <fieldset class="field full"><legend>Tipologia</legend><div class="chips" id="f-types"></div></fieldset>
+      <fieldset class="field full"><legend>Stato</legend><div class="chips" id="f-conditions"></div></fieldset>
+      <fieldset class="field full"><legend>Comune</legend><div class="chips" id="f-towns"></div></fieldset>
+      <fieldset class="field full" id="zones-box"><legend>Zona di Trieste</legend><div class="chips" id="f-zones"></div></fieldset>
+      <fieldset class="field full"><legend>Deve avere</legend><div class="chips" id="f-features"></div></fieldset>
+      <fieldset class="field full"><legend>Venditore</legend><div class="chips" id="f-kinds"></div></fieldset>
+      <label class="check full"><input type="checkbox" name="noprice"> Includi annunci senza prezzo</label>
+      <label class="check full"><input type="checkbox" name="removed"> Mostra anche quelli non più online</label>
+      <div class="full actions"><button type="button" id="reset" class="btn ghost">Azzera filtri</button></div>
+    </form>
+  </aside>
+
+  <main id="main">
+    <section id="tab-novita" class="tab" hidden>
+      <div class="bar">
+        <div class="chips" id="ev-types"></div>
+        <label class="inline">Periodo
+          <select id="ev-days"><option value="1">ultime 24 ore</option><option value="3">ultimi 3 giorni</option><option value="7" selected>ultima settimana</option><option value="30">ultimo mese</option><option value="90">ultimi 3 mesi</option></select>
+        </label>
+      </div>
+      <div id="events"></div>
+    </section>
+    <section id="tab-annunci" class="tab" hidden>
+      <div class="bar"><p id="count" class="muted"></p></div>
+      <div id="grid" class="grid"></div>
+      <div class="more-wrap"><button id="more" class="btn" hidden>Mostra altri</button></div>
+    </section>
+    <section id="tab-mappa" class="tab" hidden>
+      <p class="muted small" id="map-note"></p>
+      <div id="map"></div>
+    </section>
+    <section id="tab-preferiti" class="tab" hidden>
+      <div id="favs" class="grid"></div>
+    </section>
+    <section id="tab-fonti" class="tab" hidden>
+      <p class="muted small">Ogni fonte è il sito diretto di un'agenzia, di un costruttore o di Subito (privati). Il controllo avviene ogni 2 ore circa, dalle 7 alle 23.</p>
+      <div id="sources"></div>
+    </section>
+  </main>
+</div>
+
+<dialog id="detail"><div id="detail-body"></div></dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

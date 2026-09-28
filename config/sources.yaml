@@ -1,0 +1,48 @@
+# Elenco delle fonti controllate. Ogni voce: id univoco, nome, tipo (agenzia / costruttore / privato), adattatore e parametri.
+sources:
+  - id: subito-privati
+    name: Subito.it – privati
+    kind: privato
+    adapter: subito
+    website: https://www.subito.it/annunci-friuli-venezia-giulia/vendita/appartamenti/trieste/?advt=0
+    delay: 1.5
+
+  # ---------------------------------------------------------------- costruttori / nuove costruzioni
+  - id: toro-costruzioni
+    name: Toro Costruzioni
+    kind: costruttore
+    adapter: unit_table
+    website: https://torocostruzionisrl.com/soluzioni-in-vendita/
+    pages:
+      - {url: "https://torocostruzionisrl.com/via-battisti-muggia/", project: "Palazzo Battisti", town: Muggia}
+      - {url: "https://torocostruzionisrl.com/palazzo-tedeschi/", project: "Palazzo Tedeschi", town: Trieste, zone: "San Vito / Campi Elisi"}
+    discover:
+      url: ["https://torocostruzionisrl.com/category/nuove-costruzioni-2/", "https://torocostruzionisrl.com/soluzioni-in-vendita/"]
+      link_regex: '^https://torocostruzionisrl\.com/[a-z0-9_-]+/?$'
+      exclude_regex: 'blog|chi-siamo|contatti|cookie|informativa|download|lavori-eseguiti|nuove-costruzioni|soluzioni-in-vendita|category'
+      defaults: {town: Trieste}
+
+  - id: palazzo-haggi
+    name: Palazzo Haggi (San Vito)
+    kind: costruttore
+    adapter: unit_table
+    website: https://www.palazzohaggi.com/
+    pages:
+      - {url: "https://www.palazzohaggi.com/", project: "Palazzo Haggi", town: Trieste, zone: "San Vito / Campi Elisi"}
+    text_units: 'App\.\s*(?P<unit>\d+)\s*[–-]\s*(?P<floor>[A-Za-zà]+)\s*-?\s*[–-]?\s*(?P<mq>\d+)\s*mq\s*[–-]\s*(?:(?P<sold>VENDUTO)|(?P<price>€\s*[\d.,]+))'
+
+  - id: cantieri-tirabora
+    name: Cantieri Tirabora (nuove costruzioni)
+    kind: costruttore
+    adapter: project_page
+    town: Trieste
+    website: https://cantieritirabora.it/cantieri_attivi/
+    discover:
+      url: "https://cantieritirabora.it/cantieri_attivi/"
+      link_regex: '/cantieri/\d+/'
+      exclude_regex: 'Autorimessa'
+    name_from_url: '/cantieri/\d+/([^/?#]+)'
+    price_regex: 'Min\s*€\s*:?\s*([\d.]+)'
+    address_regex: 'posizione del cantiere\s+(.{5,80}?)\s+Capitolato'
+    image_regex: '/uploads/building/banner/'
+    description_regex: 'Consegna cantiere.*?Max\s*€\s*:\s*[\d.]+'
