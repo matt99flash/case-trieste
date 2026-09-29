@@ -1,0 +1,177 @@
+# Batch B2 — agenzie WordPress con plugin/temi non standard — Trieste
+sources:
+  - id: attico-immobiliare
+    name: Attico Immobiliare s.r.l.
+    kind: agenzia
+    website: https://www.atticoimmobiliare.com/
+    adapter: b2_attico
+    delay: 1.0
+    town: Trieste
+    sitemaps:
+      - https://www.atticoimmobiliare.com/listings-sitemap.xml
+    link_regex: 'atticoimmobiliare\.com/immobile/[^/]+/?$'
+
+  - id: pozzecco-immobiliare
+    name: Pozzecco Immobiliare di Renato Pozzecco
+    kind: agenzia
+    website: https://www.pozzeccoimmobiliare.it/
+    adapter: b2_wp
+    delay: 1.0
+    town: Trieste
+    start_urls:
+      - https://www.pozzeccoimmobiliare.it/
+    link_regex: 'pozzeccoimmobiliare\.it/index\.php/property/[^/]+/?$'
+    exclude_regex: '/affitto'
+
+  - id: immobiliare-il-faro
+    name: Immobiliare Il Faro
+    kind: agenzia
+    website: https://immobiliareilfaro.it/
+    adapter: b2_wp
+    delay: 1.0
+    town: Trieste
+    start_urls:
+      - https://immobiliareilfaro.it/immobili/vendita/
+    link_regex: 'immobiliareilfaro\.it/immobile/[^/]+/?$'
+    exclude_regex: '/immobile/croazia'
+
+  - id: dinamica-immobiliare
+    name: Dinamica immobiliare snc di Sirk Andrea e Weiss Sandro
+    kind: agenzia
+    website: https://www.dinamicaimmobiliare.com/
+    adapter: b2_dinamica
+    delay: 1.0
+    start_urls:
+      - https://www.dinamicaimmobiliare.com/
+    link_regex: 'dinamicaimmobiliare\.com/immobili/[^/]+/?$'
+
+  - id: next-immobiliare
+    name: next immobiliare
+    kind: agenzia
+    website: https://www.nextimmobiliare.net/
+    adapter: b2_wp
+    delay: 1.0
+    start_urls:
+      - https://www.nextimmobiliare.net/cerca-immobili/
+    link_regex: 'nextimmobiliare\.net/proprieta/[^/]+/?$'
+    require_regex: '(?is)^(?:(?!canone mensile).)*$'
+
+  - id: borea-immobiliare
+    name: Borea immobiliare
+    kind: agenzia
+    website: https://www.boreaimmobiliare.it/it/home/
+    adapter: b2_wp
+    delay: 1.0
+    start_urls:
+      - https://www.boreaimmobiliare.it/it/vendita/
+    link_regex: 'boreaimmobiliare\.it/it/property/[^/]+/?$'
+    exclude_regex: '/property/annuncio-ita/?$'
+
+  - id: immobiliare-art
+    name: Immobiliare Art
+    kind: agenzia
+    website: https://immobiliareart.it/
+    adapter: b2_wp
+    delay: 1.0
+    town: Trieste
+    start_urls:
+      - https://immobiliareart.it/vendita/
+    link_regex: 'immobiliareart\.it/property/[^/]+/?$'
+
+  - id: igloo-real-estate
+    name: L'Igloo Immobiliare Di Michela Kraus
+    kind: agenzia
+    website: https://igloorealestate.it/
+    adapter: b2_searchfilter
+    delay: 1.0
+    town: Trieste
+    ajax_urls:
+      - 'https://igloorealestate.it/?sfid=1869&sf_action=get_data&sf_data=all'
+    link_regex: 'igloorealestate\.it/immobili/[^/]+/?$'
+
+  - id: savino-gestioni-immobiliari
+    name: Savino Gestioni Immobiliari
+    kind: agenzia
+    website: https://www.savinogi.com/
+    adapter: b2_sitemap
+    delay: 1.0
+    town: Trieste
+    sitemaps:
+      - https://www.savinogi.com/immobile-sitemap.xml
+    link_regex: 'savinogi\.com/immobile/[^/]+/?$'
+    exclude_regex: '/immobile/affitto'
+
+  - id: dimora
+    name: Dimora
+    kind: agenzia
+    website: https://dimora.biz/
+    adapter: b2_sitemap
+    delay: 1.0
+    sitemaps:
+      - https://dimora.biz/wp-sitemap-posts-property-1.xml
+    link_regex: 'dimora\.biz/property/[^/]+/?$'
+
+  - id: rivi-immobiliare
+    name: Rivi Immobiliare
+    kind: agenzia
+    website: https://www.rivi-immobiliare.it/
+    adapter: b2_sitemap
+    delay: 1.0
+    town: Trieste
+    sitemaps:
+      - https://www.rivi-immobiliare.it/wp-sitemap-posts-listing-1.xml
+    link_regex: 'rivi-immobiliare\.it/listings/[^/]+/?$'
+
+  - id: aemmecasa
+    name: IMMOBILIARE aemmecasa
+    kind: agenzia
+    website: https://www.aemmecasa.it/
+    adapter: b2_aemmecasa
+    delay: 1.0
+    town: Trieste
+    start_urls:
+      - https://www.aemmecasa.it/vendita/
+    link_regex: 'aemmecasa\.it/property/[^/]+/?$'
+
+  - id: elleci-immobiliare
+    name: Elleci Immobiliare Di Cocco Alessandro
+    kind: agenzia
+    website: http://www.elleciimmobiliare.it/
+    adapter: b2_wp
+    delay: 1.0
+    town: Trieste
+    start_urls:
+      - https://www.elleciimmobiliare.it/tipo-annuncio/vendita/
+    link_regex: 'elleciimmobiliare\.it/annuncio/[^/]+/?$'
+
+  - id: colbert-immobiliare
+    name: Colbert Immobiliare
+    kind: agenzia
+    website: https://immobiliarecolbert.com/
+    adapter: b2_wp
+    delay: 1.0
+    town: Trieste
+    start_urls:
+      - https://immobiliarecolbert.com/category/vendita/
+    link_regex: 'immobiliarecolbert\.com/\d{4}/\d{2}/\d{2}/[^/]+/?$'
+
+  - id: vidali-gruden
+    name: VIDALI GRUDEN IMMOBILIARE
+    kind: agenzia
+    website: https://www.vidaligrudenrealestate.com/
+    adapter: b2_vidaligruden
+    delay: 1.0
+    town: Trieste
+    page_url: https://www.vidaligrudenrealestate.com/immobili-in-vendita/
+
+  - id: aureahome
+    name: AureaHome
+    kind: agenzia
+    website: https://aureahome.it/
+    adapter: b2_wp
+    delay: 1.0
+    start_urls:
+      - https://aureahome.it/portopiccolo-sistiana-trieste-appartamenti-vendita/
+      - https://aureahome.it/immobili-residenziali/
+      - https://aureahome.it/immobili-commerciali/
+    link_regex: 'aureahome\.it/(?:scheda-[a-z0-9-]+|villa-sul-mare|monolocale-con-terrazza-panoramica)/?$'

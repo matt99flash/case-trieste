@@ -32,7 +32,7 @@ jobs:
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           DASHBOARD_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
-        run: python -m scraper.run
+        run: python -m scraper.run --workers 16
 
       - name: Salva i dati aggiornati
         run: |

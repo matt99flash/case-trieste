@@ -1,0 +1,68 @@
+sources:
+  - id: tirabora-immobiliare
+    name: Tirabora Immobiliare
+    kind: agenzia
+    website: https://www.tirabora.it/
+    adapter: d1_tirabora
+    delay: 1.0
+    base_url: "https://www.tirabora.it"
+    max_pages: 20
+
+  - id: immobiliare-4b
+    name: Immobiliare 4B - For Business
+    kind: agenzia
+    website: https://www.immobiliare4b.it/
+    adapter: d1_getrix_feed
+    delay: 1.0
+    feed_url: "https://immobiliare4b-backend.onrender.com/proxy"
+    detail_template: "https://www.immobiliare4b.it/immobile.html?id={id}"
+
+  - id: tam-immobiliare
+    name: Tam Immobiliare
+    kind: agenzia
+    website: https://www.tamimmobiliare.it/
+    adapter: d1_tam
+    delay: 1.0
+    listings_url: "https://www.tamimmobiliare.it/annunci/immobili/vendita/trieste"
+
+  - id: norbedo-immobiliare
+    name: norbedo immobiliare srl
+    kind: agenzia
+    website: https://www.norbedoimmobiliare.it/
+    adapter: d1_osproperty
+    delay: 1.0
+    start_urls: ["https://www.norbedoimmobiliare.it/in-vendita.html"]
+    link_regex: '/in-vendita/[a-z0-9-]+\.html$'
+    max_pages: 10
+
+  - id: il-castello-udine
+    name: Agenzia Immobiliare Il Castello tel. 0432501464
+    kind: agenzia
+    website: https://www.immobiliarecastello.ud.it/
+    adapter: generic
+    delay: 1.2
+    start_urls: ["https://www.immobiliarecastello.ud.it/lista.php?s_archivio=vendita&submit=Cerca"]
+    page_template: "https://www.immobiliarecastello.ud.it/lista.php?s_archivio=vendita&submit=Cerca&page={n}"
+    page_start: 2
+    max_pages: 6
+    link_regex: 'scheda\.php\?id_annuncio=\d+$'
+
+  - id: studio-benedetti
+    name: Studio Immobiliare Benedetti
+    kind: agenzia
+    website: https://www.agenziabenedetti.it/
+    adapter: generic
+    delay: 1.0
+    start_urls: ["https://agenziabenedetti.it/vendite/"]
+    page_template: "https://agenziabenedetti.it/vendite/?page={n}"
+    page_start: 2
+    max_pages: 6
+    link_regex: '^https://agenziabenedetti\.it/vendite/[a-z0-9-]+$'
+
+  - id: studio-39
+    name: Studio 39 di Tommaseo Srl
+    kind: agenzia
+    website: https://www.studio39immobiliare.it/
+    adapter: d1_studio39
+    delay: 1.0
+    listings_url: "https://www.studio39immobiliare.it/articles.asp?show=vendita"

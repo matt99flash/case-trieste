@@ -1,0 +1,180 @@
+# Batch C1 - Trieste - agenzie su gestionali (Getrix, AgestaNET, GestionaleImmobiliare.it, Gestim, Miogest)
+# o siti realizzati con CMS/builder (Wix/Aruba/Jimdo/Joomla/Drupal/Squarespace/Next.js/Swanet...).
+sources:
+  # ---------------------------------------------------------------- Gallery Immobiliare Trieste (Sanity.io)
+  - id: gallery-immobiliare
+    name: Gallery Immobiliare Trieste
+    kind: agenzia
+    website: https://www.galleryimmobiliare.it/it
+    adapter: C1_gallery_sanity
+    delay: 1.0
+
+  # ---------------------------------------------------------------- Zenith Real Estate (GestionaleImmobiliare.it)
+  - id: zenith-real-estate
+    name: Zenith Real Estate
+    kind: agenzia
+    website: https://www.zenithrealestate.it/
+    adapter: C1_gestionaleimmobiliare
+    delay: 1.2
+    start_url: https://www.zenithrealestate.it/it/immobili-in-vendita
+    page_template: "https://www.zenithrealestate.it/it/immobili-in-vendita?=&page={n}"
+    max_pages: 10
+
+  # ---------------------------------------------------------------- Gestim (Andrea Oliva, Di Casa in Casa)
+  - id: andrea-oliva
+    name: Andrea Oliva & partners srl
+    kind: agenzia
+    website: https://www.andreaoliva.eu/
+    adapter: C1_gestim
+    delay: 1.2
+    sitemap_url: https://www.andreaoliva.eu/sitemap-immobili.xml
+
+  - id: di-casa-in-casa
+    name: DI CASA IN CASA Soluzioni Immobiliari di Massimiliano Dinoi
+    kind: agenzia
+    website: https://www.dicasaincasasoluzioniimmobiliari.it/
+    adapter: C1_gestim
+    delay: 1.2
+    sitemap_url: https://www.dicasaincasasoluzioniimmobiliari.it/sitemap-immobili.xml
+
+  # ---------------------------------------------------------------- Getrix/AgestaNET ASP (stesso template)
+  - id: gruppo-casa
+    name: Immobiliare Gruppo Casa
+    kind: agenzia
+    website: https://www.gruppocasatrieste.it/
+    adapter: C1_getrix_asp
+    delay: 1.2
+    start_urls:
+      - "https://www.gruppocasatrieste.it/web/immobili.asp?tipo_contratto=V&language=ita&pagref=100081"
+
+  - id: giulia-immobiliare
+    name: Giulia Immobiliare Trieste
+    kind: agenzia
+    website: https://www.giuliaimmobiliare.eu/
+    adapter: C1_getrix_asp
+    delay: 1.2
+    start_urls:
+      - "https://www.giuliaimmobiliare.eu/web/immobili.asp?tipo_contratto=V&language=ita&pagref=102009"
+
+  - id: cheni-tutta
+    name: Cheni e Tutta Immobiliare S.n.c.
+    kind: agenzia
+    website: https://www.chenituttaimmobiliare.it/web/
+    adapter: C1_getrix_asp
+    delay: 1.2
+    start_urls:
+      - "https://www.chenituttaimmobiliare.it/web/immobili.asp?tipo_contratto=V&language=ita&pagref=76156"
+
+  - id: casa-programma
+    name: Studio Immobiliare Casa Programma
+    kind: agenzia
+    website: https://www.casaprogramma.com/web/
+    adapter: C1_getrix_asp
+    delay: 1.2
+    start_urls:
+      - "https://www.casaprogramma.com/web/"
+
+  # ---------------------------------------------------------------- Arcasa/Arcube WP plugin
+  - id: equipe-immobiliare
+    name: Equipe Immobiliare srl
+    kind: agenzia
+    website: http://www.equipe-immobiliare.it/
+    adapter: C1_arcasa
+    delay: 1.2
+    category_urls:
+      - "https://www.equipe-immobiliare.it/immobili/appartamenti/?acl-contract=0"
+      - "https://www.equipe-immobiliare.it/immobili/case-ville/?acl-contract=0"
+      - "https://www.equipe-immobiliare.it/immobili/commerciali/?acl-contract=0"
+      - "https://www.equipe-immobiliare.it/immobili/investimento/?acl-contract=0"
+      - "https://www.equipe-immobiliare.it/immobili/box-posti-auto/?acl-contract=0"
+
+  # ---------------------------------------------------------------- Rigatti (Swanet / earth_tng)
+  - id: rigatti-immobiliare
+    name: Rigatti Immobiliare di Davide Rigatti
+    kind: agenzia
+    website: https://www.rigatti.it/
+    adapter: C1_rigatti
+    delay: 1.2
+    start_url: "https://www.rigatti.it/it/immobiliare-case-trieste"
+    town: Trieste
+
+  # ---------------------------------------------------------------- La Rue Immobiliare (Next.js custom)
+  - id: la-rue-immobiliare
+    name: La Rue Immobiliare s.r.l.
+    kind: agenzia
+    website: https://www.larueimmobiliare.it/
+    adapter: C1_larue
+    delay: 1.2
+    sitemap_url: https://www.larueimmobiliare.it/sitemap.xml
+
+  # ---------------------------------------------------------------- generic (elenco -> link schede -> dettaglio)
+  - id: tiquadro-immobiliare
+    name: TIQUADRO - Boutique Immobiliare
+    kind: agenzia
+    website: https://www.tiquadroimmobiliare.it/it/
+    adapter: generic
+    delay: 1.2
+    start_urls:
+      - https://www.tiquadroimmobiliare.it/it/Vendite/
+    link_regex: '/it/Vendite/[a-z-]+/[a-z-]+/v\d+/\d+/?$'
+
+  - id: studio-immobiliare-84
+    name: Studio Immobiliare 84
+    kind: agenzia
+    website: https://www.studioimmobiliare84.it/
+    adapter: generic
+    delay: 1.2
+    start_urls:
+      - https://www.studioimmobiliare84.it/vendite
+    link_regex: '^https://www\.studioimmobiliare84\.it/[a-z0-9-]+$'
+    exclude_regex: '/(vendite|affitti|agenzia|blog|consulenza-urbanistica|contatti|cookies|dicono-di-noi|immobile-desiderato|informativa-sulla-privacy|lavora-con-noi|staff|valutazioni-stime|vendere-casa-trieste)$'
+
+  - id: casaffari-lozei
+    name: CASAFFARI di Davide Lozei
+    kind: agenzia
+    website: https://www.casaffaripro.com/
+    adapter: generic
+    delay: 1.2
+    start_urls:
+      - https://www.casaffaripro.com/proposte-immobiliari
+    link_regex: '^https://www\.casaffaripro\.com/proposte-immobiliari/[a-z0-9-]+$'
+    exclude_regex: '/proposte-immobiliari/category/'
+
+  - id: immobiliare-rossetti
+    name: Immobiliare Rossetti
+    kind: agenzia
+    website: https://www.immobiliarerossetti.it/
+    adapter: generic
+    delay: 1.2
+    start_urls:
+      - "https://www.immobiliarerossetti.it/search/?loc=&resCom=&cont=vendita&fasPrezzo=&fasMQ="
+    page_template: "https://www.immobiliarerossetti.it/search/?loc=&resCom=&cont=vendita&fasPrezzo=&fasMQ=&page={n}"
+    page_start: 1
+    max_pages: 10
+    link_regex: '^https://www\.immobiliarerossetti\.it/trieste/.*-\d{5,7}/?$'
+
+  - id: imobilia-trieste
+    name: imobilia - Agenzia immobiliare a Trieste dal 1999
+    kind: agenzia
+    website: https://www.imobilia.re/it/
+    adapter: generic
+    delay: 1.2
+    start_urls:
+      - https://www.imobilia.re/it/
+    link_regex: '^https://www\.imobilia\.re/it/immobili/\d+-[a-z0-9-]+$'
+    exclude_regex: 'affitto'
+
+  - id: trieste-villas
+    name: Agenzia Immobiliare Trieste Villas
+    kind: agenzia
+    website: https://triestevillas.com/
+    adapter: generic
+    delay: 1.2
+    start_urls:
+      - https://triestevillas.com/immobili
+    link_regex: '^https://triestevillas\.com/annuncio/[a-z0-9-]+$'
+
+  # ---------------------------------------------------------------- saltate
+  # Silvana Immobiliare S.a.S. (https://www.silvanaimmobiliare.it/vendita/): pagina statica praticamente
+  # vuota (8KB, solo "vendita - silvanaimmobiliare"), contenuto renderizzato via JS dal widget Aruba
+  # "supersite" senza dati né endpoint individuabili nella pagina statica.

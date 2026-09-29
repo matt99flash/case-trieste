@@ -1,0 +1,100 @@
+# Batch A — agenzie WordPress (Houzez, RealHomes, WP Residence, ecc.) — Trieste
+sources:
+  - id: omega-trieste
+    name: Omega Gruppo Immobiliare
+    kind: agenzia
+    website: https://www.omegatrieste.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://www.omegatrieste.it/vendita/
+    link_regex: 'omegatrieste\.it/property/[^/]+/?$'
+
+  - id: fiorini-immobiliare
+    name: Agenzia Immobiliare Fiorini
+    kind: agenzia
+    website: https://www.immobiliarefiorini.it/
+    adapter: a_ere
+    delay: 1.0
+    start_urls:
+      - https://www.immobiliarefiorini.it/property-status/vendita/
+    page_template: 'https://www.immobiliarefiorini.it/property-status/vendita/page/{n}/'
+    link_regex: '/elenco-immobili/[a-z0-9-]+/?$'
+
+  - id: urban-real-estate
+    name: Urban Real Estate
+    kind: agenzia
+    website: https://studio-urban.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://studio-urban.it/vendita/
+    page_template: 'https://studio-urban.it/vendita/page/{n}/'
+    link_regex: 'studio-urban\.it/property/[^/]+/?$'
+
+  - id: living-trieste
+    name: Living Trieste Di Stefano Sedmak
+    kind: agenzia
+    website: https://www.livingtrieste.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://www.livingtrieste.it/immobili-tipologia/vendita/
+    page_template: 'https://www.livingtrieste.it/immobili-tipologia/vendita/page/{n}/'
+    max_pages: 4
+    link_regex: 'livingtrieste\.it/immobile/[^/]+/?$'
+
+  - id: dream-immobiliare
+    name: Dream Immobiliare
+    kind: agenzia
+    website: https://www.dreamtrieste.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://www.dreamtrieste.it/status/vendita/
+    page_template: 'https://www.dreamtrieste.it/status/vendita/page/{n}/'
+    max_pages: 2
+    link_regex: 'dreamtrieste\.it/property/[^/]+/?$'
+
+  - id: metrica-immobiliare
+    name: 'Immobiliare MET[R]ICA di Gianluca CRESSERI'
+    kind: agenzia
+    website: https://www.immobiliaremetrica.com/
+    adapter: a_sitemap
+    delay: 1.0
+    sitemap: https://www.immobiliaremetrica.com/property-sitemap.xml
+    link_regex: '/property/[a-z0-9-]+/?$'
+    exclude_content_regex: 'Status della propriet.{0,40}Venduto'
+
+  - id: diodicibus-immobiliare
+    name: Diodicibus Immobiliare
+    kind: agenzia
+    website: https://immobiliarediodicibus.com/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://immobiliarediodicibus.com/in-vendita/
+    link_regex: 'immobiliarediodicibus\.com/property/[^/]+/?$'
+
+  - id: carpe-diem-immobiliare
+    name: Carpe Diem Immobiliare
+    kind: agenzia
+    website: https://carpediemre.eu/
+    adapter: a_estatik
+    delay: 1.0
+    sitemap: https://carpediemre.eu/properties-sitemap.xml
+    link_regex: '/property/[a-z0-9-]+/?$'
+    # tema Estatik: kv_pairs non riconosce il campo 'contratto', quindi la scheda affitto non viene
+    # scartata come _rent da parse_detail; si esclude qui in base alla descrizione (formula fissa
+    # dell'agenzia "propone in affitto...") o al tipo di annuncio (affitti brevi/residence turistico).
+    exclude_content_regex: 'propone in affitto|affitti brevi|dedicate agli affitti'
+
+  - id: promissio-immobiliare
+    name: Promissio Immobiliare Trieste
+    kind: agenzia
+    website: https://promissioimmobiliare.it/
+    adapter: a_ere
+    delay: 1.0
+    start_urls:
+      - https://promissioimmobiliare.it/property-status/vendita/
+    link_regex: 'promissioimmobiliare\.it/property/[^/]+/?$'

@@ -25,6 +25,7 @@ def parse_price(s) -> int | None:
         v = int(s)
     else:
         t = str(s)
+        t = re.sub(r"(\d),(\d{3})(?!\d)", r"\1.\2", t)  # "125,000 €" (virgola come separatore migliaia)
         if re.search(r"trattativa|riservat|su richiesta", t, re.I) and not re.search(r"\d{2}", t):
             return None
         m = re.search(r"(?:€|eur(?:o)?)\s*" + _NUM, t, re.I) or re.search(_NUM + r"\s*(?:€|eur)", t, re.I) or re.search(_NUM, t)

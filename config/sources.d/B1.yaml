@@ -1,0 +1,118 @@
+# Batch B1 - agenzie WordPress con plugin custom/non riconosciuti (provincia di Trieste)
+sources:
+  - id: b1-al-quadrato
+    name: Al Quadrato Immobiliare
+    kind: agenzia
+    website: https://alquadratoimmobiliare.it/
+    adapter: b1_generic
+    delay: 1.2
+    town: Trieste
+    start_urls: ["https://alquadratoimmobiliare.it/immobili-contratti/vendita/"]
+    link_regex: '^https://alquadratoimmobiliare\.it/immobili/[^/]+/?$'
+    exclude_regex: '/immobili/\d+/?$'
+    ref_regex: '/immobili/([^/]+)/?$'
+    max_pages: 10
+
+  - id: b1-antica-trieste
+    name: Antica Trieste
+    kind: agenzia
+    website: https://www.anticatrieste.it/
+    adapter: b1_generic
+    delay: 1.2
+    start_urls: ["https://www.anticatrieste.it/i-nostri-immobili/"]
+    link_regex: '^https://www\.anticatrieste\.it/immobili/[^/]+/?$'
+    max_pages: 3
+
+  - id: b1-primo-piano-trieste
+    name: Primo Piano Trieste
+    kind: agenzia
+    website: https://www.primopianotrieste.it/
+    adapter: b1_generic
+    delay: 1.2
+    town: Trieste
+    start_urls: ["https://www.primopianotrieste.it/immobili/"]
+    link_regex: '^https://www\.primopianotrieste\.it/[a-z0-9-]+/?$'
+    exclude_regex: '^https://www\.primopianotrieste\.it/(immobili|chi-siamo|contatti|cookie-privacy-policy|servizi|vendi|feed|affitto-[a-z0-9-]+)/?$'
+    max_pages: 1
+
+  - id: b1-selling-trieste
+    name: Selling Trieste Immobiliare
+    kind: agenzia
+    website: https://www.sellingtrieste.com/
+    adapter: b1_generic
+    delay: 1.2
+    start_urls: ["https://www.sellingtrieste.com/in-vendita/"]
+    link_regex: '^https://www\.sellingtrieste\.com/immobili/[^/]+/?$'
+    exclude_regex: '/immobili/feed/?$'
+    max_pages: 3
+
+  - id: b1-trieste-centro
+    name: Immobiliare Trieste Centro
+    kind: agenzia
+    website: https://www.immobiliaretriestecentro.it/
+    adapter: b1_generic
+    delay: 1.2
+    town: Trieste
+    start_urls: ["https://www.immobiliaretriestecentro.it/categoria-prodotto/vendita/"]
+    link_regex: '^https://www\.immobiliaretriestecentro\.it/prodotto/[^/]+/?$'
+    page_template: "https://www.immobiliaretriestecentro.it/categoria-prodotto/vendita/page/{n}/"
+    max_pages: 5
+
+  - id: b1-nest
+    name: NEST Immobiliare S.r.l.
+    kind: agenzia
+    website: https://nestimmobiliare.com/
+    adapter: b1_nest
+    delay: 1.2
+    town: Trieste
+
+  - id: b1-contatti-immobiliari
+    name: Contatti Immobiliari Srl
+    kind: agenzia
+    website: https://contatti-immobiliari.it/
+    adapter: b1_generic
+    delay: 1.2
+    start_urls: ["https://contatti-immobiliari.it/immobili/vendita/"]
+    link_regex: '^https://contatti-immobiliari\.it/immobile/[^/]+/?$'
+    page_template: "https://contatti-immobiliari.it/immobili/vendita/page/{n}/"
+    max_pages: 2
+
+  - id: b1-l2maison
+    name: L²MAISON Real Estate
+    kind: agenzia
+    website: https://www.l2maisonrealestate.com/
+    adapter: b1_generic
+    delay: 1.2
+    start_urls: ["https://www.l2maisonrealestate.com/immobili-in-vendita/"]
+    link_regex: '^https://www\.l2maisonrealestate\.com/immobili/[^/]+/?$'
+    max_pages: 3
+
+  - id: b1-perla
+    name: Perla Investimenti Immobiliari
+    kind: agenzia
+    website: https://www.perlarealestate.it/
+    adapter: b1_generic
+    delay: 1.2
+    start_urls: ["https://www.perlarealestate.it/immobili/vendita/"]
+    link_regex: '^https://www\.perlarealestate\.it/immobile/[^/]+/?$'
+    max_pages: 3
+    bogus_address: "Via Giuseppe Mazzini 9/a, 34121, Trieste"
+    town: Trieste
+
+  - id: b1-partnerservizi
+    name: PartnerServizi Agenzia Immobiliare
+    kind: agenzia
+    website: https://partnerservizi.it/
+    adapter: b1_arcasa
+    delay: 1.2
+    sitemap: "https://partnerservizi.it/listings-sitemap.xml"
+
+  - id: b1-sirio
+    name: Sirio (agenzia Trieste)
+    kind: agenzia
+    website: https://www.grupposirio.com/
+    adapter: b1_generic
+    delay: 1.3
+    start_urls: ["https://grupposirio.com/agenzie/agenzia-immobiliare-trieste/"]
+    link_regex: '^https://grupposirio\.com/compra/\d+-[^/]+/?$'
+    max_pages: 1

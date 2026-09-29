@@ -1,0 +1,83 @@
+# Batch C2 - Trieste - agenzie su gestionali (Getrix, AgestaNET, GestionaleImmobiliare.it, Gestim, Miogest...)
+# e siti realizzati con builder (Wix/Aruba/Jimdo/Joomla/Onweb/Webnode/1clickimmobiliare...).
+sources:
+  - id: mab-immobiliare
+    name: Mab Immobiliare
+    kind: agenzia
+    website: https://www.immobiliaremab.it/
+    adapter: C2_wix
+    delay: 1.2
+
+  - id: effe-emme
+    name: Agenzia immobiliare EFFE - EMME
+    kind: agenzia
+    website: https://www.immobiliarefm.com/
+    adapter: C2_riksoft
+    delay: 1.2
+
+  - id: igloo
+    name: L'Igloo Servizi Immobiliari di Kraus Martina
+    kind: agenzia
+    website: https://www.igloomartinakraus.it/
+    adapter: generic
+    delay: 1.2
+    start_urls:
+      - https://www.igloomartinakraus.it/cerca-immobili-in-vendita_8180.html
+    link_regex: '_\d{6,}\.html$'
+
+  - id: zennaro
+    name: Geometra Zennaro
+    kind: agenzia
+    website: https://zennaro.onweb.it/it
+    adapter: C2_onweb
+    delay: 1.2
+    start_urls:
+      - https://zennaro.onweb.it/it/immobili-in-vendita
+    link_regex: '/it/immobili-in-vendita/[a-z0-9-]+-\d+$'
+    exclude_regex: '/istria-|/croazia-|/slovenia-'
+
+  - id: as-real-estate
+    name: AS Real Estate
+    kind: agenzia
+    website: https://www.asrealestate.it/
+    adapter: C2_foxgroup
+    delay: 1.2
+    start_urls:
+      - https://www.asrealestate.it/it/immobili-in-vendita
+    page_template: 'https://www.asrealestate.it/it/immobili-in-vendita?page={n}'
+    footer_regex: '(?:per (?:maggiori|ulteriori) informazioni.*)?AS Real Estate Srl.*'
+
+  - id: nb-solution
+    name: NB Solution Italy
+    kind: agenzia
+    website: https://www.nbsolutionitaly.it/it/kapcsolat/
+    adapter: C2_webnode
+    delay: 1.2
+    start_urls:
+      - https://www.nbsolutionitaly.it/it/vendita2/
+    link_regex: '^https://www\.nbsolutionitaly\.it/l/[a-z0-9-]+/?$'
+
+  - id: di-more
+    name: Di More Immobiliare
+    kind: agenzia
+    website: https://www.dimore.biz/
+    adapter: C2_wix
+    delay: 1.2
+
+  - id: guzzardi-home
+    name: GUZZARDI HOME di Guzzardi Andreina
+    kind: agenzia
+    website: https://www.guzzardihome.com/web/
+    adapter: C2_agestanet
+    delay: 1.2
+
+  - id: spazio-casa
+    name: Spazio Casa Immobiliare
+    kind: agenzia
+    website: https://www.spaziocasatrieste.it/
+    adapter: generic
+    delay: 1.2
+    start_urls:
+      - https://www.spaziocasatrieste.it/vendite/residenziale.html
+      - https://www.spaziocasatrieste.it/vendite/commerciale.html
+    link_regex: '/vendite/(residenziale|commerciale)/[a-z0-9-]+-\d+\.html$'

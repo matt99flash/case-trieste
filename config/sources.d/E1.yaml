@@ -1,0 +1,61 @@
+sources:
+  - id: e1-hometrieste
+    name: Studio Roiano / Hometrieste (Home Roiano + Home San Vito)
+    kind: agenzia
+    website: https://www.hometrieste.it/
+    adapter: e1_hometrieste
+    delay: 1.2
+
+  - id: e1-okcasaweb
+    name: OK CASA web Italia
+    kind: agenzia
+    website: https://www.okcasaweb.it
+    adapter: e1_okcasaweb
+    delay: 1.2
+
+  - id: e1-immobilisenzaconfini
+    name: Immobili Senza Confini
+    kind: agenzia
+    website: https://www.immobilisenzaconfini.com/
+    adapter: e1_immobilisenzaconfini
+    delay: 1.2
+
+  - id: e1-virtualrealty
+    name: V Realty agenzia immobiliare
+    kind: agenzia
+    website: http://www.virtualrealty.it/
+    adapter: e1_virtualrealty
+    delay: 1.2
+
+  - id: e1-abitha
+    name: ABITHA Immobiliare di Mervich Elisabetta
+    kind: agenzia
+    website: https://www.abithaimmobiliare.it/
+    adapter: e1_abitha
+    delay: 1.2
+
+  - id: e1-predonzani
+    name: PREDONZANI IMMOBILIARE DI LUCA PREDONZANI
+    kind: agenzia
+    website: https://www.predonzani-immobiliare.it/
+    adapter: e1_predonzani
+    delay: 1.2
+
+  - id: e1-fmcasa
+    name: FM CASA di Francesca Barba
+    kind: agenzia
+    website: https://www.fmcasa.it/
+    adapter: generic
+    delay: 1.2
+    town: Trieste  # unico ufficio a Trieste; le schede non riportano il comune, solo la zona (San Giovanni, Viale...)
+    start_urls:
+      - https://www.fmcasa.it/lenostreproposte.html
+    link_regex: 'fmcasa\.it/[a-z]+\.html$'
+    require_regex: 'Tipologia\s*:'
+
+  - id: e1-rifugio
+    name: Il Rifugio Immobiliare
+    kind: agenzia
+    website: https://www.ilrifugioimmobiliare.com/
+    adapter: e1_rifugio
+    delay: 1.2

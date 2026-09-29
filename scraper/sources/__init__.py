@@ -20,5 +20,8 @@ def load_all():
     import os
     for m in pkgutil.iter_modules([os.path.dirname(__file__)]):
         if m.name not in ("base", "generic"):
-            importlib.import_module(f"{__name__}.{m.name}")
+            try:
+                importlib.import_module(f"{__name__}.{m.name}")
+            except Exception as e:  # un modulo difettoso non deve bloccare tutte le altre fonti
+                print(f"ATTENZIONE: modulo {m.name} non caricato: {type(e).__name__}: {e}")
     return ADAPTERS
