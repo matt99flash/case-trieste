@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T15:26:15+00:00",
+ "updated": "2026-09-29T17:22:59+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -620,6 +620,76 @@
    "id": "studio-immobiliare-84:localita-log-0",
    "source": "studio-immobiliare-84",
    "price": 375000
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "removed",
+   "id": "tag-srl:360",
+   "source": "tag-srl",
+   "price": 50000
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "removed",
+   "id": "tag-srl:via-diacono-8-magazzino",
+   "source": "tag-srl",
+   "price": 50000
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "new",
+   "id": "omega-trieste:san-giovanni-posto-auto-coperto",
+   "source": "omega-trieste",
+   "price": 30000
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "removed",
+   "id": "omega-trieste:san-giacomo-ascensore-e-balcone",
+   "source": "omega-trieste",
+   "price": 130000
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "new",
+   "id": "noidonne-immobiliare:via-franca-2",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:muggia-via-s-forti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "new",
+   "id": "b1-primo-piano-trieste:via-franca-trieste",
+   "source": "b1-primo-piano-trieste",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "new",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-2-5",
+   "source": "dinamica-immobiliare",
+   "price": 179000
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "new",
+   "id": "tirabora-immobiliare:2544",
+   "source": "tirabora-immobiliare",
+   "price": 80000
+  },
+  {
+   "ts": "2026-09-29T17:22:59+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2541",
+   "source": "tirabora-immobiliare",
+   "price": 165000
   }
  ]
 }
