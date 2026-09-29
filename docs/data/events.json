@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T17:22:59+00:00",
+ "updated": "2026-09-29T19:24:24+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -690,6 +690,69 @@
    "id": "tirabora-immobiliare:2541",
    "source": "tirabora-immobiliare",
    "price": 165000
+  },
+  {
+   "ts": "2026-09-29T19:24:24+00:00",
+   "type": "removed",
+   "id": "omega-trieste:san-giacomo-bilocale-con-ascensore",
+   "source": "omega-trieste",
+   "price": 145000
+  },
+  {
+   "ts": "2026-09-29T19:24:24+00:00",
+   "type": "back",
+   "id": "tag-srl:via-diacono-8-magazzino",
+   "source": "tag-srl",
+   "price": 50000
+  },
+  {
+   "ts": "2026-09-29T19:24:24+00:00",
+   "type": "removed",
+   "id": "tecnocasa:61204577",
+   "source": "tecnocasa",
+   "price": 119000
+  },
+  {
+   "ts": "2026-09-29T19:24:24+00:00",
+   "type": "new",
+   "id": "noidonne-immobiliare:santantonio-in-bosco",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T19:24:24+00:00",
+   "type": "new",
+   "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T19:24:24+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:muggia-via-s-forti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T19:24:24+00:00",
+   "type": "new",
+   "id": "b1-hab:casa-hoffe-sappada",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T19:24:24+00:00",
+   "type": "new",
+   "id": "b1-sirio:237696",
+   "source": "b1-sirio",
+   "price": 410000
+  },
+  {
+   "ts": "2026-09-29T19:24:24+00:00",
+   "type": "removed",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-2",
+   "source": "dinamica-immobiliare",
+   "price": 179000
   }
  ]
 }
