@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T09:25:21+00:00",
+ "updated": "2026-09-29T11:22:55+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -42,6 +42,27 @@
    "id": "subito-privati:662572622",
    "source": "subito-privati",
    "price": null
+  },
+  {
+   "ts": "2026-09-29T11:22:55+00:00",
+   "type": "new",
+   "id": "subito-privati:662598546",
+   "source": "subito-privati",
+   "price": 180000
+  },
+  {
+   "ts": "2026-09-29T11:22:55+00:00",
+   "type": "new",
+   "id": "omega-trieste:san-giacomo-bilocale-con-ascensore-2",
+   "source": "omega-trieste",
+   "price": 145000
+  },
+  {
+   "ts": "2026-09-29T11:22:55+00:00",
+   "type": "new",
+   "id": "la-rue-immobiliare:0010",
+   "source": "la-rue-immobiliare",
+   "price": 92000
   }
  ]
 }
