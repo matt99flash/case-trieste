@@ -11,7 +11,7 @@ import re
 
 from .. import parse_utils as pu
 from ..models import Listing
-from ..zones import detect_town, detect_zone
+from ..zones import detect_town
 from . import register
 from .base import Source, abs_url, kv_pairs, parse_detail, ref_from_url, soup_of
 from .generic import GenericSource
@@ -19,6 +19,41 @@ from .generic import GenericSource
 
 def _unescape(s):
     return htmlmod.unescape(s) if isinstance(s, str) else s
+
+
+_SOLD_TITLE = re.compile(r"^\s*vendut[oa]\b", re.I)
+
+
+def _is_sold(L: Listing) -> bool:
+    """Alcune agenzie tengono online, come portfolio/referenze, schede di immobili già venduti,
+    marcandole nel titolo stesso ('VENDUTO – ...', 'VENDUTA – ...') invece di rimuoverle o segnarle
+    con un campo 'contratto'/'stato' che `parse_detail` (base.py) riconoscerebbe: da scartare come le
+    schede d'affitto."""
+    return bool(_SOLD_TITLE.match(L.title or ""))
+
+
+_JSONLD_RENT = re.compile(r'"availability"\s*:\s*"[^"]*InLocazione', re.I)
+
+
+def _is_jsonld_rent(html: str) -> bool:
+    """Alcuni plugin (MyHouse Real Estate: un tema Elementor "real estate") scrivono lo stato del
+    contratto solo nel JSON-LD, come valore custom (non standard schema.org) del campo 'availability'
+    dell'Offer ("https://schema.org/InLocazione" per l'affitto), che `parse_detail` (base.py) non
+    controlla: cerca invece un campo 'contratto' testuale (`kv_pairs`) che qui non esiste, quindi la
+    scheda d'affitto non viene scartata come le altre (e il canone mensile, troppo basso per essere un
+    prezzo di vendita plausibile, fa fallire `parse_price` e scivolare su un fallback che pesca un
+    numero a caso altrove in pagina)."""
+    return bool(_JSONLD_RENT.search(html))
+
+
+
+# Comuni del Friuli Venezia Giulia (e dintorni) FUORI provincia di Trieste, incontrati in questo batch
+# nei titoli di agenzie che operano anche altrove: non fanno parte di `zones.TOWNS` (che elenca solo la
+# provincia di Trieste), quindi `detect_town` non li riconosce e non potrebbe smentire un campo
+# 'comune' della scheda (kv_pairs) che dice erroneamente 'Trieste' (vedi `_fix_town`).
+_OUT_OF_PROVINCE_TOWN = re.compile(
+    r"\bturriaco\b|\bgorizia\b|\bmonfalcone\b|\bstaranzano\b|\bronchi dei legionari\b|\bcormons\b|"
+    r"\bcervignano\b|\bgrado\b|\budine\b|\bpordenone\b|\bcodroipo\b|\bsocchieve\b", re.I)
 
 
 def _fix_town(L: Listing):
@@ -32,15 +67,40 @@ def _fix_town(L: Listing):
         L.town = t
 
 
+def _is_out_of_province_title(L: Listing) -> bool:
+    """Il titolo nomina esplicitamente un comune del FVG fuori provincia di Trieste, non presente in
+    `zones.TOWNS` (quindi `detect_town` non lo riconosce e non può escluderlo da solo): scarta la
+    scheda subito, invece di lasciarle attraversare `finalize()` (models.py, condiviso), che senza un
+    comune già impostato ripiega su `detect_town(descrizione)` e può 'ritrovare' un falso 'Trieste'
+    nel testo standard con cui l'agenzia si presenta (es. "...immobiliare a Trieste e nei dintorni"),
+    anche per un immobile altrove."""
+    return bool(_OUT_OF_PROVINCE_TOWN.search(L.title or ""))
+
+
+# Sottoinsieme delle parole chiave di ZONES_TRIESTE (zones.py, condiviso) abbastanza distintive da
+# usare come prova che il comune è Trieste: `ZONES_TRIESTE` include anche nomi di vie/piazze comuni a
+# moltissime città italiane (es. "corso italia", "piazza garibaldi", "via mazzini", "san giacomo",
+# "san vito"), che hanno causato falsi positivi su immobili fuori provincia (es. un "Corso Italia" a
+# Gorizia proposto dalla stessa agenzia). Qui si tengono solo i rioni/microtoponimi che non hanno
+# quasi omonimi altrove.
+_TRIESTE_SAFE_ZONE = re.compile(
+    r"\b(?:roiano|chiarbola|gretta|altura|rozzol|chiadino|melara|scorcola|cologna|opicina|villa opicina|"
+    r"banne|trebiciano|padriciano|basovizza|contovello|servola|valmaura|borgo san sergio|guardiella|"
+    r"barcola|grignano|miramare|ponziana|settefontane|borgo teresiano|ponterosso|citt[aà] vecchia|"
+    r"san giusto|borgo giuseppino|cavana|montebello|barriera vecchia|cattinara|longera|gropada|"
+    r"conconello|borgo grotta gigante|prosecco|santa croce di trieste)\b", re.I)
+
+
 def _infer_town(L: Listing):
     """Molte schede citano solo il rione (es. 'Roiano', 'Chiarbola', 'Altura') senza mai scrivere
     'Trieste' esplicitamente, quindi `detect_town` (zones.py, condiviso) non lo trova e l'annuncio
-    finirebbe escluso come fuori provincia. `ZONES_TRIESTE` (stesso modulo) elenca però solo i rioni
-    del comune capoluogo: se `detect_zone` (funzione di sola lettura, non modifica zones.py) ne
-    riconosce uno nel testo, il comune è Trieste."""
+    finirebbe escluso come fuori provincia. Se il testo nomina uno dei rioni di `_TRIESTE_SAFE_ZONE`,
+    il comune è Trieste (elenco più ristretto di `ZONES_TRIESTE`/`detect_zone`, che include anche nomi
+    generici comuni ad altre città: vedi il commento sopra)."""
     if L.town:
         return
-    if detect_zone(L.title, L.address, L.zone, L.description):
+    blob = " ".join(x for x in (L.title, L.address, L.zone, L.description) if x)
+    if _TRIESTE_SAFE_ZONE.search(blob):
         L.town = "Trieste"
 
 
@@ -50,7 +110,14 @@ _MQ_STRAY = re.compile(r"(\d{1,4})\s*m\s*(?:<sup>\s*2\s*</sup>|²|2\b)", re.I)
 # LABELS. Quando la troviamo è un valore affidabile: sovrascrive anche un L.mq già valorizzato, perché
 # capita che kv_pairs abbia abbinato per sbaglio etichetta e valore sbagliati (es. l'anno di
 # costruzione letto come superficie, cfr. Immobiliare MET[R]ICA).
-_MQ_LABELED = re.compile(r"(?:Superficie|Dimensione)\s+propriet\S*\s*:?\s*</strong>\s*(?:\n\s*)?(?:<span>)?\s*(\d{1,4})\b", re.I)
+_MQ_LABELED = re.compile(
+    r"(?:(?:Superficie|Dimensione)\s+propriet\S*|Superficie)\s*:?\s*</strong>\s*(?:\n\s*)?(?:<span>)?\s*(\d{1,4})\b"
+    r'|class="h-area"[^>]*>\s*<span[^>]*>\s*(\d{1,4})\b'
+    r'|<strong>\s*(\d{1,4})\s*</strong></li>\s*<li[^>]*class="hz-meta-label h-area"',
+    re.I)
+# Divi Machine (Minimal Re): valore e unità sono in due <span> distinti e adiacenti, es.
+# '<span>87</span></div><div><span>mq</span>' (nessun testo li unisce, kv_pairs non li abbina).
+_MQ_ADJACENT_SPAN = re.compile(r"<span[^>]*>\s*(\d{1,4})\s*</span></div>\s*<div[^>]*>\s*<span[^>]*>\s*mq\s*</span>", re.I)
 
 
 def _fix_mq(L: Listing, html: str):
@@ -60,8 +127,29 @@ def _fix_mq(L: Listing, html: str):
     `kv_pairs` salta 'Superficie/Dimensione proprietà:' perché l'etichetta non è l'esatto 'superficie'.
     Cerca entrambi i pattern nell'HTML grezzo, dove il tag <sup> e l'etichetta originale sono ancora
     presenti; il pattern con etichetta esplicita (`_MQ_LABELED`) ha la priorità e può correggere anche
-    un valore già presente ma sbagliato."""
+    un valore già presente ma sbagliato.
+
+    Corregge anche un bug ricorrente in più temi di questo batch (Estatik, RealHomes-like...): quando
+    il prezzo è scritto con la virgola come separatore delle migliaia (es. '€229,000'), `kv_pairs` a
+    volte lo abbina per sbaglio alla chiave 'mq' invece che 'price' (a volte pescando persino il prezzo
+    di un ANNUNCIO CORRELATO mostrato altrove nella stessa pagina, quindi nemmeno riconducibile al
+    prezzo giusto), e il fallback di `parse_detail` (base.py) legge "229,000 mq" come 229 (la ",000"
+    viene presa per una parte decimale e scartata). Il segno di questo bug è che la stringa originale
+    (ancora nell'HTML) contiene un simbolo di valuta o la stessa virgola delle migliaia: va richiamata
+    DOPO `_fix_price`, quando L.price è già stato corretto, così da poter confrontare anche mq*1000."""
+    if L.mq and L.price and L.mq * 1000 == L.price:
+        L.mq = None
+    if L.mq:
+        raw_mq = kv_pairs(soup_of(html)).get("mq") or ""
+        if re.search(r"[€$]|,\d{3}\b", raw_mq):
+            L.mq = None
     m = _MQ_LABELED.search(html)
+    if m:
+        v = int(next(g for g in m.groups() if g))
+        if 5 <= v <= 2000:
+            L.mq = v
+            return
+    m = _MQ_ADJACENT_SPAN.search(html)
     if m:
         v = int(m.group(1))
         if 5 <= v <= 2000:
@@ -74,6 +162,28 @@ def _fix_mq(L: Listing, html: str):
         v = int(m.group(1))
         if 5 <= v <= 5000:
             L.mq = v
+            return
+    # plugin "real estate" su Elementor (MyHouse): JSON-LD con un array 'additionalProperty' invece del
+    # campo standard 'floorSize' che base.py sa leggere, es. {"name":"Area Size","value":"83","unitText":"Mq"}
+    m = re.search(r'"Area\s*Size"\s*,\s*"value"\s*:\s*"?(\d{1,4})', html, re.I)
+    if m:
+        v = int(m.group(1))
+        if 5 <= v <= 2000:
+            L.mq = v
+            return
+    # Houzez, variante "Superficie <br> 133 + 2" (superficie principale + accessori, es. terrazza):
+    # kv_pairs prende l'intera stringa "133 + 2" ma parse_mq non la riconosce (nessuna unità attaccata
+    # al numero); il primo numero è la superficie abitabile.
+    raw_mq = kv_pairs(soup_of(html)).get("mq") or ""
+    m = re.match(r"\s*(\d{1,4})\s*\+\s*\d", raw_mq)
+    if m:
+        v = int(m.group(1))
+        if 5 <= v <= 2000:
+            L.mq = v
+            return
+    # ultima spiaggia: 'NN mq' scritto in chiaro nella descrizione (parse_detail/finalize provano solo
+    # kv_pairs e il titolo, mai la descrizione).
+    L.mq = pu.parse_mq(L.description or "")
 
 
 _LOC_RE = re.compile(r"<loc>\s*(?:<!\[CDATA\[)?\s*([^<\s\]]+?)\s*(?:\]\]>)?\s*</loc>", re.I)
@@ -108,6 +218,45 @@ def _fix_price(L: Listing, html: str):
             L.price = v
 
 
+_WPR_PRICE = re.compile(r'price-single-listing-text">\s*([^<]*?)\s*<', re.I)
+
+
+def _fix_related_widget_price(L: Listing, html: str):
+    """Tema WP Residence: quando l'unico elemento con classe 'price-single-listing-text' (il prezzo
+    VERO della scheda, es. '<li class="item-price item-price-text
+    price-single-listing-text">275.000</li>') è vuoto o '0' (prezzo su richiesta), lo si azzera: altre
+    classi CSS simili ('item-price', 'item-price-wrap') usate nella stessa pagina sono condivise anche
+    da un widget "immobili correlati/visti di recente" che mostra prezzi di TUTT'ALTRI annunci, quindi
+    non affidabili come alternativa. Non fa nulla sui temi che non hanno questo elemento (es. Houzez):
+    lì il segno del bug è invece che LO STESSO prezzo si ripete su più schede diverse, corretto a parte
+    da `_dedupe_suspicious_prices` dopo aver raccolto tutti gli annunci della fonte."""
+    m = _WPR_PRICE.search(html)
+    if not m:
+        return
+    raw = m.group(1).strip()
+    if not raw or raw == "0":
+        L.price = None
+    else:
+        v = pu.parse_price(raw) or pu.parse_price(raw.replace(",", "."))
+        if v:
+            L.price = v
+
+
+def _dedupe_suspicious_prices(items: list[Listing]):
+    """Alcuni temi (Houzez, variante vista in NoiDonneImmobiliare.eu) mostrano, quando il prezzo della
+    scheda non è impostato, il prezzo di un annuncio a caso pescato da un widget "immobili
+    correlati/visti di recente" presente sulla stessa pagina: il segno distintivo è che lo STESSO
+    prezzo compare identico su annunci altrimenti scorrelati (titoli/indirizzi diversi) della stessa
+    fonte. Un prezzo genuino condiviso da 3+ annunci della stessa agenzia nello stesso giro è
+    estremamente improbabile (i prezzi non sono mai arrotondati in modo identico per caso), quindi lo si
+    azzera. Va chiamata sull'intero elenco `out` prima di restituirlo da `fetch`."""
+    from collections import Counter
+    counts = Counter(L.price for L in items if L.price)
+    for L in items:
+        if L.price and counts[L.price] >= 3:
+            L.price = None
+
+
 @register("a_wp")
 class WPCleanSource(GenericSource):
     """GenericSource + un-escape delle entità HTML rimaste grezze (bug frequente nel JSON-LD di Houzez)
@@ -119,6 +268,7 @@ class WPCleanSource(GenericSource):
         cfg = self.cfg
         link_rx = re.compile(cfg["link_regex"], re.I)
         excl = re.compile(cfg["exclude_regex"], re.I) if cfg.get("exclude_regex") else None
+        excl_content = re.compile(cfg["exclude_content_regex"], re.I | re.S) if cfg.get("exclude_content_regex") else None
         max_pages = cfg.get("max_pages", 40)
         links: dict[str, None] = {}
         for start in cfg["start_urls"]:
@@ -149,14 +299,17 @@ class WPCleanSource(GenericSource):
                 try:
                     html = ctx.http.text(u)
                     details += 1
+                    if excl_content and excl_content.search(html):
+                        continue
                     L = parse_detail(html, u, self.id, L)
                     if cfg.get("require_regex") and not re.search(cfg["require_regex"], html, re.I):
                         continue
                     L.title = _unescape(L.title)
                     L.description = _unescape(L.description)
-                    _fix_mq(L, html)
                     _fix_price(L, html)
-                    if L.features.pop("_rent", False):
+                    _fix_related_widget_price(L, html)
+                    _fix_mq(L, html)
+                    if L.features.pop("_rent", False) or _is_sold(L) or _is_jsonld_rent(html) or _is_out_of_province_title(L):
                         continue
                     ctx.detail_ids.add(L.id)
                 except Exception as e:
@@ -167,6 +320,7 @@ class WPCleanSource(GenericSource):
             _fix_town(L)
             _infer_town(L)
             out.append(L)
+        _dedupe_suspicious_prices(out)
         return out
 
 
@@ -215,10 +369,11 @@ class SitemapSource(Source):
                     L = parse_detail(html, u, self.id, L)
                     L.title = _unescape(L.title)
                     L.description = _unescape(L.description)
-                    _fix_mq(L, html)
                     _fix_price(L, html)
+                    _fix_related_widget_price(L, html)
+                    _fix_mq(L, html)
                     self._augment(L, html)
-                    if L.features.pop("_rent", False):
+                    if L.features.pop("_rent", False) or _is_sold(L) or _is_jsonld_rent(html) or _is_out_of_province_title(L):
                         continue
                     ctx.detail_ids.add(L.id)
                 except Exception as e:
@@ -229,6 +384,7 @@ class SitemapSource(Source):
             _fix_town(L)
             _infer_town(L)
             out.append(L)
+        _dedupe_suspicious_prices(out)
         return out
 
     def _augment(self, L: Listing, html: str):
@@ -326,9 +482,10 @@ class ERESource(GenericSource):
                     L.title = _unescape(L.title)
                     L.description = _unescape(L.description)
                     self._augment(L, html)
-                    _fix_mq(L, html)
                     _fix_price(L, html)
-                    if L.features.pop("_rent", False):
+                    _fix_related_widget_price(L, html)
+                    _fix_mq(L, html)
+                    if L.features.pop("_rent", False) or _is_sold(L) or _is_jsonld_rent(html) or _is_out_of_province_title(L):
                         continue
                     ctx.detail_ids.add(L.id)
                 except Exception as e:
@@ -339,6 +496,7 @@ class ERESource(GenericSource):
             _fix_town(L)
             _infer_town(L)
             out.append(L)
+        _dedupe_suspicious_prices(out)
         return out
 
     def _augment(self, L: Listing, html: str):
@@ -415,9 +573,10 @@ class WPRestSource(Source):
                     L = parse_detail(html, url, self.id, L)
                     L.title = _unescape(L.title)
                     L.description = _unescape(L.description)
-                    _fix_mq(L, html)
                     _fix_price(L, html)
-                    if L.features.pop("_rent", False):
+                    _fix_related_widget_price(L, html)
+                    _fix_mq(L, html)
+                    if L.features.pop("_rent", False) or _is_sold(L) or _is_jsonld_rent(html) or _is_out_of_province_title(L):
                         continue
                     ctx.detail_ids.add(L.id)
                 except Exception as e:
@@ -428,4 +587,5 @@ class WPRestSource(Source):
             _fix_town(L)
             _infer_town(L)
             out.append(L)
+        _dedupe_suspicious_prices(out)
         return out

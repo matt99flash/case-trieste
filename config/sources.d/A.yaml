@@ -89,6 +89,182 @@ sources:
     # dell'agenzia "propone in affitto...") o al tipo di annuncio (affitti brevi/residence turistico).
     exclude_content_regex: 'propone in affitto|affitti brevi|dedicate agli affitti'
 
+  - id: casacitta-mediazioni
+    name: Casacittà Mediazioni S.r.l.s.
+    kind: agenzia
+    website: https://www.casacittamediazioni.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://www.casacittamediazioni.it/immobili-ivendita/
+    link_regex: 'casacittamediazioni\.it/estate_property/[^/]+/?$'
+
+  - id: zorzon-immobiliare
+    name: IMMOBILIARE ZORZON & PARTNERS
+    kind: agenzia
+    website: https://zorzonimmobiliare.it/
+    adapter: a_sitemap
+    delay: 1.0
+    sitemap: https://zorzonimmobiliare.it/property-sitemap.xml
+    link_regex: '/property/[a-z0-9-]+/?$'
+
+  - id: noidonne-immobiliare
+    name: NoiDonneImmobiliare.eu
+    kind: agenzia
+    website: https://noidonneimmobiliare.eu/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://noidonneimmobiliare.eu/status/vendita/
+    page_template: 'https://noidonneimmobiliare.eu/status/vendita/page/{n}/'
+    max_pages: 2
+    link_regex: 'noidonneimmobiliare\.eu/property/[^/]+/?$'
+
+  - id: casa-con-giardino
+    name: Casa con Giardino - di Martina Micalizzi
+    kind: agenzia
+    website: https://www.casacongiardino.eu/
+    adapter: a_wpjson
+    delay: 1.0
+    # 162 immobili hanno il tag property_status=vendita, ma quasi tutti sono vecchi annunci mai spostati
+    # in archivio (tassonomia property_type 'archiviati', 173 voci): il termine property_type
+    # 'quanto-ancora-disponibile' ("Tutti gli immobili", 13 voci) e' quello davvero aggiornato.
+    api: https://www.casacongiardino.eu/wp-json/wp/v2/properties
+    params:
+      property_type: 71
+
+  - id: calcara-immobiliare
+    name: Agenzia Immobiliare CALCARA
+    kind: agenzia
+    website: https://www.calcara.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://www.calcara.it/property-status/vendita/
+    page_template: 'https://www.calcara.it/property-status/vendita/page/{n}/'
+    max_pages: 6
+    link_regex: 'calcara\.it/property/[^/]+/?$'
+
+  - id: athouse-immobiliare
+    name: atHOUSE Immobiliare
+    kind: agenzia
+    website: https://athouse.it/
+    adapter: a_sitemap
+    delay: 1.0
+    sitemap: https://athouse.it/immobile-sitemap.xml
+    link_regex: '/immobile/[a-z0-9-]+/?$'
+    exclude_regex: 'affitto'
+
+  - id: tag-srl
+    name: Tag srl
+    kind: agenzia
+    website: https://affittoappartamentitrieste.it/
+    adapter: a_wp
+    delay: 1.0
+    # town di default: l'elenco vendita e' https://.../vendita-appartamenti-trieste/ (solo Trieste
+    # città, nessun indizio di immobili fuori provincia in questo elenco) e le schede non riportano il
+    # comune in un campo riconoscibile (via Ghega, via Santi Martiri, ecc. non sono nell'elenco zone).
+    town: Trieste
+    start_urls:
+      - https://affittoappartamentitrieste.it/vendita-appartamenti-trieste/
+    link_regex: 'affittoappartamentitrieste\.it/properties/[^/]+/?$'
+
+  - id: minimal-re
+    name: Minimal Re Srl
+    kind: agenzia
+    website: https://www.minimalre.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://www.minimalre.it/vendite-residenziali/
+      - https://www.minimalre.it/vendite-commerciali/
+    link_regex: 'minimalre\.it/vendite-(?:residenziali|commerciali)/[a-z0-9-]+/?$'
+
+  - id: trieste-properties
+    name: Trieste Properties Srl
+    kind: agenzia
+    website: https://trieste-properties.com/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://trieste-properties.com/vendite/
+    link_regex: 'trieste-properties\.com/immobile/[^/]+/?$'
+
+  - id: futura-immobiliare
+    name: Futura Immobiliare
+    kind: agenzia
+    website: https://futuratrieste.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://futuratrieste.it/category/vendita/
+    link_regex: 'futuratrieste\.it/immobili/[^/]+/?$'
+
+  - id: unopiu-immobiliare
+    name: Unopiù Immobiliare di Rita Giancristofaro
+    kind: agenzia
+    website: https://www.unopiuimmobiliare.it/
+    adapter: a_wp
+    delay: 1.0
+    # agenzia con sede in Trieste; le 3 schede citano solo vie (Moreri/Stuparich/dell'Istria) senza mai
+    # nominare il comune ne' un rione della lista sicura, ma nessun indizio di immobili fuori provincia.
+    town: Trieste
+    start_urls:
+      - https://www.unopiuimmobiliare.it/immobili/?wpv-wpcf-contratto=Vendita
+    link_regex: 'unopiuimmobiliare\.it/immobile/[^/]+/?$'
+
+  - id: armony-immobiliare
+    name: Armony immobiliare di Pahor Annamaria
+    kind: agenzia
+    website: https://armony-immobiliare.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://armony-immobiliare.it/category/vendita/
+    link_regex: 'armony-immobiliare\.it/immobili/[^/]+/?$'
+
+  - id: myhouse-real-estate
+    name: MyHouse Real Estate
+    kind: agenzia
+    website: http://www.myhouserealestate.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - http://www.myhouserealestate.it/
+    link_regex: 'myhouserealestate\.it/immobili/[^/]+/?$'
+
+  - id: sim-studio-immobiliare
+    name: Albanese Andrea (SIM Studio Immobiliare - Sistiana)
+    kind: agenzia
+    website: https://www.simstudioimmobiliare.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://www.simstudioimmobiliare.it/immobili/residenziali
+      - https://www.simstudioimmobiliare.it/immobili/commerciali
+    link_regex: 'simstudioimmobiliare\.it/property/[^/]+/?$'
+
+  - id: opera-immobiliare
+    name: Opera Immobiliare snc
+    kind: agenzia
+    website: https://operaimmobiliarets.it/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://operaimmobiliarets.it/vendita/
+    page_template: 'https://operaimmobiliarets.it/vendita/page/{n}/'
+    link_regex: 'operaimmobiliarets\.it/immobili/[^/]+/?$'
+
+  - id: bro-real-estate
+    name: Bro Real Estate srls
+    kind: agenzia
+    website: https://www.business-ro.com/
+    adapter: a_wp
+    delay: 1.0
+    start_urls:
+      - https://www.business-ro.com/proposte-antevendita/
+    link_regex: 'business-ro\.com/property/[^/]+/?$'
+
   - id: promissio-immobiliare
     name: Promissio Immobiliare Trieste
     kind: agenzia
