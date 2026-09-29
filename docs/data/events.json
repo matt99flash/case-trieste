@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T19:24:24+00:00",
+ "updated": "2026-09-29T21:23:03+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -753,6 +753,13 @@
    "id": "dinamica-immobiliare:villa-single-family-2-2-2",
    "source": "dinamica-immobiliare",
    "price": 179000
+  },
+  {
+   "ts": "2026-09-29T21:23:03+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-rossetti",
+   "source": "noidonne-immobiliare",
+   "price": null
   }
  ]
 }
