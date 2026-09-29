@@ -1,0 +1,17 @@
+sources:
+  - id: rn-immobiliare
+    name: Morgan srl / RN Immobiliare
+    kind: agenzia
+    website: https://www.rnimmobiliare.com
+    adapter: e2_rn_immobiliare
+    delay: 1.2
+
+  - id: universalcasa-ts
+    name: Universalcasa
+    kind: agenzia
+    website: https://www.universalcasats.it/
+    adapter: e2_universalcasa
+    delay: 1.2
+    start_urls: ["https://www.universalcasats.it/vendita/"]
+    link_regex: '^https://www\.universalcasats\.it/i-\d+-vendita-[a-z0-9-]+/?$'
+    ref_regex: '/i-(\d+)-'
