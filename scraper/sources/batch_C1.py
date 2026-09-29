@@ -27,8 +27,12 @@ Adattatori specifici (parametrici, riusati da più agenzie quando la piattaforma
   sitemap.xml (URL con id CUID), la scheda è renderizzata lato server per testo/prezzo/indirizzo ma i
   "Dettagli" strutturati (mq/locali/ecc.) sono caricati lato client (placeholder "animate-pulse"): mq e
   locali si ricavano quindi dal testo della descrizione.
-
-Le altre agenzie del batch usano l'adattatore 'generic' (vedi config/sources.d/C1.yaml).
+- C1_generic_ts: come l'adattatore 'generic' condiviso, ma con qualche aiuto per riconoscere il comune
+  quando la scheda cita solo via/rione (frequente nei siti di piccole agenzie): comune dall'URL, indirizzo
+  completo da un tag dedicato, comune dedotto dal rione riconosciuto nel testo, uno scarto dell'indirizzo
+  quando è in realtà quello della SEDE dell'agenzia (non dell'immobile), e un default a Trieste quando non
+  si riconosce nessun comune né un indizio di luogo fuori provincia. Usato per TIQUADRO, Studio Immobiliare
+  84, Casaffari, Immobiliare Rossetti, imobilia e Trieste Villas.
 """
 import re
 
@@ -368,9 +372,9 @@ class ArcasaSource(Source):
     def _detail(html, url, L):
         soup = soup_of(html)
         L = parse_detail(html, url, L.source, L)
-        h1 = soup.select_one("h1.font-bold") or soup.select_one("div h1[class*='text-2xl']")
-        if h1:
-            L.title = h1.get_text(" ", strip=True) or L.title
+        h2 = soup.select_one("div.tab-title h2")
+        if h2 and h2.get_text(strip=True):
+            L.title = h2.get_text(" ", strip=True)
         for p in soup.select("p.arcasa-info-list-item"):
             txt = p.get_text(" ", strip=True)
             low = txt.lower()
@@ -378,9 +382,10 @@ class ArcasaSource(Source):
                 if low.startswith(label):
                     val = txt[len(label):].strip()
                     if key == "mq":
-                        m = re.search(r"\d+", val)
-                        if m and not L.mq:
-                            L.mq = int(m.group())
+                        # "1.400 m 2": il numero può avere il punto delle migliaia
+                        n = pu.to_int(val)
+                        if n and not L.mq:
+                            L.mq = n
                     elif key == "rooms":
                         L.rooms = L.rooms or pu.parse_rooms(val)
                     elif key == "bedrooms":
@@ -390,7 +395,12 @@ class ArcasaSource(Source):
                     elif key == "condition":
                         L.condition = L.condition or pu.detect_condition(val)
                     elif key == "floor":
-                        L.floor = L.floor or val
+                        # "Il piano a cui si trova 4": il valore vero è l'ultima parola del testo.
+                        # Sovrascrive sempre: il kv_pairs generico a volte prende il testo del tooltip
+                        # da solo (senza il numero finale), scambiandolo per il piano.
+                        words = val.split()
+                        if words:
+                            L.floor = words[-1]
                     break
         mt = soup.select_one("div.map-title")
         if mt:
@@ -608,7 +618,115 @@ class LaRueSource(Source):
             if title:
                 L.title = title
         if not L.mq:
-            L.mq = pu.parse_mq(L.description)
+            # i "Dettagli" strutturati sono caricati lato client: cerchiamo tutte le menzioni "NN mq" nel
+            # testo della pagina e teniamo la più grande (l'abitazione, non il terrazzo/la cantina).
+            nums = [pu.to_int(m.group(0)) for m in re.finditer(r"[\d.]{1,6}\s*mq", soup.get_text(" "), re.I)]
+            nums = [n for n in nums if n and 15 <= n <= 2000]
+            if nums:
+                L.mq = max(nums)
         if not L.rooms:
             L.rooms = pu.parse_rooms(L.title) or pu.parse_rooms(L.description)
+        imgs = re.findall(r"https://res\.cloudinary\.com/[^\"'\s]+\.(?:jpe?g|webp|png)", html, re.I)
+        if imgs:
+            L.images = list(dict.fromkeys(imgs))[:12]
+        return L
+
+
+# ================================================================== generic + comune (6 agenzie)
+
+FOREIGN_HINT = re.compile(r"\(cro\)|\(slo\)|croazia|slovenia|istra\b|savudrija|umago|umag\b|kobdilj|portoroz|"
+                          r"gorizia|monfalcone|cervignano|udine|pordenone|tarvisio|venezia|isontino", re.I)
+
+
+@register("C1_generic_ts")
+class GenericTsSource(Source):
+    """Come l'adattatore 'generic' (elenco -> link schede -> dettaglio), ma con qualche aiuto in più per
+    riconoscere il comune quando la scheda non lo scrive per esteso (frequente nei siti di piccole agenzie
+    che citano solo la via o il rione):
+      town_from_url_regex: regex con un gruppo sull'URL della scheda (es. '/Vendite/(trieste)/')
+      full_address_tag: selettore CSS di un tag che contiene via+comune su righe separate (es. 'address')
+      zone_fallback: se un rione di Trieste è riconosciuto nel testo, assume Trieste (default True)
+      default_town_if_unrecognized: se non si riconosce nessun comune/rione né un indizio di luogo fuori
+        provincia (vedi FOREIGN_HINT), assume Trieste (solo per agenzie quasi tutte triestine)
+    """
+
+    def fetch(self, ctx):
+        cfg = self.cfg
+        link_rx = re.compile(cfg["link_regex"], re.I)
+        excl = re.compile(cfg["exclude_regex"], re.I) if cfg.get("exclude_regex") else None
+        max_pages = cfg.get("max_pages", 1)
+        page_template = cfg.get("page_template")
+        links: dict[str, None] = {}
+        for start in cfg["start_urls"]:
+            url, page = start, cfg.get("page_start", 2)
+            for _ in range(max_pages):
+                if not url:
+                    break
+                html = ctx.http.text(url)
+                soup = soup_of(html)
+                before = len(links)
+                for a in soup.find_all("a", href=True):
+                    u = abs_url(url, a["href"])
+                    if u and link_rx.search(u) and not (excl and excl.search(u)):
+                        links.setdefault(u, None)
+                if len(links) == before:
+                    break
+                if not page_template:
+                    break
+                url, page = page_template.format(n=page), page + 1
+        if not links:
+            raise ValueError("nessuna scheda trovata (struttura cambiata?)")
+        ctx.log(f"{len(links)} schede trovate")
+        out, details = [], 0
+        for u in links:
+            L = Listing(source=self.id, ref=ref_from_url(u), url=u)
+            if details < self.max_details and ctx.store.needs_detail(L.id):
+                try:
+                    html = ctx.http.text(u)
+                    details += 1
+                    L = self._detail(html, u, L)
+                    ctx.detail_ids.add(L.id)
+                except Exception as e:
+                    ctx.errors.append(f"{u}: {e}")
+                    ctx.merge_known(L)
+            else:
+                ctx.merge_known(L)
+            out.append(L)
+        return out
+
+    def _detail(self, html, url, L):
+        soup = soup_of(html)
+        L = parse_detail(html, url, self.id, L)
+        cfg = self.cfg
+        # alcuni siti hanno anche un JSON-LD "RealEstateAgent" (nome dell'agenzia): il tipo generico
+        # RealEstate* del JSON-LD lo confonde con l'annuncio e usa il nome dell'agenzia come titolo.
+        # L'h1 della pagina (quando c'è un solo h1) resta il titolo più affidabile.
+        h1s = soup.find_all("h1")
+        if len(h1s) == 1:
+            h1_text = h1s[0].get_text(" ", strip=True)
+            if h1_text:
+                L.title = h1_text
+        if cfg.get("full_address_tag") and not L.town:
+            tag = soup.select_one(cfg["full_address_tag"])
+            if tag:
+                full = tag.get_text(" ", strip=True)
+                if full:
+                    L.address = full
+        # alcuni siti mostrano in scheda solo l'indirizzo della SEDE dell'agenzia (non dell'immobile):
+        # se combacia, lo scartiamo per non inquinare zona/comune con la posizione dell'ufficio.
+        if cfg.get("agency_address_hint") and L.address and cfg["agency_address_hint"].lower() in L.address.lower():
+            L.address = None
+        if cfg.get("town_from_url_regex") and not L.town:
+            m = re.search(cfg["town_from_url_regex"], url, re.I)
+            if m:
+                L.town = detect_town(m.group(1)) or None
+        blob = " ".join(x for x in (L.title, L.address, L.zone, L.description) if x)
+        foreign = FOREIGN_HINT.search(blob)   # es. "Altipiano/Carso e altre province" cita "Carso" ma è
+                                              # la categoria del sito per gli annunci FUORI provincia
+        if not L.town and not foreign and cfg.get("zone_fallback", True):
+            from ..zones import detect_zone
+            if detect_zone(blob):
+                L.town = "Trieste"
+        if not L.town and not foreign and cfg.get("default_town_if_unrecognized"):
+            L.town = "Trieste"
         return L

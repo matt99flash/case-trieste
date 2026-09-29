@@ -107,33 +107,39 @@ sources:
     delay: 1.2
     sitemap_url: https://www.larueimmobiliare.it/sitemap.xml
 
-  # ---------------------------------------------------------------- generic (elenco -> link schede -> dettaglio)
+  # ---------------------------------------------------------------- generic + comune (C1_generic_ts)
+  # Piccole agenzie le cui schede spesso citano solo via/rione senza il comune per esteso: l'adattatore
+  # C1_generic_ts aggiunge al comportamento di 'generic' il riconoscimento del comune da rione/URL/etc.
   - id: tiquadro-immobiliare
     name: TIQUADRO - Boutique Immobiliare
     kind: agenzia
     website: https://www.tiquadroimmobiliare.it/it/
-    adapter: generic
+    adapter: C1_generic_ts
     delay: 1.2
     start_urls:
       - https://www.tiquadroimmobiliare.it/it/Vendite/
     link_regex: '/it/Vendite/[a-z-]+/[a-z-]+/v\d+/\d+/?$'
+    town_from_url_regex: '/Vendite/([a-z-]+)/'
+    agency_address_hint: "Silvio Benco"
 
   - id: studio-immobiliare-84
     name: Studio Immobiliare 84
     kind: agenzia
     website: https://www.studioimmobiliare84.it/
-    adapter: generic
+    adapter: C1_generic_ts
     delay: 1.2
     start_urls:
       - https://www.studioimmobiliare84.it/vendite
     link_regex: '^https://www\.studioimmobiliare84\.it/[a-z0-9-]+$'
     exclude_regex: '/(vendite|affitti|agenzia|blog|consulenza-urbanistica|contatti|cookies|dicono-di-noi|immobile-desiderato|informativa-sulla-privacy|lavora-con-noi|staff|valutazioni-stime|vendere-casa-trieste)$'
+    default_town_if_unrecognized: true
+    agency_address_hint: "Carducci"
 
   - id: casaffari-lozei
     name: CASAFFARI di Davide Lozei
     kind: agenzia
     website: https://www.casaffaripro.com/
-    adapter: generic
+    adapter: C1_generic_ts
     delay: 1.2
     start_urls:
       - https://www.casaffaripro.com/proposte-immobiliari
@@ -144,12 +150,12 @@ sources:
     name: Immobiliare Rossetti
     kind: agenzia
     website: https://www.immobiliarerossetti.it/
-    adapter: generic
+    adapter: C1_generic_ts
     delay: 1.2
     start_urls:
       - "https://www.immobiliarerossetti.it/search/?loc=&resCom=&cont=vendita&fasPrezzo=&fasMQ="
     page_template: "https://www.immobiliarerossetti.it/search/?loc=&resCom=&cont=vendita&fasPrezzo=&fasMQ=&page={n}"
-    page_start: 1
+    page_start: 2
     max_pages: 10
     link_regex: '^https://www\.immobiliarerossetti\.it/trieste/.*-\d{5,7}/?$'
 
@@ -157,22 +163,24 @@ sources:
     name: imobilia - Agenzia immobiliare a Trieste dal 1999
     kind: agenzia
     website: https://www.imobilia.re/it/
-    adapter: generic
+    adapter: C1_generic_ts
     delay: 1.2
     start_urls:
       - https://www.imobilia.re/it/
     link_regex: '^https://www\.imobilia\.re/it/immobili/\d+-[a-z0-9-]+$'
     exclude_regex: 'affitto'
+    full_address_tag: "address"
 
   - id: trieste-villas
     name: Agenzia Immobiliare Trieste Villas
     kind: agenzia
     website: https://triestevillas.com/
-    adapter: generic
+    adapter: C1_generic_ts
     delay: 1.2
     start_urls:
       - https://triestevillas.com/immobili
     link_regex: '^https://triestevillas\.com/annuncio/[a-z0-9-]+$'
+    agency_address_hint: "Via Torino"
 
   # ---------------------------------------------------------------- saltate
   # Silvana Immobiliare S.a.S. (https://www.silvanaimmobiliare.it/vendita/): pagina statica praticamente
