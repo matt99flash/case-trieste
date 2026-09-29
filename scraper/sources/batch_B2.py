@@ -1,10 +1,18 @@
-"""Adattatori specifici per il batch B2 (agenzie WordPress con plugin non standard) a Trieste.
+"""Adattatori specifici per il batch B2 (agenzie WordPress con plugin/temi non standard) a Trieste.
 
+  b2_wp            GenericSource + un-escape delle entità HTML rimaste grezze (bug diffuso in alcuni temi
+                   immobiliari); con relaxed_encoding: true tollera anche pagine UTF-8 con qualche byte
+                   cp1252 isolato.
+  b2_aemmecasa     b2_wp + fallback dedicato per prezzo/mq (il tema li mette in formato non standard).
   b2_sitemap       elenco letto da una o più sitemap XML (WP core o Yoast) invece che da pagine con <a href>:
                    utile quando la pagina "vendita" del sito non contiene i link diretti alle schede
                    (caricati via JS) ma esiste una sitemap con i permalink degli annunci.
-  b2_attico        b2_sitemap + scarta le schede già "VENDUTO"/"AFFITTATO" (titolo) o in affitto (prezzo "/Mese").
+  b2_attico        b2_sitemap + scarta le schede già "VENDUTO"/"AFFITTATO" (titolo) o in affitto (prezzo "/Mese")
+                   + legge mq/piano/locali/bagni dai campi propri del tema.
   b2_searchfilter  elenco letto dall'endpoint AJAX del plugin WordPress "Search & Filter" (sf_action=get_data).
+  b2_dinamica      le schede non hanno <h1>/og:title (l'estrattore generico ripiegherebbe sul <title> della
+                   pagina, che aggiunge "Trieste" allo slogan e farebbe risultare in provincia anche gli
+                   immobili fuori provincia del sito): titolo/indirizzo/descrizione dai blocchi del tema.
   b2_vidaligruden  pagina singola con più annunci come blocchi di testo (Elementor), senza schede separate.
 
 Ogni classe si registra con prefisso ``b2_`` per non collidere con altri batch.
