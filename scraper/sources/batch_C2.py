@@ -18,9 +18,15 @@ Piattaforme coperte in questo modulo (prefisso C2_ per non collidere con gli alt
                      di <main> e foto in un blob JSON incorporato nella pagina. Alcuni siti elencano per
                      errore anche annunci in affitto nella pagina "vendita": tiene solo le schede il cui
                      testo dice "Proponiamo in vendita".
+  - C2_angularhousing  SPA Angular con dati statici in JSON (es. comfortimmobiliare.it): elenco slug in
+                     immobili/listaImmobili.json, scheda in immobili/in-vendita/<slug>/<slug>.json (il
+                     server risponde 200 con l'index anche per i file mancanti: si riconosce dal JSON non
+                     valido).
 """
 import html as html_lib
+import json
 import re
+from urllib.parse import quote
 
 from .. import parse_utils as pu
 from ..models import Listing
@@ -491,4 +497,200 @@ class AgestaNetSource(Source):
                 break
             page += 1
         ctx.log(f"{len(out)} annunci in vendita")
+        return out
+
+
+@register("C2_angularhousing")
+class AngularHousingSource(Source):
+    """SPA Angular con dati statici in JSON (es. comfortimmobiliare.it): elenco slug in
+    immobili/listaImmobili.json, scheda in immobili/in-vendita/<slug>/<slug>.json (quelle vendute sono
+    invece in immobili/venduti/<slug>/<slug>.json e vanno scartate); le foto sono
+    immobili/in-vendita/<slug>/<valore campo immagineN>.webp. Il server risponde 200 con la pagina index
+    anche per i file mancanti: le tratta come "non trovate" controllando che il body sia JSON valido."""
+
+    def fetch(self, ctx):
+        base = self.cfg["website"].rstrip("/") + "/"
+        slugs = ctx.http.json(base + "immobili/listaImmobili.json")
+        ctx.log(f"{len(slugs)} immobili nell'elenco")
+        out, details = [], 0
+        for slug in slugs:
+            url = f"{base}immobili/in-vendita/{slug}/{slug}.json"
+            L = Listing(source=self.id, ref=slug, url=url)
+            if ctx.store.needs_detail(L.id) and details < self.max_details:
+                try:
+                    details += 1
+                    raw = ctx.http.text(url)
+                    try:
+                        data = json.loads(raw)
+                    except ValueError:
+                        continue  # non è uno "in-vendita" valido (fallback index.html o file assente)
+                    # "tipoAnnuncio" e "statoTrattative" non sono sempre valorizzati entrambi: li combina
+                    stato = f"{data.get('tipoAnnuncio', '')} {data.get('statoTrattative', '')}"
+                    if re.search(r"affitt", stato, re.I) or re.search(r"vendut[oa]", stato, re.I):
+                        continue
+                    if not re.search(r"vendit", stato, re.I):
+                        continue
+                    L.title = data.get("titolo")
+                    L.description = pu.clean_text(data.get("descrizione"), 3000)
+                    L.address = data.get("indirizzo")
+                    L.price = pu.parse_price(data.get("prezzo"))
+                    L.mq = pu.parse_mq(data.get("superficie"))
+                    L.rooms = pu.parse_rooms(data.get("locali"))
+                    L.bathrooms = pu.parse_small_count(data.get("bagni"), ["bagni"])
+                    L.floor = str(data.get("piano")) if data.get("piano") is not None else None
+                    if data.get("tipologia"):
+                        L.type = pu.detect_type(data["tipologia"])
+                    imgs = []
+                    for i in range(1, 20):
+                        v = data.get(f"immagine{i}")
+                        if not v:
+                            break
+                        imgs.append(f"{base}immobili/in-vendita/{slug}/{quote(v)}.webp")
+                    L.images = imgs[:12]
+                    ctx.detail_ids.add(L.id)
+                except Exception as e:
+                    ctx.errors.append(f"{url}: {e}")
+                    ctx.merge_known(L)
+            else:
+                ctx.merge_known(L)
+            out.append(L)
+        return out
+
+
+@register("C2_miogest")
+class MiogestSource(Source):
+    """Gestionale Miogest: l'elenco vendita è caricato via JS con una POST che restituisce un frammento
+    HTML (POST {origin}/ajax.html?azi=Archivio&lin=it&n=1, serve prima una GET alla pagina vendite per i
+    cookie di sessione e gli header Referer/X-Requested-With). Il frammento contiene già prezzo/mq/locali/
+    camere/bagni/comune/titolo/foto per ogni annuncio (div.annuncio). La scheda dettaglio ha un JSON-LD di
+    tipo RealEstateAgent (l'agenzia, non l'immobile) che l'estrattore generico riconosce per errore (la
+    regex include "RealEstate"): lo rimuove prima di passare l'HTML a parse_detail, altrimenti titolo/
+    indirizzo/descrizione diventano quelli dell'agenzia invece che dell'immobile."""
+
+    def fetch(self, ctx):
+        cfg = self.cfg
+        base = cfg["website"].rstrip("/")
+        list_url = cfg.get("list_url", base + "/vendite/")
+        ctx.http.text(list_url)  # ottiene i cookie di sessione
+        data = {
+            "H_Url": list_url, "Src_Li_Tip": "V", "Src_Li_Cat": "", "Src_Li_Cit": "", "Src_Li_Zon": "",
+            "Src_T_Pr1": "", "Src_T_Pr2": "", "Src_T_Mq1": "", "Src_T_Mq2": "", "Src_T_Cod": "",
+            "Src_Li_Ord": "", "CP_C_Need": "need", "CP_C_Funz": "funz", "CP_C_Mark": "mark",
+            "CP_C_Anal": "anal",
+        }
+        r = ctx.http.post(f"{base}/ajax.html?azi=Archivio&lin=it&n=1", data=data,
+                           headers={"Referer": list_url, "X-Requested-With": "XMLHttpRequest"})
+        soup = soup_of(r.text)
+        cards = soup.select("a.annuncio")
+        ctx.log(f"{len(cards)} schede trovate")
+        out, details = [], 0
+        for a in cards:
+            url = abs_url(base + "/", a.get("href"))
+            if not url:
+                continue
+            # ref_from_url prenderebbe l'ultimo numero lungo dell'URL, che qui è l'id dell'AGENZIA
+            # (uguale per tutti gli annunci, es. "...-26198-9"): usa invece il codice dopo "/v" iniziale
+            m = re.search(r"/v(\d+)-", url)
+            ref = m.group(1) if m else ref_from_url(url)
+            L = Listing(source=self.id, ref=ref, url=url)
+            # template diversi a seconda della versione del gestionale (visti: .prezzo/.titolo/.comune/.pc
+            # con icone "icon18-*" e .annuncio-prezzo/.annuncio-titolo/.annuncio-indirizzo/.caratteristiche
+            # .car con icone "icon20-*"): cerca per parola chiave nel nome classe invece che per template fisso
+            price_tag = (a.select_one(".prezzo") or a.select_one("[class*=prezzo]"))
+            L.price = pu.parse_price(price_tag.get_text(strip=True)) if price_tag else None
+            title_tag = (a.select_one(".titolo") or a.select_one("[class*=titolo]"))
+            L.title = title_tag.get_text(strip=True) if title_tag else None
+            comune_tag = (a.select_one(".comune") or a.select_one("[class*=indirizzo]"))
+            L.address = comune_tag.get_text(" ", strip=True) if comune_tag else None
+            img = a.select_one("img")
+            if img and img.get("src"):
+                L.images = [abs_url(base + "/", img["src"])]
+            for pc in a.select(".pc, .car"):
+                icon = pc.select_one("i")
+                cls = " ".join(icon.get("class", [])) if icon else ""
+                val = pc.get_text(strip=True)
+                if "design" in cls:
+                    L.mq = pu.parse_mq(val)
+                elif "vani" in cls:
+                    L.rooms = pu.parse_rooms(val)
+                elif "bed" in cls or "camere" in cls:
+                    L.bedrooms = pu.parse_small_count(val, ["camere"])
+                elif "bath" in cls or "bagni" in cls:
+                    L.bathrooms = pu.parse_small_count(val, ["bagni"])
+            if ctx.store.needs_detail(L.id, L.price) and details < self.max_details:
+                try:
+                    details += 1
+                    html = ctx.http.text(url)
+                    dsoup = soup_of(html)
+                    for tag in dsoup.find_all("script", type=lambda t: t and "ld+json" in t):
+                        if "RealEstateAgent" in (tag.string or tag.get_text() or ""):
+                            tag.decompose()
+                    L = parse_detail(str(dsoup), url, self.id, L)
+                    if L.features.pop("_rent", False):
+                        continue
+                    ctx.detail_ids.add(L.id)
+                except Exception as e:
+                    ctx.errors.append(f"{url}: {e}")
+                    ctx.merge_known(L)
+            else:
+                ctx.merge_known(L)
+            out.append(L)
+        return out
+
+
+@register("C2_dudagallery")
+class DudaGallerySource(Source):
+    """Siti realizzati con Duda/Italiaonline dove gli annunci sono presentati come blocchi di testo libero
+    su un'unica pagina "galleria" (h2 col titolo + paragrafo con descrizione/prezzo, seguito dalle foto),
+    senza una scheda/URL propria per annuncio (es. altipianoimmobiliare.it). Config: gallery_url."""
+
+    def fetch(self, ctx):
+        base = self.cfg["website"].rstrip("/") + "/"
+        url = self.cfg.get("gallery_url", base)
+        html = ctx.http.text(url)
+        soup = soup_of(html)
+        for tag in soup.find_all(["script", "style"]):
+            tag.decompose()
+
+        # foto per blocco: sequenza h2/img nell'ordine del documento (le foto di un annuncio stanno tra
+        # il suo titolo h2 e il successivo)
+        images_by_title: dict[str, list[str]] = {}
+        cur = None
+        for el in soup.find_all(["h2", "img"]):
+            if el.name == "h2":
+                cur = el.get_text(" ", strip=True)
+                images_by_title.setdefault(cur, [])
+            elif cur is not None:
+                src = el.get("data-src") or el.get("src")
+                if src and re.search(r"\.(jpe?g|png|webp)(\?|$)", src, re.I):
+                    images_by_title[cur].append(abs_url(url, src))
+
+        h2_texts = list(images_by_title.keys())
+        lines = [l.strip() for l in soup.get_text("\n").split("\n") if l.strip()]
+        idxs = [i for i, l in enumerate(lines) if l in h2_texts]
+        out, skipped = [], 0
+        for k, i in enumerate(idxs):
+            title = lines[i]
+            end = idxs[k + 1] if k + 1 < len(idxs) else len(lines)
+            body = " ".join(lines[i + 1:end])
+            if not re.search(r"vend", body, re.I) or re.search(r"affitt", body, re.I):
+                skipped += 1  # non è un annuncio di vendita (CTA/contatti, o è in affitto)
+                continue
+            slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+            L = Listing(source=self.id, ref=slug, url=f"{url}#{slug}")
+            L.title = title.title()
+            L.description = pu.clean_text(body, 2000)
+            # niente indirizzo strutturato: se il testo non nomina esplicitamente un comune ma nomina una
+            # frazione/rione nota del Carso triestino (es. "Opicina", "Santa Croce"), è comunque nel
+            # Comune di Trieste (altrimenti finalize() non lo dedurrebbe da una frazione, solo dal comune)
+            from ..zones import detect_town, detect_zone
+            if not detect_town(title, body):
+                zone = detect_zone(title, body)
+                if zone:
+                    L.town, L.zone = "Trieste", zone
+            L.price = pu.parse_price(body)
+            L.mq = pu.parse_mq(body)
+            L.images = list(dict.fromkeys(images_by_title.get(title, [])))[:12]
+            out.append(L)
+        ctx.log(f"{len(out)} annunci in vendita, {skipped} scartati (affitto o non annuncio)")
         return out

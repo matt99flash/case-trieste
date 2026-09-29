@@ -3,7 +3,11 @@ import re
 import unicodedata
 
 TOWNS = {
-    "Trieste": ["trieste"],
+    # rioni e frazioni di Trieste inconfondibili (senza omonimi comuni altrove)
+    "Trieste": ["trieste", "opicina", "barcola", "roiano", "servola", "valmaura", "basovizza", "gropada", "padriciano",
+                "trebiciano", "banne", "contovello", "borgo san sergio", "cattinara", "longera", "conconello", "gretta",
+                "chiadino", "rozzol", "melara", "guardiella", "scorcola", "grignano", "miramare", "ponziana",
+                "borgo teresiano", "prosecco di trieste"],
     "Muggia": ["muggia", "aquilinia", "santa barbara", "chiampore", "zindis", "noghere", "lazzaretto", "stramare", "rabuiese"],
     "Duino-Aurisina": ["duino", "aurisina", "sistiana", "visogliano", "san giovanni di duino", "santa croce di aurisina",
                        "ceroglie", "malchina", "slivia", "prepotto", "medeazza", "san pelagio", "villaggio del pescatore", "nabrezina", "devin", "sesljan"],
@@ -57,8 +61,9 @@ def detect_town(*texts) -> str | None:
     for town, kw in _TOWN_KW:
         if town != "Trieste" and re.search(r"\b" + re.escape(kw.strip()) + r"\b", blob):
             return town
-    if "trieste" in blob:
-        return "Trieste"
+    for town, kw in _TOWN_KW:
+        if town == "Trieste" and re.search(r"\b" + re.escape(kw) + r"\b", blob):
+            return "Trieste"
     return None
 
 

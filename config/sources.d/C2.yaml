@@ -71,6 +71,60 @@ sources:
     adapter: C2_agestanet
     delay: 1.2
 
+  - id: comfort-immobiliare
+    name: Comfort Immobiliare di Filippo Bortolon
+    kind: agenzia
+    website: https://www.comfortimmobiliare.it/
+    adapter: C2_angularhousing
+    delay: 1.2
+
+  - id: cristina-rufolo
+    name: cristina rufolo agente immobiliare
+    kind: agenzia
+    website: http://www.cristinarufoloagenteimmobiliare.it/web/
+    adapter: C2_agestanet
+    delay: 1.2
+
+  - id: real-estate-adv
+    name: Real Estate ADV
+    kind: agenzia
+    website: https://realestateadv.it
+    adapter: C2_miogest
+    delay: 1.2
+    list_url: https://realestateadv.it/it/vendite/
+
+  - id: izzo-coretti
+    name: Izzo Gabriele (Francesco Coretti - ufficio Trieste)
+    kind: agenzia
+    website: https://www.francescocoretti.it/
+    adapter: generic
+    delay: 1.2
+    start_urls:
+      - https://www.francescocoretti.it/it/immobili-residenziali
+      - https://www.francescocoretti.it/it/immobili-residenziali?page=2
+      - https://www.francescocoretti.it/it/immobili-residenziali?page=3
+      - https://www.francescocoretti.it/it/immobili-residenziali?page=4
+      - https://www.francescocoretti.it/it/immobili-residenziali?page=5
+      - https://www.francescocoretti.it/it/immobili-commerciali
+      - https://www.francescocoretti.it/it/nuove-costruzioni
+    link_regex: '/it/[a-z0-9-]+-\d{5,}$'
+
+  - id: immobiliare-sabrina
+    name: Immobiliare Sabrina (Terracciano Sabrina)
+    kind: agenzia
+    website: https://www.immobiliaresabrina.com
+    adapter: C2_miogest
+    delay: 1.2
+    list_url: https://www.immobiliaresabrina.com/it/vendite/
+
+  - id: altipiano
+    name: Altipiano Immobiliare
+    kind: agenzia
+    website: https://www.altipianoimmobiliare.com/
+    adapter: C2_dudagallery
+    delay: 1.2
+    gallery_url: https://www.altipianoimmobiliare.com/altipiano-carsico-gallery
+
   - id: spazio-casa
     name: Spazio Casa Immobiliare
     kind: agenzia
