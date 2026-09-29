@@ -42,7 +42,7 @@ def parse_mq(s) -> int | None:
         v = int(s)
     else:
         t = str(s)
-        m = (re.search(_NUM + r"\s*(?:mq|m²|m2|metri\s*quadr|sqm)", t, re.I)
+        m = (re.search(_NUM + r"\s*(?:mq|m²|m2|m\s2(?!\d)|metri\s*quadr|sqm)", t, re.I)
              or re.search(r"(?:mq|m²|superficie|sup\.)\s*[:.]?\s*" + _NUM, t, re.I))
         if not m:
             m = re.fullmatch(r"\s*" + _NUM + r"\s*", t)

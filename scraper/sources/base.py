@@ -167,6 +167,9 @@ def parse_detail(html: str, url: str, source: str, base: Listing | None = None) 
     for obj in jsonld_objects(soup):
         t = obj.get("@type")
         t = " ".join(t) if isinstance(t, list) else str(t or "")
+        # "RealEstateAgent"/Organization descrivono l'agenzia (indirizzo della sede), non l'immobile
+        if re.search(r"Agent|Organization|LocalBusiness|WebSite|WebPage|BreadcrumbList", t) and not re.search(r"Residence|Apartment|House", t):
+            continue
         if not re.search(r"Residence|Apartment|House|Product|Offer|RealEstate|Accommodation|SingleFamily|Place", t):
             continue
         L.title = L.title or obj.get("name")

@@ -107,6 +107,77 @@ sources:
     delay: 1.2
     sitemap: "https://partnerservizi.it/listings-sitemap.xml"
 
+  - id: b1-paradisi
+    name: Paradisi Immobiliare srl
+    kind: agenzia
+    website: https://immobiliareparadisi.it/
+    adapter: b1_generic
+    delay: 1.2
+    town: Trieste
+    start_urls: ["https://immobiliareparadisi.it/vendita/"]
+    link_regex: '^https://immobiliareparadisi\.it/property/[^/]+/?$'
+    page_template: "https://immobiliareparadisi.it/vendita/page/{n}/"
+    max_pages: 5
+
+  - id: b1-carso
+    name: Carso immobiliare di Piero Fattorini
+    kind: agenzia
+    website: https://carsoimmobiliare.it/
+    adapter: b1_carso
+    delay: 1.2
+
+  - id: b1-audace
+    name: Audace Immobiliare
+    kind: agenzia
+    website: https://www.audaceimmobiliare.it/
+    adapter: b1_audace
+    delay: 1.2
+
+  - id: b1-casacoral
+    name: Casacoral Immobiliare
+    kind: agenzia
+    website: https://casacoral.it/
+    adapter: b1_generic
+    delay: 1.2
+    start_urls: ["https://casacoral.it/catalogo-immobiliare/?acl-contract=0"]
+    link_regex: '^https://casacoral\.it/immobile/[^/]+/?$'
+    max_pages: 3
+
+  - id: b1-hab
+    name: HAB - Habitare Trieste
+    kind: agenzia
+    website: https://habtrieste.com/
+    adapter: b1_generic
+    delay: 1.2
+    town: Trieste
+    start_urls: ["https://habtrieste.com/appartamenti/"]
+    link_regex: '^https://habtrieste\.com/proprieta/[^/]+/?$'
+    max_pages: 2
+
+  - id: b1-project-immobiliare
+    name: Project Immobiliare di Enrico Geom. Fonda
+    kind: agenzia
+    website: https://project-immobiliare.com/
+    adapter: b1_arcasa
+    delay: 1.2
+    sitemap: "https://project-immobiliare.com/listings-sitemap.xml"
+
+  - id: b1-laboratorio
+    name: Laboratorio Immobiliare S.r.l.
+    kind: agenzia
+    website: https://www.labimmobiliare.it/
+    adapter: b1_lab
+    delay: 1.2
+    town: Trieste
+
+  - id: b1-pizzarello
+    name: Pizzarello s.a.s.
+    kind: agenzia
+    website: https://pizzarello.it/
+    adapter: b1_arcasa
+    delay: 1.2
+    sitemap: "https://pizzarello.it/listings-sitemap.xml"
+
   - id: b1-sirio
     name: Sirio (agenzia Trieste)
     kind: agenzia
