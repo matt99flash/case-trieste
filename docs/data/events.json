@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T11:22:55+00:00",
+ "updated": "2026-09-29T13:28:08+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -63,6 +63,287 @@
    "id": "la-rue-immobiliare:0010",
    "source": "la-rue-immobiliare",
    "price": 92000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "removed",
+   "id": "subito-privati:658511711",
+   "source": "subito-privati",
+   "price": 205000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "b1-partnerservizi:appartamento-in-casetta-con-giardino",
+   "source": "b1-partnerservizi",
+   "price": 110000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "b1-partnerservizi:locale-daffari-con-ampie-vetrine-in-zona-servitissima",
+   "source": "b1-partnerservizi",
+   "price": 157000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "b1-partnerservizi:ampia-metratura-con-ascensore-con-in-zona-stazione-ferroviaria",
+   "source": "b1-partnerservizi",
+   "price": 243000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "dimora:elegante-appartamento-a-opicina",
+   "source": "dimora",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "casaffari-lozei:primi-ingressi-opicina-hermada",
+   "source": "casaffari-lozei",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "casaffari-lozei:primi-ingressi-opicina",
+   "source": "casaffari-lozei",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "casaffari-lozei:villa-a-schiera-a-trebiciano",
+   "source": "casaffari-lozei",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "casaffari-lozei:villa-bifamiliare-ampio-giardino",
+   "source": "casaffari-lozei",
+   "price": 460000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "casaffari-lozei:villa-in-residence-opicina",
+   "source": "casaffari-lozei",
+   "price": 320000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "removed",
+   "id": "spazio-casa:25004",
+   "source": "spazio-casa",
+   "price": 95000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "price_down",
+   "id": "tam-immobiliare:113213",
+   "source": "tam-immobiliare",
+   "old_price": 393000,
+   "price": 347000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21771",
+   "source": "e1-hometrieste",
+   "price": 89000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21761",
+   "source": "e1-hometrieste",
+   "price": 88000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21791",
+   "source": "e1-hometrieste",
+   "price": 42000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21766",
+   "source": "e1-hometrieste",
+   "price": 192000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21730",
+   "source": "e1-hometrieste",
+   "price": 250000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:10285",
+   "source": "e1-hometrieste",
+   "price": 535000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21746",
+   "source": "e1-hometrieste",
+   "price": 210000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21768",
+   "source": "e1-hometrieste",
+   "price": 118000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21738",
+   "source": "e1-hometrieste",
+   "price": 130000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21678",
+   "source": "e1-hometrieste",
+   "price": 89000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21472",
+   "source": "e1-hometrieste",
+   "price": 222000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21582",
+   "source": "e1-hometrieste",
+   "price": 139000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21503",
+   "source": "e1-hometrieste",
+   "price": 40000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:12018",
+   "source": "e1-hometrieste",
+   "price": 126000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:11313",
+   "source": "e1-hometrieste",
+   "price": 80000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:222",
+   "source": "imobilia-trieste",
+   "price": 380000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:217",
+   "source": "imobilia-trieste",
+   "price": 36000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:211",
+   "source": "imobilia-trieste",
+   "price": 355000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:201",
+   "source": "imobilia-trieste",
+   "price": 249000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:199",
+   "source": "imobilia-trieste",
+   "price": 78000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:197",
+   "source": "imobilia-trieste",
+   "price": 325000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:195",
+   "source": "imobilia-trieste",
+   "price": 175000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:182",
+   "source": "imobilia-trieste",
+   "price": 53000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:179",
+   "source": "imobilia-trieste",
+   "price": 35000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:176",
+   "source": "imobilia-trieste",
+   "price": 174000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "tirabora-immobiliare:2427",
+   "source": "tirabora-immobiliare",
+   "price": 430000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "mab-immobiliare:villa-unifamiliare-da-ristrutturare-",
+   "source": "mab-immobiliare",
+   "price": 329000
+  },
+  {
+   "ts": "2026-09-29T13:28:08+00:00",
+   "type": "new",
+   "id": "mab-immobiliare:villa-unifamiliare-in-costiera",
+   "source": "mab-immobiliare",
+   "price": 1200000
   }
  ]
 }
