@@ -10,7 +10,7 @@ TOWNS = {
                 "borgo teresiano", "prosecco di trieste"],
     "Muggia": ["muggia", "aquilinia", "santa barbara", "chiampore", "zindis", "noghere", "lazzaretto", "stramare", "rabuiese"],
     "Duino-Aurisina": ["duino", "aurisina", "sistiana", "visogliano", "san giovanni di duino", "santa croce di aurisina",
-                       "ceroglie", "malchina", "slivia", "prepotto", "medeazza", "san pelagio", "villaggio del pescatore", "nabrezina", "devin", "sesljan"],
+                       "ceroglie", "malchina", "slivia", "medeazza", "san pelagio", "villaggio del pescatore", "nabrezina", "devin", "sesljan"],
     "San Dorligo della Valle": ["san dorligo", "dolina", "bagnoli della rosandra", "domio", "mattonaia", "caresana", "prebenico",
                                 "sant'antonio in bosco", "borgo grotta gigante", "crogole", "moccò"],
     "Sgonico": ["sgonico", "zgonik", "sales", "samatorza", "gabrovizza", "rupingrande", "rupinpiccolo", "borgo grotta gigante"],

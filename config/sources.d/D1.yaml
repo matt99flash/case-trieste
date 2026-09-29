@@ -59,6 +59,160 @@ sources:
     max_pages: 6
     link_regex: '^https://agenziabenedetti\.it/vendite/[a-z0-9-]+$'
 
+  - id: rizza-immobiliare
+    name: Rizza immobiliare del dott. Mathias Carabellese
+    kind: agenzia
+    website: https://www.rizzaimmobiliare.com/
+    adapter: d1_rizza
+    delay: 1.0
+    start_urls:
+      - "https://www.rizzaimmobiliare.com/residenziali"
+      - "https://www.rizzaimmobiliare.com/residenziali/appartamenti"
+      - "https://www.rizzaimmobiliare.com/residenziali/ville-casette"
+      - "https://www.rizzaimmobiliare.com/residenziali/premium"
+      - "https://www.rizzaimmobiliare.com/commerciali"
+      - "https://www.rizzaimmobiliare.com/commerciali/locali-d-affari"
+      - "https://www.rizzaimmobiliare.com/commerciali/uffici"
+      - "https://www.rizzaimmobiliare.com/commerciali/attivita-commerciali"
+      - "https://www.rizzaimmobiliare.com/commerciali/capannoni"
+    link_regex: '/(?:residenziali|commerciali)/(?:\d{4}[a-z]?|n-c)-[a-z0-9-]+/$'
+    max_pages: 3
+
+  - id: casaimmedia
+    name: Casaimmedia Immobiliare
+    kind: agenzia
+    website: https://www.casaimmedia.it/
+    adapter: d1_casaimmedia
+    delay: 1.0
+    base_url: "https://www.casaimmedia.it"
+
+  - id: dimarino-immobiliare
+    name: DI MARINO Immobiliare
+    kind: agenzia
+    website: https://dimarinoimmobiliare.it/
+    adapter: d1_generic_tszone
+    delay: 1.0
+    start_urls: ["https://dimarinoimmobiliare.it/annunci.html"]
+    link_regex: '/immobili/[a-z0-9-]+\.html$'
+    max_pages: 3
+
+  - id: mazzini-immobiliare
+    name: Mazzini Immobiliare
+    kind: agenzia
+    website: http://www.mazzini-immobiliare.it/
+    adapter: d1_mazzini
+    delay: 1.0
+    base_url: "https://www.mazzini-immobiliare.it"
+
+  - id: il-quadrifoglio
+    name: Il Quadrifoglio srl
+    kind: agenzia
+    website: https://ilquadrifoglio.ts.it/
+    adapter: generic
+    delay: 1.0
+    start_urls: ["https://ilquadrifoglio.ts.it/immobili-in-vendita"]
+    link_regex: '/immobili-in-vendita/[a-z0-9-]+$'
+    max_pages: 3
+
+  - id: solaris-real-estate
+    name: Solaris real estate
+    kind: agenzia
+    website: https://www.solarisrealestate.it/
+    adapter: d1_studio39
+    delay: 1.0
+    listings_url: "https://www.solarisrealestate.it/articles.asp?id_genere=2&id_categoria=1"
+    link_regex: 'article\.asp\?id_article=\d+$'
+
+  - id: devetti-immobiliare
+    name: Immobiliare Devetti
+    kind: agenzia
+    website: https://www.devetti-immobiliare.it/
+    adapter: generic
+    delay: 1.0
+    start_urls: ["https://www.devetti-immobiliare.it/immobili-in-vendita.html"]
+    link_regex: '/immobili/[a-z0-9-]+/\d+/[a-z0-9-]+\.html$'
+    max_pages: 3
+
+  - id: dimmi-immobiliare
+    name: Dimmi Immobiliare
+    kind: agenzia
+    website: https://www.immobiliaredimmi.it/
+    adapter: generic
+    delay: 1.0
+    start_urls: ["https://www.immobiliaredimmi.it/"]
+    link_regex: '/immobile/\d+$'
+    max_pages: 2
+
+  - id: altipiano-immobiliare
+    name: Altipiano Immobiliare di Candotti
+    kind: agenzia
+    website: https://www.altipianoimmobiliare.it/
+    adapter: d1_altipiano
+    delay: 1.0
+    base_url: "https://www.altipianoimmobiliare.it"
+
+  - id: grm-immobiliare
+    name: Grm immobiliare
+    kind: agenzia
+    website: http://www.grmimmobiliare.it/it/
+    adapter: d1_grm
+    delay: 1.0
+    base_url: "http://www.grmimmobiliare.it"
+
+  - id: vesta-immobiliare
+    name: immobiliare Vesta
+    kind: agenzia
+    website: https://www.vestaimmobiliare.it/
+    adapter: d1_vesta
+    delay: 1.0
+    base_url: "https://www.vestaimmobiliare.it"
+
+  - id: bg-real-estate
+    name: BG REAL ESTATE SRL
+    kind: agenzia
+    website: https://www.bgrealestate.it/
+    adapter: d1_bgrealestate
+    delay: 1.0
+    base_url: "https://www.bgrealestate.it"
+
+  - id: bonavia-advisory
+    name: Bonavia Real Estate Advisory
+    kind: agenzia
+    website: https://bonaviaadvisory.com/it/
+    adapter: d1_bonavia
+    delay: 1.0
+    listings_url: "https://bonaviaadvisory.com/it/immobili/"
+
+  - id: fabris-immobiliare
+    name: fabris immobiliare
+    kind: agenzia
+    website: https://www.fabrisimmobiliaretrieste.it/
+    adapter: d1_fabris
+    delay: 1.0
+    base_url: "https://www.fabrisimmobiliaretrieste.it"
+
+  - id: immobiliare-meta
+    name: Immobiliare Meta
+    kind: agenzia
+    website: https://www.immobilmeta.it/
+    adapter: generic
+    delay: 1.0
+    start_urls: ["https://www.immobilmeta.it/immobili-trieste"]
+    page_template: "https://www.immobilmeta.it/immobili-trieste/?page={n}"
+    page_start: 1
+    max_pages: 8
+    link_regex: '^https://www\.immobilmeta\.it/immobili-trieste/[a-z0-9-]+$'
+    require_regex: 'rel="tag">Vendita</a>'
+
+  - id: tirabora-lusso
+    name: Tirabora Lusso
+    kind: agenzia
+    website: https://www.lusso.casa/
+    adapter: d1_tirabora
+    delay: 1.0
+    base_url: "https://www.lusso.casa"
+    max_pages: 10
+
   - id: studio-39
     name: Studio 39 di Tommaseo Srl
     kind: agenzia
