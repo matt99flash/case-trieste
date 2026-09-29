@@ -1,10 +1,84 @@
 {
+"androna campo marzio 7|trieste": [
+45.64344,
+13.75763
+],
 "androna campo marzio 9|trieste": [
 45.64333,
 13.75773
 ],
+"campo metastasio 2|trieste": [
+45.62439,
+13.80744
+],
 "corso italia 22, gorizia|trieste": null,
+"corso saba|trieste": [
+45.64901,
+13.7777
+],
+"localita aurisina|duino-aurisina": [
+45.75017,
+13.67084
+],
+"localita basovizza|trieste": [
+45.64368,
+13.86604
+],
+"localita sales|sgonico": [
+45.74685,
+13.73078
+],
+"monrupino frazione zolla 60|trieste": null,
+"piazza dalmazia 3|trieste": [
+45.65498,
+13.77579
+],
+"piazza garibaldi, 10|trieste": [
+45.64612,
+13.78116
+],
+"piazza guglielmo oberdan|trieste": [
+45.65447,
+13.7763
+],
+"piazza liberta 1 turriaco|trieste": null,
+"strada costiera|trieste": [
+45.70699,
+13.71595
+],
+"strada del friuli 124/4|trieste": [
+45.67882,
+13.76124
+],
+"strada per longera|trieste": [
+45.63881,
+13.83246
+],
 "trieste, salita di gretta 13|trieste": null,
+"via alessandro la marmora|trieste": [
+45.64053,
+13.79643
+],
+"via antonino di peco|trieste": [
+45.62273,
+13.82885
+],
+"via artemisio|trieste": [
+45.66111,
+13.79978
+],
+"via beirut|trieste": [
+45.70553,
+13.71718
+],
+"via bellosguardo 58|trieste": [
+45.64288,
+13.76816
+],
+"via benedetto marcello|trieste": [
+45.64637,
+13.76712
+],
 "via besenghi 23|trieste": [
 45.64344,
 13.77301
@@ -13,18 +87,201 @@
 45.65022,
 13.78605
 ],
+"via calderai|muggia": [
+45.59724,
+13.77686
+],
 "via capitolina 3/1|trieste": [
 45.64661,
 13.77715
+],
+"via capodistria|trieste": [
+45.62966,
+13.78356
+],
+"via cappello 7/1|trieste": [
+45.64525,
+13.76853
+],
+"via capuano|trieste": [
+45.64577,
+13.76533
+],
+"via carducci 8/c|duino-aurisina": null,
+"via carducci 8/c|san dorligo della valle": null,
+"via carducci 8/c|trieste": [
+45.64931,
+13.77817
+],
+"via carsia|trieste": [
+45.68794,
+13.77516
+],
+"via chiadino 13/1|trieste": [
+45.64941,
+13.79131
+],
+"via cologna, 11|trieste": [
+45.65462,
+13.78669
+],
+"via degli artisti 3|trieste": [
+45.64918,
+13.77293
+],
+"via dei capuano|trieste": [
+45.64577,
+13.76533
+],
+"via dei navali|trieste": [
+45.64187,
+13.77241
+],
+"via dei piccardi, 47|trieste": [
+45.64274,
+13.79022
+],
+"via dei porta|trieste": [
+45.64805,
+13.79137
+],
+"via del caprile, 4|trieste": [
+45.66666,
+13.77594
+],
+"via del lloyd|trieste": [
+45.63814,
+13.76906
+],
+"via del pucino|trieste": [
+45.71672,
+13.7064
+],
+"via del ricreatorio, 48/2|trieste": [
+45.68268,
+13.78912
+],
+"via del teatro 4|trieste": [
+45.6501,
+13.76912
+],
+"via del teatro romano 16|trieste": [
+45.64877,
+13.77065
+],
+"via del teatro|trieste": [
+45.65015,
+13.76895
+],
+"via dell'industria|trieste": [
+45.64139,
+13.77831
+],
+"via delle fiamme gialle 8|trieste": [
+45.63908,
+13.76269
+],
+"via domenico rossetti, 84|trieste": [
+45.64059,
+13.7945
+],
+"via donadoni|trieste": [
+45.64456,
+13.78735
+],
+"via fabio severo|trieste": [
+45.66122,
+13.7921
+],
+"via ferruccio suppan|trieste": [
+45.62818,
+13.8151
+],
+"via flavia di stramare|muggia": [
+45.58779,
+13.80281
+],
+"via frausin|trieste": [
+45.64368,
+13.77803
+],
+"via giovanni pascoli, 41|trieste": [
+45.6478,
+13.78664
+],
+"via giovanni pierluigi da palestrina|trieste": null,
+"via giulia|trieste": [
+45.65475,
+13.79001
+],
+"via giustinelli|trieste": [
+45.64561,
+13.76682
+],
+"via guglielmo marconi|trieste": [
+45.65495,
+13.78416
+],
+"via marcello 2|trieste": [
+45.64636,
+13.76728
+],
+"via marcello 4|trieste": [
+45.64624,
+13.76709
+],
+"via marco polo 5|trieste": [
+45.64274,
+13.77412
+],
+"via michelangelo buonarroti|trieste": [
+45.65035,
+13.78756
+],
+"via milano|trieste": [
+45.65434,
+13.77192
+],
+"via molino a vapore, 3|trieste": [
+45.64624,
+13.77843
 ],
 "via molino a vento 158|trieste": [
 45.63758,
 13.78774
 ],
+"via monte peralba, 15|trieste": [
+45.62777,
+13.81923
+],
 "via montecchi 6|trieste": null,
+"via pietro kandler|trieste": [
+45.6551,
+13.78857
+],
+"via rossetti|trieste": [
+45.64417,
+13.79012
+],
 "via san francesco 40|trieste": [
 45.65419,
 13.78114
+],
+"via san marco|trieste": [
+45.638,
+13.77142
+],
+"via san michele|trieste": [
+45.64587,
+13.77031
+],
+"via san nicolo 14|trieste": [
+45.65094,
+13.77119
+],
+"via san nicolo 9|trieste": [
+45.65093,
+13.77063
 ],
 "via san vito 4|trieste": [
 45.6452,
@@ -34,8 +291,47 @@
 45.65682,
 13.77431
 ],
+"via srecko kosovel, 29|trieste": [
+45.64357,
+13.86307
+],
+"via timignano|trieste": [
+45.65336,
+13.81023
+],
+"via timmel|trieste": [
+45.64269,
+13.80518
+],
+"via tolmezzo 11|trieste": [
+45.66817,
+13.76353
+],
+"via tonello|trieste": [
+45.63967,
+13.77037
+],
+"via toti|trieste": [
+45.64614,
+13.77905
+],
+"via trenta ottobre 19|trieste": [
+45.65363,
+13.77562
+],
+"viale miramare|trieste": [
+45.66822,
+13.76079
+],
 "viale raffaello sanzio 16|trieste": [
 45.65521,
 13.80017
-]
+],
+"vicolo delle rose|trieste": [
+45.66828,
+13.78047
+],
+"|monrupino": null,
+"|muggia": null,
+"|trieste": null
 }
