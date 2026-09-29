@@ -1,9 +1,9 @@
 {
- "updated": "2026-09-29T05:23:12+00:00",
+ "updated": "2026-09-29T07:25:13+00:00",
  "sources": {
   "palazzo-haggi": {
    "name": "Palazzo Haggi (San Vito)",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 5,
    "stats": {
     "requests": 1,
@@ -12,7 +12,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -21,7 +21,7 @@
   },
   "subito-privati": {
    "name": "Subito.it – privati",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 66,
    "stats": {
     "requests": 3,
@@ -30,7 +30,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -39,7 +39,7 @@
   },
   "toro-costruzioni": {
    "name": "Toro Costruzioni",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 4,
    "stats": {
     "requests": 8,
@@ -48,7 +48,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -57,7 +57,7 @@
   },
   "cantieri-tirabora": {
    "name": "Cantieri Tirabora (nuove costruzioni)",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 21,
    "stats": {
     "requests": 22,
@@ -66,7 +66,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -75,7 +75,7 @@
   },
   "doveit": {
    "name": "Dove.it",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 0,
    "stats": {
     "requests": 1,
@@ -84,7 +84,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -93,7 +93,7 @@
   },
   "gabetti": {
    "name": "Gabetti Trieste",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 15,
    "stats": {
     "requests": 2,
@@ -102,7 +102,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -111,7 +111,7 @@
   },
   "engelvoelkers": {
    "name": "Engel & Völkers Trieste",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 11,
    "stats": {
     "requests": 1,
@@ -120,7 +120,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -129,7 +129,7 @@
   },
   "limmobiliare": {
    "name": "L'Immobiliare.com Trieste (Di Casa in Casa)",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 13,
    "stats": {
     "requests": 4,
@@ -138,7 +138,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -147,16 +147,16 @@
   },
   "remax": {
    "name": "RE/MAX Enterprise Trieste",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 31,
    "stats": {
     "requests": 2,
-    "seconds": 4,
+    "seconds": 3,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -165,7 +165,7 @@
   },
   "tecnocasa": {
    "name": "Tecnocasa (13 agenzie in provincia)",
-   "last_run": "2026-09-29T05:23:12+00:00",
+   "last_run": "2026-09-29T07:25:13+00:00",
    "last_count": 61,
    "stats": {
     "requests": 7,
@@ -174,12 +174,48 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-09-29T05:23:12+00:00",
+   "last_ok": "2026-09-29T07:25:13+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
    "kind": "agenzia",
    "website": "https://www.tecnocasa.it/annunci/immobili/friuli-venezia-giulia/trieste.html"
+  },
+  "rn-immobiliare": {
+   "name": "Morgan srl / RN Immobiliare",
+   "last_run": "2026-09-29T07:25:13+00:00",
+   "last_count": 6,
+   "stats": {
+    "requests": 1,
+    "seconds": 1,
+    "outside": 0,
+    "details": 0,
+    "partial_errors": 0
+   },
+   "last_ok": "2026-09-29T07:25:13+00:00",
+   "first_ok": "2026-09-29T07:25:13+00:00",
+   "last_error": null,
+   "fail_streak": 0,
+   "kind": "agenzia",
+   "website": "https://www.rnimmobiliare.com"
+  },
+  "universalcasa-ts": {
+   "name": "Universalcasa",
+   "last_run": "2026-09-29T07:25:13+00:00",
+   "last_count": 2,
+   "stats": {
+    "requests": 5,
+    "seconds": 5,
+    "outside": 0,
+    "details": 2,
+    "partial_errors": 0
+   },
+   "last_ok": "2026-09-29T07:25:13+00:00",
+   "first_ok": "2026-09-29T07:25:13+00:00",
+   "last_error": null,
+   "fail_streak": 0,
+   "kind": "agenzia",
+   "website": "https://www.universalcasats.it/"
   }
  }
 }
