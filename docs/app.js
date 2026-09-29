@@ -196,7 +196,14 @@ function card(h) {
     </div></article>`;
 }
 
+function syncSort() {
+  document.querySelectorAll(".sort-top").forEach(el => { el.value = F.sort; });
+  const f = $("#filter-form");
+  if (f) f.elements.sort.value = F.sort;
+}
+
 function renderGrid() {
+  syncSort();
   const list = sortHouses(houses(F.removed).filter(matchHouse));
   $("#count").textContent = `${list.length.toLocaleString("it-IT")} immobili corrispondono ai filtri`;
   $("#grid").innerHTML = list.length ? list.slice(0, S.shown).map(card).join("") : `<div class="empty">Nessun immobile con questi filtri.</div>`;
@@ -239,7 +246,8 @@ function renderEvents() {
 }
 
 function renderFavs() {
-  const list = houses(true).filter(h => S.favs.has(h.gid));
+  syncSort();
+  const list = sortHouses(houses(true).filter(h => S.favs.has(h.gid)));
   $("#favs").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">Tocca ★ su un annuncio per salvarlo qui. I preferiti restano su questo dispositivo.</div>`;
   $("#fav-count").textContent = S.favs.size || "";
 }
@@ -468,6 +476,9 @@ function bind() {
   let t;
   $("#filter-form").addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { readForm(); S.shown = 60; render(); }, 200); });
   $("#reset").addEventListener("click", () => { F = { ...DEFAULT_F }; store.set("filters", F); buildFilters(); render(); });
+  document.querySelectorAll(".sort-top").forEach(el => el.addEventListener("change", e => {
+    F.sort = e.target.value; store.set("filters", F); S.shown = 60; syncSort(); render();
+  }));
   $("#filters-toggle").addEventListener("click", e => {
     const open = $("#filters").classList.toggle("open");
     e.currentTarget.setAttribute("aria-expanded", open);

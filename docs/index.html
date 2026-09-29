@@ -46,8 +46,8 @@
       <label class="field">Ordina per
         <select name="sort">
           <option value="recent">Più recenti</option>
-          <option value="price_asc">Prezzo crescente</option>
-          <option value="price_desc">Prezzo decrescente</option>
+          <option value="price_asc">Prezzo: dal più basso</option>
+          <option value="price_desc">Prezzo: dal più alto</option>
           <option value="ppm_asc">€/mq più basso</option>
           <option value="mq_desc">Più grandi</option>
           <option value="drop">Maggior ribasso</option>
@@ -76,7 +76,17 @@
       <div id="events"></div>
     </section>
     <section id="tab-annunci" class="tab" hidden>
-      <div class="bar"><p id="count" class="muted"></p></div>
+      <div class="bar"><p id="count" class="muted"></p>
+        <label class="inline sortbox">Ordina per
+          <select class="sort-top" aria-label="Ordina per">
+            <option value="recent">Più recenti</option>
+            <option value="price_asc">Prezzo: dal più basso</option>
+            <option value="price_desc">Prezzo: dal più alto</option>
+            <option value="ppm_asc">€/mq più basso</option>
+            <option value="mq_desc">Più grandi</option>
+            <option value="drop">Maggior ribasso</option>
+          </select>
+        </label></div>
       <div id="grid" class="grid"></div>
       <div class="more-wrap"><button id="more" class="btn" hidden>Mostra altri</button></div>
     </section>
@@ -85,6 +95,17 @@
       <div id="map"></div>
     </section>
     <section id="tab-preferiti" class="tab" hidden>
+      <div class="bar"><p class="muted small">I preferiti restano salvati su questo dispositivo.</p>
+        <label class="inline sortbox">Ordina per
+          <select class="sort-top" aria-label="Ordina per">
+            <option value="recent">Più recenti</option>
+            <option value="price_asc">Prezzo: dal più basso</option>
+            <option value="price_desc">Prezzo: dal più alto</option>
+            <option value="ppm_asc">€/mq più basso</option>
+            <option value="mq_desc">Più grandi</option>
+            <option value="drop">Maggior ribasso</option>
+          </select>
+        </label></div>
       <div id="favs" class="grid"></div>
     </section>
     <section id="tab-notifiche" class="tab" hidden>

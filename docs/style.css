@@ -107,6 +107,8 @@ input:focus-visible, select:focus-visible, button:focus-visible, .chip:focus-wit
 .bar p { margin: 0; }
 .inline { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); }
 .inline select { width: auto; }
+.sortbox { margin-left: auto; }
+.sortbox select { font-weight: 600; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
 .card {
