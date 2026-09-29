@@ -7,15 +7,31 @@
 45.64333,
 13.75773
 ],
+"androna san cilino, 28, 34100 trieste ts|trieste": [
+45.65608,
+13.79575
+],
+"appartamento in via del crocifisso 5|trieste": null,
+"attico su due piani in via besenghi 19|trieste": null,
 "campo metastasio 2|trieste": [
 45.62439,
 13.80744
 ],
 "corso italia 22, gorizia|trieste": null,
+"corso saba 3|trieste": [
+45.64906,
+13.77754
+],
 "corso saba|trieste": [
 45.64901,
 13.7777
 ],
+"largo a. roiano, 3/1|trieste": [
+45.6634,
+13.77015
+],
+"localita aurisina cave, 25/u|duino-aurisina": null,
+"localita aurisina cave, 68/a|duino-aurisina": null,
 "localita aurisina|duino-aurisina": [
 45.75017,
 13.67084
@@ -28,10 +44,26 @@
 45.74685,
 13.73078
 ],
+"localita' santa croce, 268|trieste": [
+45.72597,
+13.69124
+],
 "monrupino frazione zolla 60|trieste": null,
+"piazza carlo alberto, 11|trieste": [
+45.64213,
+13.7554
+],
 "piazza dalmazia 3|trieste": [
 45.65498,
 13.77579
+],
+"piazza della borsa|trieste": [
+45.65027,
+13.77043
+],
+"piazza della valle, 1|trieste": [
+45.64653,
+13.76871
 ],
 "piazza garibaldi, 10|trieste": [
 45.64612,
@@ -42,6 +74,18 @@
 13.7763
 ],
 "piazza liberta 1 turriaco|trieste": null,
+"salita di gretta 15|trieste": [
+45.66581,
+13.76708
+],
+"scala santa 182|trieste": [
+45.6732,
+13.77457
+],
+"strada costiera, 234|trieste": [
+45.73231,
+13.68312
+],
 "strada costiera|trieste": [
 45.70699,
 13.71595
@@ -49,6 +93,15 @@
 "strada del friuli 124/4|trieste": [
 45.67882,
 13.76124
+],
+"strada per lazzaretto 2|muggia": null,
+"strada per lazzaretto 5|muggia": [
+45.60691,
+13.75568
+],
+"strada per longera, 66, trieste ts|trieste": [
+45.65165,
+13.81251
 ],
 "strada per longera|trieste": [
 45.63881,
@@ -59,6 +112,10 @@
 45.64053,
 13.79643
 ],
+"via angelo emo, 35|trieste": [
+45.64145,
+13.77495
+],
 "via antonino di peco|trieste": [
 45.62273,
 13.82885
@@ -66,6 +123,10 @@
 "via artemisio|trieste": [
 45.66111,
 13.79978
+],
+"via beirut, 9|trieste": [
+45.70419,
+13.71983
 ],
 "via beirut|trieste": [
 45.70553,
@@ -75,6 +136,14 @@
 45.64288,
 13.76816
 ],
+"via belpoggio 1|trieste": [
+45.64536,
+13.75968
+],
+"via benedetto marcello, 4|trieste": [
+45.64624,
+13.76709
+],
 "via benedetto marcello|trieste": [
 45.64637,
 13.76712
@@ -83,6 +152,10 @@
 45.64344,
 13.77301
 ],
+"via bruno zelik, 3|trieste": [
+45.66423,
+13.77696
+],
 "via buonarroti 14|trieste": [
 45.65022,
 13.78605
@@ -90,6 +163,10 @@
 "via calderai|muggia": [
 45.59724,
 13.77686
+],
+"via cantu'|trieste": [
+45.66056,
+13.78632
 ],
 "via capitolina 3/1|trieste": [
 45.64661,
@@ -113,6 +190,7 @@
 45.64931,
 13.77817
 ],
+"via carlo e gian stuparich 19|trieste": null,
 "via carsia|trieste": [
 45.68794,
 13.77516
@@ -121,17 +199,62 @@
 45.64941,
 13.79131
 ],
+"via chiadino|trieste": [
+45.64905,
+13.78919
+],
 "via cologna, 11|trieste": [
 45.65462,
 13.78669
+],
+"via colombara di vignano, 6, muggia ts|muggia": [
+45.58598,
+13.80299
+],
+"via combi, 7, 34100 trieste ts|trieste": [
+45.64196,
+13.76368
+],
+"via conti, 11/3|trieste": [
+45.64397,
+13.78568
+],
+"via corti, 2|muggia": null,
+"via costantino cumano, 2, 34100 trieste ts|trieste": [
+45.63966,
+13.79642
+],
+"via costantino cumano, 2, trieste ts|trieste": [
+45.63966,
+13.79642
+],
+"via crispi, 46, trieste ts|trieste": [
+45.65178,
+13.78286
+],
+"via crispi, 8|trieste": [
+45.65098,
+13.77856
+],
+"via de coletti, 1|trieste": [
+45.63793,
+13.76825
 ],
 "via degli artisti 3|trieste": [
 45.64918,
 13.77293
 ],
+"via dei baiardi 118|trieste": [
+45.66799,
+13.79643
+],
 "via dei capuano|trieste": [
 45.64577,
 13.76533
+],
+"via dei mirissa|trieste": [
+45.63474,
+13.80611
 ],
 "via dei navali|trieste": [
 45.64187,
@@ -148,6 +271,19 @@
 "via del caprile, 4|trieste": [
 45.66666,
 13.77594
+],
+"via del castello 2|trieste": [
+45.64721,
+13.7707
+],
+"via del farnetello, 25, trieste ts|trieste": [
+45.65074,
+13.80887
+],
+"via del lazzaretto vecchio 3|muggia": null,
+"via del lloyd, 2|trieste": [
+45.63786,
+13.76876
 ],
 "via del lloyd|trieste": [
 45.63814,
@@ -173,6 +309,7 @@
 45.65015,
 13.76895
 ],
+"via dell'hermada|trieste": null,
 "via dell'industria|trieste": [
 45.64139,
 13.77831
@@ -181,6 +318,27 @@
 45.63908,
 13.76269
 ],
+"via dello scoglio, 137, trieste ts|trieste": null,
+"via di cavana, 15|trieste": [
+45.64739,
+13.7656
+],
+"via di mercato vecchio|trieste": [
+45.64968,
+13.76625
+],
+"via di noghere, 94|muggia": [
+45.59876,
+13.80505
+],
+"via di noghere|muggia": [
+45.59886,
+13.80532
+],
+"via di scorcola 2|trieste": [
+45.65738,
+13.77748
+],
 "via domenico rossetti, 84|trieste": [
 45.64059,
 13.7945
@@ -188,6 +346,14 @@
 "via donadoni|trieste": [
 45.64456,
 13.78735
+],
+"via fabio severo, 138, 34100 trieste ts|trieste": [
+45.65967,
+13.79105
+],
+"via fabio severo, 4, 34100 trieste ts|trieste": [
+45.65578,
+13.77915
 ],
 "via fabio severo|trieste": [
 45.66122,
@@ -201,18 +367,32 @@
 45.58779,
 13.80281
 ],
+"via fra' pace da vedano|trieste": [
+45.6464,
+13.7946
+],
 "via frausin|trieste": [
 45.64368,
 13.77803
 ],
+"via frescobaldi 25 trieste trieste italy|trieste": null,
+"via g.grimani , 42|trieste": null,
 "via giovanni pascoli, 41|trieste": [
 45.6478,
 13.78664
 ],
 "via giovanni pierluigi da palestrina|trieste": null,
+"via giulia, 12, 34126 trieste ts|trieste": [
+45.65417,
+13.78704
+],
 "via giulia|trieste": [
 45.65475,
 13.79001
+],
+"via giustinelli, 13|trieste": [
+45.64542,
+13.76635
 ],
 "via giustinelli|trieste": [
 45.64561,
@@ -221,6 +401,14 @@
 "via guglielmo marconi|trieste": [
 45.65495,
 13.78416
+],
+"via illersberg, 7, 34100 trieste ts|trieste": [
+45.68159,
+13.75596
+],
+"via madonnina, 14, 34100 trieste ts|trieste": [
+45.64627,
+13.77809
 ],
 "via marcello 2|trieste": [
 45.64636,
@@ -233,6 +421,11 @@
 "via marco polo 5|trieste": [
 45.64274,
 13.77412
+],
+"via marco valerio marziale, 23|trieste": null,
+"via martiri della liberta, 6|trieste": [
+45.65599,
+13.77554
 ],
 "via michelangelo buonarroti|trieste": [
 45.65035,
@@ -250,14 +443,46 @@
 45.63758,
 13.78774
 ],
+"via molino a vento|trieste": [
+45.64298,
+13.78301
+],
 "via monte peralba, 15|trieste": [
 45.62777,
 13.81923
 ],
+"via monte peralba|trieste": [
+45.6276,
+13.81913
+],
 "via montecchi 6|trieste": null,
+"via pasquale revoltella, 34|trieste": [
+45.64227,
+13.79167
+],
+"via patrizio , 4/1, 34100 trieste ts|trieste": [
+45.63658,
+13.79346
+],
+"via piccardi, 20, 34100 trieste ts|trieste": [
+45.64624,
+13.78754
+],
 "via pietro kandler|trieste": [
 45.6551,
 13.78857
+],
+"via rapicio, 6|trieste": [
+45.65346,
+13.78566
+],
+"via rittmeyer|trieste": [
+45.65638,
+13.77527
+],
+"via roma, 28, trieste ts|trieste": [
+45.65503,
+13.77365
 ],
 "via rossetti|trieste": [
 45.64417,
@@ -271,6 +496,10 @@
 45.638,
 13.77142
 ],
+"via san michele, 6|trieste": [
+45.6471,
+13.76893
+],
 "via san michele|trieste": [
 45.64587,
 13.77031
@@ -283,17 +512,33 @@
 45.65093,
 13.77063
 ],
+"via san nicolo'|trieste": [
+45.65083,
+13.77133
+],
 "via san vito 4|trieste": [
 45.6452,
 13.76778
+],
+"via sant anastasio|trieste": [
+45.65682,
+13.77431
 ],
 "via sant'anastasio|trieste": [
 45.65682,
 13.77431
 ],
+"via sottomonte 9|trieste": [
+45.66935,
+13.77615
+],
 "via srecko kosovel, 29|trieste": [
 45.64357,
 13.86307
+],
+"via stuparich, 2|trieste": [
+45.65055,
+13.78251
 ],
 "via timignano|trieste": [
 45.65336,
@@ -319,6 +564,38 @@
 45.65363,
 13.77562
 ],
+"via udine, 79, 34100 trieste ts|trieste": [
+45.66297,
+13.7711
+],
+"via valdirivo, 31, trieste ts|trieste": [
+45.65277,
+13.77545
+],
+"via virgilio|trieste": [
+45.65965,
+13.77679
+],
+"viale campi elisi, 36/c, trieste ts|trieste": [
+45.63856,
+13.76742
+],
+"viale campi elisi, 52|trieste": [
+45.6394,
+13.77168
+],
+"viale ippodromo, 10, 34100 trieste ts|trieste": [
+45.63984,
+13.79271
+],
+"viale miramare, 117|trieste": [
+45.6812,
+13.75334
+],
+"viale miramare, 31|trieste": [
+45.66263,
+13.76993
+],
 "viale miramare|trieste": [
 45.66822,
 13.76079
@@ -326,6 +603,10 @@
 "viale raffaello sanzio 16|trieste": [
 45.65521,
 13.80017
+],
+"viale xx settembre, 5|trieste": [
+45.65144,
+13.77845
 ],
 "vicolo delle rose|trieste": [
 45.66828,

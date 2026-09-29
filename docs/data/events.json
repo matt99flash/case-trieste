@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T08:14:12+00:00",
+ "updated": "2026-09-29T09:25:21+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -33,6 +33,13 @@
    "ts": "2026-09-29T05:23:12+00:00",
    "type": "removed",
    "id": "subito-privati:662526015",
+   "source": "subito-privati",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T09:25:21+00:00",
+   "type": "new",
+   "id": "subito-privati:662572622",
    "source": "subito-privati",
    "price": null
   }
