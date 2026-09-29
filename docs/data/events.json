@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T14:13:32+00:00",
+ "updated": "2026-09-29T15:26:15+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -543,6 +543,83 @@
    "id": "e1-hometrieste:21676",
    "source": "e1-hometrieste",
    "price": null
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "new",
+   "id": "tag-srl:083",
+   "source": "tag-srl",
+   "price": 165000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "new",
+   "id": "tag-srl:appartamento-vs4am",
+   "source": "tag-srl",
+   "price": 190000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "new",
+   "id": "tecnocasa:61277857",
+   "source": "tecnocasa",
+   "price": 325000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "removed",
+   "id": "urban-real-estate:via-conti-locale-daffari-ad-angolo",
+   "source": "urban-real-estate",
+   "price": 165000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "removed",
+   "id": "rigatti-immobiliare:san-vito-appartamento-con-giardino",
+   "source": "rigatti-immobiliare",
+   "price": 230000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "removed",
+   "id": "studio-immobiliare-84:aurisina-ente-6",
+   "source": "studio-immobiliare-84",
+   "price": 390000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "removed",
+   "id": "studio-immobiliare-84:aurisina-ente-8",
+   "source": "studio-immobiliare-84",
+   "price": 390000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "removed",
+   "id": "studio-immobiliare-84:aurisina-ente-9",
+   "source": "studio-immobiliare-84",
+   "price": 420000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "removed",
+   "id": "studio-immobiliare-84:bellini",
+   "source": "studio-immobiliare-84",
+   "price": 890000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "removed",
+   "id": "studio-immobiliare-84:dello-scoglio",
+   "source": "studio-immobiliare-84",
+   "price": 608000
+  },
+  {
+   "ts": "2026-09-29T15:26:15+00:00",
+   "type": "removed",
+   "id": "studio-immobiliare-84:localita-log-0",
+   "source": "studio-immobiliare-84",
+   "price": 375000
   }
  ]
 }
