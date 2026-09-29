@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T13:28:08+00:00",
+ "updated": "2026-09-29T14:13:32+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -344,6 +344,205 @@
    "id": "mab-immobiliare:villa-unifamiliare-in-costiera",
    "source": "mab-immobiliare",
    "price": 1200000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "price_up",
+   "id": "palazzo-haggi:palazzo-haggi-4-113",
+   "source": "palazzo-haggi",
+   "old_price": 575000,
+   "price": 585000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "price_up",
+   "id": "palazzo-haggi:palazzo-haggi-8-120",
+   "source": "palazzo-haggi",
+   "old_price": 650000,
+   "price": 670000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "price_up",
+   "id": "palazzo-haggi:palazzo-haggi-9-127",
+   "source": "palazzo-haggi",
+   "old_price": 625000,
+   "price": 680000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "removed",
+   "id": "b1-antica-trieste:trebiciano-villa-a-schiera",
+   "source": "b1-antica-trieste",
+   "price": 518000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "b1-hab:attico-cologna-universita",
+   "source": "b1-hab",
+   "price": 450000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "b1-hab:capannone-zona-industriale-con-terreno",
+   "source": "b1-hab",
+   "price": 350000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "b1-hab:ristorante-in-centro-storico",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "b1-hab:attico-cologna-universita-2",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "b1-hab:posto-auto-park-san-giusto",
+   "source": "b1-hab",
+   "price": 60000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "casaffari-lozei:casetta-appartamento-ex-locale",
+   "source": "casaffari-lozei",
+   "price": null
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "immobiliare-rossetti:519597",
+   "source": "immobiliare-rossetti",
+   "price": 320000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:piazza-parugino",
+   "source": "studio-immobiliare-84",
+   "price": 35000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:san-francesco",
+   "source": "studio-immobiliare-84",
+   "price": 55000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:dei-gradi",
+   "source": "studio-immobiliare-84",
+   "price": 59000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:colombo",
+   "source": "studio-immobiliare-84",
+   "price": 95000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:revoltella",
+   "source": "studio-immobiliare-84",
+   "price": 120000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:conti",
+   "source": "studio-immobiliare-84",
+   "price": 129000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:piazza-garibaldi",
+   "source": "studio-immobiliare-84",
+   "price": 129000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:del-farneto",
+   "source": "studio-immobiliare-84",
+   "price": 135000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:gallesano-galizana",
+   "source": "studio-immobiliare-84",
+   "price": 250000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:221",
+   "source": "imobilia-trieste",
+   "price": 260000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:220",
+   "source": "imobilia-trieste",
+   "price": 5000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:219",
+   "source": "imobilia-trieste",
+   "price": 38000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:218",
+   "source": "imobilia-trieste",
+   "price": 160000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:208",
+   "source": "imobilia-trieste",
+   "price": 108000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:188",
+   "source": "imobilia-trieste",
+   "price": 264000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:163",
+   "source": "imobilia-trieste",
+   "price": 219000
+  },
+  {
+   "ts": "2026-09-29T14:13:32+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21676",
+   "source": "e1-hometrieste",
+   "price": null
   }
  ]
 }
