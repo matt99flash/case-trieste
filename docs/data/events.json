@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T13:26:38+00:00",
+ "updated": "2026-09-30T15:27:49+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1063,6 +1063,27 @@
    "id": "bg-real-estate:625",
    "source": "bg-real-estate",
    "price": 550000
+  },
+  {
+   "ts": "2026-09-30T15:27:49+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2467",
+   "source": "tirabora-immobiliare",
+   "price": 630000
+  },
+  {
+   "ts": "2026-09-30T15:27:49+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2471",
+   "source": "tirabora-immobiliare",
+   "price": 330000
+  },
+  {
+   "ts": "2026-09-30T15:27:49+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2472",
+   "source": "tirabora-immobiliare",
+   "price": 300000
   }
  ]
 }
