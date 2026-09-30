@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T05:24:24+00:00",
+ "updated": "2026-09-30T07:26:33+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -824,6 +824,90 @@
    "id": "immobiliare-4b:193783665",
    "source": "immobiliare-4b",
    "price": 100000
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "new",
+   "id": "subito-privati:662696603",
+   "source": "subito-privati",
+   "price": null
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "back",
+   "id": "tag-srl:360",
+   "source": "tag-srl",
+   "price": 50000
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "removed",
+   "id": "tecnocasa:61221689",
+   "source": "tecnocasa",
+   "price": 385000
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "back",
+   "id": "b1-hab:attico-cologna-universita",
+   "source": "b1-hab",
+   "price": 450000
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "back",
+   "id": "b1-hab:casa-hoffe-sappada",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "back",
+   "id": "b1-hab:capannone-zona-industriale-con-terreno",
+   "source": "b1-hab",
+   "price": 350000
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "back",
+   "id": "b1-hab:ristorante-in-centro-storico",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "back",
+   "id": "b1-hab:attico-cologna-universita-2",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "back",
+   "id": "b1-hab:posto-auto-park-san-giusto",
+   "source": "b1-hab",
+   "price": 60000
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "removed",
+   "id": "b1-selling-trieste:trilocale-via-conti-trieste",
+   "source": "b1-selling-trieste",
+   "price": 308000
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "removed",
+   "id": "gallery-immobiliare:193777892",
+   "source": "gallery-immobiliare",
+   "price": 97000
+  },
+  {
+   "ts": "2026-09-30T07:26:33+00:00",
+   "type": "removed",
+   "id": "immobiliare-4b:193770834",
+   "source": "immobiliare-4b",
+   "price": 23000
   }
  ]
 }
