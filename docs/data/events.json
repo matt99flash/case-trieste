@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T19:24:25+00:00",
+ "updated": "2026-09-30T21:24:11+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1105,6 +1105,21 @@
    "id": "trieste-villas:0045",
    "source": "trieste-villas",
    "price": 2000000
+  },
+  {
+   "ts": "2026-09-30T21:24:11+00:00",
+   "type": "price_down",
+   "id": "subito-privati:633834375",
+   "source": "subito-privati",
+   "old_price": 640000,
+   "price": 630000
+  },
+  {
+   "ts": "2026-09-30T21:24:11+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-franca-2",
+   "source": "noidonne-immobiliare",
+   "price": null
   }
  ]
 }
