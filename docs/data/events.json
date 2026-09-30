@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T11:22:34+00:00",
+ "updated": "2026-09-30T13:26:38+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1034,6 +1034,35 @@
    "id": "e1-hometrieste:21448",
    "source": "e1-hometrieste",
    "price": 295000
+  },
+  {
+   "ts": "2026-09-30T13:26:38+00:00",
+   "type": "price_up",
+   "id": "palazzo-haggi:palazzo-haggi-5-97",
+   "source": "palazzo-haggi",
+   "old_price": 460000,
+   "price": 470000
+  },
+  {
+   "ts": "2026-09-30T13:26:38+00:00",
+   "type": "back",
+   "id": "tag-srl:123",
+   "source": "tag-srl",
+   "price": 470000
+  },
+  {
+   "ts": "2026-09-30T13:26:38+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-09-30T13:26:38+00:00",
+   "type": "new",
+   "id": "bg-real-estate:625",
+   "source": "bg-real-estate",
+   "price": 550000
   }
  ]
 }
