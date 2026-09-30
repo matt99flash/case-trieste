@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T09:24:35+00:00",
+ "updated": "2026-09-30T11:22:34+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -957,6 +957,83 @@
    "id": "tirabora-immobiliare:2545",
    "source": "tirabora-immobiliare",
    "price": 207000
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "removed",
+   "id": "remax:31431029-4",
+   "source": "remax",
+   "price": 269000
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "removed",
+   "id": "remax:33641024-61",
+   "source": "remax",
+   "price": 199000
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "removed",
+   "id": "subito-privati:662696603",
+   "source": "subito-privati",
+   "price": null
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "back",
+   "id": "tag-srl:174",
+   "source": "tag-srl",
+   "price": null
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "removed",
+   "id": "tag-srl:123",
+   "source": "tag-srl",
+   "price": 470000
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "back",
+   "id": "tecnocasa:61221689",
+   "source": "tecnocasa",
+   "price": 385000
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "new",
+   "id": "tecnocasa:61278559",
+   "source": "tecnocasa",
+   "price": 85000
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "removed",
+   "id": "calcara-immobiliare:appartamento-con-giardino-via-crispi",
+   "source": "calcara-immobiliare",
+   "price": 350000
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "removed",
+   "id": "pozzecco-immobiliare:zona-grignano-appartamento-in-casa-bifamiliare-con-ingresso-indipendente-e-giard",
+   "source": "pozzecco-immobiliare",
+   "price": 370000
+  },
+  {
+   "ts": "2026-09-30T11:22:34+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21448",
+   "source": "e1-hometrieste",
+   "price": 295000
   }
  ]
 }
