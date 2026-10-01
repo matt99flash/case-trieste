@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T21:24:11+00:00",
+ "updated": "2026-10-01T05:23:59+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1120,6 +1120,20 @@
    "id": "noidonne-immobiliare:via-franca-2",
    "source": "noidonne-immobiliare",
    "price": null
+  },
+  {
+   "ts": "2026-10-01T05:23:59+00:00",
+   "type": "new",
+   "id": "gallery-immobiliare:191036017",
+   "source": "gallery-immobiliare",
+   "price": 185000
+  },
+  {
+   "ts": "2026-10-01T05:23:59+00:00",
+   "type": "new",
+   "id": "gallery-immobiliare:193748760",
+   "source": "gallery-immobiliare",
+   "price": 375000
   }
  ]
 }
