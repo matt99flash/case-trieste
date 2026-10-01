@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T13:28:58+00:00",
+ "updated": "2026-10-01T15:26:00+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1260,6 +1260,28 @@
    "id": "andrea-oliva:756",
    "source": "andrea-oliva",
    "price": 155000
+  },
+  {
+   "ts": "2026-10-01T15:26:00+00:00",
+   "type": "price_down",
+   "id": "tecnocasa:61221689",
+   "source": "tecnocasa",
+   "old_price": 385000,
+   "price": 345000
+  },
+  {
+   "ts": "2026-10-01T15:26:00+00:00",
+   "type": "new",
+   "id": "b1-contatti-immobiliari:universita-san-giovanni",
+   "source": "b1-contatti-immobiliari",
+   "price": 750000
+  },
+  {
+   "ts": "2026-10-01T15:26:00+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21738",
+   "source": "e1-hometrieste",
+   "price": 130000
   }
  ]
 }
