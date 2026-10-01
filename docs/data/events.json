@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T09:25:50+00:00",
+ "updated": "2026-10-01T11:24:10+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1197,6 +1197,48 @@
    "id": "tirabora-immobiliare:2511",
    "source": "tirabora-immobiliare",
    "price": null
+  },
+  {
+   "ts": "2026-10-01T11:24:10+00:00",
+   "type": "new",
+   "id": "trieste-villas:appartamento-con-terrazza-a-barcola-25",
+   "source": "trieste-villas",
+   "price": 585000
+  },
+  {
+   "ts": "2026-10-01T11:24:10+00:00",
+   "type": "removed",
+   "id": "imobilia-trieste:163",
+   "source": "imobilia-trieste",
+   "price": 219000
+  },
+  {
+   "ts": "2026-10-01T11:24:10+00:00",
+   "type": "removed",
+   "id": "imobilia-trieste:176",
+   "source": "imobilia-trieste",
+   "price": 174000
+  },
+  {
+   "ts": "2026-10-01T11:24:10+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21782",
+   "source": "e1-hometrieste",
+   "price": 250000
+  },
+  {
+   "ts": "2026-10-01T11:24:10+00:00",
+   "type": "new",
+   "id": "studio-39:1041",
+   "source": "studio-39",
+   "price": 320000
+  },
+  {
+   "ts": "2026-10-01T11:24:10+00:00",
+   "type": "new",
+   "id": "studio-39:1040",
+   "source": "studio-39",
+   "price": 320000
   }
  ]
 }
