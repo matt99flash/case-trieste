@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T07:26:53+00:00",
+ "updated": "2026-10-01T09:25:50+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1141,6 +1141,62 @@
    "id": "remax:33641022-4779",
    "source": "remax",
    "price": 230000
+  },
+  {
+   "ts": "2026-10-01T09:25:50+00:00",
+   "type": "new",
+   "id": "subito-privati:662836194",
+   "source": "subito-privati",
+   "price": 150000
+  },
+  {
+   "ts": "2026-10-01T09:25:50+00:00",
+   "type": "new",
+   "id": "cantieri-tirabora:viale-miramare-9",
+   "source": "cantieri-tirabora",
+   "price": 111000
+  },
+  {
+   "ts": "2026-10-01T09:25:50+00:00",
+   "type": "new",
+   "id": "b1-paradisi:miramare75-ampiotrilocaleristrutturatoconscorciomare",
+   "source": "b1-paradisi",
+   "price": 296000
+  },
+  {
+   "ts": "2026-10-01T09:25:50+00:00",
+   "type": "removed",
+   "id": "andrea-oliva:716",
+   "source": "andrea-oliva",
+   "price": 4750000
+  },
+  {
+   "ts": "2026-10-01T09:25:50+00:00",
+   "type": "removed",
+   "id": "andrea-oliva:881",
+   "source": "andrea-oliva",
+   "price": 330000
+  },
+  {
+   "ts": "2026-10-01T09:25:50+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:227",
+   "source": "imobilia-trieste",
+   "price": 295000
+  },
+  {
+   "ts": "2026-10-01T09:25:50+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:226",
+   "source": "imobilia-trieste",
+   "price": 185000
+  },
+  {
+   "ts": "2026-10-01T09:25:50+00:00",
+   "type": "new",
+   "id": "tirabora-immobiliare:2511",
+   "source": "tirabora-immobiliare",
+   "price": null
   }
  ]
 }
