@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T11:24:10+00:00",
+ "updated": "2026-10-01T13:28:58+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1239,6 +1239,27 @@
    "id": "studio-39:1040",
    "source": "studio-39",
    "price": 320000
+  },
+  {
+   "ts": "2026-10-01T13:28:58+00:00",
+   "type": "removed",
+   "id": "omega-trieste:via-pascoli-posto-auto-coperto",
+   "source": "omega-trieste",
+   "price": 40000
+  },
+  {
+   "ts": "2026-10-01T13:28:58+00:00",
+   "type": "removed",
+   "id": "tag-srl:124",
+   "source": "tag-srl",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-01T13:28:58+00:00",
+   "type": "removed",
+   "id": "andrea-oliva:756",
+   "source": "andrea-oliva",
+   "price": 155000
   }
  ]
 }
