@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T19:24:05+00:00",
+ "updated": "2026-10-01T21:23:25+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1303,6 +1303,27 @@
    "id": "norbedo-immobiliare:costiera-le-ginestre-marina-di-aurisina.html",
    "source": "norbedo-immobiliare",
    "price": 1550000
+  },
+  {
+   "ts": "2026-10-01T21:23:25+00:00",
+   "type": "back",
+   "id": "tag-srl:124",
+   "source": "tag-srl",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-01T21:23:25+00:00",
+   "type": "removed",
+   "id": "tag-srl:083",
+   "source": "tag-srl",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-01T21:23:25+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-san-francesco",
+   "source": "noidonne-immobiliare",
+   "price": null
   }
  ]
 }
