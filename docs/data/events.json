@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T15:26:00+00:00",
+ "updated": "2026-10-01T17:24:40+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1282,6 +1282,20 @@
    "id": "e1-hometrieste:21738",
    "source": "e1-hometrieste",
    "price": 130000
+  },
+  {
+   "ts": "2026-10-01T17:24:40+00:00",
+   "type": "new",
+   "id": "subito-privati:662910773",
+   "source": "subito-privati",
+   "price": 298000
+  },
+  {
+   "ts": "2026-10-01T17:24:40+00:00",
+   "type": "new",
+   "id": "trieste-villas:0040",
+   "source": "trieste-villas",
+   "price": 555000
   }
  ]
 }
