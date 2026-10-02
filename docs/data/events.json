@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T13:26:15+00:00",
+ "updated": "2026-10-02T15:26:17+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1507,6 +1507,56 @@
    "id": "b1-antica-trieste:prestigiosa-villa-in-carso",
    "source": "b1-antica-trieste",
    "price": 600000
+  },
+  {
+   "ts": "2026-10-02T15:26:17+00:00",
+   "type": "removed",
+   "id": "subito-privati:618697523",
+   "source": "subito-privati",
+   "price": 618000
+  },
+  {
+   "ts": "2026-10-02T15:26:17+00:00",
+   "type": "removed",
+   "id": "tag-srl:174",
+   "source": "tag-srl",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T15:26:17+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-rossetti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T15:26:17+00:00",
+   "type": "removed",
+   "id": "b1-trieste-centro:villa-immersa-nel-verde-con-ampio-giardino-a-padriciano",
+   "source": "b1-trieste-centro",
+   "price": 590000
+  },
+  {
+   "ts": "2026-10-02T15:26:17+00:00",
+   "type": "new",
+   "id": "zenith-real-estate:5166032",
+   "source": "zenith-real-estate",
+   "price": 95000
+  },
+  {
+   "ts": "2026-10-02T15:26:17+00:00",
+   "type": "price_down",
+   "id": "as-real-estate:5044457",
+   "source": "as-real-estate",
+   "old_price": 189000,
+   "price": 179000
+  },
+  {
+   "ts": "2026-10-02T15:26:17+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21755",
+   "source": "e1-hometrieste",
+   "price": 98000
   }
  ]
 }
