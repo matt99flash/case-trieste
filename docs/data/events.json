@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T21:23:25+00:00",
+ "updated": "2026-10-02T05:23:12+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1324,6 +1324,34 @@
    "id": "noidonne-immobiliare:via-san-francesco",
    "source": "noidonne-immobiliare",
    "price": null
+  },
+  {
+   "ts": "2026-10-02T05:23:12+00:00",
+   "type": "back",
+   "id": "tag-srl:083",
+   "source": "tag-srl",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-02T05:23:12+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T05:23:12+00:00",
+   "type": "new",
+   "id": "immobiliare-4b:193788765",
+   "source": "immobiliare-4b",
+   "price": 35000
+  },
+  {
+   "ts": "2026-10-02T05:23:12+00:00",
+   "type": "new",
+   "id": "e1-immobilisenzaconfini:IMMO-133161332",
+   "source": "e1-immobilisenzaconfini",
+   "price": 490000
   }
  ]
 }
