@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T05:23:12+00:00",
+ "updated": "2026-10-02T07:26:01+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1352,6 +1352,48 @@
    "id": "e1-immobilisenzaconfini:IMMO-133161332",
    "source": "e1-immobilisenzaconfini",
    "price": 490000
+  },
+  {
+   "ts": "2026-10-02T07:26:01+00:00",
+   "type": "new",
+   "id": "tecnocasa:61127875",
+   "source": "tecnocasa",
+   "price": 1010000
+  },
+  {
+   "ts": "2026-10-02T07:26:01+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T07:26:01+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-san-francesco",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T07:26:01+00:00",
+   "type": "removed",
+   "id": "b1-antica-trieste:appartamento-trieste-chiarbola-via-pietro-zorutti-terrazza-scorcio-mare-cantina-",
+   "source": "b1-antica-trieste",
+   "price": 138000
+  },
+  {
+   "ts": "2026-10-02T07:26:01+00:00",
+   "type": "removed",
+   "id": "b1-antica-trieste:bilocale-nel-cuore-di-trieste",
+   "source": "b1-antica-trieste",
+   "price": 198000
+  },
+  {
+   "ts": "2026-10-02T07:26:01+00:00",
+   "type": "removed",
+   "id": "b1-antica-trieste:villa-san-dorligo",
+   "source": "b1-antica-trieste",
+   "price": 210000
   }
  ]
 }
