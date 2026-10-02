@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T07:26:01+00:00",
+ "updated": "2026-10-02T09:25:44+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1394,6 +1394,20 @@
    "id": "b1-antica-trieste:villa-san-dorligo",
    "source": "b1-antica-trieste",
    "price": 210000
+  },
+  {
+   "ts": "2026-10-02T09:25:44+00:00",
+   "type": "new",
+   "id": "opera-immobiliare:via-paisiello-luminoso-quadrilocale-vista-mare",
+   "source": "opera-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T09:25:44+00:00",
+   "type": "new",
+   "id": "rigatti-immobiliare:terreno-agricolo-comune-di-sgonico",
+   "source": "rigatti-immobiliare",
+   "price": 30000
   }
  ]
 }
