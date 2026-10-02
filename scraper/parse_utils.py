@@ -89,29 +89,44 @@ def parse_small_count(s, words) -> int | None:
 
 
 TYPES = [
-    ("attico", ["attico", "superattico", "penthouse", "mansarda"]),
-    ("villa", ["villa ", "villa,", "villetta", "villino", "villa a schiera", "schiera", "bifamiliare", "trifamiliare"]),
+    ("commerciale", ["negozio", "negozi ", "ufficio", "uffici ", "locale commerciale", "locale senza canna", "capannone", "magazzino",
+                     "laboratorio", "attivita", "cessione", "licenza", "studio professionale", "albergo", "hotel", "bar ",
+                     "ristorante", "ristorazione", "locale ", "b&b", "bed and breakfast", "affittacamere", "profumeria", "pizzeria"]),
+    ("box", ["box auto", "garage", "posto auto", "posti auto", "autorimessa", "posto macchina", "posti moto", "cantina ", "cantine"]),
+    ("terreno", ["terreno", "terreni", "lotto edificabile", "area edificabile", "fondo agricolo"]),
+    ("attico", ["attico", "superattico", "penthouse", "mansard"]),
+    ("villa", ["villa ", "villa,", "ville ", "villetta", "villino", "villa a schiera", "schiera", "bifamiliare", "trifamiliare"]),
     ("casa", ["casa indipendente", "casa singola", "casa semindipendente", "porzione di casa", "casa carsica", "casa di paese",
-              "rustico", "casale", "stabile", "palazzina", "intero edificio", "cielo-terra", "terra-cielo", "casa "]),
-    ("terreno", ["terreno", "lotto edificabile", "area edificabile"]),
-    ("box", ["box auto", "garage", "posto auto", "autorimessa", "posto macchina"]),
-    ("commerciale", ["negozio", "ufficio", "locale commerciale", "capannone", "magazzino", "laboratorio", "attivita commerciale",
-                     "studio professionale", "albergo", "hotel", "bar ", "ristorante"]),
-    ("appartamento", ["appartamento", "monolocale", "bilocale", "trilocale", "quadrilocale", "pentalocale", "plurilocale",
-                      "loft", "open space", "duplex", "alloggio"]),
+              "rustico", "casale", "stabile", "palazzina", "intero edificio", "cielo-terra", "terra-cielo", "casetta", "casa "]),
+    ("appartamento", ["appartamento", "appartamenti", "monolocale", "bilocale", "trilocale", "quadrilocale", "pentalocale",
+                      "plurilocale", "loft", "open space", "duplex", "bilivello", "alloggio", "unita abitativ", "nuda proprieta",
+                      "ultimo piano", "piano alto", "residenza"]),
 ]
 TYPE_LABELS = {"appartamento": "Appartamento", "attico": "Attico / Mansarda", "villa": "Villa / Villetta", "casa": "Casa indipendente",
                "terreno": "Terreno", "box": "Box / Posto auto", "commerciale": "Commerciale", "altro": "Altro"}
 
 
 def detect_type(title: str | None, extra: str | None = None) -> str:
-    """Tipologia dal titolo (prioritario) o dal testo aggiuntivo."""
-    for blob in (norm(title or "") + " ", norm(extra or "")[:400] + " "):
-        if not blob.strip():
-            continue
+    """Tipologia dal titolo (prioritario) o dal testo aggiuntivo.
+    Nel titolo vince la parola chiave che compare PRIMA ("Villa con garage" → villa, "Garage in palazzina" → box).
+    Nella descrizione si privilegiano le abitazioni (citano spesso garage, cantine, uffici vicini...)."""
+    t = " " + norm(title or "") + " "
+    if t.strip():
+        best = None
         for key, kws in TYPES:
-            if any(k in blob for k in kws):
-                return key
+            for k in kws:
+                i = t.find(k)
+                if i >= 0 and (best is None or i < best[0]):
+                    best = (i, key)
+        if best:
+            return best[1]
+    d = " " + norm(extra or "")[:400] + " "
+    order = ["attico", "villa", "casa", "appartamento", "commerciale", "terreno", "box"]
+    kw = dict(TYPES)
+    for key in order:
+        words = [k for k in kw[key] if k != "casa "]   # "la casa è..." non vuol dire casa indipendente
+        if any(k in d for k in words):
+            return key
     return "altro"
 
 

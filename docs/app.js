@@ -1,7 +1,8 @@
 "use strict";
 
 const TYPE_LABELS = { appartamento: "Appartamento", attico: "Attico / Mansarda", villa: "Villa / Villetta", casa: "Casa indipendente", terreno: "Terreno", box: "Box / Posto auto", commerciale: "Commerciale", altro: "Altro" };
-const DEFAULT_TYPES = ["appartamento", "attico", "villa", "casa"];
+// "altro" incluso: annunci con titolo poco chiaro (spesso solo la via) non devono sparire
+const DEFAULT_TYPES = ["appartamento", "attico", "villa", "casa", "altro"];
 const COND_LABELS = { nuovo: "Nuova costruzione", ristrutturato: "Ristrutturato / Ottimo", buono: "Buono / Abitabile", da_ristrutturare: "Da ristrutturare", nd: "Non indicato" };
 const FEATURES = { elevator: "Ascensore", garage: "Garage / posto auto", terrace: "Terrazzo / balcone", garden: "Giardino", sea_view: "Vista mare" };
 const KINDS = { agenzia: "Agenzie", costruttore: "Costruttori", privato: "Privati (Subito)" };
@@ -79,6 +80,9 @@ function priceChange(r) {
 
 const DEFAULT_F = { q: "", pmin: "", pmax: "", mqmin: "", mqmax: "", rooms: "", sort: "recent", types: DEFAULT_TYPES, conditions: [], towns: [], zones: [], features: [], kinds: [], noprice: true, removed: false };
 let F = Object.assign({}, DEFAULT_F, store.get("filters", {}));
+// filtri salvati con la vecchia tipologia predefinita (senza "altro"): aggiornali una volta
+if (!F.v && String(F.types) === "appartamento,attico,villa,casa") F.types = DEFAULT_TYPES.slice();
+F.v = 2;
 
 function chipGroup(el, name, entries, counts) {
   el.innerHTML = entries.map(([v, label]) => `<label class="chip"><input type="checkbox" name="${name}" value="${esc(v)}" ${F[name].includes(v) ? "checked" : ""}><span>${esc(label)}${counts && counts[v] ? `<small>${counts[v]}</small>` : ""}</span></label>`).join("");
@@ -106,7 +110,7 @@ function readForm() {
   F = { q: fd.get("q").trim(), pmin: fd.get("pmin"), pmax: fd.get("pmax"), mqmin: fd.get("mqmin"), mqmax: fd.get("mqmax"),
     rooms: fd.get("rooms"), sort: fd.get("sort"), types: fd.getAll("types"), conditions: fd.getAll("conditions"),
     towns: fd.getAll("towns"), zones: fd.getAll("zones"), features: fd.getAll("features"), kinds: fd.getAll("kinds"),
-    noprice: form.elements.noprice.checked, removed: form.elements.removed.checked };
+    noprice: form.elements.noprice.checked, removed: form.elements.removed.checked, v: 2 };
   store.set("filters", F);
   syncZonesBox();
 }

@@ -47,6 +47,9 @@ class Listing:
             self.zone = detect_zone(self.zone) or detect_zone(self.address, self.title) or self.zone
         if not self.type or self.type == "altro":
             self.type = pu.detect_type(self.title, self.description)
+            # titolo con la sola via ("Via Fabio Severo") ma con camere/bagni: è un'abitazione
+            if self.type == "altro" and (self.rooms or self.bedrooms or self.bathrooms):
+                self.type = "appartamento"
         if not self.condition:
             self.condition = pu.detect_condition(self.title, self.description)
         if not self.rooms:
