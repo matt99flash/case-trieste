@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T11:23:49+00:00",
+ "updated": "2026-10-02T13:26:15+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1493,6 +1493,20 @@
    "id": "mab-immobiliare:accogliente-appartamento-in-pieno-centro",
    "source": "mab-immobiliare",
    "price": 148000
+  },
+  {
+   "ts": "2026-10-02T13:26:15+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-rossetti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T13:26:15+00:00",
+   "type": "removed",
+   "id": "b1-antica-trieste:prestigiosa-villa-in-carso",
+   "source": "b1-antica-trieste",
+   "price": 600000
   }
  ]
 }
