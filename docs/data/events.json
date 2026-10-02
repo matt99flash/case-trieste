@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T19:24:32+00:00",
+ "updated": "2026-10-02T21:23:19+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1620,6 +1620,27 @@
    "id": "b1-carso:trilocale-con-bel-terrazzo",
    "source": "b1-carso",
    "price": 178000
+  },
+  {
+   "ts": "2026-10-02T21:23:19+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T21:23:19+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-san-francesco",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T21:23:19+00:00",
+   "type": "new",
+   "id": "igloo:2902584",
+   "source": "igloo",
+   "price": 199000
   }
  ]
 }
