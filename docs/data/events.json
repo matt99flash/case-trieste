@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T17:24:24+00:00",
+ "updated": "2026-10-02T19:24:32+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1592,6 +1592,34 @@
    "id": "tam-immobiliare:113237",
    "source": "tam-immobiliare",
    "price": 205000
+  },
+  {
+   "ts": "2026-10-02T19:24:32+00:00",
+   "type": "removed",
+   "id": "tecnocasa:61239904",
+   "source": "tecnocasa",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-02T19:24:32+00:00",
+   "type": "new",
+   "id": "opera-immobiliare:visogliano-ampio-quadrilocale-con-accesso-indipendente-giardino-e-posti-auto",
+   "source": "opera-immobiliare",
+   "price": 199000
+  },
+  {
+   "ts": "2026-10-02T19:24:32+00:00",
+   "type": "new",
+   "id": "b1-sirio:237644",
+   "source": "b1-sirio",
+   "price": 250000
+  },
+  {
+   "ts": "2026-10-02T19:24:32+00:00",
+   "type": "new",
+   "id": "b1-carso:trilocale-con-bel-terrazzo",
+   "source": "b1-carso",
+   "price": 178000
   }
  ]
 }
