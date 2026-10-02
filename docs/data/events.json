@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T09:25:44+00:00",
+ "updated": "2026-10-02T11:23:49+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1408,6 +1408,91 @@
    "id": "rigatti-immobiliare:terreno-agricolo-comune-di-sgonico",
    "source": "rigatti-immobiliare",
    "price": 30000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "new",
+   "id": "gabetti:3342661",
+   "source": "gabetti",
+   "price": 142000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "new",
+   "id": "tecnocasa:61279963",
+   "source": "tecnocasa",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "new",
+   "id": "tecnocasa:61279762",
+   "source": "tecnocasa",
+   "price": 228000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "new",
+   "id": "tecnocasa:61278683",
+   "source": "tecnocasa",
+   "price": 250000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "removed",
+   "id": "tecnocasa:61274016",
+   "source": "tecnocasa",
+   "price": 200000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "new",
+   "id": "b1-antica-trieste:appartamento-reddito-strada-di-fiume-trieste",
+   "source": "b1-antica-trieste",
+   "price": 139000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "new",
+   "id": "b1-antica-trieste:villetta-bifamiliare-due-appartamenti-indipendenti",
+   "source": "b1-antica-trieste",
+   "price": 199000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "new",
+   "id": "rigatti-immobiliare:san-vito-spazi-ampi-e-giardino-privato",
+   "source": "rigatti-immobiliare",
+   "price": 230000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "removed",
+   "id": "casa-programma:2418437",
+   "source": "casa-programma",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "new",
+   "id": "cristina-rufolo:1755524",
+   "source": "cristina-rufolo",
+   "price": 380000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "price_down",
+   "id": "bg-real-estate:617",
+   "source": "bg-real-estate",
+   "old_price": 250000,
+   "price": 220000
+  },
+  {
+   "ts": "2026-10-02T11:23:49+00:00",
+   "type": "removed",
+   "id": "mab-immobiliare:accogliente-appartamento-in-pieno-centro",
+   "source": "mab-immobiliare",
+   "price": 148000
   }
  ]
 }
