@@ -12,6 +12,7 @@
 "2, via artemidoro, scorcola, citta nuova-barriera nuova-san vito-citta vecchia, conconello, trieste, friuli-venezia giulia, 34134, italia|trieste": null,
 "20, via tommaso luciani, perugino, barriera vecchia, barriera vecchia-san giacomo, trieste, friuli-venezia giulia, 34138, italia|trieste": null,
 "27, via milano, borgo teresiano, citta nuova-barriera nuova-san vito-citta vecchia, trieste, friuli-venezia giulia, 34132, italia|trieste": null,
+"3, via dell'erica, verniellis, cologna, roiano-gretta-barcola-cologna-scorcola, conconello, trieste, friuli-venezia giulia, 34134, italia|trieste": null,
 "31, via udine, borgo teresiano, roiano-gretta-barcola-cologna-scorcola, trieste, friuli-venezia giulia, 34135, italia|trieste": null,
 "36, via dello scoglio, scoglietto, san cilino, roiano-gretta-barcola-cologna-scorcola, conconello, trieste, friuli-venezia giulia, 34127, italia|trieste": null,
 "37, via dell'istria, maddalena, san giacomo, barriera vecchia-san giacomo, trieste, friuli-venezia giulia, 34137, italia|trieste": null,
@@ -483,6 +484,10 @@
 "via del lloyd|trieste": [
 45.63814,
 13.76906
+],
+"via del muraglione|trieste": [
+45.64366,
+13.78214
 ],
 "via del ponticello, 25/11, 34146 trieste ts, italia|trieste": null,
 "via del pucino|trieste": [

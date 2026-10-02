@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T15:26:17+00:00",
+ "updated": "2026-10-02T17:24:24+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1557,6 +1557,41 @@
    "id": "e1-hometrieste:21755",
    "source": "e1-hometrieste",
    "price": 98000
+  },
+  {
+   "ts": "2026-10-02T17:24:24+00:00",
+   "type": "back",
+   "id": "tag-srl:174",
+   "source": "tag-srl",
+   "price": null
+  },
+  {
+   "ts": "2026-10-02T17:24:24+00:00",
+   "type": "new",
+   "id": "omega-trieste:settefontane-alta-bicamere-in-ottime-condizioni",
+   "source": "omega-trieste",
+   "price": 185000
+  },
+  {
+   "ts": "2026-10-02T17:24:24+00:00",
+   "type": "new",
+   "id": "b1-project-immobiliare:bifamiliare-appartametno-con-giardino-roiano",
+   "source": "b1-project-immobiliare",
+   "price": 235000
+  },
+  {
+   "ts": "2026-10-02T17:24:24+00:00",
+   "type": "new",
+   "id": "casa-programma:2405621",
+   "source": "casa-programma",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-02T17:24:24+00:00",
+   "type": "removed",
+   "id": "tam-immobiliare:113237",
+   "source": "tam-immobiliare",
+   "price": 205000
   }
  ]
 }
