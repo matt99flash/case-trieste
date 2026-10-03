@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T21:23:19+00:00",
+ "updated": "2026-10-03T05:29:47+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1641,6 +1641,48 @@
    "id": "igloo:2902584",
    "source": "igloo",
    "price": 199000
+  },
+  {
+   "ts": "2026-10-03T05:29:47+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-03T05:29:47+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-san-francesco",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-03T05:29:47+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-franca-2",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-03T05:29:47+00:00",
+   "type": "new",
+   "id": "b1-antica-trieste:appartamento-via-dei-toffani-trieste-vista-mare",
+   "source": "b1-antica-trieste",
+   "price": 180000
+  },
+  {
+   "ts": "2026-10-03T05:29:47+00:00",
+   "type": "new",
+   "id": "b1-antica-trieste:fabbricato-ristrutturare-sant-antonio-in-bosco",
+   "source": "b1-antica-trieste",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-03T05:29:47+00:00",
+   "type": "new",
+   "id": "sim-studio-immobiliare:001034",
+   "source": "sim-studio-immobiliare",
+   "price": 265000
   }
  ]
 }
