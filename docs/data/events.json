@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03T07:24:16+00:00",
+ "updated": "2026-10-03T09:23:56+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1697,6 +1697,27 @@
    "id": "immobiliare-4b:193559630",
    "source": "immobiliare-4b",
    "price": 18000
+  },
+  {
+   "ts": "2026-10-03T09:23:56+00:00",
+   "type": "removed",
+   "id": "tag-srl:083",
+   "source": "tag-srl",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-03T09:23:56+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-03T09:23:56+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-rossetti",
+   "source": "noidonne-immobiliare",
+   "price": null
   }
  ]
 }
