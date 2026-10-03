@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03T14:19:40+00:00",
+ "updated": "2026-10-03T19:02:36+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1725,6 +1725,21 @@
    "id": "tag-srl:083",
    "source": "tag-srl",
    "price": 165000
+  },
+  {
+   "ts": "2026-10-03T19:02:36+00:00",
+   "type": "new",
+   "id": "subito-privati:663186110",
+   "source": "subito-privati",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-03T19:02:36+00:00",
+   "type": "price_down",
+   "id": "subito-privati:656022330",
+   "source": "subito-privati",
+   "old_price": 159000,
+   "price": 149000
   }
  ]
 }
