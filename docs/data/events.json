@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03T19:02:36+00:00",
+ "updated": "2026-10-04T02:33:55+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1740,6 +1740,27 @@
    "source": "subito-privati",
    "old_price": 159000,
    "price": 149000
+  },
+  {
+   "ts": "2026-10-04T02:33:55+00:00",
+   "type": "removed",
+   "id": "subito-privati:641263009",
+   "source": "subito-privati",
+   "price": 149000
+  },
+  {
+   "ts": "2026-10-04T02:33:55+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-rossetti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-04T02:33:55+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
   }
  ]
 }
