@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T11:03:19+00:00",
+ "updated": "2026-10-04T17:59:10+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1782,6 +1782,55 @@
    "id": "tag-srl:appartamento-vs14-4p",
    "source": "tag-srl",
    "price": 360000
+  },
+  {
+   "ts": "2026-10-04T17:59:10+00:00",
+   "type": "back",
+   "id": "tag-srl:appartamento-vs14-4p",
+   "source": "tag-srl",
+   "price": 360000
+  },
+  {
+   "ts": "2026-10-04T17:59:10+00:00",
+   "type": "removed",
+   "id": "b1-hab:attico-cologna-universita",
+   "source": "b1-hab",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-04T17:59:10+00:00",
+   "type": "removed",
+   "id": "b1-hab:attico-cologna-universita-2",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-04T17:59:10+00:00",
+   "type": "removed",
+   "id": "b1-hab:capannone-zona-industriale-con-terreno",
+   "source": "b1-hab",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-04T17:59:10+00:00",
+   "type": "removed",
+   "id": "b1-hab:casa-hoffe-sappada",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-04T17:59:10+00:00",
+   "type": "removed",
+   "id": "b1-hab:posto-auto-park-san-giusto",
+   "source": "b1-hab",
+   "price": 60000
+  },
+  {
+   "ts": "2026-10-04T17:59:10+00:00",
+   "type": "removed",
+   "id": "b1-hab:ristorante-in-centro-storico",
+   "source": "b1-hab",
+   "price": null
   }
  ]
 }
