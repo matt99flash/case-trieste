@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T02:33:55+00:00",
+ "updated": "2026-10-04T11:03:19+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1761,6 +1761,27 @@
    "id": "noidonne-immobiliare:via-buonarroti",
    "source": "noidonne-immobiliare",
    "price": null
+  },
+  {
+   "ts": "2026-10-04T11:03:19+00:00",
+   "type": "new",
+   "id": "subito-privati:663226657",
+   "source": "subito-privati",
+   "price": 180000
+  },
+  {
+   "ts": "2026-10-04T11:03:19+00:00",
+   "type": "removed",
+   "id": "subito-privati:639446302",
+   "source": "subito-privati",
+   "price": 180000
+  },
+  {
+   "ts": "2026-10-04T11:03:19+00:00",
+   "type": "removed",
+   "id": "tag-srl:appartamento-vs14-4p",
+   "source": "tag-srl",
+   "price": 360000
   }
  ]
 }
