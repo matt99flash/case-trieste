@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T09:29:03+00:00",
+ "updated": "2026-10-05T11:25:07+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1944,6 +1944,20 @@
    "id": "e1-hometrieste:21450",
    "source": "e1-hometrieste",
    "price": 405000
+  },
+  {
+   "ts": "2026-10-05T11:25:07+00:00",
+   "type": "removed",
+   "id": "spazio-casa:25009",
+   "source": "spazio-casa",
+   "price": 85000
+  },
+  {
+   "ts": "2026-10-05T11:25:07+00:00",
+   "type": "new",
+   "id": "mazzini-immobiliare:1455",
+   "source": "mazzini-immobiliare",
+   "price": 230000
   }
  ]
 }
