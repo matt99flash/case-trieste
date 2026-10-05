@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T11:25:07+00:00",
+ "updated": "2026-10-05T13:30:14+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1958,6 +1958,34 @@
    "id": "mazzini-immobiliare:1455",
    "source": "mazzini-immobiliare",
    "price": 230000
+  },
+  {
+   "ts": "2026-10-05T13:30:14+00:00",
+   "type": "removed",
+   "id": "tag-srl:appartamento-vs4am",
+   "source": "tag-srl",
+   "price": 190000
+  },
+  {
+   "ts": "2026-10-05T13:30:14+00:00",
+   "type": "removed",
+   "id": "tecnocasa:61229256",
+   "source": "tecnocasa",
+   "price": 150000
+  },
+  {
+   "ts": "2026-10-05T13:30:14+00:00",
+   "type": "removed",
+   "id": "tecnocasa:61273654",
+   "source": "tecnocasa",
+   "price": 80000
+  },
+  {
+   "ts": "2026-10-05T13:30:14+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
+   "source": "noidonne-immobiliare",
+   "price": null
   }
  ]
 }
