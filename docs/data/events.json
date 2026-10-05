@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T13:30:14+00:00",
+ "updated": "2026-10-05T15:26:52+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1985,6 +1985,223 @@
    "type": "removed",
    "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
    "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "new",
+   "id": "dream-immobiliare:viale-ippodromo",
+   "source": "dream-immobiliare",
+   "price": 280000
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "back",
+   "id": "tag-srl:appartamento-vs4am",
+   "source": "tag-srl",
+   "price": 190000
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:capannone-e-casa-in-zona-artigianale",
+   "source": "aemmecasa",
+   "price": 530000
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:sistiana",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-pinguente-defilato-dal-traffico",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-san-michele",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:guardiella-panoramico",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:strada-del-friuli-vista-golfo-di-trieste",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:san-vito-primoingresso",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:posto-auto-coperto",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:muggia-vista-mare-con-giardino",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-giulia-in-stabile-depoca",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:contovello-via-san-nazario",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:muggia-bifamiliare",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:duino",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:magazzino-con-area-scoperta",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:ufficio-zona-tribunale",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-dello-scoglio",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:opicina",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:viale-xx-settembre",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:chiarbola-scorcio-mare",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:san-lorenzo-in-selva",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-cologna",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-baiamonti",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:roiano-via-barbariga",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-orsera",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:box-auto-foro-ulpiano",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-dei-giuliani",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-orsera-2",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-05T15:26:52+00:00",
+   "type": "sold",
+   "id": "aemmecasa:box-auto-strada-di-fiume",
+   "source": "aemmecasa",
    "price": null
   }
  ]
