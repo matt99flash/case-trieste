@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T15:54:43+00:00",
+ "updated": "2026-10-05T17:23:54+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2315,6 +2315,27 @@
    "id": "il-quadrifoglio:locale-daffari-a-trieste-via-cologna-indifferente",
    "source": "il-quadrifoglio",
    "price": 40000
+  },
+  {
+   "ts": "2026-10-05T17:23:54+00:00",
+   "type": "removed",
+   "id": "remax:38501111-23",
+   "source": "remax",
+   "price": 312000
+  },
+  {
+   "ts": "2026-10-05T17:23:54+00:00",
+   "type": "removed",
+   "id": "cantieri-tirabora:loft-san-giusto",
+   "source": "cantieri-tirabora",
+   "price": 175000
+  },
+  {
+   "ts": "2026-10-05T17:23:54+00:00",
+   "type": "new",
+   "id": "giulia-immobiliare:330911",
+   "source": "giulia-immobiliare",
+   "price": null
   }
  ]
 }
