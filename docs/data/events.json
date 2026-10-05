@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T21:24:37+00:00",
+ "updated": "2026-10-05T05:28:06+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1887,6 +1887,20 @@
    "id": "b1-hab:posto-auto-park-san-giusto",
    "source": "b1-hab",
    "price": 60000
+  },
+  {
+   "ts": "2026-10-05T05:28:06+00:00",
+   "type": "removed",
+   "id": "tag-srl:123",
+   "source": "tag-srl",
+   "price": 470000
+  },
+  {
+   "ts": "2026-10-05T05:28:06+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-rossetti",
+   "source": "noidonne-immobiliare",
+   "price": null
   }
  ]
 }
