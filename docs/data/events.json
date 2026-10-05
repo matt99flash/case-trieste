@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T15:26:52+00:00",
+ "updated": "2026-10-05T15:54:43+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2203,6 +2203,118 @@
    "id": "aemmecasa:box-auto-strada-di-fiume",
    "source": "aemmecasa",
    "price": null
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "dream-immobiliare:%f0%9f%8f%a1-nuda-proprieta-luminoso-bilocale-con-vista-aperta-in-zona-san-giaco",
+   "source": "dream-immobiliare",
+   "price": 55000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "dream-immobiliare:via-del-molino-a-vento",
+   "source": "dream-immobiliare",
+   "price": 180000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "dream-immobiliare:via-vergerio-settefontane",
+   "source": "dream-immobiliare",
+   "price": 130000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "dream-immobiliare:zona-giardino-basevi-san-giacomo",
+   "source": "dream-immobiliare",
+   "price": 119000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "trieste-properties:fiordalisi-opicina-trieste-vendita-appartamento-quadrilocale-box",
+   "source": "trieste-properties",
+   "price": 248000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "trieste-properties:san-dorligo-della-valle-trieste-domio-terreno-edificabile-vendita",
+   "source": "trieste-properties",
+   "price": 100000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "trieste-properties:via-battera-trieste-semicentro-vendita-appartamento-bilocale",
+   "source": "trieste-properties",
+   "price": 82000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "trieste-properties:via-carli-trieste-san-vito-vendita-appartamento-quadrilocale",
+   "source": "trieste-properties",
+   "price": 295000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "trieste-properties:via-fabio-severo-vendita-bilocale-semicentro-giardino-pubblico-trieste",
+   "source": "trieste-properties",
+   "price": 149000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "trieste-properties:via-grossich-vendita-appartamento-cortile-campanelle-trieste",
+   "source": "trieste-properties",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "trieste-properties:via-grossich-vendita-appartamento-posto-auto-campanelle-trieste",
+   "source": "trieste-properties",
+   "price": 268000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "trieste-properties:via-soncini-trieste-periferia-est-vendita-appartamento-quadrilocale",
+   "source": "trieste-properties",
+   "price": 159000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "new",
+   "id": "b1-nest:largo-sydney-sonnino-bilocale-con-terrazzino",
+   "source": "b1-nest",
+   "price": 140000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "il-quadrifoglio:appartamento-a-trieste-via-beda-zona-giorno-2-stanze",
+   "source": "il-quadrifoglio",
+   "price": 180000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "il-quadrifoglio:casa-a-trieste-via-rosani-zona-giorno-3-o-piu-stanze",
+   "source": "il-quadrifoglio",
+   "price": 415000
+  },
+  {
+   "ts": "2026-10-05T15:54:43+00:00",
+   "type": "removed",
+   "id": "il-quadrifoglio:locale-daffari-a-trieste-via-cologna-indifferente",
+   "source": "il-quadrifoglio",
+   "price": 40000
   }
  ]
 }
