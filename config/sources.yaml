@@ -42,7 +42,7 @@ sources:
       link_regex: '/cantieri/\d+/'
       exclude_regex: 'Autorimessa'
     name_from_url: '/cantieri/\d+/([^/?#]+)'
-    price_regex: 'Min\s*€\s*:?\s*([\d.]+)'
+    price_regex: '(?:Min|Max)\s*€\s*:?\s*([\d.]+)'
     address_regex: 'posizione del cantiere\s+(.{5,80}?)\s+Capitolato'
     image_regex: '/uploads/building/banner/'
     description_regex: 'Consegna cantiere.*?Max\s*€\s*:\s*[\d.]+'

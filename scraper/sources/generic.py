@@ -30,7 +30,13 @@ class GenericSource(Source):
                 if not url or url in visited:
                     break
                 visited.add(url)
-                html = ctx.http.text(url)
+                try:
+                    html = ctx.http.text(url)
+                except Exception as e:
+                    # pagina successiva inesistente (404): l'elenco è finito. Se è la prima pagina, è un errore vero.
+                    if len(visited) > 1 and "404" in str(e):
+                        break
+                    raise
                 soup = soup_of(html)
                 before = len(links)
                 for a in soup.find_all("a", href=True):

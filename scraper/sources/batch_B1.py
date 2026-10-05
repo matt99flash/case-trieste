@@ -54,6 +54,23 @@ def _best_mq(text: str | None) -> int | None:
     return max(vals) if vals else pu.parse_mq(text)
 
 
+def _all_leaf_text(soup, min_len=15) -> str:
+    """Testo di TUTTI i blocchi "foglia" della pagina (stessa euristica di `_longest_description` in
+    base.py, che però ne tiene solo uno): alcuni temi spezzano la descrizione in tanti paragrafi brevi
+    (una frase ciascuno) e la frase con la metratura spesso non è la più lunga, quindi va persa se si
+    cerca `_best_mq` solo in `L.description`. Unendo tutti i paragrafi si dà a `_best_mq` il testo
+    completo su cui cercare (nessun sito di questo lotto mostra "immobili correlati" con una propria
+    metratura sulla stessa pagina, quindi il rischio di prendere un numero di un'altra scheda è basso)."""
+    parts = []
+    for tag in soup.find_all(["p", "div", "section"]):
+        if tag.find(["p", "div", "section", "ul", "table"]):
+            continue
+        t = tag.get_text(" ", strip=True)
+        if len(t) >= min_len:
+            parts.append(t)
+    return " ".join(parts)
+
+
 _STRONG_SPAN_RE = re.compile(r"<strong>\s*([^<:]+?)\s*:?\s*</strong>\s*<span>\s*([^<]*?)\s*</span>", re.I)
 
 
@@ -83,6 +100,38 @@ def _resolve_town(L: Listing) -> None:
             L.town = m.group(1).title()
 
 
+_META_DESC_RE = re.compile(r'name="description"\s+content="([^"]*)"', re.I)
+_ACF_IMMOBILE_RE = re.compile(r'class="[^"]*\bacf_(mq|bagni|notte|piano|garage)_immobile\b[^"]*"[^>]*>([^<]*)<', re.I)
+
+
+def _extra_detail_fields(html: str) -> dict:
+    """Campi letti da pattern comuni a più temi di questo lotto, non riconosciuti da `kv_pairs` perché
+    senza etichetta testuale abbinata al valore:
+    - tema WPBakery "Total" (es. Antica Trieste): riquadri <div class="... acf_mq_immobile ...">250m²</div>
+      (icona CSS, nessun testo "Superficie");
+    - plugin/gestionale condiviso da altre agenzie (es. Contatti Immobiliari, Casacoral): il meta tag
+      <meta name="description" content="Vendita - 78 mq - 2 Camere - 1 Bagno"> riepiloga mq/camere/bagni
+      in un formato fisso, più affidabile del testo libero della descrizione (che spesso cita ANCHE
+      metrature di pertinenze come giardino/terrazzo, prese per errore come superficie dell'immobile
+      dall'euristica `_best_mq` se non si legge prima questo dato strutturato)."""
+    out = {}
+    for key, val in _ACF_IMMOBILE_RE.findall(html):
+        out.setdefault(key.lower(), val.strip())
+    m = _META_DESC_RE.search(html)
+    if m:
+        d = m.group(1)
+        mm = re.search(r"(\d{1,4})\s*mq\b", d, re.I)
+        if mm:
+            out.setdefault("mq", mm.group(1) + " mq")
+        mm = re.search(r"(\d{1,2})\s*camer", d, re.I)
+        if mm:
+            out.setdefault("notte", mm.group(1))
+        mm = re.search(r"(\d{1,2})\s*bagn", d, re.I)
+        if mm:
+            out.setdefault("bagni", mm.group(1))
+    return out
+
+
 @register("b1_generic")
 class B1GenericSource(GenericSource):
     def fetch(self, ctx):
@@ -94,6 +143,20 @@ class B1GenericSource(GenericSource):
                 # come se fosse l'annuncio, perché il suo @type contiene la sottostringa "RealEstate"):
                 # il suo indirizzo è quello della SEDE dell'agenzia, non dell'immobile in vendita.
                 L.address = None
+            if L.id in ctx.detail_ids and (not L.mq or not L.bathrooms or not L.bedrooms):
+                try:
+                    raw = ctx.http.text(L.url)
+                    extra = _extra_detail_fields(raw)
+                    if not L.mq:
+                        L.mq = pu.parse_mq(extra.get("mq"))
+                    if not L.bathrooms:
+                        L.bathrooms = pu.parse_small_count(extra.get("bagni"), ["bagni", "bagno"])
+                    if not L.bedrooms:
+                        L.bedrooms = pu.parse_small_count(extra.get("notte"), ["camere", "camera"])
+                    if not L.mq:
+                        L.mq = _best_mq(_all_leaf_text(soup_of(raw)))
+                except Exception:
+                    pass
             _resolve_town(L)
             if not L.mq:
                 L.mq = _best_mq(L.description)
@@ -188,7 +251,7 @@ class CarsoSource(Source):
                         L.zone = m.group(1).strip()
                     _resolve_town(L)
                     if not L.mq:
-                        L.mq = _best_mq(L.description)
+                        L.mq = _best_mq(_all_leaf_text(soup_of(h))) or _best_mq(L.description)
                     if not L.rooms:
                         L.rooms = pu.parse_rooms(L.description)
                     ctx.detail_ids.add(L.id)
@@ -306,9 +369,16 @@ class NestSource(Source):
     """NEST Immobiliare (plugin 'Real Estate Manager'): niente archivio pubblico distinto vendita/affitto,
     l'elenco completo si legge dalla sitemap del post type rem_property; gli annunci di affitto si
     riconoscono dalla classe CSS 'rem_property_tag-*affitto*' sulla pagina scheda (nessun'altra tag
-    o campo distingue vendita/affitto su questo sito)."""
+    o campo distingue vendita/affitto su questo sito).
+
+    La "Scheda tecnica" (tema Elementor) mostra mq/camere/bagni come riquadri icona+numero senza
+    etichetta testuale (un'icona SVG Font Awesome seguita da uno <span class="rem-field-value"> col solo
+    numero, es. l'icona "bed" seguita da "2"): `kv_pairs` non li riconosce perché non c'è alcuna etichetta
+    da abbinare al valore, quindi si leggono appaiando ogni icona (bed/bath/square) al valore immediatamente
+    successivo nell'HTML."""
     SITEMAP = "https://nestimmobiliare.com/wp-sitemap-posts-rem_property-1.xml"
     RENT_RE = re.compile(r"rem_property_tag-[a-z-]*affitto", re.I)
+    ICON_FIELD_RE = re.compile(r'e-fa[rs]-(bed|bath|square)"[\s\S]*?rem-field-value">([^<]*)</span>')
 
     def fetch(self, ctx):
         xml = ctx.http.text(self.SITEMAP)
@@ -325,6 +395,13 @@ class NestSource(Source):
                     if self.RENT_RE.search(html):
                         continue
                     L = parse_detail(html, u, self.id, L)
+                    icons = dict(self.ICON_FIELD_RE.findall(html))
+                    if not L.mq:
+                        L.mq = pu.parse_mq(icons.get("square"))
+                    if not L.bedrooms:
+                        L.bedrooms = pu.parse_small_count(icons.get("bed"), ["camere", "camera"])
+                    if not L.bathrooms:
+                        L.bathrooms = pu.parse_small_count(icons.get("bath"), ["bagni", "bagno"])
                     _resolve_town(L)
                     if not L.mq:
                         L.mq = _best_mq(L.description)

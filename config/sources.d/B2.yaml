@@ -115,7 +115,7 @@ sources:
     name: Rivi Immobiliare
     kind: agenzia
     website: https://www.rivi-immobiliare.it/
-    adapter: b2_sitemap
+    adapter: b2_rivi
     delay: 1.0
     town: Trieste
     sitemaps:

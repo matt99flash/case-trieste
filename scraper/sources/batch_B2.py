@@ -62,7 +62,48 @@ class WPCleanSource(GenericSource):
     """GenericSource + un-escape delle entità HTML rimaste grezze nel titolo/descrizione (bug frequente
     in alcuni temi WordPress per il settore immobiliare, es. "&#8217;" al posto dell'apostrofo).
     Con `relaxed_encoding: true` in config tollera anche singoli byte non validi in pagine dichiarate
-    UTF-8 (es. simbolo "€" incollato in cp1252, che altrimenti fa fallire il riconoscimento del prezzo)."""
+    UTF-8 (es. simbolo "€" incollato in cp1252, che altrimenti fa fallire il riconoscimento del prezzo).
+
+    Fallback mq: alcuni temi (es. Borea, AureaHome) mettono la superficie in un elenco di "icone" dove
+    valore ed etichetta non sono una coppia label:value riconoscibile dall'estrattore generico, es.
+    '<li>370 m<sup>2</sup><span class="tooltip">Superficie</span></li>' (valore PRIMA dell'etichetta,
+    in tooltip) oppure un box Elementor con un solo valore senza etichetta affatto ("185 m²"): quando
+    L.mq resta vuoto si cercano questi pattern nella pagina.
+
+    Fallback prezzo: il tema usato da Immobiliare Art (classe "property-header") non ha un'etichetta
+    "Prezzo"/"€" abbinabile dall'estrattore generico: il prezzo sta in un <div class="meta"> subito sotto
+    il titolo insieme a tipologia e contratto, senza separatore riconoscibile ("170.000 € · Appartamento
+    · Vendita"). Quando L.price resta vuoto si rilegge quel primo div. Altre schede (Il Faro) scrivono il
+    prezzo come frase libera "Euro 129.000" in un paragrafo a parte, senza alcuna etichetta "Prezzo" né il
+    simbolo "€" (che l'estrattore generico riconosce): si cerca anche questo pattern in tutto il testo."""
+
+    _EURO_WORD_RE = re.compile(r"\bEuro\s*([\d][\d.,]{2,})\b")
+
+    def _detail_fallback(self, ctx, L):
+        try:
+            soup = soup_of(ctx.http.text(L.url))
+        except Exception:
+            return
+        if not L.price:
+            meta = soup.select_one(".property-header .meta")
+            if meta:
+                L.price = pu.parse_price(meta.get_text(" ", strip=True))
+        if not L.price:
+            m = self._EURO_WORD_RE.search(soup.get_text(" ", strip=True))
+            if m:
+                L.price = pu.parse_price(m.group(1))
+        if not L.mq:
+            for li in soup.select(".meta-box-list li"):
+                tip = li.select_one(".tooltip")
+                if tip and re.search(r"superfic", tip.get_text(strip=True), re.I):
+                    L.mq = pu.parse_mq(li.get_text(" ", strip=True))
+                    break
+            if not L.mq:
+                for box in soup.select(".elementor-icon-box-description, .elementor-icon-box-content"):
+                    mq = pu.parse_mq(box.get_text(" ", strip=True))
+                    if mq:
+                        L.mq = mq
+                        break
 
     def fetch(self, ctx):
         if self.cfg.get("relaxed_encoding"):
@@ -72,6 +113,8 @@ class WPCleanSource(GenericSource):
         for L in items:
             L.title = _unescape(L.title)
             L.description = _unescape(L.description)
+            if not L.mq or not L.price:
+                self._detail_fallback(ctx, L)
         return items
 
 
@@ -81,7 +124,9 @@ class WPCleanSource(GenericSource):
 class AemmecasaSource(GenericSource):
     """aemmecasa: il prezzo è in '<div class="meta">NUM€</div>' (numero PRIMA del simbolo, mentre
     l'estrattore generico riconosce solo '€ NUM') e non viene letto; qui si aggiunge un fallback dedicato
-    per prezzo e mq quando l'estrattore generico non li trova."""
+    per prezzo e mq quando l'estrattore generico non li trova. Il tema svuota il prezzo quando l'immobile
+    risulta "VENDUTO" (badge '.property-header .status-update'): in quel caso niente prezzo da trovare,
+    ma segnaliamo comunque L.sold così la dashboard non lo tratta come annuncio attivo senza prezzo."""
 
     def fetch(self, ctx):
         items = super().fetch(ctx)
@@ -94,6 +139,9 @@ class AemmecasaSource(GenericSource):
                 soup = soup_of(ctx.http.text(L.url))
             except Exception:
                 continue
+            badge = soup.select_one(".property-header .status-update")
+            if badge and pu.detect_sold(badge.get_text(strip=True)):
+                L.sold = True
             if not L.price:
                 for div in soup.select(".property-header .meta"):
                     m = re.search(r"([\d.,]+)\s*€", div.get_text(strip=True))
@@ -179,6 +227,59 @@ class SitemapSource(Source):
             if m:
                 return m.group(1)
         return ref_from_url(url)
+
+
+# ---------------------------------------------------------------- b2_rivi
+
+_ASIDE_RE = re.compile(r"<aside\b.*?</aside>", re.S | re.I)
+_RIVI_FIELD_RE = re.compile(
+    r"\b(Price|Square Feet|Bedrooms|Bathrooms|Address|City)\s*:\s*([^\n]*?)"
+    r"(?=\s*(?:Price|Square Feet|Bedrooms|Bathrooms|Address|City|State|ZIP|MLS\s*#|Basement|"
+    r"Additional Features)\s*:|$)", re.I)
+_RIVI_MQ_RE = re.compile(r"\b(\d{2,4})\s*(?:mq|m²)\b", re.I)
+
+
+@register("b2_rivi")
+class RiviSource(SitemapSource):
+    """Rivi Immobiliare (tema 'AgentPress Pro' su Genesis Framework): la sidebar di OGNI scheda ha un
+    filtro di ricerca con <select name='prezzo'>/<select name='tipologia'> le cui prime opzioni reali
+    (dopo il placeholder) sono sempre le stesse su ogni pagina — `kv_pairs` le abbina per errore
+    all'etichetta "Prezzo"/"Tipologia" come se fossero il valore dell'annuncio (lo stesso prezzo "a
+    fascia" e la stessa tipologia "Appartamento" su OGNI scheda, capannone commerciale incluso): la
+    sidebar va eliminata PRIMA di `parse_detail`, altrimenti inquina anche `L.type` (corretto poi da
+    `finalize()`, ma solo se `kv_pairs` non ha già scritto un valore non vuoto).
+
+    Il prezzo vero (quando pubblicato) sta in un blocco dati con etichette in INGLESE (tema MLS):
+    "Price: 350000 Address: ... City: ... Square Feet: 100 Bedrooms: 2 Bathrooms: 2" — non riconosciuto
+    da `kv_pairs` (etichette solo italiane). 'Square Feet' è in realtà già in metri quadri (i numeri
+    coincidono con gli 'm² commerciali' citati nel testo libero, errore di etichetta del tema, non di
+    unità). Quando il blocco manca (annunci senza prezzo pubblicato, es. "Trattativa riservata" implicita)
+    la superficie è comunque spesso citata nel testo libero ("appartamento di 220 mq")."""
+
+    def _text(self, ctx, u):
+        return _ASIDE_RE.sub(" ", super()._text(ctx, u))
+
+    def _post_filter(self, html: str, L: Listing) -> bool:
+        text = soup_of(html).get_text(" ", strip=True)
+        fields = {m.group(1).lower(): m.group(2).strip() for m in _RIVI_FIELD_RE.finditer(text)}
+        if fields.get("price"):
+            L.price = pu.parse_price(fields["price"])
+        if fields.get("square feet"):
+            L.mq = pu.parse_mq(fields["square feet"] + " mq")
+        if fields.get("bedrooms"):
+            L.bedrooms = pu.parse_small_count(fields["bedrooms"], ["camere"])
+        if fields.get("bathrooms"):
+            L.bathrooms = pu.parse_small_count(fields["bathrooms"], ["bagni"])
+        if fields.get("address") and not L.address:
+            L.address = fields["address"].title() or None
+        if not L.mq:
+            # non tutte le schede hanno il blocco dati (prezzo/mq strutturati): quando manca, la
+            # superficie è spesso citata nel testo libero ("attico di 230 mq"), ma non sempre nel
+            # paragrafo scelto da `parse_detail` come L.description, quindi si cerca in tutta la pagina.
+            m = _RIVI_MQ_RE.search(text)
+            if m:
+                L.mq = pu.parse_mq(m.group(0))
+        return True
 
 
 # ---------------------------------------------------------------- b2_attico
@@ -288,7 +389,11 @@ class DinamicaSource(Source):
     """Le schede non hanno <h1> né meta og:title: l'estrattore generico ripiega sul <title> della pagina,
     che aggiunge lo slogan '| Dinamica Immobiliare Trieste' e farebbe risultare 'Trieste' qualunque comune
     (il sito propone anche immobili fuori provincia, es. Latisana/San Giorgio di Nogaro). Titolo, indirizzo
-    (con il comune, formato 'Comune - via, civico') e descrizione si riprendono dai blocchi propri del tema."""
+    (con il comune, formato 'Comune - via, civico') e descrizione si riprendono dai blocchi propri del tema.
+
+    Il tema scrive letteralmente 'Prezzo : VENDUTO' al posto del numero per gli immobili già venduti ma
+    tenuti online come portfolio (parse_price scarta giustamente "VENDUTO", quindi niente prezzo da
+    trovare): qui si marca L.sold così la dashboard non li tratta come annunci attivi senza prezzo."""
 
     def fetch(self, ctx):
         cfg = self.cfg
@@ -321,6 +426,8 @@ class DinamicaSource(Source):
                     paras = [p.get_text(" ", strip=True) for p in soup.select("p.wp-block-paragraph")]
                     if paras:
                         L.description = pu.clean_text(_CTA_RE.sub("", _unescape(" ".join(paras))))
+                    if not L.price and pu.detect_sold(soup.get_text(" ", strip=True)):
+                        L.sold = True
                     if L.features.pop("_rent", False):
                         continue
                     ctx.detail_ids.add(L.id)
@@ -377,6 +484,10 @@ class VidaliGrudenSource(Source):
             L = Listing(source=self.id, ref=ref, url=f"{url}#{ref}", title=title)
             m = _VG_PRICE.search(body)
             L.price = pu.parse_price(m.group(1)) if m else pu.parse_price(body)
+            # la superficie è citata solo nel testo libero ("Circa 110mq calpestabili"): L.mq non veniva
+            # mai valorizzato perché questo adattatore non costruisce L. tramite parse_detail/kv_pairs
+            # (niente scheda/URL dedicati da cui leggerla).
+            L.mq = pu.parse_mq(body)
             L.description = pu.clean_text(body)
             L.images = imgs[:12]
             out.append(L)

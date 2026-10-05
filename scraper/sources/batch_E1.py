@@ -372,6 +372,13 @@ class VirtualRealtySource(Source):
 # scritta "VENDUTO" accanto al prezzo: da escludere.
 _RIFUGIO_FUORI_PROVINCIA = re.compile(r"\bumago\b|\bcervignano\b", re.I)  # zone note dell'agenzia fuori provincia
 
+# Quando il prezzo è in grassetto su un <p> a parte ("<p><strong>PREZZO:</strong> Grezzo avanzato
+# <strong>320.000,00 €</strong></p>"), `soup.get_text("\n")` (usato da `kv_pairs`) spezza etichetta e valore
+# su righe diverse per via dei tag <strong> annidati, quindi la riga successiva a "PREZZO:" letta da `kv_pairs`
+# è solo "Grezzo avanzato" (senza il numero, sulla riga dopo ancora): niente prezzo. Qui si rilegge il prezzo
+# dal testo con gli spazi normalizzati (una sola riga), dove l'etichetta e il numero restano vicini.
+_RIFUGIO_PRICE_RE = re.compile(r"PREZZO[^\d€]{0,40}([\d][\d.,]*)\s*€", re.I)
+
 
 @register("e1_rifugio")
 class RifugioSource(Source):
@@ -400,6 +407,10 @@ class RifugioSource(Source):
                 L = parse_detail(html_d, url, self.id, L)
                 if L.features.pop("_rent", False):
                     continue
+                if not L.price:
+                    m = _RIFUGIO_PRICE_RE.search(text)
+                    if m:
+                        L.price = pu.parse_price(m.group(1) + " €")
                 # L'agenzia copre anche Umago (Croazia) e Cervignano (UD): niente town di default.
                 # Ma titolo/descrizione spesso citano solo il rione ("OPICINA", "GRETTA", "BANNE"...) senza mai
                 # scrivere "Trieste": usiamo le parole chiave dei rioni (comune di Trieste) per riconoscerli.

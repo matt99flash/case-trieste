@@ -51,7 +51,7 @@ sources:
     name: Studio Immobiliare Benedetti
     kind: agenzia
     website: https://www.agenziabenedetti.it/
-    adapter: generic
+    adapter: d1_benedetti
     delay: 1.0
     start_urls: ["https://agenziabenedetti.it/vendite/"]
     page_template: "https://agenziabenedetti.it/vendite/?page={n}"
@@ -127,7 +127,7 @@ sources:
     name: Immobiliare Devetti
     kind: agenzia
     website: https://www.devetti-immobiliare.it/
-    adapter: generic
+    adapter: d1_devetti
     delay: 1.0
     start_urls: ["https://www.devetti-immobiliare.it/immobili-in-vendita.html"]
     link_regex: '/immobili/[a-z0-9-]+/\d+/[a-z0-9-]+\.html$'

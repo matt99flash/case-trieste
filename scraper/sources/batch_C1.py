@@ -158,7 +158,14 @@ class GetrixAspSource(Source):
     """Siti ASP con /web/immobili.asp?tipo_contratto=V + /web/immobile_dettaglio.asp?cod_annuncio=N
     (Gruppo Casa, Giulia Immobiliare, Cheni e Tutta, Casa Programma): teniamo l'ULTIMA occorrenza di ogni
     etichetta nel testo della scheda, che è sempre quella della tabella pulita (la prima, in ordine
-    valore-poi-etichetta, produce abbinamenti sbagliati col kv_pairs generico)."""
+    valore-poi-etichetta, produce abbinamenti sbagliati col kv_pairs generico).
+
+    Eccezione per le etichette numeriche (superficie, vani, camere, bagni, prezzo): su Casa Programma
+    'Superficie' ricompare una terza volta più sotto, nella tabella di dettaglio "Consistenze", ma lì è
+    la cella di INTESTAZIONE della colonna ("Sup. comm.") e non un valore — se la si accetta come ultima
+    occorrenza si perde la vera superficie letta poco prima. Per queste etichette si scarta quindi un
+    candidato senza cifre, tenendo comunque l'ultima occorrenza valida (le altre agenzie del lotto non
+    hanno questa terza tabella, quindi per loro il comportamento resta identico)."""
 
     def fetch(self, ctx):
         links: dict[str, None] = {}
@@ -200,10 +207,14 @@ class GetrixAspSource(Source):
         L = parse_detail(html, url, L.source, L)
         lines = [l.strip() for l in soup.get_text("\n").split("\n") if l.strip()]
         kv = {}
+        _numeric_fields = {"mq", "rooms", "bedrooms", "bathrooms", "price"}
         for i in range(len(lines) - 1):
             key = lines[i].rstrip(":").strip().lower()
             if key in _ASP_LABELS and len(lines[i + 1]) < 60:
-                kv[_ASP_LABELS[key]] = lines[i + 1]   # sovrascrive: vince l'ultima occorrenza
+                field = _ASP_LABELS[key]
+                if field in _numeric_fields and not re.search(r"\d", lines[i + 1]):
+                    continue  # cella di intestazione ("Sup. comm."), non un valore: non sovrascrivere
+                kv[field] = lines[i + 1]   # sovrascrive: vince l'ultima occorrenza valida
         if kv.get("mq"):
             L.mq = pu.parse_mq(kv["mq"]) or L.mq
         if kv.get("rooms"):

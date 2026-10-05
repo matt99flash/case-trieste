@@ -118,6 +118,14 @@ _MQ_LABELED = re.compile(
 # Divi Machine (Minimal Re): valore e unità sono in due <span> distinti e adiacenti, es.
 # '<span>87</span></div><div><span>mq</span>' (nessun testo li unisce, kv_pairs non li abbina).
 _MQ_ADJACENT_SPAN = re.compile(r"<span[^>]*>\s*(\d{1,4})\s*</span></div>\s*<div[^>]*>\s*<span[^>]*>\s*mq\s*</span>", re.I)
+# Divi Builder (Armony Immobiliare): l'etichetta è sulla stessa riga del valore ma separata da un PUNTO
+# invece dei due punti, es. "DUINO n. 75/O Prezzo € 199.000 Mq. 81 Camere 1 Bagni 1": `kv_pairs` (base.py)
+# riconosce "Mq"/"Superficie" come etichetta solo con ":" o su una riga a parte seguita dal valore sulla
+# riga successiva, quindi qui non trova nulla (il meta tag og:description, generato dallo stesso tema, ha
+# anche uno shortcode ACF ("[acf field=\"mq\"]") rimasto non processato: per questo si cerca nell'HTML
+# il solo pattern "Mq. NN" col punto, mai nel testo libero della descrizione dove "mq" compare spesso
+# anche per pertinenze).
+_MQ_PERIOD_LABEL = re.compile(r"\bMq\.?\s*(\d{1,4})\b", re.I)
 
 
 def _fix_mq(L: Listing, html: str):
@@ -176,6 +184,12 @@ def _fix_mq(L: Listing, html: str):
     # al numero); il primo numero è la superficie abitabile.
     raw_mq = kv_pairs(soup_of(html)).get("mq") or ""
     m = re.match(r"\s*(\d{1,4})\s*\+\s*\d", raw_mq)
+    if m:
+        v = int(m.group(1))
+        if 5 <= v <= 2000:
+            L.mq = v
+            return
+    m = _MQ_PERIOD_LABEL.search(html)
     if m:
         v = int(m.group(1))
         if 5 <= v <= 2000:
@@ -277,7 +291,13 @@ class WPCleanSource(GenericSource):
                 if not url or url in visited:
                     break
                 visited.add(url)
-                html = ctx.http.text(url)
+                try:
+                    html = ctx.http.text(url)
+                except Exception as e:
+                    # pagina successiva inesistente (404): l'elenco è finito. Se è la prima pagina, è un errore vero.
+                    if len(visited) > 1 and "404" in str(e):
+                        break
+                    raise
                 soup = soup_of(html)
                 before = len(links)
                 for a in soup.find_all("a", href=True):
@@ -456,7 +476,13 @@ class ERESource(GenericSource):
                 if not url or url in visited:
                     break
                 visited.add(url)
-                html = ctx.http.text(url)
+                try:
+                    html = ctx.http.text(url)
+                except Exception as e:
+                    # pagina successiva inesistente (404): l'elenco è finito. Se è la prima pagina, è un errore vero.
+                    if len(visited) > 1 and "404" in str(e):
+                        break
+                    raise
                 soup = soup_of(html)
                 before = len(links)
                 for a in soup.find_all("a", href=True):

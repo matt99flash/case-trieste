@@ -362,6 +362,66 @@ class GenericTriesteZoneSource(GenericSource):
         return out
 
 
+_BENEDETTI_MQ_RE = re.compile(r"Superficie\s*m\s*2\s*:?\s*(\d{1,4})", re.I)
+
+
+@register("d1_benedetti")
+class BenedettiSource(GenericSource):
+    """Studio Immobiliare Benedetti: come `generic`, ma la superficie è in un singolo <li> con il simbolo
+    m² spezzato dal tag <sup> ("Superficie m<sup>2</sup>: 430"), che `kv_pairs` (etichette attese su una
+    riga propria, es. "Superficie" da sola) non riconosce perché il testo della riga diventa "Superficie m
+    2 : 430" (con "m 2" incollato all'etichetta): letta con una regex dedicata quando manca."""
+
+    def fetch(self, ctx):
+        out = super().fetch(ctx)
+        for L in out:
+            if not L.mq and L.id in ctx.detail_ids:
+                try:
+                    text = soup_of(ctx.http.text(L.url)).get_text(" ", strip=True)
+                except Exception:
+                    continue
+                m = _BENEDETTI_MQ_RE.search(text)
+                if m:
+                    L.mq = pu.parse_mq(m.group(1) + " mq")
+        return out
+
+
+_DEVETTI_REV_LABELS = {"superficie": "mq", "locali": "rooms", "camere": "bedrooms", "bagni": "bathrooms"}
+
+
+@register("d1_devetti")
+class DevettiSource(GenericSource):
+    """Immobiliare Devetti: come `generic`, ma il riquadro panoramica (Superficie/Locali/Camere/Bagni) ha
+    il VALORE sulla riga PRIMA dell'etichetta ("101 m²" poi "Superficie", non il contrario): `kv_pairs`
+    abbina sempre etichetta -> riga SUCCESSIVA, quindi ogni etichetta finisce abbinata al valore
+    dell'etichetta seguente (es. 'Superficie' prende il valore di 'Locali'), con numeri piccoli che spesso
+    cadono fuori dai limiti di sicurezza di `parse_mq` e restano vuoti invece che palesemente sbagliati.
+    Qui si rilegge il blocco prendendo per ogni etichetta nota la riga PRECEDENTE."""
+
+    def fetch(self, ctx):
+        out = super().fetch(ctx)
+        for L in out:
+            if (not L.mq or not L.rooms or not L.bedrooms or not L.bathrooms) and L.id in ctx.detail_ids:
+                try:
+                    lines = [l.strip() for l in soup_of(ctx.http.text(L.url)).get_text("\n").split("\n") if l.strip()]
+                except Exception:
+                    continue
+                fields = {}
+                for i, l in enumerate(lines):
+                    key = _DEVETTI_REV_LABELS.get(l.strip().lower())
+                    if key and i > 0 and key not in fields:
+                        fields[key] = lines[i - 1]
+                if not L.mq and fields.get("mq"):
+                    L.mq = pu.parse_mq(fields["mq"])
+                if not L.rooms and fields.get("rooms"):
+                    L.rooms = pu.parse_rooms(fields["rooms"])
+                if not L.bedrooms and fields.get("bedrooms"):
+                    L.bedrooms = pu.parse_small_count(fields["bedrooms"], ["camere"])
+                if not L.bathrooms and fields.get("bathrooms"):
+                    L.bathrooms = pu.parse_small_count(fields["bathrooms"], ["bagni"])
+        return out
+
+
 @register("d1_osproperty")
 class OsPropertySource(Source):
     """Piattaforma Joomla "com_osproperty" (es. Norbedo). Nella pagina scheda la sidebar "immobili in
@@ -516,11 +576,23 @@ class RizzaSource(Source):
         return out
 
 
+_CASAIMMEDIA_TOTAL_MQ = re.compile(r"(\d{1,4})\s*mq\.?\s*(?:circa)?,?\s*compost\w*\s+da", re.I)
+
+
 @register("d1_casaimmedia")
 class CasaimmediaSource(Source):
     """Casaimmedia Immobiliare: elenco caricato via AJAX (POST /methods/stampaProprieta.php?f=1&t=1&
     rowid=<offset>&rowperpage=<n>), risposta JSON [{"cont": "<totale>"}, {...annuncio...}, ...] paginata
-    con `rowid` come offset. `t=1` = vendita (t=2 = affitto)."""
+    con `rowid` come offset. `t=1` = vendita (t=2 = affitto).
+
+    Niente campo 'mq' strutturato nella risposta: la metratura, quando c'è, sta solo nel testo libero di
+    "descrizione", che però spesso cita ANCHE metrature di pertinenze (giardino, terreno, singole stanze)
+    senza alcuna convenzione di posizione (a volte la superficie totale è citata per prima, a volte per
+    ultima, a volte mai): prendere "il numero più grande" o "il primo numero" darebbe spesso un valore
+    sbagliato, non solo mancante. Si estrae quindi solo quando la frase è un pattern non ambiguo che
+    descrive esplicitamente la metratura TOTALE dell'immobile, introducendo l'elenco dei vani (es. "50 mq
+    circa composti da ingresso, cucina..."): gli altri casi restano senza mq (fonte che non lo scrive in
+    modo riconoscibile, non un bug dell'adattatore)."""
 
     def fetch(self, ctx):
         base = self.cfg.get("base_url", "https://www.casaimmedia.it").rstrip("/")
@@ -553,6 +625,9 @@ class CasaimmediaSource(Source):
             L.title = (it.get("titolo") or "").strip() or None
             L.description = pu.clean_text(it.get("descrizione"))
             L.price = pu.parse_price(it.get("prezzo"))
+            m = _CASAIMMEDIA_TOTAL_MQ.search(it.get("descrizione") or "")
+            if m:
+                L.mq = pu.parse_mq(m.group(1) + " mq")
             try:
                 L.rooms = int(it["nCamere"]) or None
             except (TypeError, ValueError, KeyError):
@@ -653,12 +728,22 @@ class MazziniSource(Source):
         return L
 
 
+_ALTIPIANO_LAND_MQ = re.compile(r"terren[oi]\s+agricol\w*[^.]*?(\d[\d.]{0,6})\s*mq", re.I)
+
+
 @register("d1_altipiano")
 class AltipianoSource(Source):
     """Altipiano Immobiliare di Candotti: sito PHP proprietario, elenco intero in homepage
     (?casa=<id>). Scheda con markup minimale: titolo in <h4>, descrizione in un <div class="decription">
     (sic, refuso del sito) spesso troppo corta per l'estrattore generico (soglia minima 150 caratteri),
-    prezzo in <div class="price">, foto tramite getImage.php?id=<id>&size=<n> (usiamo size=800)."""
+    prezzo in <div class="price">, foto tramite getImage.php?id=<id>&size=<n> (usiamo size=800).
+
+    Niente campo mq strutturato: per gli appartamenti/case la metratura quasi mai è scritta in modo
+    riconoscibile nella descrizione libera (quando c'è un numero + 'mq' è quasi sempre una pertinenza:
+    giardino, accesso auto, terrazzo), quindi tentare di indovinarla darebbe spesso un valore sbagliato,
+    non solo mancante: si lascia vuota. Per i TERRENI (il tipo di immobile più comune di questa agenzia)
+    la metratura citata subito dopo 'terreno agricolo' è invece affidabile (è l'intera superficie in
+    vendita, non una pertinenza): quella si estrae."""
 
     def fetch(self, ctx):
         base = self.cfg.get("base_url", "https://www.altipianoimmobiliare.it").rstrip("/")
@@ -704,6 +789,10 @@ class AltipianoSource(Source):
         ids = re.findall(r"getImage\.php\?id=(\d+)", html)
         L.images = [abs_url(url, f"getImage.php?id={i}&size=800") for i in dict.fromkeys(ids)][:12]
         L = parse_detail(html, url, L.source, L)
+        if not L.mq:
+            m = _ALTIPIANO_LAND_MQ.search(L.description or "")
+            if m:
+                L.mq = pu.parse_mq(m.group(1) + " mq")
         return L
 
 
