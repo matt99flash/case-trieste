@@ -251,43 +251,170 @@ class TecnocasaSource(Source):
 
 
 # ---------------------------------------------------------------- RE/MAX
+# cms.remax.it (vecchia API JSON) non risponde più (connessione rifiutata/timeout, anche da rete diversa):
+# i dati sono ora incorporati (React Server Components / Next.js "Flight") nelle pagine pubbliche
+# https://www.remax.it/vendita-case/<comune>, una ricerca per ciascun comune della provincia (non esiste
+# più una ricerca provinciale unica). Quando un comune non ha annunci propri, il sito mostra comunque una
+# manciata di "immobili simili" presi altrove: li scartiamo confrontando il campo 'city' dell'annuncio col
+# comune cercato, invece di fidarci dell'URL della pagina.
+
+REMAX_TOWNS = {
+    "Trieste": "trieste",
+    "Muggia": "muggia",
+    "Duino-Aurisina": "duino-aurisina",
+    "Sgonico": "sgonico",
+    "Monrupino": "monrupino",
+    "San Dorligo della Valle": "san-dorligo-della-valle-dolina",
+}
+REMAX_TYPE_LABELS = {
+    "appartamento": "Appartamento", "attico_mansarda": "Attico", "nuove_costruzioni": "Nuova costruzione",
+    "casa_semindipendente": "Casa semindipendente", "villa": "Villa", "villa_a_schiera": "Villa a schiera",
+    "loft": "Loft", "casale": "Casale", "rustico": "Rustico",
+}
+
+
+def _remax_push_payloads(html: str) -> list[str]:
+    """Argomenti (JSON-string, quindi con virgolette interne escapate) dei self.__next_f.push([1,"...")
+    con cui Next.js invia la pagina a pezzi (React Flight)."""
+    out, marker, pos = [], 'self.__next_f.push([1,"', 0
+    while True:
+        idx = html.find(marker, pos)
+        if idx == -1:
+            break
+        start = idx + len(marker)
+        i = start
+        while i < len(html):
+            c = html[i]
+            if c == "\\":
+                i += 2
+                continue
+            if c == '"':
+                break
+            i += 1
+        try:
+            out.append(json.loads('"' + html[start:i] + '"'))
+        except Exception:
+            pass
+        pos = i
+    return out
+
+
+def _remax_flight_chunks(html: str) -> dict:
+    """I pezzi React Flight (`self.__next_f.push`) sono testo concatenato a righe 'id:payload'; un payload
+    'T<len_hex>,' è seguito da esattamente <len> BYTE (UTF-8) grezzi (così una stringa lunga, es. la
+    descrizione, può proseguire nel pezzo successivo senza essere ri-escapata): operiamo sui byte, non sui
+    caratteri Python, perché le lettere accentate occupano più di un byte e sfaserebbero il conteggio."""
+    buf = "".join(_remax_push_payloads(html)).encode("utf-8")
+    chunks, i, n = {}, 0, len(buf)
+    while i < n:
+        m = re.match(rb"([0-9a-fA-F]+):", buf[i:])
+        if not m:
+            i += 1
+            continue
+        cid, j = m.group(1).decode(), i + m.end()
+        if j < n and buf[j:j + 1] == b"T":
+            m2 = re.match(rb"T([0-9a-fA-F]+),", buf[j:])
+            if not m2:
+                i = j
+                continue
+            length = int(m2.group(1), 16)
+            start = j + m2.end()
+            chunks[cid] = buf[start:start + length].decode("utf-8", errors="replace")
+            i = start + length
+        else:
+            nl = buf.find(b"\n", j)
+            if nl == -1:
+                nl = n
+            chunks[cid] = buf[j:nl].decode("utf-8", errors="replace")
+            i = nl + 1
+    return chunks
+
+
+def _remax_resolve(value, chunks: dict):
+    """Un valore tipo '$1a' è un riferimento a un pezzo caricato altrove (usato per i testi lunghi, es.
+    la descrizione, mandati in streaming separatamente)."""
+    if isinstance(value, str) and re.match(r"^\$[0-9a-fA-F]+$", value):
+        raw = chunks.get(value[1:])
+        if raw is None:
+            return None
+        try:
+            return json.loads(raw)
+        except Exception:
+            return raw
+    return value
+
+
+def _remax_properties(html: str) -> list[dict]:
+    """Oggetti annuncio ('"property":{...}') incorporati nella pagina: li isoliamo contando le graffe
+    (ignorando quelle dentro le stringhe escapate) perché non sono JSON valido di per sé (fanno parte
+    della stringa React Flight)."""
+    out, marker, pos = [], '\\"property\\":{', 0
+    while True:
+        idx = html.find(marker, pos)
+        if idx == -1:
+            break
+        start = idx + len(marker) - 1
+        i, depth = start, 0
+        while i < len(html):
+            c = html[i]
+            if c == "\\":
+                i += 2
+                continue
+            if c == "{":
+                depth += 1
+            elif c == "}":
+                depth -= 1
+                if depth == 0:
+                    i += 1
+                    break
+            i += 1
+        obj_text = html[start:i]
+        pos = i
+        try:
+            obj = json.loads(json.loads('"' + obj_text + '"'))
+        except Exception:
+            obj = None
+        if isinstance(obj, dict) and obj.get("code"):
+            out.append(obj)
+    return out
+
+
+def _remax_detail_url(html: str, code: str) -> str | None:
+    """URL pubblico della scheda (su un sottodominio per agenzia, es. enterprise.remax.it): non ricavabile
+    dai soli campi dell'annuncio (lo slug di zona non è una semplice trasformazione del nome zona), ma
+    presente alla lettera nel JSON-LD incorporato nella stessa pagina elenco."""
+    m = re.search(r"https://[a-z0-9.-]+\.remax\.it/vendita-[a-z-]+/[a-z-]+/[a-z0-9'-]+-" + re.escape(code), html)
+    return m.group(0) if m else None
+
 
 @register("remax")
 class RemaxSource(Source):
-    API = "https://cms.remax.it/api/v1/units"
-    HEADERS = {"Accept": "application/json", "Origin": "https://www.remax.it", "Referer": "https://www.remax.it/"}
-
     def fetch(self, ctx):
-        # unit_type=1 = residenziale (appartamenti, attici, case, ville, nuove costruzioni)
-        base = {"announce": "5c5abf0647c29f5b05619b50", "location": "ts", "location_type": "districts",
-                "unit_type": self.cfg.get("unit_type", "1")}
-        units, page, total_pages, total = [], 1, 1, None
-        while page <= min(total_pages, 30):
-            j = _json(ctx.http.get(self.API, params={**base, "page": page}, headers=self.HEADERS))
-            if "units" not in j:
-                raise ValueError("risposta RE/MAX senza 'units'")
-            if j.get("extended_search"):
-                # nessun risultato esatto: il sito ha allargato la ricerca, i risultati non sono della provincia
-                ctx.log(f"ricerca allargata alla pagina {page}: tengo solo i risultati esatti ({len(units)})")
-                break
-            pag = j.get("pagination") or {}
-            total_pages, total = int(pag.get("total_pages") or 1), pag.get("total_results")
-            feats = (j["units"] or {}).get("features") or []
-            units += feats
-            if not feats:
-                break
-            page += 1
-        ctx.log(f"{len(units)} annunci nell'elenco (dichiarati {total})")
+        found = {}
+        for town, slug in REMAX_TOWNS.items():
+            seen, page = set(), 1
+            while page <= 30:
+                html = ctx.http.text(f"https://www.remax.it/vendita-case/{slug}", params={"page": page})
+                matched = [p for p in _remax_properties(html) if _town(p.get("city")) == town]
+                new = [p for p in matched if p["code"] not in seen]
+                if not new:
+                    break
+                for p in new:
+                    seen.add(p["code"])
+                    found[p["code"]] = (town, p, _remax_detail_url(html, p["code"]))
+                page += 1
+            ctx.log(f"{town}: {len(seen)} annunci")
+        ctx.log(f"{len(found)} annunci nell'elenco (provincia di Trieste)")
         out, details = [], 0
-        for u in units:
+        for code, (town, p, url) in found.items():
             try:
-                L = self._parse(u)
+                L = self._parse(code, town, p, url)
             except Exception as ex:
-                ctx.errors.append(f"{(u.get('properties') or {}).get('code')}: {ex}")
+                ctx.errors.append(f"{code}: {ex}")
                 continue
             if L is None:
                 continue
-            if details < self.max_details and ctx.store.needs_detail(L.id, L.price):
+            if url and details < self.max_details and ctx.store.needs_detail(L.id, L.price):
                 details += 1
                 try:
                     self._detail(ctx, L)
@@ -300,47 +427,34 @@ class RemaxSource(Source):
             out.append(L)
         return out
 
-    def _parse(self, u):
-        p = u.get("properties") or {}
-        if p.get("announce") and p["announce"] != "Vendita":
+    def _parse(self, code, town, p, url):
+        utype = p.get("propertyType") or ""
+        if NON_RES.search(utype.replace("_", " ")):
             return None
-        utype = p.get("unit_type") or ""
-        if NON_RES.search(utype):
-            return None
-        muni = p.get("municipality") or ""
-        L = Listing(source=self.id, ref=p["code"], url=f"https://www.remax.it/trova/immobile/{p.get('slug')}",
-                    title=f"{utype} in vendita a {muni}".strip(),
-                    price=None if p.get("reserved_price") else pu.parse_price(p.get("sell_price")),
-                    mq=pu.parse_mq(p.get("square_meters")), rooms=pu.parse_rooms(p.get("rooms")),
-                    bedrooms=pu.parse_small_count((p.get("locals") or {}).get("bedrooms"), ["camere"]),
-                    bathrooms=pu.parse_small_count((p.get("locals") or {}).get("bathrooms"), ["bagni"]),
-                    town=_town(muni) if (p.get("district") or "TS").upper() == "TS" else (muni or "fuori provincia"),
-                    agency=(p.get("agent") or {}).get("agency"))
-        c = (u.get("geometry") or {}).get("coordinates") or p.get("location") or []
-        if len(c) == 2 and c[0] and c[1]:
-            _geo(L, c[1], c[0])
+        label = REMAX_TYPE_LABELS.get(utype) or (utype.replace("_", " ").strip().capitalize() or "Immobile")
+        L = Listing(source=self.id, ref=code,
+                    url=url or f"https://www.remax.it/vendita-case/{REMAX_TOWNS.get(town, 'trieste')}#{code}",
+                    title=f"{label} in vendita a {town}",
+                    price=None if p.get("isConfidential") else pu.parse_price(p.get("price")),
+                    mq=pu.parse_mq(p.get("totalArea")), rooms=pu.parse_rooms(p.get("rooms")),
+                    bedrooms=pu.parse_small_count(p.get("bedrooms"), ["camere"]),
+                    bathrooms=pu.parse_small_count(p.get("bathrooms"), ["bagni"]),
+                    town=town, zone=p.get("neighborhood") or p.get("quadrantName") or None,
+                    address=p.get("address") or None,
+                    floor=str(p["floor"]) if p.get("floor") not in (None, "") else None,
+                    agency=p.get("agencyName"))
+        if p.get("latitude") and p.get("longitude"):
+            _geo(L, p["latitude"], p["longitude"])
         L.type = self._type(utype)
-        if utype.lower().startswith("nuov"):
+        if p.get("isNew") or utype == "nuove_costruzioni":
             L.condition = "nuovo"
-        imgs = p.get("images") or []
-        L.images = [(i.get("images") or {}).get("desktop") for i in imgs][:12]
-        # zona dal testo alternativo delle foto: "Appartamento Ospedale Maggiore, Trieste, TS Vendita"
-        if imgs and imgs[0].get("alt"):
-            head = imgs[0]["alt"].split(",")[0]
-            if head.lower().startswith(utype.lower()):
-                z = head[len(utype):].strip()
-                if z and z.lower() != muni.lower():
-                    L.zone = z
-        s = p.get("services") or {}
-        # i servizi sono spesso lasciati a "false" quando non compilati: considera solo i "sì"
-        L.features = _feats(elevator=True if s.get("elevator") else None,
-                            garage=True if (s.get("garage") or s.get("parking")) else None,
-                            terrace=True if s.get("terrace") else None, garden=True if s.get("garden") else None)
+        if p.get("mainPhotoUrl"):
+            L.images = [p["mainPhotoUrl"]]
         return L
 
     @staticmethod
     def _type(utype):
-        t = utype.lower()
+        t = (utype or "").lower()
         if "attic" in t or "mansard" in t:
             return "attico"
         if "vill" in t or "schiera" in t:
@@ -352,22 +466,32 @@ class RemaxSource(Source):
         return None
 
     def _detail(self, ctx, L):
-        slug = L.url.rsplit("/", 1)[-1]
-        d = _json(ctx.http.get(f"{self.API}/{slug}", headers=self.HEADERS)).get("unit") or {}
+        html = ctx.http.text(L.url)
+        d = next((x for x in _remax_properties(html) if x.get("code") == L.ref), None)
         if not d:
             raise ValueError("scheda vuota")
-        L.description = _text(d.get("description"))
+        desc = _remax_resolve(d.get("description"), _remax_flight_chunks(html))
+        if isinstance(desc, str) and desc.strip():
+            L.description = _text(htmlmod.unescape(desc))
         if d.get("address"):
-            L.address = " ".join(x for x in (d.get("address"), d.get("house_number")) if x)
-        if d.get("hamlet"):
-            L.zone = d["hamlet"]
-        imgs = [(i.get("images") or {}).get("desktop") for i in d.get("images") or [] if isinstance(i, dict)]
-        if len([i for i in imgs if i]) > len(L.images):
-            L.images = [i for i in imgs if i][:12]
-        L.energy = _energy(d.get("new_energy_class")) or _energy(d.get("energy_class"))
+            L.address = d["address"]
+        coords = d.get("coordinates") or {}
+        if coords.get("lat") and coords.get("lng"):
+            _geo(L, coords["lat"], coords["lng"])
+        photos = sorted((d.get("photos") or []), key=lambda x: x.get("order") or 0)
+        imgs = [x.get("url") for x in photos if isinstance(x, dict) and x.get("url")]
+        if len(imgs) > len(L.images or []):
+            L.images = imgs[:12]
+        L.energy = _energy(d.get("energyClass"))
+        L.condition = L.condition or _condition((d.get("conservationState") or "").replace("_", " "))
+        if d.get("floor") not in (None, ""):
+            L.floor = str(d["floor"])
         if not L.type or L.type == "altro":
             L.type = pu.detect_type(L.title, L.description)
-        L.condition = L.condition or _condition(d.get("unit_state"))
+        L.features = _feats(elevator=_yes(d.get("hasElevator")),
+                            garage=_yes(d.get("hasGarage") or d.get("hasBox") or d.get("hasParking")),
+                            terrace=_yes(d.get("hasTerrace") or d.get("hasBalcony")),
+                            garden=_yes(d.get("hasGarden")))
 
 
 # ---------------------------------------------------------------- Gabetti
