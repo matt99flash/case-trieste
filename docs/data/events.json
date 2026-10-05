@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T07:27:20+00:00",
+ "updated": "2026-10-05T09:29:03+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -1915,6 +1915,35 @@
    "id": "noidonne-immobiliare:via-buonarroti",
    "source": "noidonne-immobiliare",
    "price": null
+  },
+  {
+   "ts": "2026-10-05T09:29:03+00:00",
+   "type": "back",
+   "id": "tag-srl:123",
+   "source": "tag-srl",
+   "price": 470000
+  },
+  {
+   "ts": "2026-10-05T09:29:03+00:00",
+   "type": "price_down",
+   "id": "tecnocasa:61277581",
+   "source": "tecnocasa",
+   "old_price": 328000,
+   "price": 318000
+  },
+  {
+   "ts": "2026-10-05T09:29:03+00:00",
+   "type": "new",
+   "id": "andrea-oliva:908",
+   "source": "andrea-oliva",
+   "price": 320000
+  },
+  {
+   "ts": "2026-10-05T09:29:03+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21450",
+   "source": "e1-hometrieste",
+   "price": 405000
   }
  ]
 }
