@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T17:22:25+00:00",
+ "updated": "2026-10-06T19:22:54+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2717,6 +2717,27 @@
    "id": "promissio-immobiliare:villetta-bifamiliare-con-giardino",
    "source": "promissio-immobiliare",
    "price": 470000
+  },
+  {
+   "ts": "2026-10-06T19:22:54+00:00",
+   "type": "back",
+   "id": "tag-srl:083",
+   "source": "tag-srl",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-06T19:22:54+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-rossetti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T19:22:54+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
   }
  ]
 }
