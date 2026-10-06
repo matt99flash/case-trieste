@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T05:24:02+00:00",
+ "updated": "2026-10-06T07:26:16+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2350,6 +2350,84 @@
    "id": "b1-trieste-centro:tarvisio-elegante-appartamento-con-terrazza-panoramica",
    "source": "b1-trieste-centro",
    "price": null
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "back",
+   "id": "remax:33641022-4779",
+   "source": "remax",
+   "price": 219000
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "price_down",
+   "id": "remax:33641022-4779",
+   "source": "remax",
+   "old_price": 230000,
+   "price": 219000
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "removed",
+   "id": "b1-hab:attico-cologna-universita",
+   "source": "b1-hab",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "removed",
+   "id": "b1-hab:attico-cologna-universita-2",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "removed",
+   "id": "b1-hab:capannone-zona-industriale-con-terreno",
+   "source": "b1-hab",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "removed",
+   "id": "b1-hab:casa-hoffe-sappada",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "removed",
+   "id": "b1-hab:posto-auto-park-san-giusto",
+   "source": "b1-hab",
+   "price": 60000
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "removed",
+   "id": "b1-hab:ristorante-in-centro-storico",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "removed",
+   "id": "gallery-immobiliare:190360158",
+   "source": "gallery-immobiliare",
+   "price": 112000
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "removed",
+   "id": "gruppo-casa:376529",
+   "source": "gruppo-casa",
+   "price": 345000
+  },
+  {
+   "ts": "2026-10-06T07:26:16+00:00",
+   "type": "removed",
+   "id": "giulia-immobiliare:371450",
+   "source": "giulia-immobiliare",
+   "price": 155000
   }
  ]
 }
