@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T21:32:07+00:00",
+ "updated": "2026-10-06T05:24:02+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2343,6 +2343,13 @@
    "id": "giulia-immobiliare:318593",
    "source": "giulia-immobiliare",
    "price": 850000
+  },
+  {
+   "ts": "2026-10-06T05:24:02+00:00",
+   "type": "new",
+   "id": "b1-trieste-centro:tarvisio-elegante-appartamento-con-terrazza-panoramica",
+   "source": "b1-trieste-centro",
+   "price": null
   }
  ]
 }
