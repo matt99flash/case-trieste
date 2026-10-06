@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T07:26:16+00:00",
+ "updated": "2026-10-06T09:26:12+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2428,6 +2428,125 @@
    "id": "giulia-immobiliare:371450",
    "source": "giulia-immobiliare",
    "price": 155000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "noidonne-immobiliare:palazzo-re-nudo-centro-storico",
+   "source": "noidonne-immobiliare",
+   "price": 298000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-franca-2",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "b1-al-quadrato:via-della-tesa-intero-stabile-a-reddito-con-10-appartamenti-e-1-150-000",
+   "source": "b1-al-quadrato",
+   "price": 1150000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "remax:33641003-197",
+   "source": "remax",
+   "price": 119000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "remax:38501111-28",
+   "source": "remax",
+   "price": 312000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "back",
+   "id": "b1-hab:attico-cologna-universita",
+   "source": "b1-hab",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "back",
+   "id": "b1-hab:casa-hoffe-sappada",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "back",
+   "id": "b1-hab:capannone-zona-industriale-con-terreno",
+   "source": "b1-hab",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "back",
+   "id": "b1-hab:ristorante-in-centro-storico",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "back",
+   "id": "b1-hab:attico-cologna-universita-2",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "back",
+   "id": "b1-hab:posto-auto-park-san-giusto",
+   "source": "b1-hab",
+   "price": 60000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "b1-perla:giardino-pubblico-trieste",
+   "source": "b1-perla",
+   "price": 268000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "b1-perla:faro-della-vittoria",
+   "source": "b1-perla",
+   "price": 670000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "b1-perla:locale-commerciale-corso-saba",
+   "source": "b1-perla",
+   "price": 156000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "b1-perla:box-macchina-zona-viale-xx-settembre",
+   "source": "b1-perla",
+   "price": 35000
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "tirabora-immobiliare:2546",
+   "source": "tirabora-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T09:26:12+00:00",
+   "type": "new",
+   "id": "tirabora-immobiliare:2547",
+   "source": "tirabora-immobiliare",
+   "price": null
   }
  ]
 }
