@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T15:24:57+00:00",
+ "updated": "2026-10-06T17:22:25+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2661,6 +2661,62 @@
    "id": "subito-privati:663510074",
    "source": "subito-privati",
    "price": 145000
+  },
+  {
+   "ts": "2026-10-06T17:22:25+00:00",
+   "type": "new",
+   "id": "limmobiliare:5809031010",
+   "source": "limmobiliare",
+   "price": 480000
+  },
+  {
+   "ts": "2026-10-06T17:22:25+00:00",
+   "type": "removed",
+   "id": "tag-srl:083",
+   "source": "tag-srl",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-06T17:22:25+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T17:22:25+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-rossetti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T17:22:25+00:00",
+   "type": "new",
+   "id": "rigatti-immobiliare:appartamento-d-epoca-immerso-nel-verde",
+   "source": "rigatti-immobiliare",
+   "price": 248000
+  },
+  {
+   "ts": "2026-10-06T17:22:25+00:00",
+   "type": "new",
+   "id": "di-casa-in-casa:58",
+   "source": "di-casa-in-casa",
+   "price": 480000
+  },
+  {
+   "ts": "2026-10-06T17:22:25+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:12102",
+   "source": "e1-hometrieste",
+   "price": 299000
+  },
+  {
+   "ts": "2026-10-06T17:22:25+00:00",
+   "type": "removed",
+   "id": "promissio-immobiliare:villetta-bifamiliare-con-giardino",
+   "source": "promissio-immobiliare",
+   "price": 470000
   }
  ]
 }
