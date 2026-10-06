@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T09:26:12+00:00",
+ "updated": "2026-10-06T11:24:09+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2547,6 +2547,70 @@
    "id": "tirabora-immobiliare:2547",
    "source": "tirabora-immobiliare",
    "price": null
+  },
+  {
+   "ts": "2026-10-06T11:24:09+00:00",
+   "type": "removed",
+   "id": "omega-trieste:largo-mioni-bilocale-con-balcone-e-cantina",
+   "source": "omega-trieste",
+   "price": 109000
+  },
+  {
+   "ts": "2026-10-06T11:24:09+00:00",
+   "type": "removed",
+   "id": "urban-real-estate:chiadino-villa-depoca-con-giardino",
+   "source": "urban-real-estate",
+   "price": 1350000
+  },
+  {
+   "ts": "2026-10-06T11:24:09+00:00",
+   "type": "price_down",
+   "id": "tecnocasa:61268481",
+   "source": "tecnocasa",
+   "old_price": 350000,
+   "price": 310000
+  },
+  {
+   "ts": "2026-10-06T11:24:09+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-franca-2",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-06T11:24:09+00:00",
+   "type": "removed",
+   "id": "b1-perla:ottavo-piano-con-ascensore-vista-mozzafiato",
+   "source": "b1-perla",
+   "price": 270000
+  },
+  {
+   "ts": "2026-10-06T11:24:09+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:cigotti",
+   "source": "studio-immobiliare-84",
+   "price": 159000
+  },
+  {
+   "ts": "2026-10-06T11:24:09+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2466",
+   "source": "tirabora-immobiliare",
+   "price": 620000
+  },
+  {
+   "ts": "2026-10-06T11:24:09+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2469",
+   "source": "tirabora-immobiliare",
+   "price": 255000
+  },
+  {
+   "ts": "2026-10-06T11:24:09+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2470",
+   "source": "tirabora-immobiliare",
+   "price": 365000
   }
  ]
 }
