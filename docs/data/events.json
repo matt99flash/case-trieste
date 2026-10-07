@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T07:27:27+00:00",
+ "updated": "2026-10-07T09:26:16+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2766,6 +2766,55 @@
    "id": "tag-srl:073",
    "source": "tag-srl",
    "price": 370000
+  },
+  {
+   "ts": "2026-10-07T09:26:16+00:00",
+   "type": "back",
+   "id": "tag-srl:073",
+   "source": "tag-srl",
+   "price": 370000
+  },
+  {
+   "ts": "2026-10-07T09:26:16+00:00",
+   "type": "new",
+   "id": "cantieri-tirabora:residenza-giotto",
+   "source": "cantieri-tirabora",
+   "price": null
+  },
+  {
+   "ts": "2026-10-07T09:26:16+00:00",
+   "type": "new",
+   "id": "pozzecco-immobiliare:centro-citta-appartamento-mansardato-a-pochi-passi-dal-centro",
+   "source": "pozzecco-immobiliare",
+   "price": 495000
+  },
+  {
+   "ts": "2026-10-07T09:26:16+00:00",
+   "type": "new",
+   "id": "altipiano:san-luigi",
+   "source": "altipiano",
+   "price": 265000
+  },
+  {
+   "ts": "2026-10-07T09:26:16+00:00",
+   "type": "new",
+   "id": "casaimmedia:555",
+   "source": "casaimmedia",
+   "price": null
+  },
+  {
+   "ts": "2026-10-07T09:26:16+00:00",
+   "type": "new",
+   "id": "altipiano-immobiliare:557",
+   "source": "altipiano-immobiliare",
+   "price": 265000
+  },
+  {
+   "ts": "2026-10-07T09:26:16+00:00",
+   "type": "new",
+   "id": "mab-immobiliare:investimento-con-splendida-vista",
+   "source": "mab-immobiliare",
+   "price": 185000
   }
  ]
 }
