@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T05:25:30+00:00",
+ "updated": "2026-10-07T07:27:27+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2752,6 +2752,20 @@
    "id": "gallery-immobiliare:193793951",
    "source": "gallery-immobiliare",
    "price": 280000
+  },
+  {
+   "ts": "2026-10-07T07:27:27+00:00",
+   "type": "back",
+   "id": "tag-srl:083",
+   "source": "tag-srl",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-07T07:27:27+00:00",
+   "type": "removed",
+   "id": "tag-srl:073",
+   "source": "tag-srl",
+   "price": 370000
   }
  ]
 }
