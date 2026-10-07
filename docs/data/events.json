@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T13:27:34+00:00",
+ "updated": "2026-10-07T15:36:26+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2857,6 +2857,35 @@
    "id": "tag-srl:124",
    "source": "tag-srl",
    "price": 450000
+  },
+  {
+   "ts": "2026-10-07T15:36:26+00:00",
+   "type": "removed",
+   "id": "gabetti:3304690",
+   "source": "gabetti",
+   "price": 620000
+  },
+  {
+   "ts": "2026-10-07T15:36:26+00:00",
+   "type": "price_down",
+   "id": "remax:33641022-4796",
+   "source": "remax",
+   "old_price": 119000,
+   "price": 107000
+  },
+  {
+   "ts": "2026-10-07T15:36:26+00:00",
+   "type": "new",
+   "id": "remax:33641016-82",
+   "source": "remax",
+   "price": 84500
+  },
+  {
+   "ts": "2026-10-07T15:36:26+00:00",
+   "type": "removed",
+   "id": "b1-project-immobiliare:elegante-casa-indipendente-lazzaretto",
+   "source": "b1-project-immobiliare",
+   "price": 1100000
   }
  ]
 }
