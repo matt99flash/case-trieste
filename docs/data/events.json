@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T15:36:26+00:00",
+ "updated": "2026-10-07T17:26:50+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2886,6 +2886,55 @@
    "id": "b1-project-immobiliare:elegante-casa-indipendente-lazzaretto",
    "source": "b1-project-immobiliare",
    "price": 1100000
+  },
+  {
+   "ts": "2026-10-07T17:26:50+00:00",
+   "type": "removed",
+   "id": "gabetti:3310952",
+   "source": "gabetti",
+   "price": 300000
+  },
+  {
+   "ts": "2026-10-07T17:26:50+00:00",
+   "type": "removed",
+   "id": "tag-srl:023",
+   "source": "tag-srl",
+   "price": 300000
+  },
+  {
+   "ts": "2026-10-07T17:26:50+00:00",
+   "type": "removed",
+   "id": "remax:33641022-4793",
+   "source": "remax",
+   "price": 135000
+  },
+  {
+   "ts": "2026-10-07T17:26:50+00:00",
+   "type": "new",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-2-6",
+   "source": "dinamica-immobiliare",
+   "price": 205000
+  },
+  {
+   "ts": "2026-10-07T17:26:50+00:00",
+   "type": "removed",
+   "id": "casa-programma:2598124",
+   "source": "casa-programma",
+   "price": 160000
+  },
+  {
+   "ts": "2026-10-07T17:26:50+00:00",
+   "type": "removed",
+   "id": "tam-immobiliare:113243",
+   "source": "tam-immobiliare",
+   "price": 205000
+  },
+  {
+   "ts": "2026-10-07T17:26:50+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2312",
+   "source": "tirabora-immobiliare",
+   "price": 165000
   }
  ]
 }
