@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T09:26:16+00:00",
+ "updated": "2026-10-07T11:24:46+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -2815,6 +2815,41 @@
    "id": "mab-immobiliare:investimento-con-splendida-vista",
    "source": "mab-immobiliare",
    "price": 185000
+  },
+  {
+   "ts": "2026-10-07T11:24:46+00:00",
+   "type": "removed",
+   "id": "tag-srl:124",
+   "source": "tag-srl",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-07T11:24:46+00:00",
+   "type": "new",
+   "id": "tecnocasa:61239340",
+   "source": "tecnocasa",
+   "price": 238000
+  },
+  {
+   "ts": "2026-10-07T11:24:46+00:00",
+   "type": "removed",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-3",
+   "source": "dinamica-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-07T11:24:46+00:00",
+   "type": "new",
+   "id": "trieste-villas:casa-romantica-nel-borgo-di-contovello-62",
+   "source": "trieste-villas",
+   "price": 335000
+  },
+  {
+   "ts": "2026-10-07T11:24:46+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21791",
+   "source": "e1-hometrieste",
+   "price": 42000
   }
  ]
 }
