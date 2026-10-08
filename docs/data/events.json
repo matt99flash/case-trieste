@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T19:25:33+00:00",
+ "updated": "2026-10-08T21:25:08+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3385,6 +3385,13 @@
    "id": "norbedo-immobiliare:campi-elisi-via-coletti.html",
    "source": "norbedo-immobiliare",
    "price": 28000
+  },
+  {
+   "ts": "2026-10-08T21:25:08+00:00",
+   "type": "removed",
+   "id": "b1-project-immobiliare:158",
+   "source": "b1-project-immobiliare",
+   "price": 297000
   }
  ]
 }
