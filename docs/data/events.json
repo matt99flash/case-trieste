@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T09:26:45+00:00",
+ "updated": "2026-10-08T11:25:47+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3103,6 +3103,63 @@
    "id": "trieste-villas:quadrilocale-borgata-bach-alta-sappada-0",
    "source": "trieste-villas",
    "price": 485000
+  },
+  {
+   "ts": "2026-10-08T11:25:47+00:00",
+   "type": "price_down",
+   "id": "subito-privati:647309037",
+   "source": "subito-privati",
+   "old_price": 280000,
+   "price": 269000
+  },
+  {
+   "ts": "2026-10-08T11:25:47+00:00",
+   "type": "new",
+   "id": "limmobiliare:6009031010",
+   "source": "limmobiliare",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-08T11:25:47+00:00",
+   "type": "removed",
+   "id": "remax:31431022-35",
+   "source": "remax",
+   "price": 140000
+  },
+  {
+   "ts": "2026-10-08T11:25:47+00:00",
+   "type": "new",
+   "id": "next-immobiliare:casetta-accostata",
+   "source": "next-immobiliare",
+   "price": 188000
+  },
+  {
+   "ts": "2026-10-08T11:25:47+00:00",
+   "type": "new",
+   "id": "tecnocasa:61282251",
+   "source": "tecnocasa",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-08T11:25:47+00:00",
+   "type": "removed",
+   "id": "tecnocasa:61236866",
+   "source": "tecnocasa",
+   "price": 159000
+  },
+  {
+   "ts": "2026-10-08T11:25:47+00:00",
+   "type": "removed",
+   "id": "igloo:2902634",
+   "source": "igloo",
+   "price": 123000
+  },
+  {
+   "ts": "2026-10-08T11:25:47+00:00",
+   "type": "new",
+   "id": "di-casa-in-casa:60",
+   "source": "di-casa-in-casa",
+   "price": 350000
   }
  ]
 }
