@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T15:27:24+00:00",
+ "updated": "2026-10-08T17:25:09+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3259,6 +3259,111 @@
    "id": "tecnocasa:61283042",
    "source": "tecnocasa",
    "price": 220000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "trieste-properties:via-grossich-vendita-appartamento-cortile-campanelle-trieste",
+   "source": "trieste-properties",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "trieste-properties:via-grossich-vendita-appartamento-posto-auto-campanelle-trieste",
+   "source": "trieste-properties",
+   "price": 268000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "trieste-properties:via-fabio-severo-vendita-bilocale-semicentro-giardino-pubblico-trieste",
+   "source": "trieste-properties",
+   "price": 149000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "trieste-properties:via-battera-trieste-semicentro-vendita-appartamento-bilocale",
+   "source": "trieste-properties",
+   "price": 82000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "trieste-properties:via-soncini-trieste-periferia-est-vendita-appartamento-quadrilocale",
+   "source": "trieste-properties",
+   "price": 159000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "trieste-properties:san-dorligo-della-valle-trieste-domio-terreno-edificabile-vendita",
+   "source": "trieste-properties",
+   "price": 100000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "trieste-properties:via-carli-trieste-san-vito-vendita-appartamento-quadrilocale",
+   "source": "trieste-properties",
+   "price": 295000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "trieste-properties:fiordalisi-opicina-trieste-vendita-appartamento-quadrilocale-box",
+   "source": "trieste-properties",
+   "price": 248000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "tag-srl:123",
+   "source": "tag-srl",
+   "price": 470000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "removed",
+   "id": "tag-srl:appartamento-vt06am",
+   "source": "tag-srl",
+   "price": null
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "removed",
+   "id": "tecnocasa:61210096",
+   "source": "tecnocasa",
+   "price": 139000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-franca-2",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "removed",
+   "id": "cheni-tutta:2563813",
+   "source": "cheni-tutta",
+   "price": 240000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "removed",
+   "id": "la-rue-immobiliare:00002",
+   "source": "la-rue-immobiliare",
+   "price": 248000
+  },
+  {
+   "ts": "2026-10-08T17:25:09+00:00",
+   "type": "removed",
+   "id": "imobilia-trieste:179",
+   "source": "imobilia-trieste",
+   "price": 35000
   }
  ]
 }
