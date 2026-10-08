@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T13:28:44+00:00",
+ "updated": "2026-10-08T15:27:24+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3188,6 +3188,77 @@
    "id": "b1-pizzarello:laboratorio-odontotecnico-vendita-muri-zona-ospedale-maggiore-trieste",
    "source": "b1-pizzarello",
    "price": 134000
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "removed",
+   "id": "tag-srl:123",
+   "source": "tag-srl",
+   "price": 470000
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-franca-2",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "new",
+   "id": "cheni-tutta:2556506",
+   "source": "cheni-tutta",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "new",
+   "id": "la-rue-immobiliare:00035",
+   "source": "la-rue-immobiliare",
+   "price": 150000
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:228",
+   "source": "imobilia-trieste",
+   "price": 140000
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "new",
+   "id": "tam-immobiliare:113188",
+   "source": "tam-immobiliare",
+   "price": 162000
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "price_down",
+   "id": "tam-immobiliare:34960",
+   "source": "tam-immobiliare",
+   "old_price": 330000,
+   "price": 297000
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "removed",
+   "id": "rizza-immobiliare:0713",
+   "source": "rizza-immobiliare",
+   "price": 200000
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "new",
+   "id": "tecnocasa:61283041",
+   "source": "tecnocasa",
+   "price": 380000
+  },
+  {
+   "ts": "2026-10-08T15:27:24+00:00",
+   "type": "new",
+   "id": "tecnocasa:61283042",
+   "source": "tecnocasa",
+   "price": 220000
   }
  ]
 }
