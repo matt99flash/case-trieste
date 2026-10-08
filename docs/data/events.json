@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T07:27:21+00:00",
+ "updated": "2026-10-08T09:26:45+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3054,6 +3054,55 @@
    "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
    "source": "noidonne-immobiliare",
    "price": null
+  },
+  {
+   "ts": "2026-10-08T09:26:45+00:00",
+   "type": "back",
+   "id": "tag-srl:174",
+   "source": "tag-srl",
+   "price": null
+  },
+  {
+   "ts": "2026-10-08T09:26:45+00:00",
+   "type": "removed",
+   "id": "omega-trieste:san-luigi-box-auto-singolo",
+   "source": "omega-trieste",
+   "price": 32000
+  },
+  {
+   "ts": "2026-10-08T09:26:45+00:00",
+   "type": "removed",
+   "id": "opera-immobiliare:carlo-antoni-ultimo-piano-nel-verde",
+   "source": "opera-immobiliare",
+   "price": 278000
+  },
+  {
+   "ts": "2026-10-08T09:26:45+00:00",
+   "type": "removed",
+   "id": "opera-immobiliare:cittavecchia-splendido-trilocale-con-vista-mare",
+   "source": "opera-immobiliare",
+   "price": 325000
+  },
+  {
+   "ts": "2026-10-08T09:26:45+00:00",
+   "type": "back",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-2",
+   "source": "dinamica-immobiliare",
+   "price": 179000
+  },
+  {
+   "ts": "2026-10-08T09:26:45+00:00",
+   "type": "removed",
+   "id": "trieste-villas:duplex-con-doppia-terrazza-e-vista-mare-via-romagna-52",
+   "source": "trieste-villas",
+   "price": 690000
+  },
+  {
+   "ts": "2026-10-08T09:26:45+00:00",
+   "type": "removed",
+   "id": "trieste-villas:quadrilocale-borgata-bach-alta-sappada-0",
+   "source": "trieste-villas",
+   "price": 485000
   }
  ]
 }
