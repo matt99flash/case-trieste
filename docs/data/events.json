@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T11:25:47+00:00",
+ "updated": "2026-10-08T13:28:44+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3160,6 +3160,34 @@
    "id": "di-casa-in-casa:60",
    "source": "di-casa-in-casa",
    "price": 350000
+  },
+  {
+   "ts": "2026-10-08T13:28:44+00:00",
+   "type": "new",
+   "id": "tecnocasa:61282910",
+   "source": "tecnocasa",
+   "price": 109000
+  },
+  {
+   "ts": "2026-10-08T13:28:44+00:00",
+   "type": "new",
+   "id": "opera-immobiliare:nuda-proprieta-muggia-splendido-appartamento-a-50-metri-dal-mare",
+   "source": "opera-immobiliare",
+   "price": 135000
+  },
+  {
+   "ts": "2026-10-08T13:28:44+00:00",
+   "type": "removed",
+   "id": "next-immobiliare:villa-accostata-al-grezzo-con-vista-mare",
+   "source": "next-immobiliare",
+   "price": 650000
+  },
+  {
+   "ts": "2026-10-08T13:28:44+00:00",
+   "type": "removed",
+   "id": "b1-pizzarello:laboratorio-odontotecnico-vendita-muri-zona-ospedale-maggiore-trieste",
+   "source": "b1-pizzarello",
+   "price": 134000
   }
  ]
 }
