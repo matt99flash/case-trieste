@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T21:25:04+00:00",
+ "updated": "2026-10-08T05:25:49+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3033,6 +3033,13 @@
    "id": "b1-hab:posto-auto-park-san-giusto",
    "source": "b1-hab",
    "price": 60000
+  },
+  {
+   "ts": "2026-10-08T05:25:49+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
+   "source": "noidonne-immobiliare",
+   "price": null
   }
  ]
 }
