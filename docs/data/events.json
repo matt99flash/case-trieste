@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T05:25:49+00:00",
+ "updated": "2026-10-08T07:27:21+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3037,6 +3037,20 @@
   {
    "ts": "2026-10-08T05:25:49+00:00",
    "type": "removed",
+   "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-08T07:27:21+00:00",
+   "type": "removed",
+   "id": "tag-srl:174",
+   "source": "tag-srl",
+   "price": null
+  },
+  {
+   "ts": "2026-10-08T07:27:21+00:00",
+   "type": "back",
    "id": "noidonne-immobiliare:via-dei-pagliaricci-san-giovanni",
    "source": "noidonne-immobiliare",
    "price": null
