@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T17:25:09+00:00",
+ "updated": "2026-10-08T19:25:33+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3364,6 +3364,27 @@
    "id": "imobilia-trieste:179",
    "source": "imobilia-trieste",
    "price": 35000
+  },
+  {
+   "ts": "2026-10-08T19:25:33+00:00",
+   "type": "back",
+   "id": "tag-srl:appartamento-vt06am",
+   "source": "tag-srl",
+   "price": null
+  },
+  {
+   "ts": "2026-10-08T19:25:33+00:00",
+   "type": "new",
+   "id": "b1-project-immobiliare:villa-rustico-localita-lazzaretto-6",
+   "source": "b1-project-immobiliare",
+   "price": 1100000
+  },
+  {
+   "ts": "2026-10-08T19:25:33+00:00",
+   "type": "new",
+   "id": "norbedo-immobiliare:campi-elisi-via-coletti.html",
+   "source": "norbedo-immobiliare",
+   "price": 28000
   }
  ]
 }
