@@ -1,18 +1,24 @@
 {
 "10, via guido brunner, barriera nuova, citta nuova-barriera nuova-san vito-citta vecchia, opicina, trieste, friuli-venezia giulia, 34125, italia|trieste": null,
+"123/1, viale miramare, barcola, roiano-gretta-barcola-cologna-scorcola, prosecco, trieste, friuli-venezia giulia, 34136, italia|trieste": null,
 "14, via guido brunner|trieste": [
 45.65067,
 13.78235
 ],
+"14, via vinicio lago, borgo san sergio, servola-chiarbola-valmaura-borgo san sergio, trieste, friuli-venezia giulia, 34148, italia|trieste": null,
 "15, via della ginnastica, barriera nuova, citta nuova-barriera nuova-san vito-citta vecchia, trieste, friuli-venezia giulia, 34125, italia|trieste": null,
 "17/2, strada costiera|trieste": [
 45.70701,
 13.7169
 ],
 "2, via artemidoro, scorcola, citta nuova-barriera nuova-san vito-citta vecchia, conconello, trieste, friuli-venezia giulia, 34134, italia|trieste": null,
+"2, via ponziana, ponziana, san giacomo, barriera vecchia-san giacomo, trieste, friuli-venezia giulia, 34137, italia|trieste": null,
 "20, via tommaso luciani, perugino, barriera vecchia, barriera vecchia-san giacomo, trieste, friuli-venezia giulia, 34138, italia|trieste": null,
+"26, via karl ludwig von bruck, campi elisi, citta nuova-barriera nuova-san vito-citta vecchia, trieste, friuli-venezia giulia, 34144, italia|trieste": null,
+"27, via giangiorgio trissino, maddalena, san giacomo, barriera vecchia-san giacomo, trieste, friuli-venezia giulia, 34144, italia|trieste": null,
 "27, via milano, borgo teresiano, citta nuova-barriera nuova-san vito-citta vecchia, trieste, friuli-venezia giulia, 34132, italia|trieste": null,
 "3, via dell'erica, verniellis, cologna, roiano-gretta-barcola-cologna-scorcola, conconello, trieste, friuli-venezia giulia, 34134, italia|trieste": null,
+"3, via gregorio mansanta, ponziana, san giacomo, barriera vecchia-san giacomo, trieste, friuli-venezia giulia, 34137, italia|trieste": null,
 "31, via udine, borgo teresiano, roiano-gretta-barcola-cologna-scorcola, trieste, friuli-venezia giulia, 34135, italia|trieste": null,
 "36, via dello scoglio, scoglietto, san cilino, roiano-gretta-barcola-cologna-scorcola, conconello, trieste, friuli-venezia giulia, 34127, italia|trieste": null,
 "37, via dell'istria, maddalena, san giacomo, barriera vecchia-san giacomo, trieste, friuli-venezia giulia, 34137, italia|trieste": null,
@@ -22,6 +28,7 @@
 ],
 "4/5, via ovidio, case degli americani, roiano, roiano-gretta-barcola-cologna-scorcola, conconello, trieste, friuli-venezia giulia, 34134, italia|trieste": null,
 "40, viale gabriele d'annunzio, perugino, san giacomo, barriera vecchia-san giacomo, trieste, friuli-venezia giulia, 34138, italia|trieste": null,
+"5, vicolo san fortunato, cisternone, roiano, roiano-gretta-barcola-cologna-scorcola, opicina, trieste, friuli-venezia giulia, 34136, italia|trieste": null,
 "54, via di romagna, scorcola, citta nuova-barriera nuova-san vito-citta vecchia, conconello, trieste, friuli-venezia giulia, 34134, italia|trieste": null,
 "6, via di roiano|trieste": [
 45.6651,
@@ -86,6 +93,10 @@
 45.6634,
 13.77015
 ],
+"largo nazario sauro|muggia": [
+45.60515,
+13.76739
+],
 "loc.sistiana|duino-aurisina": [
 45.77327,
 13.63075
@@ -138,6 +149,7 @@
 45.64653,
 13.76871
 ],
+"piazza foraggi|trieste": null,
 "piazza garibaldi, 10|trieste": [
 45.64612,
 13.78116
@@ -156,6 +168,10 @@
 13.76708
 ],
 "salita monte valerio, 31, 34127 trieste ts, italia|trieste": null,
+"scala ferolli|trieste": [
+45.65597,
+13.78919
+],
 "scala santa 182|trieste": [
 45.6732,
 13.77457
@@ -315,6 +331,7 @@
 13.77817
 ],
 "via carlo e gian stuparich 19|trieste": null,
+"via carlo favetti, cisternone, gretta, roiano-gretta-barcola-cologna-scorcola, opicina, trieste, friuli-venezia giulia, 34136, italia|trieste": null,
 "via carlo ghega, trieste, ts, italia|trieste": null,
 "via carsia|trieste": [
 45.68794,

@@ -1,5 +1,10 @@
 {
- "updated": "2026-10-09T07:26:52+00:00",
+ "updated": "2026-10-09T09:27:11+00:00",
+ "weekly_at": "2026-10-09T09:27:11+00:00",
+ "weekly_stats": {
+  "count": 70,
+  "median_ppm": 1807
+ },
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3476,6 +3481,617 @@
    "id": "sim-studio-immobiliare:001012",
    "source": "sim-studio-immobiliare",
    "price": 300000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "tecnocasa:61224514",
+   "source": "tecnocasa",
+   "old_price": 308000,
+   "price": 249000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "dream-immobiliare:settefontane-grande-terrazzo-abitabile-di-13-mq-piano-alto-con-ascensore",
+   "source": "dream-immobiliare",
+   "old_price": 235000,
+   "price": 215000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "new",
+   "id": "engelvoelkers:W-04BDA8",
+   "source": "engelvoelkers",
+   "price": 560000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "new",
+   "id": "remax:31431014-123",
+   "source": "remax",
+   "price": 297000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-san-francesco",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "back",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_up",
+   "id": "urban-real-estate:complesso-commerciale-a-reddito",
+   "source": "urban-real-estate",
+   "old_price": 165000,
+   "price": 295000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "back",
+   "id": "b1-hab:attico-cologna-universita",
+   "source": "b1-hab",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "back",
+   "id": "b1-hab:casa-hoffe-sappada",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "back",
+   "id": "b1-hab:capannone-zona-industriale-con-terreno",
+   "source": "b1-hab",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "back",
+   "id": "b1-hab:ristorante-in-centro-storico",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "back",
+   "id": "b1-hab:attico-cologna-universita-2",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "back",
+   "id": "b1-hab:posto-auto-park-san-giusto",
+   "source": "b1-hab",
+   "price": 60000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "next-immobiliare:appartamento-con-terrazzo",
+   "source": "next-immobiliare",
+   "old_price": 418000,
+   "price": 188000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "immobiliare-art:ultimo-piano-con-posto-auto",
+   "source": "immobiliare-art",
+   "old_price": 265000,
+   "price": 245000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_up",
+   "id": "rivi-immobiliare:centrale-capannone-con-annesso-locale-commerciale",
+   "source": "rivi-immobiliare",
+   "old_price": 300000,
+   "price": 400000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_up",
+   "id": "rivi-immobiliare:adiacente-mare-appartamento-storico-a-muggia",
+   "source": "rivi-immobiliare",
+   "old_price": 300000,
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "omega-trieste:san-vito-villa-depoca-singola",
+   "source": "omega-trieste",
+   "old_price": 1300000,
+   "price": 1200000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "omega-trieste:via-settefontane-ultimo-piano-perfetto-con-ascensore",
+   "source": "omega-trieste",
+   "old_price": 309000,
+   "price": 298000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_up",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-2",
+   "source": "dinamica-immobiliare",
+   "old_price": 179000,
+   "price": 440000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-2-3",
+   "source": "dinamica-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-2-2-2",
+   "source": "dinamica-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-7",
+   "source": "dinamica-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-5",
+   "source": "dinamica-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-8",
+   "source": "dinamica-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-6",
+   "source": "dinamica-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "dinamica-immobiliare:villa-single-family-2-2-4",
+   "source": "dinamica-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "pozzecco-immobiliare:adiacenze-piazza-hortis-appartamento-arredato-nelle-vicinanze-di-piazza-cavana",
+   "source": "pozzecco-immobiliare",
+   "old_price": 142000,
+   "price": 98000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_up",
+   "id": "pozzecco-immobiliare:viale-raffaele-sanzio-box-auto-indipendente",
+   "source": "pozzecco-immobiliare",
+   "old_price": 168000,
+   "price": 595000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "studio-immobiliare-84:localita-log",
+   "source": "studio-immobiliare-84",
+   "old_price": 210000,
+   "price": 195000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "la-rue-immobiliare:000618",
+   "source": "la-rue-immobiliare",
+   "old_price": 79000,
+   "price": 73000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "la-rue-immobiliare:000",
+   "source": "la-rue-immobiliare",
+   "old_price": 750000,
+   "price": 95000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "la-rue-immobiliare:390002",
+   "source": "la-rue-immobiliare",
+   "old_price": 149000,
+   "price": 139000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "b1-l2maison:appartamento-vista-mare",
+   "source": "b1-l2maison",
+   "old_price": 650000,
+   "price": 500000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_up",
+   "id": "di-casa-in-casa:28",
+   "source": "di-casa-in-casa",
+   "old_price": 167000,
+   "price": 325000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "di-casa-in-casa:30",
+   "source": "di-casa-in-casa",
+   "old_price": 325000,
+   "price": 215000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "zenith-real-estate:5116720",
+   "source": "zenith-real-estate",
+   "old_price": 328000,
+   "price": 309000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_up",
+   "id": "andrea-oliva:827",
+   "source": "andrea-oliva",
+   "old_price": 650000,
+   "price": 670000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_up",
+   "id": "andrea-oliva:828",
+   "source": "andrea-oliva",
+   "old_price": 625000,
+   "price": 680000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:carpineto",
+   "source": "equipe-immobiliare",
+   "price": 112000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:rozzol-trilocale-con-balcone",
+   "source": "equipe-immobiliare",
+   "price": 183000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:san-vito-ristrutturato",
+   "source": "equipe-immobiliare",
+   "price": 250000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:porta",
+   "source": "equipe-immobiliare",
+   "price": 258000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:muggia",
+   "source": "equipe-immobiliare",
+   "price": 398000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:porto-piccolo",
+   "source": "equipe-immobiliare",
+   "price": 715000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:via-baiardi",
+   "source": "equipe-immobiliare",
+   "price": 310000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:barcola-alta",
+   "source": "equipe-immobiliare",
+   "price": 353000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:38170",
+   "source": "equipe-immobiliare",
+   "price": 52000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:duino-3",
+   "source": "equipe-immobiliare",
+   "price": 52000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:posto-barca-a-porto-san-rocco-2",
+   "source": "equipe-immobiliare",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "equipe-immobiliare:posti-auto-ospedale-maggiore",
+   "source": "equipe-immobiliare",
+   "price": 56000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "norbedo-immobiliare:largo-pestalozzi-zona.html",
+   "source": "norbedo-immobiliare",
+   "price": 595000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "norbedo-immobiliare:570",
+   "source": "norbedo-immobiliare",
+   "price": 150000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "norbedo-immobiliare:via-dei-pagliaricci.html",
+   "source": "norbedo-immobiliare",
+   "price": 595000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_up",
+   "id": "norbedo-immobiliare:muggia-colle-di-chiampore.html",
+   "source": "norbedo-immobiliare",
+   "old_price": 140000,
+   "price": 280000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "norbedo-immobiliare:muggia-colle-di-chiampore.html",
+   "source": "norbedo-immobiliare",
+   "price": 280000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "norbedo-immobiliare:343",
+   "source": "norbedo-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "b1-al-quadrato:sistiana-appartamento-con-giardino-in-residence-e-419-000",
+   "source": "b1-al-quadrato",
+   "old_price": 419000,
+   "price": 399000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "b1-al-quadrato:san-giacomo-bilocale-ristrutturato-e110-000",
+   "source": "b1-al-quadrato",
+   "old_price": 110000,
+   "price": 105000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "b1-al-quadrato:morpungo-villette-indipendenti-di-nuova-costruzione-con-giardino-e-garage-taverna-e590-000",
+   "source": "b1-al-quadrato",
+   "old_price": 590000,
+   "price": 495000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "trieste-villas:recente-con-giardino-strada-per-basovizza-1",
+   "source": "trieste-villas",
+   "old_price": 540000,
+   "price": 520000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "studio-benedetti:209000",
+   "source": "studio-benedetti",
+   "old_price": 209000,
+   "price": 199000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "aemmecasa:strada-di-fiume-maddalena",
+   "source": "aemmecasa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "aemmecasa:borgo-grotta-gigante",
+   "source": "aemmecasa",
+   "price": 293000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "aemmecasa:fronte-giardino-pubblico-via-giulia",
+   "source": "aemmecasa",
+   "price": 145000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-parini-con-cantina",
+   "source": "aemmecasa",
+   "price": 78000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "aemmecasa:mansarda-zona-tribunale",
+   "source": "aemmecasa",
+   "price": 198000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "aemmecasa:via-fabio-severo",
+   "source": "aemmecasa",
+   "price": 45000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:1038",
+   "source": "studio-39",
+   "price": 85000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:1016",
+   "source": "studio-39",
+   "price": 219000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:1019",
+   "source": "studio-39",
+   "price": 110000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:1005",
+   "source": "studio-39",
+   "price": 175000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:1003",
+   "source": "studio-39",
+   "price": 138000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:1002",
+   "source": "studio-39",
+   "price": 185000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:992",
+   "source": "studio-39",
+   "price": 80000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:991",
+   "source": "studio-39",
+   "price": 110000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:984",
+   "source": "studio-39",
+   "price": 164000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:980",
+   "source": "studio-39",
+   "price": 25000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:967",
+   "source": "studio-39",
+   "price": 109000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:973",
+   "source": "studio-39",
+   "price": 110000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "sold",
+   "id": "studio-39:960",
+   "source": "studio-39",
+   "price": 49000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "tirabora-immobiliare:2098",
+   "source": "tirabora-immobiliare",
+   "old_price": 27000,
+   "price": 23000
+  },
+  {
+   "ts": "2026-10-09T09:27:11+00:00",
+   "type": "price_down",
+   "id": "b1-selling-trieste:terreno-agricolo-a-padriciano-trieste",
+   "source": "b1-selling-trieste",
+   "old_price": 32000,
+   "price": 28000
   }
  ]
 }
