@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T05:25:44+00:00",
+ "updated": "2026-10-09T07:26:52+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3406,6 +3406,76 @@
    "id": "immobiliare-4b:193798703",
    "source": "immobiliare-4b",
    "price": 75000
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "back",
+   "id": "tecnocasa:61274016",
+   "source": "tecnocasa",
+   "price": 200000
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-buonarroti",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "removed",
+   "id": "noidonne-immobiliare:via-san-francesco",
+   "source": "noidonne-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "removed",
+   "id": "b1-hab:attico-cologna-universita",
+   "source": "b1-hab",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "removed",
+   "id": "b1-hab:attico-cologna-universita-2",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "removed",
+   "id": "b1-hab:capannone-zona-industriale-con-terreno",
+   "source": "b1-hab",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "removed",
+   "id": "b1-hab:casa-hoffe-sappada",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "removed",
+   "id": "b1-hab:posto-auto-park-san-giusto",
+   "source": "b1-hab",
+   "price": 60000
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "removed",
+   "id": "b1-hab:ristorante-in-centro-storico",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-09T07:26:52+00:00",
+   "type": "removed",
+   "id": "sim-studio-immobiliare:001012",
+   "source": "sim-studio-immobiliare",
+   "price": 300000
   }
  ]
 }
