@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T11:24:34+00:00",
+ "updated": "2026-10-09T13:28:14+00:00",
  "weekly_at": "2026-10-09T09:27:11+00:00",
  "weekly_stats": {
   "count": 70,
@@ -4239,6 +4239,36 @@
    "id": "mab-immobiliare:elegante-appartamento-ristrutturato-in-centro-citt%C3%A0",
    "source": "mab-immobiliare",
    "price": 218000
+  },
+  {
+   "ts": "2026-10-09T13:28:14+00:00",
+   "type": "new",
+   "id": "subito-privati:663891692",
+   "source": "subito-privati",
+   "price": 149000
+  },
+  {
+   "ts": "2026-10-09T13:28:14+00:00",
+   "type": "price_down",
+   "id": "b1-pizzarello:6007",
+   "source": "b1-pizzarello",
+   "old_price": 42000,
+   "price": 39000
+  },
+  {
+   "ts": "2026-10-09T13:28:14+00:00",
+   "type": "price_down",
+   "id": "e1-hometrieste:12059",
+   "source": "e1-hometrieste",
+   "old_price": 570000,
+   "price": 540000
+  },
+  {
+   "ts": "2026-10-09T13:28:14+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21582",
+   "source": "e1-hometrieste",
+   "price": 139000
   }
  ]
 }
