@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T21:25:08+00:00",
+ "updated": "2026-10-09T05:25:44+00:00",
  "events": [
   {
    "ts": "2026-09-28T17:22:59+00:00",
@@ -3392,6 +3392,20 @@
    "id": "b1-project-immobiliare:158",
    "source": "b1-project-immobiliare",
    "price": 297000
+  },
+  {
+   "ts": "2026-10-09T05:25:44+00:00",
+   "type": "new",
+   "id": "sim-studio-immobiliare:001021",
+   "source": "sim-studio-immobiliare",
+   "price": 419000
+  },
+  {
+   "ts": "2026-10-09T05:25:44+00:00",
+   "type": "new",
+   "id": "immobiliare-4b:193798703",
+   "source": "immobiliare-4b",
+   "price": 75000
   }
  ]
 }
