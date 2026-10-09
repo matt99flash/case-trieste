@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T09:27:11+00:00",
+ "updated": "2026-10-09T11:24:34+00:00",
  "weekly_at": "2026-10-09T09:27:11+00:00",
  "weekly_stats": {
   "count": 70,
@@ -4092,6 +4092,153 @@
    "source": "b1-selling-trieste",
    "old_price": 32000,
    "price": 28000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "engelvoelkers:W-047O1R",
+   "source": "engelvoelkers",
+   "price": 290000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "engelvoelkers:W-04BTUA",
+   "source": "engelvoelkers",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "urban-real-estate:220",
+   "source": "urban-real-estate",
+   "price": 175000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "omega-trieste:r-sanzio-bilocale-ad-uso-investimento",
+   "source": "omega-trieste",
+   "price": 180000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "omega-trieste:san-giacomo-uso-investimento",
+   "source": "omega-trieste",
+   "price": 112000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "omega-trieste:tarvisio-bilivello-con-terrazze-e-box-auto",
+   "source": "omega-trieste",
+   "price": 230000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "omega-trieste:via-udine-centro-benessere-ristrutturato",
+   "source": "omega-trieste",
+   "price": 160000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "omega-trieste:via-udine-stazione-piano-alto-termoautonomo-con-ascensore",
+   "source": "omega-trieste",
+   "price": 195000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "living-trieste:san-giacomo-grande-appartamento",
+   "source": "living-trieste",
+   "price": 190000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "living-trieste:via-romagna-appartamento-terrazzo-cantina",
+   "source": "living-trieste",
+   "price": 210000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "living-trieste:viale-xx-settembre-ampia-metratura",
+   "source": "living-trieste",
+   "price": 485000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "b1-selling-trieste:trilocale-viale-campielisi-44-trieste",
+   "source": "b1-selling-trieste",
+   "price": 104000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "immobiliare-rossetti:520089",
+   "source": "immobiliare-rossetti",
+   "price": 96000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "trieste-villas:0103",
+   "source": "trieste-villas",
+   "price": 3000000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "trieste-villas:239",
+   "source": "trieste-villas",
+   "price": 1390000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "trieste-villas:villa-indipendente-con-tre-garage-e-giardino-begliano-0",
+   "source": "trieste-villas",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "new",
+   "id": "tam-immobiliare:113414",
+   "source": "tam-immobiliare",
+   "price": 365000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "studio-benedetti:389000",
+   "source": "studio-benedetti",
+   "price": 349000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "new",
+   "id": "mazzini-immobiliare:1456",
+   "source": "mazzini-immobiliare",
+   "price": 110000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2535",
+   "source": "tirabora-immobiliare",
+   "price": 89000
+  },
+  {
+   "ts": "2026-10-09T11:24:34+00:00",
+   "type": "removed",
+   "id": "mab-immobiliare:elegante-appartamento-ristrutturato-in-centro-citt%C3%A0",
+   "source": "mab-immobiliare",
+   "price": 218000
   }
  ]
 }

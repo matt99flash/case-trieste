@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-09T09:27:11+00:00",
+ "updated": "2026-10-09T11:24:34+00:00",
  "sources": {
   "palazzo-haggi": {
    "name": "Palazzo Haggi (San Vito)",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 5,
    "stats": {
     "requests": 1,
@@ -12,7 +12,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -21,7 +21,7 @@
   },
   "subito-privati": {
    "name": "Subito.it – privati",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 70,
    "stats": {
     "requests": 3,
@@ -30,7 +30,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -39,16 +39,16 @@
   },
   "toro-costruzioni": {
    "name": "Toro Costruzioni",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 4,
    "stats": {
     "requests": 8,
-    "seconds": 9,
+    "seconds": 7,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -57,7 +57,7 @@
   },
   "cantieri-tirabora": {
    "name": "Cantieri Tirabora (nuove costruzioni)",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 22,
    "stats": {
     "requests": 23,
@@ -66,7 +66,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:17:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -75,7 +75,7 @@
   },
   "doveit": {
    "name": "Dove.it",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 0,
    "stats": {
     "requests": 1,
@@ -84,7 +84,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -93,16 +93,16 @@
   },
   "gabetti": {
    "name": "Gabetti Trieste",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 14,
    "stats": {
     "requests": 2,
-    "seconds": 3,
+    "seconds": 5,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -111,16 +111,16 @@
   },
   "engelvoelkers": {
    "name": "Engel & Völkers Trieste",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 10,
    "stats": {
-    "requests": 11,
-    "seconds": 16,
+    "requests": 1,
+    "seconds": 0,
     "outside": 0,
-    "details": 10,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -129,7 +129,7 @@
   },
   "limmobiliare": {
    "name": "L'Immobiliare.com Trieste (Di Casa in Casa)",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 15,
    "stats": {
     "requests": 4,
@@ -138,7 +138,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -147,16 +147,16 @@
   },
   "remax": {
    "name": "RE/MAX Enterprise Trieste",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 30,
    "stats": {
-    "requests": 12,
-    "seconds": 18,
+    "requests": 11,
+    "seconds": 16,
     "outside": 0,
-    "details": 1,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -165,16 +165,16 @@
   },
   "tecnocasa": {
    "name": "Tecnocasa (13 agenzie in provincia)",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 67,
    "stats": {
-    "requests": 8,
-    "seconds": 13,
+    "requests": 7,
+    "seconds": 10,
     "outside": 0,
-    "details": 1,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-28T13:47:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -183,16 +183,16 @@
   },
   "rn-immobiliare": {
    "name": "Morgan srl / RN Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 6,
    "stats": {
     "requests": 1,
-    "seconds": 1,
+    "seconds": 0,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T07:25:13+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -201,7 +201,7 @@
   },
   "universalcasa-ts": {
    "name": "Universalcasa",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
     "requests": 1,
@@ -210,7 +210,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T07:25:13+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -219,11 +219,11 @@
   },
   "fiorini-immobiliare": {
    "name": "Agenzia Immobiliare Fiorini",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 0,
    "stats": {
     "requests": 8,
-    "seconds": 9,
+    "seconds": 11,
     "outside": 6,
     "details": 6,
     "partial_errors": 0
@@ -231,22 +231,22 @@
    "last_ok": "2026-10-09T07:26:52+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": "sospetto: 0 annunci contro 2 del giro precedente",
-   "fail_streak": 1,
+   "fail_streak": 2,
    "kind": "agenzia",
    "website": "https://www.immobiliarefiorini.it/"
   },
   "metrica-immobiliare": {
    "name": "Immobiliare MET[R]ICA di Gianluca CRESSERI",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
-    "requests": 10,
-    "seconds": 20,
+    "requests": 9,
+    "seconds": 15,
     "outside": 1,
-    "details": 2,
+    "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -255,16 +255,16 @@
   },
   "b1-nest": {
    "name": "NEST Immobiliare S.r.l.",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 9,
    "stats": {
-    "requests": 12,
-    "seconds": 19,
+    "requests": 4,
+    "seconds": 6,
     "outside": 0,
-    "details": 8,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -273,16 +273,16 @@
   },
   "diodicibus-immobiliare": {
    "name": "Diodicibus Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 4,
    "stats": {
-    "requests": 6,
-    "seconds": 14,
+    "requests": 1,
+    "seconds": 5,
     "outside": 0,
-    "details": 4,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -291,16 +291,16 @@
   },
   "b1-antica-trieste": {
    "name": "Antica Trieste",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 9,
    "stats": {
-    "requests": 31,
-    "seconds": 37,
+    "requests": 21,
+    "seconds": 26,
     "outside": 10,
-    "details": 15,
+    "details": 10,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -309,16 +309,16 @@
   },
   "carpe-diem-immobiliare": {
    "name": "Carpe Diem Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 6,
    "stats": {
-    "requests": 14,
-    "seconds": 21,
+    "requests": 8,
+    "seconds": 11,
     "outside": 3,
-    "details": 9,
+    "details": 3,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -327,16 +327,16 @@
   },
   "b1-sirio": {
    "name": "Sirio (agenzia Trieste)",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 8,
    "stats": {
-    "requests": 13,
-    "seconds": 16,
+    "requests": 1,
+    "seconds": 1,
     "outside": 0,
-    "details": 6,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -345,16 +345,16 @@
   },
   "dream-immobiliare": {
    "name": "Dream Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 9,
    "stats": {
-    "requests": 11,
-    "seconds": 15,
-    "outside": 1,
-    "details": 9,
+    "requests": 2,
+    "seconds": 6,
+    "outside": 0,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -363,16 +363,16 @@
   },
   "b1-contatti-immobiliari": {
    "name": "Contatti Immobiliari Srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 10,
    "stats": {
-    "requests": 24,
-    "seconds": 31,
+    "requests": 12,
+    "seconds": 15,
     "outside": 8,
-    "details": 17,
+    "details": 8,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -381,16 +381,16 @@
   },
   "b1-primo-piano-trieste": {
    "name": "Primo Piano Trieste",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 33,
    "stats": {
-    "requests": 66,
-    "seconds": 84,
+    "requests": 4,
+    "seconds": 7,
     "outside": 1,
-    "details": 32,
+    "details": 1,
     "partial_errors": 1
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": "1 schede non lette (es. https://www.primopianotrieste.it/villa-indipendente-fernetti/: HTTP 404 https://www.primopianotrieste.it/villa-indipendente-fernetti/)",
    "fail_streak": 0,
@@ -399,7 +399,7 @@
   },
   "immobiliare-il-faro": {
    "name": "Immobiliare Il Faro",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 11,
    "stats": {
     "requests": 19,
@@ -410,23 +410,23 @@
    },
    "last_ok": "2026-10-09T09:27:11+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
-   "last_error": null,
-   "fail_streak": 0,
+   "last_error": "DNSError: Failed to perform, curl: (6) Could not resolve host: immobiliareilfaro.it. See https://curl.se/libcurl/c/libcurl-errors.html first for more details. (https://immobiliareilfaro.it/immobili/vendita/)",
+   "fail_streak": 1,
    "kind": "agenzia",
    "website": "https://immobiliareilfaro.it/"
   },
   "b1-partnerservizi": {
    "name": "PartnerServizi Agenzia Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 12,
    "stats": {
-    "requests": 20,
-    "seconds": 24,
+    "requests": 12,
+    "seconds": 14,
     "outside": 0,
-    "details": 8,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -435,16 +435,16 @@
   },
   "b1-perla": {
    "name": "Perla Investimenti Immobiliari",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 15,
    "stats": {
-    "requests": 28,
-    "seconds": 42,
+    "requests": 6,
+    "seconds": 14,
     "outside": 2,
-    "details": 13,
+    "details": 2,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -453,16 +453,16 @@
   },
   "living-trieste": {
    "name": "Living Trieste Di Stefano Sedmak",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 6,
    "stats": {
-    "requests": 25,
-    "seconds": 48,
+    "requests": 19,
+    "seconds": 38,
     "outside": 14,
-    "details": 20,
+    "details": 14,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -471,16 +471,16 @@
   },
   "igloo-real-estate": {
    "name": "L'Igloo Immobiliare Di Michela Kraus",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
-    "requests": 2,
-    "seconds": 7,
+    "requests": 1,
+    "seconds": 5,
     "outside": 0,
-    "details": 1,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -489,16 +489,16 @@
   },
   "savino-gestioni-immobiliari": {
    "name": "Savino Gestioni Immobiliari",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 4,
    "stats": {
-    "requests": 5,
-    "seconds": 6,
+    "requests": 1,
+    "seconds": 2,
     "outside": 0,
-    "details": 4,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -507,16 +507,16 @@
   },
   "immobiliare-art": {
    "name": "Immobiliare Art",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 7,
    "stats": {
-    "requests": 15,
-    "seconds": 17,
+    "requests": 2,
+    "seconds": 3,
     "outside": 0,
-    "details": 7,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -525,16 +525,16 @@
   },
   "rivi-immobiliare": {
    "name": "Rivi Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 4,
    "stats": {
-    "requests": 5,
-    "seconds": 5,
+    "requests": 1,
+    "seconds": 1,
     "outside": 0,
-    "details": 4,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -543,16 +543,16 @@
   },
   "attico-immobiliare": {
    "name": "Attico Immobiliare s.r.l.",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 6,
    "stats": {
-    "requests": 23,
-    "seconds": 33,
+    "requests": 17,
+    "seconds": 22,
     "outside": 0,
-    "details": 6,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -561,16 +561,16 @@
   },
   "next-immobiliare": {
    "name": "next immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 11,
    "stats": {
-    "requests": 12,
-    "seconds": 16,
+    "requests": 2,
+    "seconds": 3,
     "outside": 0,
-    "details": 10,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -579,7 +579,7 @@
   },
   "elleci-immobiliare": {
    "name": "Elleci Immobiliare Di Cocco Alessandro",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
     "requests": 3,
@@ -590,14 +590,14 @@
    },
    "last_ok": "2026-10-09T09:27:11+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
-   "last_error": null,
-   "fail_streak": 0,
+   "last_error": "Timeout: Failed to perform, curl: (28) Connection timed out after 30002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details. (https://www.elleciimmobiliare.it/tipo-annuncio/vendita/)",
+   "fail_streak": 1,
    "kind": "agenzia",
    "website": "http://www.elleciimmobiliare.it/"
   },
   "vidali-gruden": {
    "name": "VIDALI GRUDEN IMMOBILIARE",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 4,
    "stats": {
     "requests": 1,
@@ -606,7 +606,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -615,16 +615,16 @@
   },
   "colbert-immobiliare": {
    "name": "Colbert Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
-    "requests": 3,
-    "seconds": 2,
+    "requests": 2,
+    "seconds": 1,
     "outside": 0,
-    "details": 1,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -633,7 +633,7 @@
   },
   "gallery-immobiliare": {
    "name": "Gallery Immobiliare Trieste",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 165,
    "stats": {
     "requests": 1,
@@ -642,7 +642,7 @@
     "details": 177,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -651,16 +651,16 @@
   },
   "borea-immobiliare": {
    "name": "Borea immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 18,
    "stats": {
-    "requests": 38,
-    "seconds": 50,
+    "requests": 8,
+    "seconds": 12,
     "outside": 2,
-    "details": 20,
+    "details": 2,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -669,16 +669,16 @@
   },
   "urban-real-estate": {
    "name": "Urban Real Estate",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 27,
    "stats": {
-    "requests": 35,
-    "seconds": 59,
+    "requests": 8,
+    "seconds": 16,
     "outside": 3,
-    "details": 30,
+    "details": 3,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -687,16 +687,16 @@
   },
   "b1-trieste-centro": {
    "name": "Immobiliare Trieste Centro",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 47,
    "stats": {
-    "requests": 55,
-    "seconds": 69,
+    "requests": 2,
+    "seconds": 4,
     "outside": 0,
-    "details": 46,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -705,16 +705,16 @@
   },
   "pozzecco-immobiliare": {
    "name": "Pozzecco Immobiliare di Renato Pozzecco",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 34,
    "stats": {
-    "requests": 39,
-    "seconds": 40,
+    "requests": 7,
+    "seconds": 7,
     "outside": 0,
-    "details": 33,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -723,16 +723,16 @@
   },
   "b1-al-quadrato": {
    "name": "Al Quadrato Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 70,
    "stats": {
-    "requests": 140,
-    "seconds": 170,
+    "requests": 2,
+    "seconds": 4,
     "outside": 0,
-    "details": 69,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -741,16 +741,16 @@
   },
   "dimora": {
    "name": "Dimora",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
-    "requests": 9,
-    "seconds": 28,
+    "requests": 8,
+    "seconds": 24,
     "outside": 7,
-    "details": 8,
+    "details": 7,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -759,16 +759,16 @@
   },
   "gruppo-casa": {
    "name": "Immobiliare Gruppo Casa",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 4,
    "stats": {
-    "requests": 9,
-    "seconds": 13,
+    "requests": 5,
+    "seconds": 7,
     "outside": 4,
-    "details": 8,
+    "details": 4,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -777,16 +777,16 @@
   },
   "dinamica-immobiliare": {
    "name": "Dinamica immobiliare snc di Sirk Andrea e Weiss Sandro",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 13,
    "stats": {
-    "requests": 14,
-    "seconds": 32,
+    "requests": 3,
+    "seconds": 13,
     "outside": 2,
-    "details": 13,
+    "details": 2,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -795,16 +795,16 @@
   },
   "cheni-tutta": {
    "name": "Cheni e Tutta Immobiliare S.n.c.",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 9,
    "stats": {
-    "requests": 9,
-    "seconds": 17,
+    "requests": 1,
+    "seconds": 2,
     "outside": 0,
-    "details": 8,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -813,16 +813,16 @@
   },
   "giulia-immobiliare": {
    "name": "Giulia Immobiliare Trieste",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 6,
    "stats": {
-    "requests": 12,
-    "seconds": 20,
+    "requests": 7,
+    "seconds": 10,
     "outside": 6,
-    "details": 11,
+    "details": 6,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -831,16 +831,16 @@
   },
   "omega-trieste": {
    "name": "Omega Gruppo Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 36,
    "stats": {
-    "requests": 42,
-    "seconds": 107,
+    "requests": 10,
+    "seconds": 22,
     "outside": 6,
-    "details": 39,
+    "details": 7,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -849,16 +849,16 @@
   },
   "aureahome": {
    "name": "AureaHome",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 8,
    "stats": {
-    "requests": 45,
-    "seconds": 60,
+    "requests": 29,
+    "seconds": 35,
     "outside": 13,
-    "details": 20,
+    "details": 12,
     "partial_errors": 1
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": "1 schede non lette (es. https://aureahome.it/scheda-villa-ottoboni/: HTTP 404 https://aureahome.it/scheda-villa-ottoboni/)",
    "fail_streak": 0,
@@ -867,16 +867,16 @@
   },
   "la-rue-immobiliare": {
    "name": "La Rue Immobiliare s.r.l.",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 16,
    "stats": {
-    "requests": 19,
-    "seconds": 23,
-    "outside": 1,
-    "details": 14,
+    "requests": 2,
+    "seconds": 2,
+    "outside": 0,
+    "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -885,16 +885,16 @@
   },
   "rigatti-immobiliare": {
    "name": "Rigatti Immobiliare di Davide Rigatti",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 16,
    "stats": {
-    "requests": 14,
-    "seconds": 19,
+    "requests": 1,
+    "seconds": 1,
     "outside": 0,
-    "details": 13,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -903,16 +903,16 @@
   },
   "immobiliare-rossetti": {
    "name": "Immobiliare Rossetti",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 9,
    "stats": {
-    "requests": 10,
-    "seconds": 95,
+    "requests": 2,
+    "seconds": 3,
     "outside": 0,
-    "details": 8,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -921,7 +921,7 @@
   },
   "effe-emme": {
    "name": "Agenzia immobiliare EFFE - EMME",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
     "requests": 2,
@@ -930,7 +930,7 @@
     "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -939,16 +939,16 @@
   },
   "casaffari-lozei": {
    "name": "CASAFFARI di Davide Lozei",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 12,
    "stats": {
-    "requests": 7,
-    "seconds": 12,
+    "requests": 1,
+    "seconds": 1,
     "outside": 0,
-    "details": 6,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -957,16 +957,16 @@
   },
   "igloo": {
    "name": "L'Igloo Servizi Immobiliari di Kraus Martina",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
-    "requests": 2,
-    "seconds": 10,
+    "requests": 1,
+    "seconds": 4,
     "outside": 0,
-    "details": 1,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -975,16 +975,16 @@
   },
   "studio-immobiliare-84": {
    "name": "Studio Immobiliare 84",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 11,
    "stats": {
-    "requests": 4,
-    "seconds": 6,
+    "requests": 2,
+    "seconds": 3,
     "outside": 1,
-    "details": 3,
+    "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -993,16 +993,16 @@
   },
   "zennaro": {
    "name": "Geometra Zennaro",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 7,
    "stats": {
-    "requests": 8,
-    "seconds": 9,
+    "requests": 1,
+    "seconds": 1,
     "outside": 0,
-    "details": 7,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1011,16 +1011,16 @@
   },
   "nb-solution": {
    "name": "NB Solution Italy",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
-    "requests": 5,
-    "seconds": 5,
+    "requests": 4,
+    "seconds": 4,
     "outside": 0,
-    "details": 1,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1029,16 +1029,16 @@
   },
   "di-casa-in-casa": {
    "name": "DI CASA IN CASA Soluzioni Immobiliari di Massimiliano Dinoi",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 20,
    "stats": {
-    "requests": 30,
-    "seconds": 45,
+    "requests": 12,
+    "seconds": 17,
     "outside": 11,
-    "details": 29,
+    "details": 11,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1047,16 +1047,16 @@
   },
   "b1-l2maison": {
    "name": "L²MAISON Real Estate",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 13,
    "stats": {
-    "requests": 24,
-    "seconds": 110,
+    "requests": 9,
+    "seconds": 29,
     "outside": 7,
-    "details": 20,
+    "details": 7,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1065,7 +1065,7 @@
   },
   "immobiliare-4b": {
    "name": "Immobiliare 4B - For Business",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 38,
    "stats": {
     "requests": 1,
@@ -1074,7 +1074,7 @@
     "details": 43,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1083,16 +1083,16 @@
   },
   "guzzardi-home": {
    "name": "GUZZARDI HOME di Guzzardi Andreina",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
-    "requests": 3,
-    "seconds": 3,
+    "requests": 2,
+    "seconds": 2,
     "outside": 0,
-    "details": 1,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1101,16 +1101,16 @@
   },
   "zenith-real-estate": {
    "name": "Zenith Real Estate",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 28,
    "stats": {
-    "requests": 45,
-    "seconds": 66,
+    "requests": 18,
+    "seconds": 24,
     "outside": 12,
-    "details": 39,
+    "details": 12,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1119,16 +1119,16 @@
   },
   "as-real-estate": {
    "name": "AS Real Estate",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 3,
    "stats": {
-    "requests": 13,
-    "seconds": 24,
+    "requests": 11,
+    "seconds": 17,
     "outside": 8,
-    "details": 10,
+    "details": 8,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1137,16 +1137,16 @@
   },
   "imobilia-trieste": {
    "name": "imobilia - Agenzia immobiliare a Trieste dal 1999",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 17,
    "stats": {
     "requests": 2,
-    "seconds": 6,
+    "seconds": 4,
     "outside": 1,
     "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1155,16 +1155,16 @@
   },
   "casa-programma": {
    "name": "Studio Immobiliare Casa Programma",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 19,
    "stats": {
-    "requests": 21,
-    "seconds": 39,
+    "requests": 3,
+    "seconds": 6,
     "outside": 2,
-    "details": 20,
+    "details": 2,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1173,8 +1173,8 @@
   },
   "e1-hometrieste": {
    "name": "Studio Roiano / Hometrieste (Home Roiano + Home San Vito)",
-   "last_run": "2026-10-09T09:27:11+00:00",
-   "last_count": 29,
+   "last_run": "2026-10-09T11:24:34+00:00",
+   "last_count": 28,
    "stats": {
     "requests": 6,
     "seconds": 7,
@@ -1182,7 +1182,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1191,34 +1191,34 @@
   },
   "spazio-casa": {
    "name": "Spazio Casa Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 11,
    "stats": {
-    "requests": 26,
-    "seconds": 55,
+    "requests": 15,
+    "seconds": 31,
     "outside": 13,
-    "details": 24,
+    "details": 13,
     "partial_errors": 0
    },
    "last_ok": "2026-10-09T07:26:52+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": "sospetto: 11 annunci contro 23 del giro precedente",
-   "fail_streak": 1,
+   "fail_streak": 2,
    "kind": "agenzia",
    "website": "https://www.spaziocasatrieste.it/"
   },
   "norbedo-immobiliare": {
    "name": "norbedo immobiliare srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 14,
    "stats": {
-    "requests": 22,
-    "seconds": 22,
+    "requests": 10,
+    "seconds": 20,
     "outside": 9,
-    "details": 21,
+    "details": 9,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1227,16 +1227,16 @@
   },
   "tam-immobiliare": {
    "name": "Tam Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
-   "last_count": 26,
+   "last_run": "2026-10-09T11:24:34+00:00",
+   "last_count": 27,
    "stats": {
-    "requests": 25,
-    "seconds": 25,
+    "requests": 3,
+    "seconds": 3,
     "outside": 0,
-    "details": 23,
+    "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1245,16 +1245,16 @@
   },
   "e1-virtualrealty": {
    "name": "V Realty agenzia immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
-    "requests": 3,
-    "seconds": 4,
+    "requests": 2,
+    "seconds": 2,
     "outside": 0,
-    "details": 1,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1263,16 +1263,16 @@
   },
   "e1-immobilisenzaconfini": {
    "name": "Immobili Senza Confini",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 4,
    "stats": {
-    "requests": 5,
-    "seconds": 5,
+    "requests": 2,
+    "seconds": 2,
     "outside": 0,
-    "details": 3,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1281,16 +1281,16 @@
   },
   "studio-benedetti": {
    "name": "Studio Immobiliare Benedetti",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 13,
    "stats": {
-    "requests": 37,
-    "seconds": 37,
-    "outside": 4,
-    "details": 16,
+    "requests": 9,
+    "seconds": 9,
+    "outside": 3,
+    "details": 3,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1299,16 +1299,16 @@
   },
   "e1-predonzani": {
    "name": "PREDONZANI IMMOBILIARE DI LUCA PREDONZANI",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
-    "requests": 3,
-    "seconds": 6,
+    "requests": 1,
+    "seconds": 0,
     "outside": 0,
-    "details": 2,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1317,16 +1317,16 @@
   },
   "il-castello-udine": {
    "name": "Agenzia Immobiliare Il Castello tel. 0432501464",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 7,
    "stats": {
-    "requests": 26,
-    "seconds": 31,
+    "requests": 19,
+    "seconds": 22,
     "outside": 15,
-    "details": 22,
+    "details": 15,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1335,16 +1335,16 @@
   },
   "e1-fmcasa": {
    "name": "FM CASA di Francesca Barba",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 3,
    "stats": {
-    "requests": 9,
-    "seconds": 10,
+    "requests": 6,
+    "seconds": 6,
     "outside": 0,
-    "details": 3,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1353,16 +1353,16 @@
   },
   "andrea-oliva": {
    "name": "Andrea Oliva & partners srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 33,
    "stats": {
-    "requests": 45,
-    "seconds": 69,
+    "requests": 13,
+    "seconds": 19,
     "outside": 12,
-    "details": 44,
+    "details": 12,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1371,16 +1371,16 @@
   },
   "trieste-villas": {
    "name": "Agenzia Immobiliare Trieste Villas",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 54,
    "stats": {
-    "requests": 54,
-    "seconds": 66,
+    "requests": 4,
+    "seconds": 5,
     "outside": 3,
-    "details": 53,
+    "details": 3,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1389,16 +1389,16 @@
   },
   "equipe-immobiliare": {
    "name": "Equipe Immobiliare srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 35,
    "stats": {
-    "requests": 41,
-    "seconds": 65,
+    "requests": 6,
+    "seconds": 10,
     "outside": 1,
-    "details": 36,
+    "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1407,16 +1407,16 @@
   },
   "mab-immobiliare": {
    "name": "Mab Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 10,
    "stats": {
-    "requests": 35,
-    "seconds": 53,
+    "requests": 28,
+    "seconds": 33,
     "outside": 6,
-    "details": 13,
+    "details": 6,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1425,16 +1425,16 @@
   },
   "promissio-immobiliare": {
    "name": "Promissio Immobiliare Trieste",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
-    "requests": 71,
-    "seconds": 125,
+    "requests": 70,
+    "seconds": 100,
     "outside": 38,
-    "details": 39,
+    "details": 38,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1443,16 +1443,16 @@
   },
   "e1-rifugio": {
    "name": "Il Rifugio Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 9,
    "stats": {
-    "requests": 16,
-    "seconds": 18,
+    "requests": 7,
+    "seconds": 7,
     "outside": 5,
-    "details": 14,
+    "details": 5,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1461,16 +1461,16 @@
   },
   "e1-abitha": {
    "name": "ABITHA Immobiliare di Mervich Elisabetta",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
-    "requests": 16,
-    "seconds": 19,
+    "requests": 14,
+    "seconds": 17,
     "outside": 8,
-    "details": 10,
+    "details": 8,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1479,16 +1479,16 @@
   },
   "studio-39": {
    "name": "Studio 39 di Tommaseo Srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 22,
    "stats": {
-    "requests": 31,
-    "seconds": 40,
+    "requests": 11,
+    "seconds": 19,
     "outside": 10,
-    "details": 30,
+    "details": 10,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1497,16 +1497,16 @@
   },
   "e1-okcasaweb": {
    "name": "OK CASA web Italia",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 3,
    "stats": {
-    "requests": 32,
-    "seconds": 37,
+    "requests": 29,
+    "seconds": 34,
     "outside": 0,
-    "details": 3,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1515,16 +1515,16 @@
   },
   "aemmecasa": {
    "name": "IMMOBILIARE aemmecasa",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 43,
    "stats": {
-    "requests": 91,
-    "seconds": 116,
+    "requests": 37,
+    "seconds": 44,
     "outside": 0,
-    "details": 43,
+    "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1533,16 +1533,16 @@
   },
   "di-more": {
    "name": "Di More Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
-    "requests": 59,
-    "seconds": 86,
+    "requests": 58,
+    "seconds": 69,
     "outside": 2,
-    "details": 1,
+    "details": 0,
     "partial_errors": 2
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": "2 schede non lette (es. https://www.dimore.biz/properties-3/piazza-unita'-d'italia%2C-appartamento-arredato: HTTP 403 https://www.dimore.biz/properties-3/piazza-unita'-d'ital)",
    "fail_streak": 0,
@@ -1551,16 +1551,16 @@
   },
   "b1-selling-trieste": {
    "name": "Selling Trieste Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 165,
    "stats": {
-    "requests": 347,
-    "seconds": 421,
+    "requests": 17,
+    "seconds": 24,
     "outside": 8,
-    "details": 173,
+    "details": 8,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1569,16 +1569,16 @@
   },
   "tirabora-immobiliare": {
    "name": "Tirabora Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 64,
    "stats": {
-    "requests": 80,
-    "seconds": 80,
+    "requests": 22,
+    "seconds": 21,
     "outside": 12,
-    "details": 70,
+    "details": 12,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T08:14:12+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1587,16 +1587,16 @@
   },
   "b1-hab": {
    "name": "HAB - Habitare Trieste",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 6,
    "stats": {
     "requests": 1,
-    "seconds": 2,
+    "seconds": 4,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1605,7 +1605,7 @@
   },
   "b1-laboratorio": {
    "name": "Laboratorio Immobiliare S.r.l.",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_error": null,
    "fail_streak": 0,
    "kind": "agenzia",
@@ -1618,21 +1618,21 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00"
   },
   "b1-audace": {
    "name": "Audace Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
     "requests": 20,
-    "seconds": 46,
+    "seconds": 49,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1641,16 +1641,16 @@
   },
   "b1-project-immobiliare": {
    "name": "Project Immobiliare di Enrico Geom. Fonda",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 17,
    "stats": {
     "requests": 10,
-    "seconds": 14,
+    "seconds": 13,
     "outside": 5,
     "details": 5,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1659,16 +1659,16 @@
   },
   "b1-casacoral": {
    "name": "Casacoral Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 11,
    "stats": {
     "requests": 15,
-    "seconds": 21,
+    "seconds": 19,
     "outside": 11,
     "details": 11,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1677,16 +1677,16 @@
   },
   "b1-pizzarello": {
    "name": "Pizzarello s.a.s.",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 12,
    "stats": {
     "requests": 3,
-    "seconds": 6,
+    "seconds": 5,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1695,16 +1695,16 @@
   },
   "b1-carso": {
    "name": "Carso immobiliare di Piero Fattorini",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 10,
    "stats": {
     "requests": 26,
-    "seconds": 31,
+    "seconds": 30,
     "outside": 1,
     "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1713,7 +1713,7 @@
   },
   "altipiano": {
    "name": "Altipiano Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 8,
    "stats": {
     "requests": 1,
@@ -1722,7 +1722,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1731,16 +1731,16 @@
   },
   "cristina-rufolo": {
    "name": "cristina rufolo agente immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
     "requests": 2,
-    "seconds": 2,
+    "seconds": 1,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1749,7 +1749,7 @@
   },
   "real-estate-adv": {
    "name": "Real Estate ADV",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 6,
    "stats": {
     "requests": 2,
@@ -1758,7 +1758,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1767,7 +1767,7 @@
   },
   "comfort-immobiliare": {
    "name": "Comfort Immobiliare di Filippo Bortolon",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
     "requests": 9,
@@ -1776,7 +1776,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1785,16 +1785,16 @@
   },
   "b1-paradisi": {
    "name": "Paradisi Immobiliare srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 31,
    "stats": {
     "requests": 11,
-    "seconds": 47,
+    "seconds": 28,
     "outside": 3,
     "details": 3,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1803,16 +1803,16 @@
   },
   "izzo-coretti": {
    "name": "Izzo Gabriele (Francesco Coretti - ufficio Trieste)",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 3,
    "stats": {
     "requests": 54,
-    "seconds": 74,
+    "seconds": 73,
     "outside": 38,
     "details": 38,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T13:28:08+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1821,7 +1821,7 @@
   },
   "unopiu-immobiliare": {
    "name": "Unopiù Immobiliare di Rita Giancristofaro",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 3,
    "stats": {
     "requests": 1,
@@ -1830,7 +1830,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1839,16 +1839,16 @@
   },
   "casacitta-mediazioni": {
    "name": "Casacittà Mediazioni S.r.l.s.",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
     "requests": 8,
-    "seconds": 14,
+    "seconds": 19,
     "outside": 2,
     "details": 2,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1857,7 +1857,7 @@
   },
   "zorzon-immobiliare": {
    "name": "IMMOBILIARE ZORZON & PARTNERS",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 11,
    "stats": {
     "requests": 3,
@@ -1866,7 +1866,7 @@
     "details": 2,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1875,7 +1875,7 @@
   },
   "casa-con-giardino": {
    "name": "Casa con Giardino - di Martina Micalizzi",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 11,
    "stats": {
     "requests": 1,
@@ -1884,7 +1884,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1893,16 +1893,16 @@
   },
   "tag-srl": {
    "name": "Tag srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 14,
    "stats": {
     "requests": 2,
-    "seconds": 3,
+    "seconds": 4,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1911,16 +1911,16 @@
   },
   "trieste-properties": {
    "name": "Trieste Properties Srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 8,
    "stats": {
     "requests": 1,
-    "seconds": 3,
+    "seconds": 2,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1929,7 +1929,7 @@
   },
   "myhouse-real-estate": {
    "name": "MyHouse Real Estate",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
     "requests": 5,
@@ -1938,7 +1938,7 @@
     "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1947,7 +1947,7 @@
   },
   "futura-immobiliare": {
    "name": "Futura Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 7,
    "stats": {
     "requests": 6,
@@ -1956,7 +1956,7 @@
     "details": 5,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1965,7 +1965,7 @@
   },
   "noidonne-immobiliare": {
    "name": "NoiDonneImmobiliare.eu",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 16,
    "stats": {
     "requests": 3,
@@ -1974,7 +1974,7 @@
     "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -1983,16 +1983,16 @@
   },
   "bro-real-estate": {
    "name": "Bro Real Estate srls",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 13,
    "stats": {
     "requests": 3,
-    "seconds": 8,
+    "seconds": 12,
     "outside": 0,
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2001,7 +2001,7 @@
   },
   "armony-immobiliare": {
    "name": "Armony immobiliare di Pahor Annamaria",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 10,
    "stats": {
     "requests": 11,
@@ -2010,7 +2010,7 @@
     "details": 10,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2019,7 +2019,7 @@
   },
   "minimal-re": {
    "name": "Minimal Re Srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 19,
    "stats": {
     "requests": 30,
@@ -2028,7 +2028,7 @@
     "details": 28,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2037,16 +2037,16 @@
   },
   "opera-immobiliare": {
    "name": "Opera Immobiliare snc",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 24,
    "stats": {
     "requests": 7,
-    "seconds": 11,
+    "seconds": 13,
     "outside": 3,
     "details": 3,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2055,7 +2055,7 @@
   },
   "sim-studio-immobiliare": {
    "name": "Albanese Andrea (SIM Studio Immobiliare - Sistiana)",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 9,
    "stats": {
     "requests": 16,
@@ -2064,7 +2064,7 @@
     "details": 7,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2073,16 +2073,16 @@
   },
   "athouse-immobiliare": {
    "name": "atHOUSE Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 12,
    "stats": {
     "requests": 30,
-    "seconds": 51,
+    "seconds": 47,
     "outside": 26,
     "details": 26,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2091,16 +2091,16 @@
   },
   "calcara-immobiliare": {
    "name": "Agenzia Immobiliare CALCARA",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 27,
    "stats": {
     "requests": 12,
-    "seconds": 30,
+    "seconds": 25,
     "outside": 6,
     "details": 6,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2109,7 +2109,7 @@
   },
   "casaimmedia": {
    "name": "Casaimmedia Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 29,
    "stats": {
     "requests": 6,
@@ -2118,7 +2118,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2127,7 +2127,7 @@
   },
   "dimarino-immobiliare": {
    "name": "DI MARINO Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 4,
    "stats": {
     "requests": 2,
@@ -2136,7 +2136,7 @@
     "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2145,7 +2145,7 @@
   },
   "dimmi-immobiliare": {
    "name": "Dimmi Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
     "requests": 2,
@@ -2154,7 +2154,7 @@
     "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2163,7 +2163,7 @@
   },
   "solaris-real-estate": {
    "name": "Solaris real estate",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 6,
    "stats": {
     "requests": 1,
@@ -2172,7 +2172,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2181,7 +2181,7 @@
   },
   "bg-real-estate": {
    "name": "BG REAL ESTATE SRL",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 30,
    "stats": {
     "requests": 1,
@@ -2190,7 +2190,7 @@
     "details": 30,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2199,7 +2199,7 @@
   },
   "vesta-immobiliare": {
    "name": "immobiliare Vesta",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 5,
    "stats": {
     "requests": 1,
@@ -2208,7 +2208,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2217,7 +2217,7 @@
   },
   "bonavia-advisory": {
    "name": "Bonavia Real Estate Advisory",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 4,
    "stats": {
     "requests": 1,
@@ -2226,7 +2226,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2235,16 +2235,16 @@
   },
   "grm-immobiliare": {
    "name": "Grm immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 5,
    "stats": {
     "requests": 4,
-    "seconds": 3,
+    "seconds": 4,
     "outside": 1,
     "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2253,16 +2253,16 @@
   },
   "devetti-immobiliare": {
    "name": "Immobiliare Devetti",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 5,
    "stats": {
     "requests": 5,
-    "seconds": 9,
+    "seconds": 6,
     "outside": 2,
     "details": 2,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2271,7 +2271,7 @@
   },
   "il-quadrifoglio": {
    "name": "Il Quadrifoglio srl",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 9,
    "stats": {
     "requests": 3,
@@ -2280,7 +2280,7 @@
     "details": 2,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2289,7 +2289,7 @@
   },
   "rizza-immobiliare": {
    "name": "Rizza immobiliare del dott. Mathias Carabellese",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 5,
    "stats": {
     "requests": 13,
@@ -2298,7 +2298,7 @@
     "details": 3,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2307,7 +2307,7 @@
   },
   "immobiliare-meta": {
    "name": "Immobiliare Meta",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 2,
    "stats": {
     "requests": 6,
@@ -2316,7 +2316,7 @@
     "details": 0,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2325,16 +2325,16 @@
   },
   "mazzini-immobiliare": {
    "name": "Mazzini Immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
-   "last_count": 13,
+   "last_run": "2026-10-09T11:24:34+00:00",
+   "last_count": 14,
    "stats": {
-    "requests": 7,
+    "requests": 8,
     "seconds": 7,
     "outside": 1,
-    "details": 1,
+    "details": 2,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2343,7 +2343,7 @@
   },
   "altipiano-immobiliare": {
    "name": "Altipiano Immobiliare di Candotti",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 17,
    "stats": {
     "requests": 2,
@@ -2352,7 +2352,7 @@
     "details": 1,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2361,7 +2361,7 @@
   },
   "fabris-immobiliare": {
    "name": "fabris immobiliare",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 1,
    "stats": {
     "requests": 10,
@@ -2370,7 +2370,7 @@
     "details": 9,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
@@ -2379,7 +2379,7 @@
   },
   "tirabora-lusso": {
    "name": "Tirabora Lusso",
-   "last_run": "2026-10-09T09:27:11+00:00",
+   "last_run": "2026-10-09T11:24:34+00:00",
    "last_count": 6,
    "stats": {
     "requests": 6,
@@ -2388,7 +2388,7 @@
     "details": 4,
     "partial_errors": 0
    },
-   "last_ok": "2026-10-09T09:27:11+00:00",
+   "last_ok": "2026-10-09T11:24:34+00:00",
    "first_ok": "2026-09-29T14:13:32+00:00",
    "last_error": null,
    "fail_streak": 0,
