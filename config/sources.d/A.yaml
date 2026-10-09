@@ -112,13 +112,19 @@ sources:
     name: NoiDonneImmobiliare.eu
     kind: agenzia
     website: https://noidonneimmobiliare.eu/
-    adapter: a_wp
+    # l'archivio pubblico (adapter a_wp su /status/vendita/, paginato) è ordinato in modo non
+    # deterministico: tra due richieste separate (anche la pagina 1 e la pagina 2 della stessa
+    # richiesta) l'ordine cambia, quindi una scheda può restare fuori da entrambe le pagine lette e
+    # risultare "rimossa" per un giro salvo poi ricomparire (o viceversa comparire su entrambe le
+    # pagine). L'API REST di WordPress (stesso tema Houzez di altre fonti di questo batch) espone lo
+    # stesso elenco in modo stabile: 'property_status'=10 è il termine di tassonomia 'vendita'
+    # (wp-json/wp/v2/property_status). 'ref_from_url' tiene gli id coerenti con quelli già in archivio.
+    adapter: a_wpjson
     delay: 1.0
-    start_urls:
-      - https://noidonneimmobiliare.eu/status/vendita/
-    page_template: 'https://noidonneimmobiliare.eu/status/vendita/page/{n}/'
-    max_pages: 2
-    link_regex: 'noidonneimmobiliare\.eu/property/[^/]+/?$'
+    api: https://noidonneimmobiliare.eu/wp-json/wp/v2/properties
+    params:
+      property_status: 10
+    ref_from_url: true
 
   - id: casa-con-giardino
     name: Casa con Giardino - di Martina Micalizzi

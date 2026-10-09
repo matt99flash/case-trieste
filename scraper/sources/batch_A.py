@@ -21,6 +21,15 @@ def _unescape(s):
     return htmlmod.unescape(s) if isinstance(s, str) else s
 
 
+def _known_active_count(ctx, source_id: str) -> int:
+    """Quanti annunci di questa fonte risultano attivi nell'archivio (giro precedente): usato per
+    accorgersi che l'elenco appena letto è sospettosamente più corto (o vuoto) senza che la richiesta
+    HTTP abbia dato un errore vero e proprio (il sito risponde 200 ma con la pagina elenco vuota o
+    con una scheda in meno: capita, raramente ma spesso, su alcuni di questi siti WordPress sotto
+    carico o con una cache applicativa instabile)."""
+    return sum(1 for r in ctx.store.listings.values() if r.get("source") == source_id and r.get("status") == "active")
+
+
 _SOLD_TITLE = re.compile(r"^\s*vendut[oa]\b", re.I)
 
 
@@ -278,11 +287,10 @@ class WPCleanSource(GenericSource):
     schede->dettaglio di GenericSource (invece di richiamare super().fetch) perché deve riguardare
     l'HTML grezzo della scheda dopo `parse_detail`, che GenericSource non restituisce."""
 
-    def fetch(self, ctx):
+    def _collect_links(self, ctx):
         cfg = self.cfg
         link_rx = re.compile(cfg["link_regex"], re.I)
         excl = re.compile(cfg["exclude_regex"], re.I) if cfg.get("exclude_regex") else None
-        excl_content = re.compile(cfg["exclude_content_regex"], re.I | re.S) if cfg.get("exclude_content_regex") else None
         max_pages = cfg.get("max_pages", 40)
         links: dict[str, None] = {}
         for start in cfg["start_urls"]:
@@ -311,7 +319,28 @@ class WPCleanSource(GenericSource):
                     page += 1
                 else:
                     url = self._next_link(soup, url)
-        ctx.log(f"{len(links)} schede trovate")
+        return links
+
+    def fetch(self, ctx):
+        cfg = self.cfg
+        excl_content = re.compile(cfg["exclude_content_regex"], re.I | re.S) if cfg.get("exclude_content_regex") else None
+        known_active = _known_active_count(ctx, self.id)
+        links: dict[str, None] = self._collect_links(ctx)
+        attempts = 1
+        # alcuni siti di questo lotto (es. l'archivio WordPress ordinato in modo non deterministico di
+        # NoiDonneImmobiliare) restituiscono, di tanto in tanto o persino fra una pagina e la successiva
+        # dello stesso giro, un sottoinsieme diverso e incompleto delle schede attive (nessun errore HTTP
+        # da intercettare: la pagina risponde 200 ma con l'ordine/elenco rimescolato). Si ripete solo la
+        # raccolta dei link (economica: nessuna scheda dettaglio) finché l'unione non smette di
+        # crescere o non raggiunge il numero di annunci attivi del giro precedente: le schede dettaglio
+        # si scaricano una sola volta, dopo, sull'elenco finale.
+        while len(links) < known_active and attempts < 4:
+            attempts += 1
+            before = len(links)
+            links.update(self._collect_links(ctx))
+            if len(links) == before:
+                break
+        ctx.log(f"{len(links)} schede trovate" + (f" (dopo {attempts} tentativi)" if attempts > 1 else ""))
         out, details = [], 0
         for u in links:
             L = Listing(source=self.id, ref=self._ref(u), url=u)
@@ -341,6 +370,8 @@ class WPCleanSource(GenericSource):
             _infer_town(L)
             out.append(L)
         _dedupe_suspicious_prices(out)
+        if not out and known_active:
+            raise ValueError(f"elenco vuoto dopo {attempts} tentativi (prima c'erano {known_active} annunci attivi)")
         return out
 
 
@@ -357,15 +388,17 @@ class SitemapSource(Source):
         (es. tema che marca "Status della proprietà: Venduto" invece di rimuovere l'annuncio)
     """
 
-    def fetch(self, ctx):
+    def _collect_links(self, ctx):
         cfg = self.cfg
         link_rx = re.compile(cfg["link_regex"], re.I)
         excl = re.compile(cfg["exclude_regex"], re.I) if cfg.get("exclude_regex") else None
-        excl_content = re.compile(cfg["exclude_content_regex"], re.I | re.S) if cfg.get("exclude_content_regex") else None
         xml = ctx.http.text(cfg["sitemap"])
         locs = _extract_locs(xml)
         if not locs:
-            raise ValueError(f"sitemap vuota: {cfg['sitemap']}")
+            # diagnostica per il messaggio d'errore finale: se capita di nuovo (es. solo sui runner
+            # GitHub Actions) si vede subito cos'ha risposto il sito invece di dover riprodurlo a mano.
+            self._last_empty_hint = xml[:200].replace("\n", " ").strip()
+            return []
         # sitemap indice: altre sitemap invece di URL di schede -> le scarico e unisco
         if all(re.search(r"sitemap.*\.xml$", u, re.I) for u in locs):
             merged = []
@@ -375,7 +408,22 @@ class SitemapSource(Source):
             locs = merged
         links = [u for u in locs if link_rx.search(u) and not (excl and excl.search(u))]
         if not links:
-            raise ValueError(f"nessuna scheda nella sitemap: {cfg['sitemap']}")
+            self._last_empty_hint = f"{len(locs)} <loc> nella sitemap ma nessuno combacia con link_regex"
+        return links
+
+    def fetch(self, ctx):
+        cfg = self.cfg
+        excl_content = re.compile(cfg["exclude_content_regex"], re.I | re.S) if cfg.get("exclude_content_regex") else None
+        links = self._collect_links(ctx)
+        attempts = 0
+        # la sitemap a volte risponde vuota o incompleta solo per un giro (hiccup del sito, non un
+        # errore HTTP): un nuovo tentativo quasi sempre la recupera per intero.
+        while not links and attempts < 2:
+            attempts += 1
+            links = self._collect_links(ctx)
+        if not links:
+            hint = getattr(self, "_last_empty_hint", "")
+            raise ValueError(f"sitemap vuota dopo {1 + attempts} tentativi: {cfg['sitemap']}" + (f" [{hint}]" if hint else ""))
         ctx.log(f"{len(links)} schede in sitemap")
         out, details = [], 0
         for u in links:
@@ -590,7 +638,11 @@ class WPRestSource(Source):
             url = row.get(link_field)
             if not url or (excl and excl.search(url)):
                 continue
-            ref = str(row.get("id")) or ref_from_url(url)
+            # ref_from_url (invece dell'id numerico del post WP) tiene stabili gli id già in archivio
+            # quando una fonte passa da link statici (adapter 'a_wp') a questa API REST (es.
+            # NoiDonneImmobiliare, il cui archivio pubblico è ordinato in modo non deterministico): con
+            # l'id numerico ogni annuncio noto risulterebbe "rimosso" e poi "nuovo" in un colpo solo.
+            ref = ref_from_url(url) if cfg.get("ref_from_url") else (str(row.get("id")) or ref_from_url(url))
             L = Listing(source=self.id, ref=ref, url=url)
             if ctx.store.needs_detail(L.id) and details < self.max_details:
                 try:

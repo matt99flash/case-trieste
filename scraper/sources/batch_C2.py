@@ -124,7 +124,9 @@ class WixDynamicSource(Source):
         for sm in sub_sitemaps:
             xml = ctx.http.text(sm)
             for u in re.findall(r"<loc>\s*([^<]+)\s*</loc>", xml):
-                urls.setdefault(u.strip())
+                # alcuni slug con apostrofo (es. "dimora d'epoca") restano con l'entità XML "&apos;" non
+                # decodificata: scaricarli così com'è non trova la pagina (l'URL vero ha l'apostrofo).
+                urls.setdefault(html_lib.unescape(u.strip()))
         ctx.log(f"{len(urls)} pagine immobile nelle sitemap")
         out, details, skipped = [], 0, 0
         for u in urls:

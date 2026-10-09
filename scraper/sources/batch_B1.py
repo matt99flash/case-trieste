@@ -82,6 +82,12 @@ def _strong_span_kv(html: str) -> dict:
     return {k.strip().lower(): v.strip() for k, v in _STRONG_SPAN_RE.findall(html)}
 
 
+def _known_active_count(ctx, source_id: str) -> int:
+    """Quanti annunci di questa fonte risultano attivi nell'archivio (giro precedente): vedi
+    `B1GenericSource.fetch` e `LabImmobiliareSource.fetch` più sotto."""
+    return sum(1 for r in ctx.store.listings.values() if r.get("source") == source_id and r.get("status") == "active")
+
+
 def _resolve_town(L: Listing) -> None:
     """Come sopra: forza il comune quando titolo/indirizzo/zona bastano a deciderlo da soli, invece di
     lasciare che la descrizione (spesso testo promozionale fisso, non affidabile) decida da sola."""
@@ -135,7 +141,21 @@ def _extra_detail_fields(html: str) -> dict:
 @register("b1_generic")
 class B1GenericSource(GenericSource):
     def fetch(self, ctx):
-        out = super().fetch(ctx)
+        known_active = _known_active_count(ctx, self.id)
+        # alcuni di questi siti, di tanto in tanto o persino fra una pagina e la successiva dello
+        # stesso giro, rispondono 200 ma con la pagina elenco vuota o con qualche scheda in meno
+        # (nessun errore HTTP da intercettare, a volte un ordinamento non deterministico): si uniscono
+        # (per id) più tentativi finché il totale non raggiunge quello del giro precedente, invece di
+        # sostituire un tentativo con un altro (ogni tentativo è un campione diverso, va unito non scelto).
+        merged: dict[str, Listing] = {L.id: L for L in super().fetch(ctx)}
+        attempts = 0
+        while len(merged) < known_active and attempts < 2:
+            attempts += 1
+            for L in super().fetch(ctx):
+                merged.setdefault(L.id, L)
+        out = list(merged.values())
+        if not out and known_active:
+            raise ValueError(f"elenco vuoto dopo {1 + attempts} tentativi (prima c'erano {known_active} annunci attivi)")
         bogus_addr = self.cfg.get("bogus_address")
         for L in out:
             if bogus_addr and L.address == bogus_addr:
@@ -320,7 +340,7 @@ class LabImmobiliareSource(Source):
     BED_RE = re.compile(r'ct-span"\s*>\s*(\d+)\s*<.{0,80}?icon-bed', re.S)
     BATH_RE = re.compile(r'ct-span"\s*>\s*(\d+)\s*<.{0,80}?icon-bath', re.S)
 
-    def fetch(self, ctx):
+    def _list_links(self, ctx):
         html = ctx.http.text(self.LIST_URL)
         soup = soup_of(html)
         links: dict[str, None] = {}
@@ -329,7 +349,22 @@ class LabImmobiliareSource(Source):
             if u and self.LINK_RE.search(u):
                 links.setdefault(u)
         if not links:
-            raise ValueError("nessuna scheda trovata in /vendite/")
+            # diagnostica per il messaggio d'errore finale: se capita di nuovo (es. solo sui runner
+            # GitHub Actions) si vede subito cos'ha risposto il sito invece di doverlo riprodurre a mano.
+            self._last_empty_hint = html[:200].replace("\n", " ").strip()
+        return links
+
+    def fetch(self, ctx):
+        links = self._list_links(ctx)
+        attempts = 0
+        # a volte la pagina risponde 200 ma senza schede (hiccup del sito, non un errore HTTP):
+        # un nuovo tentativo quasi sempre la recupera per intero.
+        while not links and attempts < 2:
+            attempts += 1
+            links = self._list_links(ctx)
+        if not links:
+            hint = getattr(self, "_last_empty_hint", "")
+            raise ValueError(f"nessuna scheda trovata in /vendite/ dopo {1 + attempts} tentativi" + (f" [{hint}]" if hint else ""))
         ctx.log(f"{len(links)} schede trovate")
         out = []
         for u in links:

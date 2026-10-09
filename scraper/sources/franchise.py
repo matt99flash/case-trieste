@@ -637,7 +637,12 @@ class EngelVoelkersSource(Source):
 
     def fetch(self, ctx):
         j = _next_data(ctx.http.text(self.URL))
-        res = (((j.get("props") or {}).get("pageProps") or {}).get("searchModule") or {}).get("initialSearchResults")
+        pp = ((j.get("props") or {}).get("pageProps") or {})
+        # il sito non espone più i risultati in searchModule.initialSearchResults: ora sono nella query
+        # React-Query "listings" dentro dehydratedState (il resto della struttura è invariato).
+        queries = (pp.get("dehydratedState") or {}).get("queries") or []
+        res = next((q.get("state", {}).get("data") for q in queries
+                    if (q.get("queryKey") or [None])[0] == "listings"), None)
         if not res or "listings" not in res:
             raise ValueError("risultati E&V non trovati")
         rows = [r.get("listing") or {} for r in res["listings"]]
@@ -900,9 +905,10 @@ class DoveitSource(Source):
             pp = (_next_data(ctx.http.text(self.URL, params={"p": page} if page > 1 else None)).get("props") or {}).get("pageProps") or {}
             loc = ((pp.get("query") or {}).get("locality") or "").lower()
             if loc != "trieste":
-                # slug sconosciuto: il sito ripiega su tutta Italia -> non usare questi risultati
-                ctx.log(f"località inattesa '{loc}': nessun annuncio")
-                return []
+                # slug sconosciuto: il sito ripiega sui risultati di tutta Italia -> non è un vero
+                # elenco di Trieste (e se capitasse con annunci già in archivio, non vanno segnati
+                # come "rimossi" per questo): solleva un'eccezione invece di restituire una lista vuota.
+                raise ValueError(f"località inattesa '{loc}' (il sito è ripiegato su tutta Italia)")
             props = pp.get("properties")
             if not isinstance(props, dict) or "content" not in props:
                 raise ValueError("elenco Dove.it non trovato")

@@ -115,6 +115,12 @@ sources:
     website: https://www.immobiliaresabrina.com
     adapter: C2_miogest
     delay: 1.2
+    # disabilitata (2026-10-09): HTTP 403 persistente da GitHub Actions da settimane (fail_streak 49),
+    # ma il sito si legge normalmente (200) con lo stesso client (curl_cffi impersonate=chrome) da una
+    # rete diversa (non-GitHub) -> blocco del WAF del sito (gestionale Miogest) sugli indirizzi IP di
+    # GitHub Actions, non un problema dell'adattatore. Da riabilitare se in futuro risponde di nuovo
+    # dai runner GitHub.
+    enabled: false
     list_url: https://www.immobiliaresabrina.com/it/vendite/
 
   - id: altipiano
