@@ -171,3 +171,121 @@ def send_health(store):
         creq.post(os.environ.get("NTFY_SERVER", "https://ntfy.sh"), json=msg, timeout=20)
     except Exception as e:
         print("Avviso fonti fallito:", e)
+
+
+# ------------------------------------------------------------------ riepilogo settimanale
+
+def _week_start(now):
+    """Lunedì più recente alle 7:00 (ora italiana) già passato."""
+    from datetime import timedelta
+    from zoneinfo import ZoneInfo
+    local = now.astimezone(ZoneInfo("Europe/Rome"))
+    monday = (local - timedelta(days=local.weekday())).replace(hour=7, minute=0, second=0, microsecond=0)
+    return monday if monday <= local else monday - timedelta(days=7)
+
+
+def _median(vals):
+    vals = sorted(vals)
+    if not vals:
+        return None
+    n = len(vals)
+    return vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) / 2
+
+
+def build_weekly(store, now) -> dict | None:
+    """Riepilogo degli ultimi 7 giorni, limitato ai criteri scelti per le notifiche."""
+    from datetime import datetime, timedelta
+    cfg = load_config()
+    flt = cfg.get("filters") or {}
+    cut = now - timedelta(days=7)
+    kind_of = lambda r: "privato" if r.get("private") else store.sources.get(r["source"], {}).get("kind", "agenzia")
+    ok = lambda r: r is not None and _matches(r, flt, kind_of(r))
+
+    # case (gruppi di annunci) oggi in vendita che rispettano i criteri
+    groups = {}
+    for r in store.listings.values():
+        if r["status"] == "active" and ok(r):
+            groups.setdefault(r.get("group", r["id"]), r)
+    ppm = [r["price"] / r["mq"] for r in groups.values()
+           if r.get("price") and r.get("mq") and r.get("type") in ("appartamento", "attico")]
+    stats = {"count": len(groups), "median_ppm": round(_median(ppm)) if len(ppm) >= 5 else None}
+
+    new, drops, gone, seen = [], [], 0, set()
+    for ev in store.events + store.new_events:
+        if datetime.fromisoformat(ev["ts"]) < cut:
+            continue
+        rec = store.listings.get(ev["id"])
+        if not ok(rec):
+            continue
+        key = (ev["type"], rec.get("group", rec["id"]))
+        if key in seen:
+            continue
+        seen.add(key)
+        if ev["type"] == "new" and rec["status"] == "active":
+            new.append(rec)
+        elif ev["type"] == "price_down" and ev.get("old_price") and rec["status"] == "active":
+            drops.append((ev["price"] / ev["old_price"] - 1, ev, rec))
+        elif ev["type"] in ("removed", "sold") and (rec["status"] != "active" or rec.get("sold")):
+            gone += 1
+
+    def short(r):
+        bits = [TYPE_LABELS.get(r.get("type"), "Immobile")]
+        if r.get("mq"):
+            bits.append(f"{r['mq']} mq")
+        where = r.get("zone") if r.get("town") == "Trieste" and r.get("zone") else r.get("town") or ""
+        return " ".join(bits) + (f", {where}" if where else "")
+
+    lines = [f"🆕 {len(new)} nuovi · 📉 {len(drops)} ribassi · ✅ {gone} venduti/ritirati"]
+    prev = store.weekly_stats or {}
+    tot = f"In vendita ora: {stats['count']} immobili con i tuoi criteri"
+    if prev.get("count") is not None:
+        tot += f" ({stats['count'] - prev['count']:+d} rispetto a 7 giorni fa)"
+    lines.append(tot)
+    if stats["median_ppm"]:
+        m = f"Prezzo mediano appartamenti: {_eur(stats['median_ppm'])}/mq"
+        if prev.get("median_ppm"):
+            m += f" ({(stats['median_ppm'] / prev['median_ppm'] - 1) * 100:+.1f}%)"
+        lines.append(m)
+    if drops:
+        lines.append("\nRibassi maggiori:")
+        for pct, ev, r in sorted(drops, key=lambda x: x[0])[:3]:
+            lines.append(f"• {short(r)}: {_eur(ev['old_price'])} → {_eur(ev['price'])} ({pct * 100:.0f}%)")
+    if new:
+        lines.append("\nNuovi annunci:")
+        for r in sorted(new, key=lambda r: r.get("price") or 9e12)[:6]:
+            lines.append(f"• {short(r)} – {_eur(r.get('price'))}")
+        if len(new) > 6:
+            lines.append(f"…e altri {len(new) - 6} nella dashboard")
+    msg = "\n".join(lines)
+    return {"title": "📊 Case Trieste – riepilogo della settimana", "message": msg[:3800], "stats": stats}
+
+
+def send_weekly(store, now=None):
+    """Una volta a settimana (primo giro dopo lunedì alle 7) manda il riepilogo, se le notifiche sono attive."""
+    from datetime import datetime, timezone
+    now = now or datetime.now(timezone.utc)
+    start = _week_start(now)
+    if store.weekly_at and datetime.fromisoformat(store.weekly_at) >= start:
+        return
+    if not load_config().get("enabled", True):
+        return
+    w = build_weekly(store, now)
+    topic = os.environ.get("NTFY_TOPIC")
+    if not topic:
+        print("Riepilogo settimanale (NTFY_TOPIC non impostato):\n" + w["title"] + "\n" + w["message"])
+        return
+    dashboard = os.environ.get("DASHBOARD_URL", "")
+    m = {"topic": topic, "title": w["title"], "message": w["message"], "tags": ["bar_chart"], "priority": 3}
+    if dashboard:
+        m["click"] = f"{dashboard}#novita"
+    try:
+        r = creq.post(os.environ.get("NTFY_SERVER", "https://ntfy.sh"), json=m, timeout=20)
+        if r.status_code >= 400:
+            print("Riepilogo settimanale fallito:", r.status_code, r.text[:200])
+            return
+    except Exception as e:
+        print("Riepilogo settimanale fallito:", e)
+        return
+    store.weekly_at = store.ts
+    store.weekly_stats = w["stats"]
+    print("Riepilogo settimanale inviato")

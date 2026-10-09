@@ -3,6 +3,8 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 
+from .clean import clean_record
+
 # CASE_DATA_DIR permette prove in una cartella separata senza toccare i dati veri
 DATA_DIR = os.environ.get("CASE_DATA_DIR") or os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs", "data")
 LISTINGS_FILE = os.path.join(DATA_DIR, "listings.json")
@@ -11,6 +13,7 @@ SOURCES_FILE = os.path.join(DATA_DIR, "sources.json")
 
 MISSING_RUNS_TO_REMOVE = 2      # giri consecutivi senza vederlo prima di considerarlo "ritirato/venduto"
 MIN_RATIO_OK = 0.5              # se una fonte restituisce meno della metà del solito, il giro è sospetto
+EMPTY_ACCEPT_RUNS = 12          # una fonte piccola che risulta vuota è sospetta; dopo ~1 giorno e mezzo si accetta
 KEEP_REMOVED_DAYS = 120
 KEEP_EVENTS_DAYS = 90
 DETAIL_REFRESH_DAYS = 10
@@ -55,8 +58,11 @@ def _dump(path, obj, one_per_line_key=None):
 class Store:
     def __init__(self):
         raw = _load(LISTINGS_FILE, {"listings": []})
-        self.listings: dict[str, dict] = {x["id"]: x for x in raw.get("listings", [])}
-        self.events: list[dict] = _load(EVENTS_FILE, {"events": []}).get("events", [])
+        self.listings: dict[str, dict] = {x["id"]: clean_record(x) for x in raw.get("listings", [])}
+        ev = _load(EVENTS_FILE, {"events": []})
+        self.events: list[dict] = ev.get("events", [])
+        self.weekly_at: str | None = ev.get("weekly_at")   # ultimo riepilogo settimanale inviato
+        self.weekly_stats: dict | None = ev.get("weekly_stats")
         self.sources: dict[str, dict] = _load(SOURCES_FILE, {"sources": {}}).get("sources", {})
         self.new_events: list[dict] = []
         self.ts = now_iso()
@@ -92,6 +98,9 @@ class Store:
             meta["fail_streak"] = meta.get("fail_streak", 0) + 1
             return
         suspicious = len(prev_active) >= 10 and len(results) < MIN_RATIO_OK * len(prev_active)
+        # fonte piccola che all'improvviso risulta vuota: quasi sempre è il sito che non ha risposto bene
+        if prev_active and not results and meta.get("fail_streak", 0) < EMPTY_ACCEPT_RUNS:
+            suspicious = True
         meta["last_count"] = len(results)
         meta["stats"] = stats or {}
         if suspicious:
@@ -105,6 +114,7 @@ class Store:
 
         seen = set()
         for d in results:
+            d = clean_record(d)
             lid = d["id"]
             seen.add(lid)
             rec = self.listings.get(lid)
@@ -181,5 +191,6 @@ class Store:
         self.prune()
         listings = sorted(self.listings.values(), key=lambda r: r["id"])
         _dump(LISTINGS_FILE, {"updated": self.ts, "listings": listings}, one_per_line_key="listings")
-        _dump(EVENTS_FILE, {"updated": self.ts, "events": self.events})
+        _dump(EVENTS_FILE, {"updated": self.ts, "weekly_at": self.weekly_at,
+                            "weekly_stats": self.weekly_stats, "events": self.events})
         _dump(SOURCES_FILE, {"updated": self.ts, "sources": self.sources})

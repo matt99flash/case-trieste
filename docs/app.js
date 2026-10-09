@@ -51,7 +51,37 @@ async function load() {
     if (!S.groups.has(g)) S.groups.set(g, []);
     S.groups.get(g).push(r);
   }
+  computeZoneMedians();
 }
+
+// €/mq rispetto alla mediana della zona (solo appartamenti/attici; ogni casa conta una volta; nuove costruzioni escluse dal riferimento)
+const DEAL_TYPES = ["appartamento", "attico"];
+const ZONE_MIN_SAMPLE = 8;
+const zoneKey = r => r.town === "Trieste" ? (r.zone ? "z:" + r.zone : null) : (r.town ? "t:" + r.town : null);
+function computeZoneMedians() {
+  const buckets = new Map();
+  for (const members of S.groups.values()) {
+    const r = members.find(m => m.status === "active" && m.ppm && DEAL_TYPES.includes(m.type) && m.condition !== "nuovo" && !m.features?._project);
+    const k = r && zoneKey(r);
+    if (!k) continue;
+    if (!buckets.has(k)) buckets.set(k, []);
+    buckets.get(k).push(r.ppm);
+  }
+  S.zoneMed = new Map();
+  for (const [k, v] of buckets) {
+    if (v.length < ZONE_MIN_SAMPLE) continue;
+    v.sort((a, b) => a - b);
+    const n = v.length;
+    S.zoneMed.set(k, { med: n % 2 ? v[(n - 1) / 2] : (v[n / 2 - 1] + v[n / 2]) / 2, n });
+  }
+  for (const r of S.listings) {
+    const z = r.ppm && DEAL_TYPES.includes(r.type) && !r.features?._project ? S.zoneMed.get(zoneKey(r)) : null;
+    const pct = z && (r.ppm / z.med - 1) * 100;
+    // scarti enormi sono quasi sempre dati letti male (nuda proprietà, superficie del terreno...): non mostrarli
+    r.zoneCmp = z && pct > -60 && pct < 150 ? { pct, med: z.med, n: z.n } : null;
+  }
+}
+const pctTxt = p => (p > 0 ? "+" : "−") + Math.abs(Math.round(p)) + "%";
 
 // Una "casa" = gruppo di annunci (stesso immobile su più agenzie). Rappresentante: attivo, con più dati, prezzo minore.
 function houses(includeRemoved) {
@@ -154,6 +184,7 @@ function sortHouses(list) {
     price_asc: (a, b) => (a.price || 9e12) - (b.price || 9e12),
     price_desc: (a, b) => (b.price || 0) - (a.price || 0),
     ppm_asc: (a, b) => (a.rep.ppm || 9e12) - (b.rep.ppm || 9e12),
+    zone_deal: (a, b) => (a.rep.zoneCmp?.pct ?? 9e9) - (b.rep.zoneCmp?.pct ?? 9e9),
     mq_desc: (a, b) => (b.rep.mq || 0) - (a.rep.mq || 0),
     drop: (a, b) => (priceChange(a.rep)?.pct ?? 0) - (priceChange(b.rep)?.pct ?? 0),
   }[F.sort] || (() => 0);
@@ -185,7 +216,10 @@ function card(h) {
     pc && pc.pct > 0 && `<span class="badge up">+${pc.pct.toFixed(0)}%</span>`,
     r.sold && `<span class="badge gone">Venduto / trattativa</span>`,
     r.private && `<span class="badge priv">Privato</span>`,
+    h.active && r.zoneCmp && r.zoneCmp.pct <= -15 && `<span class="badge deal" title="Prezzo al mq rispetto alla media della zona">${pctTxt(r.zoneCmp.pct)} zona</span>`,
   ].filter(Boolean).join("");
+  const zc = r.zoneCmp && Math.abs(r.zoneCmp.pct) >= 5
+    ? ` <span class="${r.zoneCmp.pct < 0 ? "deal" : "dear"}" title="Rispetto alla media della zona (${Math.round(r.zoneCmp.med).toLocaleString("it-IT")} €/mq)">(${pctTxt(r.zoneCmp.pct)} zona)</span>` : "";
   const others = h.members.length > 1 ? ` · anche su altre ${h.members.length - 1}` : "";
   return `<article class="card ${h.active ? "" : "gone"}" data-gid="${esc(h.gid)}">
     <div class="thumb">${img ? `<img loading="lazy" src="${esc(img)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}<div class="noimg">${img ? "" : "Nessuna foto"}</div>
@@ -194,7 +228,7 @@ function card(h) {
     <div class="body">
       <div class="price">${r.features?._project && h.price ? "da " : ""}${eur(h.price)}${pc ? `<span class="old">${eur(pc.first)}</span>` : ""}</div>
       <div class="specs">${esc(TYPE_LABELS[r.type] || "Immobile")}${specs(r) ? " · " + esc(specs(r)) : ""}</div>
-      <div class="where">${esc(where(r))}${r.ppm ? ` · ${Math.round(r.ppm).toLocaleString("it-IT")} €/mq` : ""}</div>
+      <div class="where">${esc(where(r))}${r.ppm ? ` · ${Math.round(r.ppm).toLocaleString("it-IT")} €/mq` : ""}${zc}</div>
       <div class="title">${esc(r.title || "")}</div>
       <div class="src">${esc(r.srcName)}${esc(others)} · online ${ago(h.firstSeen)}</div>
     </div></article>`;
@@ -253,7 +287,8 @@ function renderFavs() {
   syncSort();
   const list = sortHouses(houses(true).filter(h => S.favs.has(h.gid)));
   $("#favs").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">Tocca ★ su un annuncio per salvarlo qui. I preferiti restano su questo dispositivo.</div>`;
-  $("#fav-count").textContent = S.favs.size || "";
+  updateFavCount();
+  renderFavSync();
 }
 
 function renderSources() {
@@ -310,6 +345,7 @@ function openDetail(gid) {
   const facts = [
     [(r.features?._project ? "da " : "") + eur(Math.min(...list.map(m => m.price || Infinity)) === Infinity ? null : Math.min(...list.map(m => m.price || Infinity))), r.features?._project ? "Prezzo minimo del cantiere" : "Prezzo"],
     [r.mq && `${r.mq} mq`, "Superficie"], [r.ppm && `${Math.round(r.ppm).toLocaleString("it-IT")} €/mq`, "Prezzo al mq"],
+    [r.zoneCmp && `${pctTxt(r.zoneCmp.pct)} rispetto alla zona`, r.zoneCmp && `Media zona ${Math.round(r.zoneCmp.med).toLocaleString("it-IT")} €/mq (${r.zoneCmp.n} annunci)`],
     [r.rooms, "Locali"], [r.bedrooms, "Camere"], [r.bathrooms, "Bagni"], [r.floor, "Piano"], [r.energy, "Classe energetica"],
     [COND_LABELS[r.condition], "Stato"], [TYPE_LABELS[r.type], "Tipologia"], [where(r) + (r.town !== "Trieste" ? "" : ""), "Zona"],
     ...Object.entries(FEATURES).map(([k, l]) => [r.features?.[k] === true ? "Sì" : r.features?.[k] === false ? "No" : null, l]),
@@ -446,6 +482,82 @@ function saveNotify() {
   window.open(url, "_blank", "noopener");
 }
 
+// ------------------------------------------------------------------ preferiti su più dispositivi
+// I dispositivi "collegati" leggono docs/favorites.json; chi apre il link senza collegarsi ha solo i propri preferiti.
+// Si salvano come codici brevi (hash dell'id della casa) tramite una issue GitHub, come le impostazioni notifiche.
+
+const favSync = { get: () => store.get("favsync", { linked: false, base: null }), set: v => store.set("favsync", v) };
+const fnv = s => { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(16).padStart(8, "0"); };
+const codesOf = gids => [...new Set([...gids].map(fnv))].sort();
+const sameCodes = (a, b) => a.length === b.length && a.every((x, i) => x === b[i]);
+
+async function loadRemoteFavs() {
+  try { const r = await fetch(`favorites.json?t=${Date.now()}`); return r.ok ? await r.json() : null; } catch { return null; }
+}
+
+function applyRemoteFavs(linkNow) {
+  const st = favSync.get();
+  if (!st.linked && !linkNow) return;
+  const remote = S.remoteFavs || { updated: null, favs: [] };
+  if (linkNow || !st.base || st.base.updated !== remote.updated) {
+    const want = new Set(remote.favs || []);
+    const gids = [...S.groups.keys()].filter(g => want.has(fnv(g)));
+    const untouched = st.base && sameCodes(codesOf(S.favs), st.base.codes);
+    if (untouched) S.favs = new Set(gids); else gids.forEach(g => S.favs.add(g));
+    store.set("favs", [...S.favs]);
+    st.base = { updated: remote.updated, codes: codesOf(gids) };
+  }
+  st.linked = true;
+  favSync.set(st);
+}
+
+const favDirty = () => { const st = favSync.get(); return st.linked && !sameCodes(codesOf(S.favs), st.base?.codes || []); };
+
+function updateFavCount() {
+  $("#fav-count").textContent = (S.favs.size || "") + (favDirty() ? " •" : "");
+}
+
+function renderFavSync() {
+  const st = favSync.get(), box = $("#fav-sync");
+  if (!st.linked) {
+    $("#fav-note").textContent = "I preferiti restano salvati su questo dispositivo.";
+    box.innerHTML = `<p>Usi la dashboard sia sul telefono sia sul PC? Collega questo dispositivo per avere gli stessi preferiti ovunque.
+      <span class="muted small">Riservato al proprietario della dashboard: chi riceve il link tiene i propri preferiti.</span></p>
+      <div class="btns"><button class="btn ghost" data-favsync="link">Collega questo dispositivo</button></div>`;
+    return;
+  }
+  $("#fav-note").textContent = "Dispositivo collegato: dopo aver aggiunto o tolto preferiti premi «Salva su tutti i dispositivi».";
+  if (!favDirty()) {
+    box.innerHTML = `<p>✓ Preferiti uguali su tutti i tuoi dispositivi collegati.</p>
+      <div class="btns"><button class="btn ghost" data-favsync="unlink">Scollega</button></div>`;
+    return;
+  }
+  const pending = st.pending && Date.now() - st.pending < 30 * 60e3;
+  box.innerHTML = `<p><b>Preferiti modificati su questo dispositivo.</b> ${pending
+    ? "Salvataggio inviato: se hai toccato <i>Create</i> su GitHub, entro qualche minuto compaiono anche sugli altri dispositivi."
+    : "Salvali per vederli anche sugli altri dispositivi."}</p>
+    <div class="btns"><button class="btn" data-favsync="save">Salva su tutti i dispositivi</button></div>`;
+}
+
+function saveFavs() {
+  const codes = codesOf(S.favs), { owner, repo } = repoInfo();
+  const when = new Date().toLocaleString("it-IT", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  const body = "Richiesta inviata dalla dashboard. Tocca **Create** per salvarla: verrà applicata in automatico.\n\n" +
+    `${codes.length} preferiti.\n\n` + "```json\n" + JSON.stringify({ favs: codes }) + "\n```";
+  window.open(`https://github.com/${owner}/${repo}/issues/new?title=${encodeURIComponent("Preferiti " + when)}&body=${encodeURIComponent(body)}`, "_blank", "noopener");
+  const st = favSync.get();
+  st.pending = Date.now();
+  favSync.set(st);
+  renderFavSync();
+}
+
+function favSyncAction(what) {
+  if (what === "link") applyRemoteFavs(true);
+  else if (what === "unlink") { const st = favSync.get(); st.linked = false; st.base = null; favSync.set(st); }
+  else if (what === "save") { saveFavs(); return; }
+  renderFavs();
+}
+
 // ------------------------------------------------------------------ navigazione
 
 function showTab() {
@@ -465,14 +577,14 @@ function render(tab) {
   else if (tab === "fonti") renderSources();
   else if (tab === "notifiche") renderNotify();
   else renderGrid();
-  $("#fav-count").textContent = S.favs.size || "";
+  updateFavCount();
 }
 
 function toggleFav(gid) {
   S.favs.has(gid) ? S.favs.delete(gid) : S.favs.add(gid);
   store.set("favs", [...S.favs]);
   document.querySelectorAll(`[data-fav="${CSS.escape(gid)}"]`).forEach(b => b.classList.toggle("on", S.favs.has(gid)));
-  $("#fav-count").textContent = S.favs.size || "";
+  updateFavCount();
 }
 
 function bind() {
@@ -497,6 +609,8 @@ function bind() {
     renderEvents();
   });
   document.addEventListener("click", e => {
+    const fs = e.target.closest("[data-favsync]");
+    if (fs) { favSyncAction(fs.dataset.favsync); return; }
     const fav = e.target.closest("[data-fav]");
     if (fav) { e.stopPropagation(); toggleFav(fav.dataset.fav); if (location.hash === "#preferiti") renderFavs(); return; }
     const open = e.target.closest("[data-open]");
@@ -512,6 +626,8 @@ function bind() {
   bind();
   try {
     await load();
+    S.remoteFavs = await loadRemoteFavs();
+    applyRemoteFavs(false);
   } catch (e) {
     $("#updated").textContent = "Dati non ancora disponibili: il primo controllo automatico non è ancora terminato.";
     showTab();

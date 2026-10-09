@@ -127,6 +127,8 @@ def main():
     if not args.no_notify:
         notify.send(store, all_names)
         notify.send_health(store)
+        if not args.only:
+            notify.send_weekly(store)
     store.save()
     ok = sum(1 for r in results if r[1] is not None)
     active = sum(1 for r in store.listings.values() if r["status"] == "active")

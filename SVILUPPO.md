@@ -9,6 +9,12 @@
 - `scraper/sources/generic.py` – adattatore configurabile (pagine elenco → link schede → dettaglio).
 - `scraper/models.py` – `Listing` (campi normalizzati). `finalize()` deduce comune, zona, tipologia, stato.
 - `scraper/store.py` – archivio in `docs/data/*.json`, eventi (new, price_down, price_up, removed, sold, back).
+  Una fonte con pochi annunci che all'improvviso risulta vuota è "sospetta" (nessun annuncio rimosso) per 12 giri.
+- `scraper/clean.py` – pulizia applicata a ogni giro a tutto l'archivio: zone canoniche, nomi caratteristiche,
+  superfici impossibili scartate, box scambiati per appartamenti.
+- `scraper/notify.py` – notifiche ntfy, avviso fonti rotte, riepilogo settimanale (primo giro dopo lunedì alle 7).
+- `scraper/favorites.py` + `.github/workflows/preferiti.yml` – preferiti condivisi tra i dispositivi collegati
+  (issue "Preferiti ..." del proprietario → `docs/favorites.json`, codici FNV-1a a 8 cifre dell'id della casa).
 - `config/sources.yaml` – elenco fonti. `config/notify.yaml` – criteri notifiche.
 - `docs/` – dashboard statica (GitHub Pages).
 

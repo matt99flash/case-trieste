@@ -38,7 +38,7 @@ ZONES_TRIESTE = {
     "Roiano": ["roiano", "via moreri", "via cordaroli", "largo roiano", "via stock", "via tor san lorenzo", "via boveto"],
     "Barcola / Grignano / Miramare": ["barcola", "grignano", "miramare", "viale miramare", "strada costiera", "costiera", "cedas", "bovedo"],
     "Carso triestino (Opicina e frazioni)": ["opicina", "villa opicina", "banne", "trebiciano", "padriciano", "basovizza", "gropada",
-                                            "conconello", "ferlugi", "prosecco", "contovello", "santa croce", "campo sacro", "borgo grotta", "piscianzi", "longera", "cattinara alta", "altipiano", "carso"],
+                                            "conconello", "ferlugi", "prosecco", "contovello", "santa croce", "campo sacro", "borgo grotta", "piscianzi", "longera", "cattinara alta", "altipiano", "altopiano", "carso"],
     "Servola / Valmaura / Borgo San Sergio": ["servola", "valmaura", "borgo san sergio", "altura", "chiarbola", "santa maria maddalena",
                                              "poggi sant'anna", "poggi paese", "raute", "via flavia", "via svevo", "via dell'istria bassa", "zona industriale", "cattinara"],
     "Montebello / Rotonda del Boschetto": ["montebello", "rotonda del boschetto", "boschetto", "viale al cacciatore", "via giulia bassa", "ospedale maggiore", "via pascoli", "via del ponte"],
