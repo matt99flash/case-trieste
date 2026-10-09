@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T15:25:19+00:00",
+ "updated": "2026-10-09T17:23:23+00:00",
  "weekly_at": "2026-10-09T09:27:11+00:00",
  "weekly_stats": {
   "count": 70,
@@ -4321,6 +4321,27 @@
    "id": "tam-immobiliare:34411",
    "source": "tam-immobiliare",
    "price": 560000
+  },
+  {
+   "ts": "2026-10-09T17:23:23+00:00",
+   "type": "removed",
+   "id": "casacitta-mediazioni:gretta-appartamento-con-giardino",
+   "source": "casacitta-mediazioni",
+   "price": 190000
+  },
+  {
+   "ts": "2026-10-09T17:23:23+00:00",
+   "type": "removed",
+   "id": "gallery-immobiliare:192749586",
+   "source": "gallery-immobiliare",
+   "price": 320000
+  },
+  {
+   "ts": "2026-10-09T17:23:23+00:00",
+   "type": "removed",
+   "id": "studio-benedetti:zona-giorno-piu-due-stanze-2-camere-a-trieste",
+   "source": "studio-benedetti",
+   "price": 329000
   }
  ]
 }
