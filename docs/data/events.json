@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T13:28:14+00:00",
+ "updated": "2026-10-09T15:25:19+00:00",
  "weekly_at": "2026-10-09T09:27:11+00:00",
  "weekly_stats": {
   "count": 70,
@@ -4269,6 +4269,58 @@
    "id": "e1-hometrieste:21582",
    "source": "e1-hometrieste",
    "price": 139000
+  },
+  {
+   "ts": "2026-10-09T15:25:19+00:00",
+   "type": "price_down",
+   "id": "opera-immobiliare:muggia-centro-storico-affascinante-casa-indipendente",
+   "source": "opera-immobiliare",
+   "old_price": 262000,
+   "price": 254000
+  },
+  {
+   "ts": "2026-10-09T15:25:19+00:00",
+   "type": "price_up",
+   "id": "opera-immobiliare:costiera-porzione-di-bifamiliare-con-giardino-box-e-vista-golfo",
+   "source": "opera-immobiliare",
+   "old_price": 595000,
+   "price": 1100000
+  },
+  {
+   "ts": "2026-10-09T15:25:19+00:00",
+   "type": "removed",
+   "id": "b1-laboratorio:sistiana-2",
+   "source": "b1-laboratorio",
+   "price": 950000
+  },
+  {
+   "ts": "2026-10-09T15:25:19+00:00",
+   "type": "removed",
+   "id": "b1-pizzarello:appartamento-in-vendita-nel-rione-di-altura-trieste",
+   "source": "b1-pizzarello",
+   "price": 184000
+  },
+  {
+   "ts": "2026-10-09T15:25:19+00:00",
+   "type": "new",
+   "id": "pozzecco-immobiliare:longera-appartamento-in-casa-bifamiliare-con-terrazzo-soffitta-sottotetto-e-gran",
+   "source": "pozzecco-immobiliare",
+   "price": 230000
+  },
+  {
+   "ts": "2026-10-09T15:25:19+00:00",
+   "type": "price_down",
+   "id": "imobilia-trieste:188",
+   "source": "imobilia-trieste",
+   "old_price": 264000,
+   "price": 259000
+  },
+  {
+   "ts": "2026-10-09T15:25:19+00:00",
+   "type": "new",
+   "id": "tam-immobiliare:34411",
+   "source": "tam-immobiliare",
+   "price": 560000
   }
  ]
 }
