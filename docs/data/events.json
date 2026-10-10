@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T21:24:06+00:00",
+ "updated": "2026-10-10T05:23:33+00:00",
  "weekly_at": "2026-10-09T09:27:11+00:00",
  "weekly_stats": {
   "count": 70,
@@ -4342,6 +4342,29 @@
    "id": "studio-benedetti:zona-giorno-piu-due-stanze-2-camere-a-trieste",
    "source": "studio-benedetti",
    "price": 329000
+  },
+  {
+   "ts": "2026-10-10T05:23:33+00:00",
+   "type": "back",
+   "id": "b1-selling-trieste:trilocale-viale-campielisi-44-trieste",
+   "source": "b1-selling-trieste",
+   "price": 104000
+  },
+  {
+   "ts": "2026-10-10T05:23:33+00:00",
+   "type": "price_down",
+   "id": "gallery-immobiliare:192818411",
+   "source": "gallery-immobiliare",
+   "old_price": 550000,
+   "price": 499000
+  },
+  {
+   "ts": "2026-10-10T05:23:33+00:00",
+   "type": "price_down",
+   "id": "gallery-immobiliare:193742230",
+   "source": "gallery-immobiliare",
+   "old_price": 225000,
+   "price": 215000
   }
  ]
 }
