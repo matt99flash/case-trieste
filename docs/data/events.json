@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10T11:22:18+00:00",
+ "updated": "2026-10-10T13:23:49+00:00",
  "weekly_at": "2026-10-09T09:27:11+00:00",
  "weekly_stats": {
   "count": 70,
@@ -4386,6 +4386,90 @@
    "id": "gallery-immobiliare:193635059",
    "source": "gallery-immobiliare",
    "price": 550000
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "subito-privati:664028341",
+   "source": "subito-privati",
+   "price": 476000
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "removed",
+   "id": "subito-privati:661858740",
+   "source": "subito-privati",
+   "price": 96000
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "back",
+   "id": "b1-hab:casa-hoffe-sappada",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "spazio-casa:25056",
+   "source": "spazio-casa",
+   "price": 68500
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "spazio-casa:25061",
+   "source": "spazio-casa",
+   "price": 98000
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "spazio-casa:25062",
+   "source": "spazio-casa",
+   "price": 130000
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "spazio-casa:25063",
+   "source": "spazio-casa",
+   "price": 176000
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "spazio-casa:25068",
+   "source": "spazio-casa",
+   "price": 195000
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "spazio-casa:25064",
+   "source": "spazio-casa",
+   "price": 326000
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "spazio-casa:25065",
+   "source": "spazio-casa",
+   "price": 336000
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "spazio-casa:25071",
+   "source": "spazio-casa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-10T13:23:49+00:00",
+   "type": "new",
+   "id": "spazio-casa:25070",
+   "source": "spazio-casa",
+   "price": null
   }
  ]
 }
