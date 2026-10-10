@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10T05:23:33+00:00",
+ "updated": "2026-10-10T07:24:22+00:00",
  "weekly_at": "2026-10-09T09:27:11+00:00",
  "weekly_stats": {
   "count": 70,
@@ -4365,6 +4365,27 @@
    "source": "gallery-immobiliare",
    "old_price": 225000,
    "price": 215000
+  },
+  {
+   "ts": "2026-10-10T07:24:22+00:00",
+   "type": "removed",
+   "id": "b1-hab:casa-hoffe-sappada",
+   "source": "b1-hab",
+   "price": null
+  },
+  {
+   "ts": "2026-10-10T07:24:22+00:00",
+   "type": "removed",
+   "id": "gallery-immobiliare:193582026",
+   "source": "gallery-immobiliare",
+   "price": 225000
+  },
+  {
+   "ts": "2026-10-10T07:24:22+00:00",
+   "type": "removed",
+   "id": "gallery-immobiliare:193635059",
+   "source": "gallery-immobiliare",
+   "price": 550000
   }
  ]
 }
