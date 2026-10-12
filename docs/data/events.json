@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12T15:26:50+00:00",
+ "updated": "2026-10-12T17:26:44+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -4646,6 +4646,69 @@
    "id": "tam-immobiliare:35182",
    "source": "tam-immobiliare",
    "price": 150000
+  },
+  {
+   "ts": "2026-10-12T17:26:44+00:00",
+   "type": "removed",
+   "id": "opera-immobiliare:san-vito-signorile-quadrilocale-vista-mare",
+   "source": "opera-immobiliare",
+   "price": 700000
+  },
+  {
+   "ts": "2026-10-12T17:26:44+00:00",
+   "type": "removed",
+   "id": "opera-immobiliare:zona-giulia-monolocale-uso-investimento",
+   "source": "opera-immobiliare",
+   "price": 59000
+  },
+  {
+   "ts": "2026-10-12T17:26:44+00:00",
+   "type": "removed",
+   "id": "calcara-immobiliare:attico-bi-livello-con-terrazza-ente-12",
+   "source": "calcara-immobiliare",
+   "price": 590000
+  },
+  {
+   "ts": "2026-10-12T17:26:44+00:00",
+   "type": "removed",
+   "id": "calcara-immobiliare:attico-bi-livello-con-vista-panoramica",
+   "source": "calcara-immobiliare",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-12T17:26:44+00:00",
+   "type": "new",
+   "id": "omega-trieste:rozzol-melara-posto-auto-scoperto",
+   "source": "omega-trieste",
+   "price": 10000
+  },
+  {
+   "ts": "2026-10-12T17:26:44+00:00",
+   "type": "new",
+   "id": "b1-project-immobiliare:bifamiliare-roiano-alta-zona-super-tranquilla",
+   "source": "b1-project-immobiliare",
+   "price": 220000
+  },
+  {
+   "ts": "2026-10-12T17:26:44+00:00",
+   "type": "removed",
+   "id": "b1-project-immobiliare:bifamiliare-appartametno-con-giardino-roiano",
+   "source": "b1-project-immobiliare",
+   "price": 235000
+  },
+  {
+   "ts": "2026-10-12T17:26:44+00:00",
+   "type": "removed",
+   "id": "b1-paradisi:marconi-localeinzonadialtopassaggio",
+   "source": "b1-paradisi",
+   "price": 70000
+  },
+  {
+   "ts": "2026-10-12T17:26:44+00:00",
+   "type": "removed",
+   "id": "tirabora-immobiliare:2533",
+   "source": "tirabora-immobiliare",
+   "price": 185000
   }
  ]
 }
