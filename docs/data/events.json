@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12T11:27:36+00:00",
+ "updated": "2026-10-12T13:39:06+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -4589,6 +4589,56 @@
    "id": "e1-hometrieste:21678",
    "source": "e1-hometrieste",
    "price": 89000
+  },
+  {
+   "ts": "2026-10-12T13:39:06+00:00",
+   "type": "removed",
+   "id": "urban-real-estate:centro-storico-mansarda-primingresso",
+   "source": "urban-real-estate",
+   "price": 368000
+  },
+  {
+   "ts": "2026-10-12T13:39:06+00:00",
+   "type": "removed",
+   "id": "urban-real-estate:via-de-marchesetti-posto-auto-scoperto",
+   "source": "urban-real-estate",
+   "price": 11000
+  },
+  {
+   "ts": "2026-10-12T13:39:06+00:00",
+   "type": "new",
+   "id": "b1-primo-piano-trieste:via-dell-istria",
+   "source": "b1-primo-piano-trieste",
+   "price": null
+  },
+  {
+   "ts": "2026-10-12T13:39:06+00:00",
+   "type": "new",
+   "id": "b1-primo-piano-trieste:via-capodistria-trieste",
+   "source": "b1-primo-piano-trieste",
+   "price": null
+  },
+  {
+   "ts": "2026-10-12T13:39:06+00:00",
+   "type": "new",
+   "id": "rigatti-immobiliare:ampio-4-camere-immerso-nel-verde",
+   "source": "rigatti-immobiliare",
+   "price": 530000
+  },
+  {
+   "ts": "2026-10-12T13:39:06+00:00",
+   "type": "removed",
+   "id": "cristina-rufolo:1754667",
+   "source": "cristina-rufolo",
+   "price": null
+  },
+  {
+   "ts": "2026-10-12T13:39:06+00:00",
+   "type": "price_down",
+   "id": "e1-hometrieste:21746",
+   "source": "e1-hometrieste",
+   "old_price": 210000,
+   "price": 195000
   }
  ]
 }
