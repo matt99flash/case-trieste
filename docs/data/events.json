@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13T17:26:18+00:00",
+ "updated": "2026-10-13T19:37:05+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -4911,6 +4911,13 @@
    "id": "b1-project-immobiliare:posto-auto-in-via-moreri",
    "source": "b1-project-immobiliare",
    "price": 33600
+  },
+  {
+   "ts": "2026-10-13T19:37:05+00:00",
+   "type": "new",
+   "id": "casacitta-mediazioni:montebello-terreno-edificabile",
+   "source": "casacitta-mediazioni",
+   "price": 370000
   }
  ]
 }
