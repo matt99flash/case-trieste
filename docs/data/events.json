@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12T21:23:54+00:00",
+ "updated": "2026-10-13T05:27:22+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -4716,6 +4716,60 @@
    "id": "il-quadrifoglio:appartamento-a-trieste-via-della-calcara",
    "source": "il-quadrifoglio",
    "price": 145000
+  },
+  {
+   "ts": "2026-10-13T05:27:22+00:00",
+   "type": "removed",
+   "id": "b1-sirio:236584",
+   "source": "b1-sirio",
+   "price": 245000
+  },
+  {
+   "ts": "2026-10-13T05:27:22+00:00",
+   "type": "new",
+   "id": "b1-antica-trieste:trilocale-via-rittmeyer-trieste",
+   "source": "b1-antica-trieste",
+   "price": 220000
+  },
+  {
+   "ts": "2026-10-13T05:27:22+00:00",
+   "type": "price_down",
+   "id": "gallery-immobiliare:193724262",
+   "source": "gallery-immobiliare",
+   "old_price": 290000,
+   "price": 270000
+  },
+  {
+   "ts": "2026-10-13T05:27:22+00:00",
+   "type": "price_down",
+   "id": "gallery-immobiliare:193724307",
+   "source": "gallery-immobiliare",
+   "old_price": 240000,
+   "price": 220000
+  },
+  {
+   "ts": "2026-10-13T05:27:22+00:00",
+   "type": "price_down",
+   "id": "gallery-immobiliare:193724395",
+   "source": "gallery-immobiliare",
+   "old_price": 230000,
+   "price": 210000
+  },
+  {
+   "ts": "2026-10-13T05:27:22+00:00",
+   "type": "price_down",
+   "id": "gallery-immobiliare:193756162",
+   "source": "gallery-immobiliare",
+   "old_price": 240000,
+   "price": 220000
+  },
+  {
+   "ts": "2026-10-13T05:27:22+00:00",
+   "type": "price_down",
+   "id": "gallery-immobiliare:193756164",
+   "source": "gallery-immobiliare",
+   "old_price": 290000,
+   "price": 270000
   }
  ]
 }
