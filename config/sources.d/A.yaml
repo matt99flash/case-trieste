@@ -22,6 +22,7 @@ sources:
     link_regex: '/elenco-immobili/[a-z0-9-]+/?$'
 
   - id: urban-real-estate
+    zone_fallback: true
     name: Urban Real Estate
     kind: agenzia
     website: https://studio-urban.it/
@@ -33,6 +34,8 @@ sources:
     link_regex: 'studio-urban\.it/property/[^/]+/?$'
 
   - id: living-trieste
+    zone_fallback: true
+    default_town_if_unrecognized: true
     name: Living Trieste Di Stefano Sedmak
     kind: agenzia
     website: https://www.livingtrieste.it/
@@ -152,6 +155,7 @@ sources:
     link_regex: 'calcara\.it/property/[^/]+/?$'
 
   - id: athouse-immobiliare
+    zone_fallback: true
     name: atHOUSE Immobiliare
     kind: agenzia
     website: https://athouse.it/
@@ -197,6 +201,7 @@ sources:
     link_regex: 'trieste-properties\.com/immobile/[^/]+/?$'
 
   - id: futura-immobiliare
+    zone_fallback: true
     name: Futura Immobiliare
     kind: agenzia
     website: https://futuratrieste.it/

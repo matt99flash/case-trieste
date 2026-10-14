@@ -102,6 +102,7 @@ sources:
     exclude_regex: '/immobile/affitto'
 
   - id: dimora
+    zone_fallback: true
     name: Dimora
     kind: agenzia
     website: https://dimora.biz/

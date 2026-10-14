@@ -132,6 +132,7 @@ sources:
     gallery_url: https://www.altipianoimmobiliare.com/altipiano-carsico-gallery
 
   - id: spazio-casa
+    default_town_if_unrecognized: true
     name: Spazio Casa Immobiliare
     kind: agenzia
     website: https://www.spaziocasatrieste.it/

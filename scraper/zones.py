@@ -10,7 +10,7 @@ TOWNS = {
                 "borgo teresiano", "prosecco di trieste"],
     "Muggia": ["muggia", "aquilinia", "santa barbara", "chiampore", "zindis", "noghere", "lazzaretto", "stramare", "rabuiese"],
     "Duino-Aurisina": ["duino", "aurisina", "sistiana", "visogliano", "san giovanni di duino", "santa croce di aurisina",
-                       "ceroglie", "malchina", "slivia", "medeazza", "san pelagio", "villaggio del pescatore", "nabrezina", "devin", "sesljan"],
+                       "ceroglie", "malchina", "slivia", "medeazza", "san pelagio", "villaggio del pescatore", "nabrezina", "devin", "sesljan", "portopiccolo"],
     "San Dorligo della Valle": ["san dorligo", "dolina", "bagnoli della rosandra", "domio", "mattonaia", "caresana", "prebenico",
                                 "sant'antonio in bosco", "borgo grotta gigante", "crogole", "moccò"],
     "Sgonico": ["sgonico", "zgonik", "sales", "samatorza", "gabrovizza", "rupingrande", "rupinpiccolo", "borgo grotta gigante"],
@@ -77,3 +77,37 @@ def detect_zone(*texts) -> str | None:
 
 def in_province(town: str | None) -> bool:
     return town in TOWNS
+
+
+# Indizi di località fuori provincia (Friuli, Gorizia, Istria, Slovenia, Trentino...): se compaiono,
+# un annuncio senza comune NON viene assegnato a Trieste.
+FOREIGN_RX = re.compile(
+    r"(?<![a-z])(ud|go|pn)(?![a-z])|gorizia|monfalcone|cervignano|udine|pordenone|friuli|carnia|tarvisio|"
+    r"grado|latisana|cormons|lignano|fiumicello|aiello|pradamano|san daniele|san vito al|doberdo|savogna|"
+    r"sagrado|gradisca|ronchi dei legionari|slovenia|slovenij|croazia|croatia|istria|istra|capodistria|koper|"
+    r"umago|umag|portoroz|savudrija|pirano|buje|verteneglio|kobdilj|vigolana|folgaria|caldonazzo|forni avoltri"
+)
+
+# Parole di zona troppo generiche: esistono anche fuori provincia, quindi da sole non bastano a dire Trieste.
+_AMBIGUOUS_ZONE = {"carso", "altipiano", "altopiano", "costiera", "rive", "via roma", "san giovanni", "altura",
+                   "zona industriale", "santa croce", "sales", "prosecco", "via udine", "via del monte", "via del ponte",
+                   "via pascoli"}
+_FALLBACK_ZONE_KW = [kw for z, kw in _ZONE_KW if kw not in _AMBIGUOUS_ZONE]
+
+
+def infer_trieste(title, address, zone, description, *, zone_fallback: bool = False, unrecognized: bool = False) -> bool:
+    """Per un annuncio senza comune: True se va considerato di Trieste.
+    - sigla "(TS)" nel titolo (es. "Hermet (TS)"): sempre Trieste, salvo indizi fuori provincia;
+    - zone_fallback: cita un rione/via di Trieste riconoscibile;
+    - unrecognized: la fonte è quasi tutta triestina, quindi l'assenza di comune significa Trieste."""
+    blob_all = " " + norm(" ".join(x for x in (title, address, zone, description) if x)) + " "
+    if FOREIGN_RX.search(blob_all):
+        return False
+    if "(ts)" in blob_all:
+        return True
+    if unrecognized:
+        return True
+    if not zone_fallback:
+        return False
+    blob = " " + norm(" ".join(x for x in (title, address, zone) if x)) + " "
+    return any(re.search(r"(?<![a-z])" + re.escape(kw) + r"(?![a-z])", blob) for kw in _FALLBACK_ZONE_KW)

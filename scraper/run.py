@@ -21,7 +21,7 @@ from .http import Http
 from .sources import load_all
 from .sources.base import Context
 from .store import Store
-from .zones import in_province
+from .zones import detect_zone, in_province, infer_trieste
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
 _print_lock = threading.Lock()
@@ -70,6 +70,11 @@ def run_source(cfg, adapters, store, time_budget):
     out, skipped = [], 0
     for L in items:
         L.finalize(default_town=src.default_town)
+        if not L.town and infer_trieste(L.title, L.address, L.zone, L.description,
+                                        zone_fallback=cfg.get("zone_fallback", False),
+                                        unrecognized=cfg.get("default_town_if_unrecognized", False)):
+            L.town = "Trieste"
+            L.zone = L.zone or detect_zone(L.address, L.title) or detect_zone(L.description)
         if L.agency is None and cfg.get("agency"):
             L.agency = cfg["agency"]
         if not in_province(L.town):

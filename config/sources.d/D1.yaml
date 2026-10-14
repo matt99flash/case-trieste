@@ -1,5 +1,6 @@
 sources:
   - id: tirabora-immobiliare
+    zone_fallback: true
     name: Tirabora Immobiliare
     kind: agenzia
     website: https://www.tirabora.it/

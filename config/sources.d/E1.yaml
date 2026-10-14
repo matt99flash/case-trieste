@@ -1,5 +1,6 @@
 sources:
   - id: e1-hometrieste
+    zone_fallback: true
     name: Studio Roiano / Hometrieste (Home Roiano + Home San Vito)
     kind: agenzia
     website: https://www.hometrieste.it/
