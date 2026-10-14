@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T07:43:33+00:00",
+ "updated": "2026-10-14T09:37:34+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5702,6 +5702,35 @@
    "id": "e1-hometrieste:10904",
    "source": "e1-hometrieste",
    "price": 670000
+  },
+  {
+   "ts": "2026-10-14T09:37:34+00:00",
+   "type": "new",
+   "id": "limmobiliare:6209031010",
+   "source": "limmobiliare",
+   "price": 459000
+  },
+  {
+   "ts": "2026-10-14T09:37:34+00:00",
+   "type": "price_down",
+   "id": "tecnocasa:61259716",
+   "source": "tecnocasa",
+   "old_price": 269000,
+   "price": 249000
+  },
+  {
+   "ts": "2026-10-14T09:37:34+00:00",
+   "type": "new",
+   "id": "next-immobiliare:villa-singola-su-piu-livelli",
+   "source": "next-immobiliare",
+   "price": 265000
+  },
+  {
+   "ts": "2026-10-14T09:37:34+00:00",
+   "type": "new",
+   "id": "di-casa-in-casa:62",
+   "source": "di-casa-in-casa",
+   "price": 459000
   }
  ]
 }
