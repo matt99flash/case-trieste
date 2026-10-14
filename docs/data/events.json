@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T11:37:23+00:00",
+ "updated": "2026-10-14T13:41:28+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5745,6 +5745,48 @@
    "id": "remax:33641016-85",
    "source": "remax",
    "price": 199000
+  },
+  {
+   "ts": "2026-10-14T13:41:28+00:00",
+   "type": "removed",
+   "id": "subito-privati:656373904",
+   "source": "subito-privati",
+   "price": 280000
+  },
+  {
+   "ts": "2026-10-14T13:41:28+00:00",
+   "type": "new",
+   "id": "living-trieste:centrale-via-san-francesco-ampia-metratura",
+   "source": "living-trieste",
+   "price": 295000
+  },
+  {
+   "ts": "2026-10-14T13:41:28+00:00",
+   "type": "new",
+   "id": "b1-paradisi:appartamentolargodelpecile21",
+   "source": "b1-paradisi",
+   "price": 290000
+  },
+  {
+   "ts": "2026-10-14T13:41:28+00:00",
+   "type": "removed",
+   "id": "rigatti-immobiliare:elegante-appartamento-panoramico",
+   "source": "rigatti-immobiliare",
+   "price": 635000
+  },
+  {
+   "ts": "2026-10-14T13:41:28+00:00",
+   "type": "removed",
+   "id": "la-rue-immobiliare:00062",
+   "source": "la-rue-immobiliare",
+   "price": 130000
+  },
+  {
+   "ts": "2026-10-14T13:41:28+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21792",
+   "source": "e1-hometrieste",
+   "price": 119000
   }
  ]
 }
