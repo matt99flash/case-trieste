@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T09:37:34+00:00",
+ "updated": "2026-10-14T11:37:23+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5731,6 +5731,20 @@
    "id": "di-casa-in-casa:62",
    "source": "di-casa-in-casa",
    "price": 459000
+  },
+  {
+   "ts": "2026-10-14T11:37:23+00:00",
+   "type": "new",
+   "id": "engelvoelkers:W-04BUBS",
+   "source": "engelvoelkers",
+   "price": 950000
+  },
+  {
+   "ts": "2026-10-14T11:37:23+00:00",
+   "type": "new",
+   "id": "remax:33641016-85",
+   "source": "remax",
+   "price": 199000
   }
  ]
 }
