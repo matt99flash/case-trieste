@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T15:42:10+00:00",
+ "updated": "2026-10-14T17:36:40+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5843,6 +5843,41 @@
    "id": "e1-hometrieste:12176",
    "source": "e1-hometrieste",
    "price": 315000
+  },
+  {
+   "ts": "2026-10-14T17:36:40+00:00",
+   "type": "removed",
+   "id": "b1-audace:appartamento-via-crisciani8",
+   "source": "b1-audace",
+   "price": 225000
+  },
+  {
+   "ts": "2026-10-14T17:36:40+00:00",
+   "type": "removed",
+   "id": "b1-audace:spazioso-attico-con-terrazzo-in-via-p-marussig-san-luigi-trieste",
+   "source": "b1-audace",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-14T17:36:40+00:00",
+   "type": "removed",
+   "id": "athouse-immobiliare:palazzo-oberdan-trilocale-2",
+   "source": "athouse-immobiliare",
+   "price": 320000
+  },
+  {
+   "ts": "2026-10-14T17:36:40+00:00",
+   "type": "removed",
+   "id": "rigatti-immobiliare:via-san-michele-elegante-appartamento-ristrutturato",
+   "source": "rigatti-immobiliare",
+   "price": 265000
+  },
+  {
+   "ts": "2026-10-14T17:36:40+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21771",
+   "source": "e1-hometrieste",
+   "price": 89000
   }
  ]
 }
