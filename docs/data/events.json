@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T06:55:24+00:00",
+ "updated": "2026-10-14T07:02:40+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5450,6 +5450,258 @@
    "id": "e1-hometrieste:10901",
    "source": "e1-hometrieste",
    "price": 470000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "athouse-immobiliare:palazzo-oberdan-trilocale-2",
+   "source": "athouse-immobiliare",
+   "price": 320000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "athouse-immobiliare:palazzo-oberdan-quadrilocale-2",
+   "source": "athouse-immobiliare",
+   "price": 690000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "athouse-immobiliare:palazzo-oberdan-attico-con-terrazzo",
+   "source": "athouse-immobiliare",
+   "price": 1200000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "athouse-immobiliare:palazzo-oberdan-attico-con-giardino-dinverno",
+   "source": "athouse-immobiliare",
+   "price": 1000000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "spazio-casa:25085",
+   "source": "spazio-casa",
+   "price": 110000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24886",
+   "source": "spazio-casa",
+   "price": 20000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24887",
+   "source": "spazio-casa",
+   "price": 43500
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24890",
+   "source": "spazio-casa",
+   "price": 145000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24894",
+   "source": "spazio-casa",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24899",
+   "source": "spazio-casa",
+   "price": 42000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24930",
+   "source": "spazio-casa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24942",
+   "source": "spazio-casa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24953",
+   "source": "spazio-casa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24971",
+   "source": "spazio-casa",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24974",
+   "source": "spazio-casa",
+   "price": 110000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24975",
+   "source": "spazio-casa",
+   "price": 326000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24976",
+   "source": "spazio-casa",
+   "price": 190000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24977",
+   "source": "spazio-casa",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24989",
+   "source": "spazio-casa",
+   "price": 68500
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24990",
+   "source": "spazio-casa",
+   "price": 167000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24991",
+   "source": "spazio-casa",
+   "price": 98000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24992",
+   "source": "spazio-casa",
+   "price": 336000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:24993",
+   "source": "spazio-casa",
+   "price": 130000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:25000",
+   "source": "spazio-casa",
+   "price": 195000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:25001",
+   "source": "spazio-casa",
+   "price": 176000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:25002",
+   "source": "spazio-casa",
+   "price": 138000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "removed",
+   "id": "spazio-casa:25003",
+   "source": "spazio-casa",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21792",
+   "source": "e1-hometrieste",
+   "price": 119000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21644",
+   "source": "e1-hometrieste",
+   "price": 198000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21749",
+   "source": "e1-hometrieste",
+   "price": 200000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21742",
+   "source": "e1-hometrieste",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21675",
+   "source": "e1-hometrieste",
+   "price": 280000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "back",
+   "id": "e1-hometrieste:21676",
+   "source": "e1-hometrieste",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21657",
+   "source": "e1-hometrieste",
+   "price": 398000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:10902",
+   "source": "e1-hometrieste",
+   "price": 550000
+  },
+  {
+   "ts": "2026-10-14T07:02:40+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:10904",
+   "source": "e1-hometrieste",
+   "price": 670000
   }
  ]
 }
