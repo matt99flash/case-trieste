@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T13:41:28+00:00",
+ "updated": "2026-10-14T15:42:10+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5787,6 +5787,62 @@
    "id": "e1-hometrieste:21792",
    "source": "e1-hometrieste",
    "price": 119000
+  },
+  {
+   "ts": "2026-10-14T15:42:10+00:00",
+   "type": "new",
+   "id": "tecnocasa:61285320",
+   "source": "tecnocasa",
+   "price": 219000
+  },
+  {
+   "ts": "2026-10-14T15:42:10+00:00",
+   "type": "new",
+   "id": "opera-immobiliare:localita-lacotisce-casa-indipendente-con-ampio-terreno",
+   "source": "opera-immobiliare",
+   "price": 380000
+  },
+  {
+   "ts": "2026-10-14T15:42:10+00:00",
+   "type": "new",
+   "id": "b1-audace:property",
+   "source": "b1-audace",
+   "price": 115000
+  },
+  {
+   "ts": "2026-10-14T15:42:10+00:00",
+   "type": "new",
+   "id": "b1-audace:trilocale-via-carlo-ghega-1-borgo-teresiano-trieste",
+   "source": "b1-audace",
+   "price": 730000
+  },
+  {
+   "ts": "2026-10-14T15:42:10+00:00",
+   "type": "new",
+   "id": "b1-audace:bilocale-via-cristoforo-belli-4-san-giacomo-trieste",
+   "source": "b1-audace",
+   "price": 106000
+  },
+  {
+   "ts": "2026-10-14T15:42:10+00:00",
+   "type": "new",
+   "id": "b1-audace:bilocale-via-risorta-5-citta-vecchia-trieste",
+   "source": "b1-audace",
+   "price": 119000
+  },
+  {
+   "ts": "2026-10-14T15:42:10+00:00",
+   "type": "new",
+   "id": "b1-audace:monolocale-via-enrico-toti-23-largo-barriera-ospedale-maggiore-trieste",
+   "source": "b1-audace",
+   "price": 115000
+  },
+  {
+   "ts": "2026-10-14T15:42:10+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:12176",
+   "source": "e1-hometrieste",
+   "price": 315000
   }
  ]
 }
