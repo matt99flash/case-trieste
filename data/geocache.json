@@ -165,6 +165,10 @@
 45.65146,
 13.7723
 ],
+"rotonda del boschetto, 3/1|trieste": [
+45.65518,
+13.79886
+],
 "salita di gretta 15|trieste": [
 45.66581,
 13.76708
@@ -335,6 +339,10 @@
 "via carlo e gian stuparich 19|trieste": null,
 "via carlo favetti, cisternone, gretta, roiano-gretta-barcola-cologna-scorcola, opicina, trieste, friuli-venezia giulia, 34136, italia|trieste": null,
 "via carlo ghega, trieste, ts, italia|trieste": null,
+"via carpaccio vettor, 2|trieste": [
+45.64395,
+13.77019
+],
 "via carsia|trieste": [
 45.68794,
 13.77516
@@ -363,6 +371,10 @@
 "via combi, 7, 34100 trieste ts|trieste": [
 45.64196,
 13.76368
+],
+"via commerciale, 160/3|trieste": [
+45.66457,
+13.78168
 ],
 "via conti, 11/3|trieste": [
 45.64397,
@@ -518,6 +530,10 @@
 13.78214
 ],
 "via del ponticello, 25/11, 34146 trieste ts, italia|trieste": null,
+"via del pozzo, 4|trieste": [
+45.64364,
+13.78133
+],
 "via del pucino|trieste": [
 45.71672,
 13.7064
@@ -539,6 +555,10 @@
 13.76895
 ],
 "via del toro, 34125 trieste ts, italia|trieste": null,
+"via dell'agro|trieste": [
+45.64083,
+13.78577
+],
 "via dell'hermada|trieste": null,
 "via dell'industria|trieste": [
 45.64139,
@@ -548,6 +568,10 @@
 "via dell'ospitale 12|trieste": [
 45.64774,
 13.77103
+],
+"via della concordia, 21|trieste": [
+45.64143,
+13.77705
 ],
 "via della galleria, 3, 34100 trieste ts|trieste": [
 45.64566,
@@ -599,6 +623,10 @@
 13.80532
 ],
 "via di prosecco, 3|trieste": null,
+"via di romagna, 37/1|trieste": [
+45.65891,
+13.78294
+],
 "via di scorcola 2|trieste": [
 45.65738,
 13.77748
@@ -654,6 +682,7 @@
 ],
 "via frescobaldi 25 trieste trieste italy|trieste": null,
 "via g.grimani , 42|trieste": null,
+"via gioachino murat 8|trieste": null,
 "via giovanni pascoli, 41|trieste": [
 45.6478,
 13.78664
@@ -689,6 +718,14 @@
 45.68159,
 13.75596
 ],
+"via ireneo della croce, 5|trieste": [
+45.65321,
+13.78484
+],
+"via luigi ricci, 4|trieste": [
+45.65506,
+13.78803
+],
 "via madonnina, 14, 34100 trieste ts|trieste": [
 45.64627,
 13.77809
@@ -702,6 +739,14 @@
 13.76728
 ],
 "via marcello 4|trieste": [
+45.64624,
+13.76709
+],
+"via marcello benedetto, 2|trieste": [
+45.64636,
+13.76728
+],
+"via marcello benedetto, 4|trieste": [
 45.64624,
 13.76709
 ],
@@ -766,10 +811,22 @@
 45.66094,
 13.78801
 ],
+"via monte sernio 10|trieste": [
+45.63015,
+13.8083
+],
 "via montecchi 6|trieste": null,
+"via paduina, 5|trieste": [
+45.6516,
+13.78102
+],
 "via panfilo castaldi 3|trieste": [
 45.64526,
 13.78012
+],
+"via pasquale revoltella, 22|trieste": [
+45.64246,
+13.79023
 ],
 "via pasquale revoltella, 34|trieste": [
 45.64227,
@@ -831,6 +888,14 @@
 "via rossetti|trieste": [
 45.64417,
 13.79012
+],
+"via san benedetto, 1|trieste": [
+45.63239,
+13.78448
+],
+"via san cilino, 69|trieste": [
+45.65604,
+13.80101
 ],
 "via san francesco 40|trieste": [
 45.65419,
@@ -943,6 +1008,10 @@
 13.7711
 ],
 "via umberto felluga, 34142 trieste ts, italia|trieste": null,
+"via umberto felluga, 51|trieste": [
+45.64504,
+13.80008
+],
 "via valdirivo 16|trieste": [
 45.65375,
 13.77261
@@ -954,6 +1023,10 @@
 "via valdirivo, 31, trieste ts|trieste": [
 45.65277,
 13.77545
+],
+"via valentino pittoni, 11|trieste": [
+45.62257,
+13.81025
 ],
 "via valmaura 13|trieste": [
 45.62425,

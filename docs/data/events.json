@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T05:35:11+00:00",
+ "updated": "2026-10-14T06:55:24+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -4939,6 +4939,517 @@
    "id": "immobiliare-4b:193804462",
    "source": "immobiliare-4b",
    "price": 80000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "removed",
+   "id": "subito-privati:662526112",
+   "source": "subito-privati",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "removed",
+   "id": "subito-privati:662572622",
+   "source": "subito-privati",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "back",
+   "id": "urban-real-estate:220",
+   "source": "urban-real-estate",
+   "price": 175000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "removed",
+   "id": "remax:38501111-28",
+   "source": "remax",
+   "price": 312000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "futura-immobiliare:zona-ospedale-maggiore-bilocale-con-introvabile-posto-auto",
+   "source": "futura-immobiliare",
+   "price": 139000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:moncolano-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:hermet-ts",
+   "source": "minimal-re",
+   "price": 169000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:nobile-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:bonomo-ts-2",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:carpineto-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:battisti-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:de-jenner-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:felluga-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:sorgente-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:giulia-ts-2",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:fonderia-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:giulia-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:puccini-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:donatello-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:bonomea-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:via-flumiani-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:madonnina-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:carpison-ts",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "minimal-re:commerciale-ts-2",
+   "source": "minimal-re",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:piazzale-giarizzole-appartamento-ristrutturato-uso-investimento",
+   "source": "living-trieste",
+   "price": 125000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:interessante-locale-daffari-ottime-condizioni",
+   "source": "living-trieste",
+   "price": 130000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:campanelle-casetta-accostata-corte",
+   "source": "living-trieste",
+   "price": 140000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:fabio-severo-piano-alto-vista",
+   "source": "living-trieste",
+   "price": 395000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:via-ghirlandaio-piano-alto-vista-aperta",
+   "source": "living-trieste",
+   "price": 150000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:via-san-benedetto-box-auto-soffitta",
+   "source": "living-trieste",
+   "price": 210000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "back",
+   "id": "living-trieste:san-giacomo-grande-appartamento",
+   "source": "living-trieste",
+   "price": 190000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:centralissimo-negozio-soppalco-magazzino",
+   "source": "living-trieste",
+   "price": 175000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:centralissimo-piano-alto-lunimoso",
+   "source": "living-trieste",
+   "price": 230000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:centro-monolocale-ristrutturato",
+   "source": "living-trieste",
+   "price": 129500
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "living-trieste:bilocale-ristrutturato-posizione-centrale",
+   "source": "living-trieste",
+   "price": 175000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "back",
+   "id": "living-trieste:via-romagna-appartamento-terrazzo-cantina",
+   "source": "living-trieste",
+   "price": 210000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "back",
+   "id": "living-trieste:viale-xx-settembre-ampia-metratura",
+   "source": "living-trieste",
+   "price": 485000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "athouse-immobiliare:palazzo-haggi-appartamento-primo-ingresso",
+   "source": "athouse-immobiliare",
+   "price": 495000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "removed",
+   "id": "gruppo-casa:373866",
+   "source": "gruppo-casa",
+   "price": 50000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "studio-immobiliare-84:bellosguardo",
+   "source": "studio-immobiliare-84",
+   "price": 359000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "dimora:villa-bifamiliare-a-san-luigi",
+   "source": "dimora",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "dimora:appartamento-panoramico-a-san-luigi",
+   "source": "dimora",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25060",
+   "source": "spazio-casa",
+   "price": 85000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25057",
+   "source": "spazio-casa",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25058",
+   "source": "spazio-casa",
+   "price": 138000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25059",
+   "source": "spazio-casa",
+   "price": 155000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25066",
+   "source": "spazio-casa",
+   "price": 167000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25067",
+   "source": "spazio-casa",
+   "price": 190000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25069",
+   "source": "spazio-casa",
+   "price": 350000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25072",
+   "source": "spazio-casa",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25086",
+   "source": "spazio-casa",
+   "price": 120000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "spazio-casa:25087",
+   "source": "spazio-casa",
+   "price": 125000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "aureahome:scheda-appartamento-iconico-portopiccolo",
+   "source": "aureahome",
+   "price": 650000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "aureahome:scheda-appartamento-sul-mare",
+   "source": "aureahome",
+   "price": 2650000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "tirabora-immobiliare:2409",
+   "source": "tirabora-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "tirabora-immobiliare:2523",
+   "source": "tirabora-immobiliare",
+   "price": 405000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "tirabora-immobiliare:2199",
+   "source": "tirabora-immobiliare",
+   "price": 135000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21777",
+   "source": "e1-hometrieste",
+   "price": 68000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21750",
+   "source": "e1-hometrieste",
+   "price": 245000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21706",
+   "source": "e1-hometrieste",
+   "price": 126000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:7793",
+   "source": "e1-hometrieste",
+   "price": 275000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:8443",
+   "source": "e1-hometrieste",
+   "price": 159000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21751",
+   "source": "e1-hometrieste",
+   "price": 397000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21786",
+   "source": "e1-hometrieste",
+   "price": 205000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21739",
+   "source": "e1-hometrieste",
+   "price": 118000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21760",
+   "source": "e1-hometrieste",
+   "price": 140000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21683",
+   "source": "e1-hometrieste",
+   "price": 165000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21722",
+   "source": "e1-hometrieste",
+   "price": 210000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21659",
+   "source": "e1-hometrieste",
+   "price": 89000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21718",
+   "source": "e1-hometrieste",
+   "price": 39000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:21567",
+   "source": "e1-hometrieste",
+   "price": 47000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:10905",
+   "source": "e1-hometrieste",
+   "price": 680000
+  },
+  {
+   "ts": "2026-10-14T06:55:24+00:00",
+   "type": "new",
+   "id": "e1-hometrieste:10901",
+   "source": "e1-hometrieste",
+   "price": 470000
   }
  ]
 }
