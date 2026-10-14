@@ -26,7 +26,7 @@ ZONES_TRIESTE = {
     "Borgo Giuseppino / Cavana": ["borgo giuseppino", "cavana", "piazza hortis", "via cavana", "piazza venezia", "via diaz", "rive"],
     "Città Vecchia / San Giusto": ["città vecchia", "citta vecchia", "cittavecchia", "san giusto", "via della cattedrale", "androna", "via capitolina"],
     "Borgo Franceschino / Giulia": ["borgo franceschino", "via giulia", "largo giardino", "giardino pubblico", "via battisti", "viale xx settembre",
-                                    "via della ginnastica", "piazza oberdan", "via fabio severo", "via coroneo", "coroneo", "piazza dalmazia", "via carducci"],
+                                    "via della ginnastica", "piazza oberdan", "palazzo oberdan", "via fabio severo", "via coroneo", "coroneo", "piazza dalmazia", "via carducci"],
     "San Vito / Campi Elisi": ["san vito", "campi elisi", "via tigor", "via navali", "via ottaviano augusto", "passeggio sant'andrea",
                                "via locchi", "viale romolo gessi", "via belpoggio", "via combi", "sant'andrea", "via del monte"],
     "San Giacomo": ["san giacomo", "via dell'istria", "via dell’istria", "via ponziana", "ponziana", "via settefontane", "settefontane",
@@ -81,12 +81,18 @@ def in_province(town: str | None) -> bool:
 
 # Indizi di località fuori provincia (Friuli, Gorizia, Istria, Slovenia, Trentino...): se compaiono,
 # un annuncio senza comune NON viene assegnato a Trieste.
-FOREIGN_RX = re.compile(
-    r"(?<![a-z])(ud|go|pn)(?![a-z])|gorizia|monfalcone|cervignano|udine|pordenone|friuli|carnia|tarvisio|"
-    r"grado|latisana|cormons|lignano|fiumicello|aiello|pradamano|san daniele|san vito al|doberdo|savogna|"
-    r"sagrado|gradisca|ronchi dei legionari|slovenia|slovenij|croazia|croatia|istria|istra|capodistria|koper|"
-    r"umago|umag|portoroz|savudrija|pirano|buje|verteneglio|kobdilj|vigolana|folgaria|caldonazzo|forni avoltri"
-)
+_FOREIGN_TERMS = [
+    "ud", "go", "pn", "gorizia", "monfalcone", "cervignano", "udine", "pordenone", "friuli", "carnia", "tarvisio",
+    "grado", "latisana", "cormons", "lignano", "fiumicello", "aiello", "pradamano", "san daniele", "san vito al",
+    "doberdo", "savogna", "sagrado", "gradisca", "ronchi dei legionari", "slovenia", "slovenij", "croazia", "croatia",
+    "istria", "istra", "capodistria", "koper", "umago", "umag", "portoroz", "savudrija", "pirano", "buje",
+    "verteneglio", "kobdilj", "vigolana", "folgaria", "caldonazzo", "forni avoltri",
+]
+# con i confini di parola: "istra" non deve colpire "amministrazione", "grado" non deve colpire "in grado di"
+_FOREIGN_PATTERNS = [r"(?<![a-z])" + re.escape(t) + r"(?![a-z])" for t in _FOREIGN_TERMS if t != "grado"]
+# "grado" è anche in "in grado di": escluso quando preceduto da "in"
+_FOREIGN_PATTERNS.append(r"(?<![a-z])(?<!in )grado(?![a-z])")
+FOREIGN_RX = re.compile("|".join(_FOREIGN_PATTERNS))
 
 # Parole di zona troppo generiche: esistono anche fuori provincia, quindi da sole non bastano a dire Trieste.
 _AMBIGUOUS_ZONE = {"carso", "altipiano", "altopiano", "costiera", "rive", "via roma", "san giovanni", "altura",
