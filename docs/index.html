@@ -20,6 +20,7 @@
     <a href="#annunci" data-tab="annunci">Annunci</a>
     <a href="#mappa" data-tab="mappa">Mappa</a>
     <a href="#preferiti" data-tab="preferiti">Preferiti <span id="fav-count" class="pill"></span></a>
+    <a href="#prezzi" data-tab="prezzi">Prezzi</a>
     <a href="#notifiche" data-tab="notifiche">Notifiche</a>
     <a href="#fonti" data-tab="fonti">Fonti</a>
   </nav>
@@ -110,7 +111,14 @@
             <option value="drop">Maggior ribasso</option>
           </select>
         </label></div>
+      <div class="bar favtools">
+        <div class="seg" role="group" aria-label="Vista"><button type="button" data-favview="cards">Schede</button><button type="button" data-favview="cmp">Confronto</button></div>
+        <label class="check"><input type="checkbox" id="fav-hide"> Nascondi le scartate</label>
+      </div>
       <div id="favs" class="grid"></div>
+    </section>
+    <section id="tab-prezzi" class="tab" hidden>
+      <div id="prices"></div>
     </section>
     <section id="tab-notifiche" class="tab" hidden>
       <div class="panel">

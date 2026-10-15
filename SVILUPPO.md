@@ -18,6 +18,10 @@
   dell'agenzia e vengono scartati. La zona di Trieste si ricava dalla posizione.
 - `scraper/dedup.py` – stessa casa su più agenzie: prezzo/superficie vicini + luogo (stessa via, < 150 m o stessa zona);
   vie diverse, piani diversi o > 600 m = case diverse. Due gruppi si uniscono solo se nessuna coppia è incompatibile.
+- `scraper/trend.py` – `docs/data/trend.json`: mediana €/mq per zona, una fotografia al giorno (scheda "Prezzi"
+  della dashboard); se il file manca ricostruisce i giorni passati dall'archivio.
+- Dashboard, strumenti per decidere: storia della casa, calcolo del costo vero e della rata, stato e appunti
+  (solo nel browser, `localStorage`: il repository è pubblico), confronto dei preferiti.
 - `scraper/notify.py` – notifiche ntfy, avviso fonti rotte, riepilogo settimanale (primo giro dopo lunedì alle 7).
 - `scraper/favorites.py` + `.github/workflows/preferiti.yml` – preferiti condivisi tra i dispositivi collegati
   (issue "Preferiti ..." del proprietario → `docs/favorites.json`, codici FNV-1a a 8 cifre dell'id della casa).

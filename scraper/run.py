@@ -15,7 +15,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import yaml
 
-from . import dedup, notify
+from . import dedup, notify, trend
 from .geocode import Geocoder, enrich
 from .http import Http
 from .sources import load_all
@@ -135,6 +135,8 @@ def main():
         if not args.only:
             notify.send_weekly(store)
     store.save()
+    if not args.only:
+        trend.update(store.listings)
     ok = sum(1 for r in results if r[1] is not None)
     active = sum(1 for r in store.listings.values() if r["status"] == "active")
     print(f"\nFatto in {round(time.time() - t0)}s: {ok}/{len(results)} fonti ok, {active} annunci attivi, "

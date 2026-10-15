@@ -218,6 +218,59 @@ dialog::backdrop { background: rgba(10, 14, 16, .55); }
 .hist { font-size: 13px; font-variant-numeric: tabular-nums; }
 .hist td { padding: 2px 12px 2px 0; }
 
+/* Strumenti per decidere */
+.badge.mine { background: var(--accent); color: var(--accent-text); }
+.d-body h3 { font-size: 15px; margin-bottom: 6px; }
+.story ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; }
+.zt { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--surface-2); border-radius: 8px; padding: 10px 12px; font-size: 14px; }
+.zt .spark { flex: none; }
+.mine { display: grid; gap: 8px; }
+.mine textarea { width: 100%; font: inherit; font-size: 14px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); resize: vertical; }
+.mine p { margin: 0; }
+.chip-btn { font: inherit; font-size: 13px; padding: 5px 12px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; }
+.chip-btn.on { background: var(--accent); border-color: var(--accent); color: var(--accent-text); font-weight: 700; }
+.calc { border: 1px solid var(--line); border-radius: 8px; padding: 0 12px; }
+.calc summary { cursor: pointer; font-weight: 700; padding: 10px 0; }
+.calc-form { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: end; font-size: 13px; color: var(--muted); }
+.calc-form label { display: grid; gap: 2px; }
+.calc-form label.check { display: flex; gap: 6px; align-items: center; color: var(--text); font-size: 14px; }
+.calc-form input[type=number] { width: 104px; font: inherit; font-size: 14px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); }
+.calc-t { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+.calc-t td { padding: 6px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.calc-t td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; padding-left: 10px; }
+.calc-t tr.tot td { font-weight: 700; border-bottom: 0; }
+.calc .muted.small { margin: 4px 0 12px; }
+
+.favtools { flex-wrap: wrap; gap: 10px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { font: inherit; font-size: 14px; padding: 6px 14px; border: 0; background: var(--surface); color: var(--text); cursor: pointer; }
+.seg button.on { background: var(--accent); color: var(--accent-text); font-weight: 700; }
+.cmp-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.cmp { border-collapse: collapse; font-size: 14px; min-width: 100%; }
+.cmp th, .cmp td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; min-width: 150px; }
+.cmp tbody th { position: sticky; left: 0; background: var(--surface-2); font-size: 12px; color: var(--muted); font-weight: 600; min-width: 110px; }
+.cmp thead th { vertical-align: bottom; }
+.cmp thead a { display: grid; gap: 4px; color: var(--accent); text-decoration: none; font-weight: 700; }
+.cmp thead img { width: 150px; height: 96px; object-fit: cover; border-radius: 6px; background: var(--surface-2); }
+.cmp td { font-variant-numeric: tabular-nums; }
+.cmp td.best { font-weight: 800; }
+.cmp .note { white-space: pre-line; font-size: 13px; }
+
+.panel.wide { max-width: none; margin-bottom: 14px; }
+.lc { position: relative; margin-top: 10px; touch-action: pan-y; }
+.lc svg { width: 100%; height: auto; display: block; }
+.lc .grid { stroke: var(--line); stroke-width: 1; }
+.lc .ax { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.lc .cross { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+.lc .tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: 8px; padding: 6px 10px; font-size: 13px; display: grid; white-space: nowrap; }
+.lc .tip span { color: var(--muted); font-size: 12px; }
+.prices tbody tr { cursor: pointer; }
+.prices tbody tr:hover, .prices tbody tr.sel { background: var(--accent-soft); }
+.prices tr.all td { font-weight: 700; }
+.prices td { vertical-align: middle; }
+.prices .dn { color: var(--down); font-weight: 700; }
+.prices .upc { color: var(--up); font-weight: 700; }
+
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; padding: 12px 16px; gap: 12px; }
   .filters { position: static; max-height: none; padding: 0; overflow: visible; }

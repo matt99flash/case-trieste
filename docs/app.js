@@ -23,7 +23,9 @@ const ZONE_CENTER = {
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const eur = v => v ? "€ " + Math.round(v).toLocaleString("it-IT") : "Prezzo su richiesta";
+// punto delle migliaia anche sotto 10.000 ("€ 5.460"; toLocaleString in italiano scriverebbe "5460")
+const num = v => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const eur = v => v ? "€ " + num(v) : "Prezzo su richiesta";
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage non disponibile */ } },
@@ -38,7 +40,9 @@ async function load() {
   // "no-cache": il browser chiede sempre al server, ma riscarica il file solo se è cambiato
   // (i file piccoli impostati dall'utente, notify/favorites, saltano anche la cache di GitHub Pages)
   const get = async f => { const r = await fetch(`data/${f}`, { cache: "no-cache" }); if (!r.ok) throw new Error(f); return r.json(); };
-  const [l, e, s] = await Promise.all([get("listings.json"), get("events.json").catch(() => ({ events: [] })), get("sources.json").catch(() => ({ sources: {} }))]);
+  const [l, e, s, t] = await Promise.all([get("listings.json"), get("events.json").catch(() => ({ events: [] })),
+    get("sources.json").catch(() => ({ sources: {} })), get("trend.json").catch(() => ({ days: {} }))]);
+  S.trend = t.days || {};
   S.updated = l.updated;
   S.notify = await fetch(`notify.json?t=${Date.now()}`).then(r => r.ok ? r.json() : null).catch(() => null);
   S.sources = s.sources || {};
@@ -232,9 +236,10 @@ function card(h) {
     r.sold && `<span class="badge gone">Venduto / trattativa</span>`,
     r.private && `<span class="badge priv">Privato</span>`,
     h.active && r.zoneCmp && r.zoneCmp.pct <= -15 && `<span class="badge deal" title="Prezzo al mq rispetto alla media della zona">${pctTxt(r.zoneCmp.pct)} zona</span>`,
+    notes.get(h.gid).status && `<span class="badge mine">${esc(STATUS[notes.get(h.gid).status])}</span>`,
   ].filter(Boolean).join("");
   const zc = r.zoneCmp && Math.abs(r.zoneCmp.pct) >= 5
-    ? ` <span class="${r.zoneCmp.pct < 0 ? "deal" : "dear"}" title="Rispetto alla media della zona (${Math.round(r.zoneCmp.med).toLocaleString("it-IT")} €/mq)">(${pctTxt(r.zoneCmp.pct)} zona)</span>` : "";
+    ? ` <span class="${r.zoneCmp.pct < 0 ? "deal" : "dear"}" title="Rispetto alla media della zona (${num(r.zoneCmp.med)} €/mq)">(${pctTxt(r.zoneCmp.pct)} zona)</span>` : "";
   const others = h.members.length > 1 ? ` · anche su altre ${h.members.length - 1}` : "";
   return `<article class="card ${h.active ? "" : "gone"}" data-gid="${esc(h.gid)}">
     <div class="thumb">${img ? `<img loading="lazy" src="${esc(img)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}<div class="noimg">${img ? "" : "Nessuna foto"}</div>
@@ -243,7 +248,7 @@ function card(h) {
     <div class="body">
       <div class="price">${r.features?._project && h.price ? "da " : ""}${eur(h.price)}${pc ? `<span class="old">${eur(pc.first)}</span>` : ""}</div>
       <div class="specs">${esc(TYPE_LABELS[r.type] || "Immobile")}${specs(r) ? " · " + esc(specs(r)) : ""}</div>
-      <div class="where">${esc(where(r))}${r.ppm ? ` · ${Math.round(r.ppm).toLocaleString("it-IT")} €/mq` : ""}${zc}</div>
+      <div class="where">${esc(where(r))}${r.ppm ? ` · ${num(r.ppm)} €/mq` : ""}${zc}</div>
       <div class="title">${esc(r.title || "")}</div>
       <div class="src">${esc(r.srcName)}${esc(others)} · online ${ago(h.firstSeen)}</div>
     </div></article>`;
@@ -300,8 +305,14 @@ function renderEvents() {
 
 function renderFavs() {
   syncSort();
-  const list = sortHouses(houses(true).filter(h => S.favs.has(h.gid)));
-  $("#favs").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">Tocca ★ su un annuncio per salvarlo qui. I preferiti restano su questo dispositivo.</div>`;
+  const mode = store.get("favview", "cards"), hide = store.get("favhide", false);
+  let list = sortHouses(houses(true).filter(h => S.favs.has(h.gid)));
+  if (hide) list = list.filter(h => notes.get(h.gid).status !== "scartata");
+  document.querySelectorAll("[data-favview]").forEach(b => b.classList.toggle("on", b.dataset.favview === mode));
+  $("#fav-hide").checked = hide;
+  $("#favs").className = mode === "cmp" ? "" : "grid";
+  $("#favs").innerHTML = !S.favs.size ? `<div class="empty">Tocca ★ su un annuncio per salvarlo qui. I preferiti restano su questo dispositivo.</div>`
+    : mode === "cmp" ? compareHtml(list) : list.length ? list.map(card).join("") : `<div class="empty">Tutti i preferiti sono scartati.</div>`;
   updateFavCount();
   renderFavSync();
 }
@@ -356,11 +367,12 @@ function openDetail(gid, refresh) {
   const act = members.filter(m => m.status === "active");
   const list = (act.length ? act : members).slice().sort((a, b) => score(b) - score(a));
   const r = list[0];
+  S.openRep = r;
   const imgs = [...new Set(list.flatMap(m => m.images || []))].slice(0, 16);
   const facts = [
     [(r.features?._project ? "da " : "") + eur(Math.min(...list.map(m => m.price || Infinity)) === Infinity ? null : Math.min(...list.map(m => m.price || Infinity))), r.features?._project ? "Prezzo minimo del cantiere" : "Prezzo"],
-    [r.mq && `${r.mq} mq`, "Superficie"], [r.ppm && `${Math.round(r.ppm).toLocaleString("it-IT")} €/mq`, "Prezzo al mq"],
-    [r.zoneCmp && `${pctTxt(r.zoneCmp.pct)} rispetto alla zona`, r.zoneCmp && `Media zona ${Math.round(r.zoneCmp.med).toLocaleString("it-IT")} €/mq (${r.zoneCmp.n} annunci)`],
+    [r.mq && `${r.mq} mq`, "Superficie"], [r.ppm && `${num(r.ppm)} €/mq`, "Prezzo al mq"],
+    [r.zoneCmp && `${pctTxt(r.zoneCmp.pct)} rispetto alla zona`, r.zoneCmp && `Media zona ${num(r.zoneCmp.med)} €/mq (${r.zoneCmp.n} annunci)`],
     [r.rooms, "Locali"], [r.bedrooms, "Camere"], [r.bathrooms, "Bagni"], [r.floor, "Piano"], [r.energy, "Classe energetica"],
     [COND_LABELS[r.condition], "Stato"], [TYPE_LABELS[r.type], "Tipologia"], [where(r) + (r.town !== "Trieste" ? "" : ""), "Zona"],
     ...Object.entries(FEATURES).map(([k, l]) => [r.features?.[k] === true ? "Sì" : r.features?.[k] === false ? "No" : null, l]),
@@ -373,18 +385,297 @@ function openDetail(gid, refresh) {
     ${imgs.length ? `<div class="gallery">${imgs.map(u => `<img loading="lazy" src="${esc(u)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">`).join("")}</div>` : ""}
     <div class="d-body">
       <div class="facts">${facts.map(([v, l]) => `<div class="fact"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join("")}</div>
+      ${zoneTrendHtml(r)}
+      <div class="story"><h3>Storia della casa</h3><ul>${houseStory(members).map(x => `<li>${x}</li>`).join("")}</ul></div>
+      ${mineHtml(gid)}
+      ${list.some(m => m.price) && act.length ? calcHtml(Math.min(...list.map(m => m.price || Infinity)), r) : ""}
       <div><h3 style="font-size:15px;margin-bottom:8px">Dove è in vendita</h3><div class="offers">${members.map(m => `<div class="offer"><div><b>${esc(m.srcName)}</b>${m.private ? " (privato)" : ""}<br><span class="muted small">${eur(m.price)}${m.ref ? " · rif. " + esc(m.ref) : ""}${m.status !== "active" ? " · non più online dal " + fmtDate(m.removed_at) : ""}</span></div><a class="btn" href="${esc(m.url)}" target="_blank" rel="noopener">Vedi annuncio</a></div>`).join("")}</div></div>
       ${hist.length > 1 ? `<div><h3 style="font-size:15px;margin-bottom:6px">Storico prezzi</h3><table class="hist">${hist.map(([ts, p, s]) => `<tr><td>${fmtDate(ts)}</td><td><b>${eur(p)}</b></td><td class="muted">${esc(s)}</td></tr>`).join("")}</table></div>` : ""}
       ${r.title ? `<div><b>${esc(r.title)}</b></div>` : ""}
       ${r.description ? `<div class="desc">${esc(r.description)}</div>` : ""}
       <p class="muted small">Primo avvistamento: ${fmtDate(firstSeen)}. I dati sono letti in automatico dal sito dell'agenzia: verifica sempre sull'annuncio originale.</p>
     </div>`;
+  const cf = $("#detail-body .calc-form");
+  if (cf) fillCalc(cf, r);
   const dlg = $("#detail");
   S.openGid = gid;
   if (!dlg.open) dlg.showModal();
   if (!refresh) dlg.scrollTop = 0;
   // scheda aperta prima che arrivassero testi e foto: completala appena ci sono
   if (!S.detailsReady && S.details) S.details.then(() => { if (dlg.open && S.openGid === gid) openDetail(gid, true); });
+}
+
+// ------------------------------------------------------------------ strumenti per decidere
+
+// Stato e appunti personali: restano SOLO su questo dispositivo (il progetto è pubblico, le note non escono da qui).
+const STATUS = { vedere: "Da vedere", visitata: "Visitata", piace: "Mi piace", scartata: "Scartata" };
+const notes = {
+  all: () => store.get("notes", {}),
+  get: gid => notes.all()[gid] || {},
+  set(gid, v) {
+    const a = notes.all();
+    if (!v.status && !v.note) delete a[gid]; else a[gid] = v;
+    store.set("notes", a);
+  },
+};
+
+// Storia della casa, sommando tutte le agenzie che la propongono
+function houseStory(members) {
+  const out = [];
+  const first = members.reduce((m, x) => x.first_seen < m ? x.first_seen : m, members[0].first_seen);
+  const days = Math.max(0, Math.round((Date.now() - new Date(first)) / 864e5));
+  const srcStart = members.map(m => S.sources[m.source]?.first_ok).filter(Boolean).sort()[0];
+  const atStart = srcStart && new Date(first) - new Date(srcStart) < 864e5;
+  out.push(atStart
+    ? `Era già in vendita il ${fmtDate(first)}, quando il monitoraggio ha iniziato a leggere ${members.length > 1 ? "queste agenzie" : "questa agenzia"}: online da <b>almeno ${days} giorni</b>.`
+    : `In vendita da <b>${days} giorni</b> (comparsa il ${fmtDate(first)}).`);
+
+  let downs = 0, ups = 0;
+  for (const m of members) {
+    const h = m.price_history || [];
+    for (let i = 1; i < h.length; i++) { if (h[i][1] < h[i - 1][1]) downs++; else if (h[i][1] > h[i - 1][1]) ups++; }
+  }
+  const startPrices = members.map(m => m.price_history?.[0]?.[1]).filter(Boolean);
+  const nowPrices = members.filter(m => m.status === "active").map(m => m.price).filter(Boolean);
+  if (downs && startPrices.length && nowPrices.length) {
+    const a = Math.max(...startPrices), b = Math.min(...nowPrices);
+    out.push(`Prezzo <b>sceso ${downs === 1 ? "una volta" : downs + " volte"}</b>: da ${eur(a)} a ${eur(b)}` + (a > b ? ` (${pctTxt((b - a) / a * 100)}).` : "."));
+  } else if (ups) out.push(`Prezzo <b>aumentato ${ups === 1 ? "una volta" : ups + " volte"}</b>.`);
+  else if (startPrices.length) out.push("Prezzo mai cambiato da quando è online.");
+
+  const ids = new Set(members.map(m => m.id));
+  const backs = S.events.filter(e => e.type === "back" && ids.has(e.id)).length;
+  if (backs) out.push(`Tolta e rimessa online ${backs === 1 ? "una volta" : backs + " volte"}.`);
+
+  const act = members.filter(m => m.status === "active" && m.price);
+  if (act.length > 1) {
+    const lo = Math.min(...act.map(m => m.price)), hi = Math.max(...act.map(m => m.price));
+    const cheapest = act.find(m => m.price === lo);
+    out.push(`Proposta da <b>${act.length} agenzie</b>` + (hi > lo
+      ? `: ${eur(hi - lo)} di differenza, il prezzo più basso è di ${esc(cheapest.srcName)}.` : " allo stesso prezzo."));
+  }
+  if (days >= 60 && downs) out.push("In vendita da tempo e già ribassata: di solito c'è più margine per trattare.");
+  return out;
+}
+
+// ---- andamento del prezzo al mq per zona (docs/data/trend.json, una fotografia al giorno)
+const ALL_AREA = "Tutta la provincia";
+const trendKey = r => r.town === "Trieste" ? r.zone : r.town;
+// i primi giorni del monitoraggio avevano poche agenzie collegate: si usano solo i giorni con copertura piena
+function trendDays() {
+  if (S.trendDays) return S.trendDays;
+  const ds = Object.keys(S.trend || {}).sort();
+  const last = ds.length ? S.trend[ds[ds.length - 1]][ALL_AREA]?.[1] || 0 : 0;
+  return S.trendDays = ds.filter(d => (S.trend[d][ALL_AREA]?.[1] || 0) >= 0.8 * last);
+}
+const trendSeries = key => trendDays().map(d => [d, S.trend[d][key]?.[0], S.trend[d][key]?.[1]]).filter(x => x[1]);
+const shortDate = d => new Date(d).toLocaleDateString("it-IT", { day: "numeric", month: "short" });
+
+function trendChange(series) {
+  if (series.length < 2) return null;
+  const a = series[0][1], b = series[series.length - 1][1];
+  return { pct: (b - a) / a * 100, from: series[0][0], days: Math.round((new Date(series[series.length - 1][0]) - new Date(series[0][0])) / 864e5) };
+}
+
+// grafico a linea con mirino al passaggio del mouse/dito (una sola serie: il titolo la nomina, niente legenda)
+function lineChart(series, { w = 640, h = 220, mini = false } = {}) {
+  if (series.length < 2) return "";
+  const pad = mini ? { l: 2, r: 4, t: 4, b: 4 } : { l: 52, r: 14, t: 12, b: 26 };
+  const vals = series.map(x => x[1]);
+  let lo = Math.min(...vals), hi = Math.max(...vals);
+  const span = Math.max(hi - lo, hi * 0.04);
+  lo -= span * 0.15; hi += span * 0.15;
+  const X = i => pad.l + i * (w - pad.l - pad.r) / (series.length - 1);
+  const Y = v => pad.t + (hi - v) * (h - pad.t - pad.b) / (hi - lo);
+  const pts = series.map((x, i) => `${X(i).toFixed(1)},${Y(x[1]).toFixed(1)}`).join(" ");
+  const last = series.length - 1;
+  if (mini) {
+    return `<svg class="spark" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-hidden="true">
+      <polyline points="${pts}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="${X(last)}" cy="${Y(series[last][1])}" r="3" fill="var(--accent)"/></svg>`;
+  }
+  const ticks = [lo + (hi - lo) * 0.2, (lo + hi) / 2, lo + (hi - lo) * 0.8];
+  const data = esc(JSON.stringify(series.map(x => [shortDate(x[0]), x[1], x[2]])));
+  return `<div class="lc" data-series="${data}" data-w="${w}" data-padl="${pad.l}" data-padr="${pad.r}">
+    <svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Andamento del prezzo al metro quadro">
+      ${ticks.map(t => `<line x1="${pad.l}" x2="${w - pad.r}" y1="${Y(t)}" y2="${Y(t)}" class="grid"/>
+        <text x="${pad.l - 8}" y="${Y(t) + 4}" text-anchor="end" class="ax">${num(t)}</text>`).join("")}
+      <text x="${pad.l}" y="${h - 6}" class="ax">${shortDate(series[0][0])}</text>
+      <text x="${w - pad.r}" y="${h - 6}" text-anchor="end" class="ax">${shortDate(series[last][0])}</text>
+      <polyline points="${pts}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="${X(last)}" cy="${Y(series[last][1])}" r="4" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+      <line class="cross" y1="${pad.t}" y2="${h - pad.b}" x1="0" x2="0" style="display:none"/>
+      <circle class="cross-dot" r="5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2" cx="0" cy="0" style="display:none"/>
+      ${series.map((x, i) => `<circle class="pt" data-i="${i}" cx="${X(i)}" cy="${Y(x[1])}" r="0"/>`).join("")}
+    </svg><div class="tip" hidden></div></div>`;
+}
+
+function chartHover(e) {
+  const box = e.target.closest?.(".lc");
+  if (!box) return;
+  const svg = box.querySelector("svg"), rect = svg.getBoundingClientRect();
+  const series = JSON.parse(box.dataset.series), w = +box.dataset.w, pl = +box.dataset.padl, pr = +box.dataset.padr;
+  const x = (e.clientX - rect.left) * w / rect.width;
+  const i = Math.max(0, Math.min(series.length - 1, Math.round((x - pl) / ((w - pl - pr) / (series.length - 1)))));
+  const pt = box.querySelector(`.pt[data-i="${i}"]`), cross = box.querySelector(".cross"), dot = box.querySelector(".cross-dot"), tip = box.querySelector(".tip");
+  const cx = +pt.getAttribute("cx"), cy = +pt.getAttribute("cy");
+  cross.setAttribute("x1", cx); cross.setAttribute("x2", cx); cross.style.display = "";
+  dot.setAttribute("cx", cx); dot.setAttribute("cy", cy); dot.style.display = "";
+  tip.hidden = false;
+  tip.innerHTML = `<b>${num(series[i][1])} €/mq</b><span>${esc(series[i][0])} · ${series[i][2]} case</span>`;
+  const px = cx * rect.width / w;
+  tip.style.left = Math.max(0, Math.min(rect.width - tip.offsetWidth, px - tip.offsetWidth / 2)) + "px";
+  tip.style.top = Math.max(0, cy * rect.height / (+svg.viewBox.baseVal.height) - tip.offsetHeight - 12) + "px";
+}
+function chartLeave(e) {
+  const box = e.target.closest?.(".lc");
+  if (!box || box.contains(e.relatedTarget)) return;
+  box.querySelectorAll(".cross, .cross-dot").forEach(el => el.style.display = "none");
+  box.querySelector(".tip").hidden = true;
+}
+
+function zoneTrendHtml(r) {
+  const key = trendKey(r);
+  const s = key && trendSeries(key);
+  if (!s || s.length < 2) return "";
+  const ch = trendChange(s);
+  const how = Math.abs(ch.pct) < 0.5 ? "<b>stabili</b>" : `<b>${ch.pct > 0 ? "in salita" : "in discesa"}</b> (${ch.pct > 0 ? "+" : "−"}${Math.abs(ch.pct).toFixed(1).replace(".", ",")}%)`;
+  return `<div class="zt"><div>Prezzi al mq in ${esc(key)}: ${how} negli ultimi ${ch.days} giorni.
+      <a href="#prezzi/${encodeURIComponent(key)}">Vedi andamento</a></div>${lineChart(s, { w: 120, h: 32, mini: true })}</div>`;
+}
+
+let PRICE_SEL = ALL_AREA;
+function renderPrices() {
+  const days = trendDays();
+  const want = decodeURIComponent((location.hash.split("/")[1] || ""));
+  if (want && S.trend?.[days[days.length - 1]]?.[want]) PRICE_SEL = want;
+  if (!days.length) { $("#prices").innerHTML = `<div class="empty">L'andamento dei prezzi comparirà dopo il prossimo controllo.</div>`; return; }
+  const today = S.trend[days[days.length - 1]];
+  const rows = Object.keys(today).map(k => ({ k, s: trendSeries(k) })).filter(x => x.s.length)
+    .sort((a, b) => (a.k === ALL_AREA) - (b.k === ALL_AREA) || b.s[b.s.length - 1][1] - a.s[a.s.length - 1][1]);
+  const sel = trendSeries(PRICE_SEL), ch = trendChange(sel);
+  $("#prices").innerHTML = `<div class="panel wide">
+      <h2>${esc(PRICE_SEL)}: ${num(sel[sel.length - 1][1])} €/mq</h2>
+      <p class="muted small">Prezzo al mq medio (mediana) chiesto per appartamenti e attici usati, una volta per casa anche se è su più agenzie.
+        ${ch ? `Dal ${fmtDate(ch.from)}: <b>${ch.pct >= 0 ? "+" : "−"}${Math.abs(ch.pct).toFixed(1).replace(".", ",")}%</b>.` : ""}
+        Il grafico si allunga di giorno in giorno.</p>
+      ${lineChart(sel)}
+    </div>
+    <table class="src-table prices"><thead><tr><th>Zona</th><th class="n">€/mq</th><th class="n hide-m">Case</th><th class="n">Variazione</th><th class="hide-m">Andamento</th></tr></thead><tbody>
+    ${rows.map(({ k, s }) => {
+      const c = trendChange(s), last = s[s.length - 1];
+      return `<tr class="${k === PRICE_SEL ? "sel" : ""} ${k === ALL_AREA ? "all" : ""}" data-zone="${esc(k)}" tabindex="0">
+        <td>${esc(k)}</td><td class="n"><b>${num(last[1])}</b></td><td class="n hide-m">${last[2]}</td>
+        <td class="n">${c ? `<span class="${c.pct <= -0.5 ? "dn" : c.pct >= 0.5 ? "upc" : "muted"}">${c.pct >= 0 ? "+" : "−"}${Math.abs(c.pct).toFixed(1).replace(".", ",")}%</span>` : "–"}</td>
+        <td class="hide-m">${lineChart(s, { w: 120, h: 28, mini: true })}</td></tr>`;
+    }).join("")}</tbody></table>
+    <p class="muted small">Zone con almeno 5 case confrontabili. Sono prezzi richiesti negli annunci, non prezzi di vendita effettivi.</p>`;
+}
+
+// ---- quanto costa davvero (stime; impostazioni ricordate su questo dispositivo)
+const CALC_DEF = { prima: true, anticipo: 20, tasso: 3.2, anni: 25, agenzia: 3, rendita: "" };
+function calcCosts(price, r, c) {
+  const builder = r.kind === "costruttore", priv = r.kind === "privato";
+  let tax, taxNote;
+  if (builder) {
+    tax = price * (c.prima ? 0.04 : 0.10) + 600;
+    taxNote = `IVA ${c.prima ? 4 : 10}% + imposte fisse (vendita da costruttore)`;
+  } else {
+    const val = c.rendita ? c.rendita * 1.05 * (c.prima ? 110 : 120) : price * 0.4;
+    tax = Math.max(1000, val * (c.prima ? 0.02 : 0.09)) + 100;
+    taxNote = `imposta di registro ${c.prima ? 2 : 9}% del valore catastale` + (c.rendita ? "" : ", qui ipotizzato al 40% del prezzo");
+  }
+  const agency = builder || priv ? 0 : price * c.agenzia / 100 * 1.22;
+  const loan = Math.max(0, price * (1 - c.anticipo / 100));
+  const notary = 2500 + (loan ? 1500 : 0);
+  const loanCosts = loan ? loan * (c.prima ? 0.0025 : 0.02) + 1000 : 0;
+  const i = c.tasso / 100 / 12, n = c.anni * 12;
+  const rata = loan ? (i ? loan * i / (1 - Math.pow(1 + i, -n)) : loan / n) : 0;
+  return { tax, taxNote, agency, notary, loan, loanCosts, rata, upfront: price - loan + tax + agency + notary + loanCosts, builder, priv };
+}
+
+function calcHtml(price, r) {
+  const c = { ...CALC_DEF, ...store.get("calc", {}) };
+  return `<details class="calc" ${store.get("calcOpen", false) ? "open" : ""}><summary>Quanto costa davvero</summary>
+    <form class="calc-form" data-price="${price}" autocomplete="off">
+      <label class="check"><input type="checkbox" name="prima" ${c.prima ? "checked" : ""}> Prima casa</label>
+      <label>Anticipo % <input type="number" name="anticipo" min="0" max="100" step="5" value="${c.anticipo}"></label>
+      <label>Tasso mutuo % <input type="number" name="tasso" min="0" max="15" step="0.1" value="${c.tasso}"></label>
+      <label>Anni <input type="number" name="anni" min="5" max="40" step="5" value="${c.anni}"></label>
+      ${r.kind === "agenzia" ? `<label>Provvigione agenzia % <input type="number" name="agenzia" min="0" max="6" step="0.5" value="${c.agenzia}"></label>` : ""}
+      ${r.kind !== "costruttore" ? `<label>Rendita catastale € <input type="number" name="rendita" min="0" step="10" value="${c.rendita}" placeholder="se la sai"></label>` : ""}
+    </form>
+    <div class="calc-out"></div></details>`;
+}
+
+function fillCalc(form, r) {
+  const fd = new FormData(form), price = +form.dataset.price;
+  const c = { prima: form.elements.prima.checked, anticipo: +fd.get("anticipo") || 0, tasso: +fd.get("tasso") || 0,
+    anni: +fd.get("anni") || 25, agenzia: fd.get("agenzia") != null ? +fd.get("agenzia") : CALC_DEF.agenzia,
+    rendita: fd.get("rendita") ? +fd.get("rendita") : "" };
+  if (fd.get("agenzia") == null) c.agenzia = store.get("calc", {}).agenzia ?? CALC_DEF.agenzia;   // campo assente (privato/costruttore)
+  store.set("calc", c);
+  const x = calcCosts(price, r, c);
+  const row = (l, v, note) => `<tr><td>${l}${note ? `<br><span class="muted small">${note}</span>` : ""}</td><td class="n">${eur(v)}</td></tr>`;
+  form.nextElementSibling.innerHTML = `<table class="calc-t">
+    ${row("Prezzo", price)}
+    ${row("Imposte", x.tax, esc(x.taxNote))}
+    ${x.builder || x.priv ? "" : row("Agenzia", x.agency, `${c.agenzia}% + IVA, spesso trattabile`)}
+    ${row("Notaio", x.notary, "stima, compreso l'atto del mutuo")}
+    ${x.loan ? row("Spese del mutuo", x.loanCosts, `imposta ${c.prima ? "0,25" : "2"}% + perizia e istruttoria (stima)`) : ""}
+    <tr class="tot"><td>Soldi da avere al rogito</td><td class="n">${eur(x.upfront)}</td></tr>
+    ${x.loan ? `<tr class="tot"><td>Mutuo di ${eur(x.loan)}: rata al mese</td><td class="n">${eur(x.rata)}</td></tr>` : ""}
+    </table><p class="muted small">Stime indicative: chiedi conferma a notaio e banca.</p>`;
+}
+
+function mineHtml(gid) {
+  const n = notes.get(gid);
+  return `<div class="mine"><h3>I tuoi appunti</h3>
+    <div class="chips">${Object.entries(STATUS).map(([k, l]) => `<button type="button" class="chip-btn ${n.status === k ? "on" : ""}" data-status="${k}" data-gid="${esc(gid)}">${l}</button>`).join("")}</div>
+    <textarea data-note="${esc(gid)}" rows="3" placeholder="Impressioni della visita, domande per l'agenzia, spese condominiali…">${esc(n.note || "")}</textarea>
+    <p class="muted small">Salvati solo su questo dispositivo.</p></div>`;
+}
+
+function setStatus(gid, status) {
+  const n = notes.get(gid);
+  n.status = n.status === status ? null : status;
+  notes.set(gid, n);
+  // una casa con uno stato (tranne "scartata") va tra i preferiti, così si ritrova
+  if (n.status && n.status !== "scartata" && !S.favs.has(gid)) toggleFav(gid);
+  document.querySelectorAll(`.chip-btn[data-gid="${CSS.escape(gid)}"]`).forEach(b => b.classList.toggle("on", b.dataset.status === n.status));
+}
+
+// ---- confronto dei preferiti, fianco a fianco
+function compareHtml(list) {
+  if (!list.length) return `<div class="empty">Nessun preferito da confrontare.</div>`;
+  const yes = v => v === true ? "Sì" : v === false ? "No" : "–";
+  const story = h => {
+    const days = Math.round((Date.now() - new Date(h.firstSeen)) / 864e5);
+    const pc = priceChange(h.rep);
+    return { days, drop: pc && pc.pct < 0 ? pctTxt(pc.pct) : "–" };
+  };
+  const best = (vals, dir) => { const nums = vals.filter(v => v != null); return nums.length > 1 ? (dir < 0 ? Math.min(...nums) : Math.max(...nums)) : null; };
+  const prices = list.map(h => h.price), ppms = list.map(h => h.rep.ppm), mqs = list.map(h => h.rep.mq);
+  const bp = best(prices, -1), bppm = best(ppms, -1), bmq = best(mqs, 1);
+  const rows = [
+    ["Prezzo", h => eur(h.price), h => h.price && h.price === bp],
+    ["Superficie", h => h.rep.mq ? h.rep.mq + " mq" : "–", h => h.rep.mq && h.rep.mq === bmq],
+    ["€/mq", h => h.rep.ppm ? num(h.rep.ppm) : "–", h => h.rep.ppm && h.rep.ppm === bppm],
+    ["Rispetto alla zona", h => h.rep.zoneCmp ? pctTxt(h.rep.zoneCmp.pct) : "–"],
+    ["Zona", h => esc(where(h.rep))],
+    ["Locali", h => h.rep.rooms || "–"], ["Bagni", h => h.rep.bathrooms || "–"], ["Piano", h => esc(h.rep.floor || "–")],
+    ["Stato", h => esc(COND_LABELS[h.rep.condition] || "–")], ["Classe energetica", h => esc(h.rep.energy || "–")],
+    ...Object.entries(FEATURES).map(([k, l]) => [l, h => yes(h.rep.features?.[k])]),
+    ["In vendita da", h => story(h).days + " giorni"], ["Ribasso", h => story(h).drop],
+    ["Agenzie", h => h.members.length],
+    ["Il tuo stato", h => esc(STATUS[notes.get(h.gid).status] || "–")],
+    ["Appunti", h => `<span class="note">${esc(notes.get(h.gid).note || "–")}</span>`],
+  ];
+  return `<div class="cmp-wrap"><table class="cmp"><thead><tr><th></th>${list.map(h => `<th><a href="#" data-open="${esc(h.gid)}">
+      ${h.rep.images?.[0] ? `<img src="${esc(h.rep.images[0])}" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="this.remove()">` : ""}
+      <span>${esc(TYPE_LABELS[h.rep.type] || "Immobile")}</span></a></th>`).join("")}</tr></thead>
+    <tbody>${rows.map(([l, f, isBest]) => `<tr><th>${l}</th>${list.map(h => `<td class="${isBest && isBest(h) ? "best" : ""}">${f(h)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+    <p class="muted small">In grassetto il valore migliore della riga.</p>`;
 }
 
 // ------------------------------------------------------------------ impostazioni notifiche
@@ -579,20 +870,22 @@ function favSyncAction(what) {
 // ------------------------------------------------------------------ navigazione
 
 function showTab() {
+  if ($("#detail").open) $("#detail").close();
   const tab = (location.hash.slice(1) || "annunci").split("/")[0];
-  const valid = ["novita", "annunci", "mappa", "preferiti", "notifiche", "fonti"].includes(tab) ? tab : "annunci";
+  const valid = ["novita", "annunci", "mappa", "preferiti", "prezzi", "notifiche", "fonti"].includes(tab) ? tab : "annunci";
   document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("active", a.dataset.tab === valid));
   document.querySelectorAll(".tab").forEach(s => s.hidden = s.id !== "tab-" + valid);
-  $("#filters").hidden = valid === "fonti" || valid === "notifiche";
+  $("#filters").hidden = valid === "fonti" || valid === "notifiche" || valid === "prezzi";
   render(valid);
 }
 
 function render(tab) {
-  tab = tab || (location.hash.slice(1) || "annunci");
+  tab = (tab || location.hash.slice(1) || "annunci").split("/")[0];
   if (tab === "novita") renderEvents();
   else if (tab === "mappa") renderMap();
   else if (tab === "preferiti") renderFavs();
   else if (tab === "fonti") renderSources();
+  else if (tab === "prezzi") renderPrices();
   else if (tab === "notifiche") renderNotify();
   else renderGrid();
   updateFavCount();
@@ -631,6 +924,12 @@ function bind() {
     if (fs) { favSyncAction(fs.dataset.favsync); return; }
     const fav = e.target.closest("[data-fav]");
     if (fav) { e.stopPropagation(); toggleFav(fav.dataset.fav); if (location.hash === "#preferiti") renderFavs(); return; }
+    const st = e.target.closest("[data-status]");
+    if (st) { setStatus(st.dataset.gid, st.dataset.status); return; }
+    const fv = e.target.closest("[data-favview]");
+    if (fv) { store.set("favview", fv.dataset.favview); renderFavs(); return; }
+    const zr = e.target.closest("tr[data-zone]");
+    if (zr) { history.replaceState(null, "", "#prezzi/" + encodeURIComponent(zr.dataset.zone)); renderPrices(); return; }
     const open = e.target.closest("[data-open]");
     if (open) { e.preventDefault(); openDetail(open.dataset.open); return; }
     if (e.target.closest(".close")) { $("#detail").close(); return; }
@@ -638,6 +937,16 @@ function bind() {
     if (c) openDetail(c.dataset.gid);
   });
   $("#detail").addEventListener("click", e => { if (e.target === $("#detail")) $("#detail").close(); });
+  $("#detail").addEventListener("input", e => {
+    const nt = e.target.closest("[data-note]");
+    if (nt) { const n = notes.get(nt.dataset.note); n.note = nt.value.trim() ? nt.value : ""; notes.set(nt.dataset.note, n); return; }
+    const cf = e.target.closest(".calc-form");
+    if (cf && S.openRep) fillCalc(cf, S.openRep);
+  });
+  document.addEventListener("toggle", e => { if (e.target.classList?.contains("calc")) store.set("calcOpen", e.target.open); }, true);
+  $("#fav-hide").addEventListener("change", e => { store.set("favhide", e.target.checked); renderFavs(); });
+  document.addEventListener("pointermove", chartHover);
+  document.addEventListener("pointerout", chartLeave);
 }
 
 (async function init() {
