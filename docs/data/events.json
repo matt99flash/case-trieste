@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T05:34:58+00:00",
+ "updated": "2026-10-15T07:44:37+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5892,6 +5892,13 @@
    "id": "universalcasa-ts:35557884",
    "source": "universalcasa-ts",
    "price": 43000
+  },
+  {
+   "ts": "2026-10-15T07:44:37+00:00",
+   "type": "removed",
+   "id": "b1-antica-trieste:rossetti-luminoso-quadrilocale",
+   "source": "b1-antica-trieste",
+   "price": 428000
   }
  ]
 }
