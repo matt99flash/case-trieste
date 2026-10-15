@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T08:43:47+00:00",
+ "updated": "2026-10-15T09:37:45+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5977,6 +5977,70 @@
    "id": "fiorini-immobiliare:via-conti",
    "source": "fiorini-immobiliare",
    "price": 220000
+  },
+  {
+   "ts": "2026-10-15T09:37:45+00:00",
+   "type": "removed",
+   "id": "subito-privati:651962620",
+   "source": "subito-privati",
+   "price": null
+  },
+  {
+   "ts": "2026-10-15T09:37:45+00:00",
+   "type": "removed",
+   "id": "pozzecco-immobiliare:gradisca-porzione-di-villa-bifamiliare-con-ampio-giardino",
+   "source": "pozzecco-immobiliare",
+   "price": 370000
+  },
+  {
+   "ts": "2026-10-15T09:37:45+00:00",
+   "type": "removed",
+   "id": "immobiliare-4b:193093147",
+   "source": "immobiliare-4b",
+   "price": 1600000
+  },
+  {
+   "ts": "2026-10-15T09:37:45+00:00",
+   "type": "removed",
+   "id": "immobiliare-4b:193375555",
+   "source": "immobiliare-4b",
+   "price": 62000
+  },
+  {
+   "ts": "2026-10-15T09:37:45+00:00",
+   "type": "removed",
+   "id": "immobiliare-4b:193533654",
+   "source": "immobiliare-4b",
+   "price": 130000
+  },
+  {
+   "ts": "2026-10-15T09:37:45+00:00",
+   "type": "removed",
+   "id": "immobiliare-4b:193580254",
+   "source": "immobiliare-4b",
+   "price": 42000
+  },
+  {
+   "ts": "2026-10-15T09:37:45+00:00",
+   "type": "removed",
+   "id": "immobiliare-4b:193681025",
+   "source": "immobiliare-4b",
+   "price": 59000
+  },
+  {
+   "ts": "2026-10-15T09:37:45+00:00",
+   "type": "back",
+   "id": "tam-immobiliare:35182",
+   "source": "tam-immobiliare",
+   "price": 200000
+  },
+  {
+   "ts": "2026-10-15T09:37:45+00:00",
+   "type": "price_up",
+   "id": "tam-immobiliare:35182",
+   "source": "tam-immobiliare",
+   "old_price": 150000,
+   "price": 200000
   }
  ]
 }

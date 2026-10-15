@@ -64,9 +64,17 @@
 45.64383,
 13.75741
 ],
+"androna del pane|trieste": [
+45.64963,
+13.7696
+],
 "androna san cilino, 28, 34100 trieste ts|trieste": [
 45.65608,
 13.79575
+],
+"androna san cilino|trieste": [
+45.65594,
+13.79669
 ],
 "appartamento in via del crocifisso 5|trieste": null,
 "attico su due piani in via besenghi 19|trieste": null,
@@ -75,6 +83,9 @@
 13.65933
 ],
 "borgo carsico|trieste": {
+"miss": "2026-10-15"
+},
+"borgo grotta adiacenze avalon|trieste": {
 "miss": "2026-10-15"
 },
 "borgo san mauro|duino-aurisina": [
@@ -88,9 +99,16 @@
 "borgo stellato”|duino-aurisina": {
 "miss": "2026-10-15"
 },
+"borgo storico|trieste": {
+"miss": "2026-10-15"
+},
 "borgo villadi poggio|trieste": {
 "miss": "2026-10-15"
 },
+"calle dei lauri 8|muggia": [
+45.60459,
+13.76608
+],
 "calle oberdan|muggia": [
 45.60371,
 13.76792
@@ -103,6 +121,9 @@
 45.62503,
 13.80534
 ],
+"campo gres italgraniti|trieste": {
+"miss": "2026-10-15"
+},
 "campo marzio|trieste": [
 45.64346,
 13.75724
@@ -125,6 +146,10 @@
 45.64901,
 13.7777
 ],
+"duino 67/0|duino-aurisina": [
+45.77339,
+13.60448
+],
 "frazione aurisina stazione|duino-aurisina": [
 45.75116,
 13.68568
@@ -133,8 +158,13 @@
 "miss": "2026-10-15"
 },
 "frazione fernetti 1|monrupino": null,
-"frazione samatorza|sgonico": null,
+"frazione samatorza|sgonico": {
+"miss": "2026-10-15"
+},
 "frazione sistiana|trieste": {
+"miss": "2026-10-15"
+},
+"frazione zolla 60|trieste": {
 "miss": "2026-10-15"
 },
 "largo a. roiano, 3/1|trieste": [
@@ -144,9 +174,31 @@
 "largo barriera vecchia 12|trieste": {
 "miss": "2026-10-15"
 },
+"largo canal|trieste": [
+45.64513,
+13.77245
+],
+"largo del pecile 21|trieste": {
+"miss": "2026-10-15"
+},
 "largo nazario sauro|muggia": [
 45.60515,
 13.76739
+],
+"largo panfili|trieste": [
+45.65477,
+13.77208
+],
+"largo pestalozzi|trieste": [
+45.63978,
+13.78416
+],
+"largo roiano 1b|trieste": {
+"miss": "2026-10-15"
+},
+"largo roiano|trieste": [
+45.6634,
+13.76963
 ],
 "largo sydney sonnino|trieste": {
 "miss": "2026-10-15"
@@ -163,6 +215,10 @@
 ],
 "localita bagnoli 237|san dorligo della valle": null,
 "localita bagnoli della rosandra 237|san dorligo della valle": null,
+"localita banne|trieste": [
+45.67784,
+13.80248
+],
 "localita basovizza|trieste": [
 45.64368,
 13.86604
@@ -179,9 +235,17 @@
 13.65979
 ],
 "localita precenico, 3a, duino aurisina, ts, italia|duino-aurisina": null,
+"localita riostorto|muggia": [
+45.59923,
+13.75699
+],
 "localita sales|sgonico": [
 45.74685,
 13.73078
+],
+"localita santa barbara|muggia": [
+45.59239,
+13.77078
 ],
 "localita' dolina n. 542 piano terra|san dorligo della valle": null,
 "localita' santa croce, 268|trieste": [
@@ -189,6 +253,10 @@
 13.69124
 ],
 "monrupino frazione zolla 60|trieste": null,
+"piazza carlo alberto 11|trieste": [
+45.64213,
+13.7554
+],
 "piazza carlo alberto, 11|trieste": [
 45.64213,
 13.7554
@@ -202,6 +270,10 @@
 45.65498,
 13.77579
 ],
+"piazza dalmazia|trieste": [
+45.65505,
+13.77534
+],
 "piazza del sansovino 2/1|trieste": [
 45.64605,
 13.77644
@@ -214,6 +286,10 @@
 45.64653,
 13.76871
 ],
+"piazza della valle|trieste": [
+45.64653,
+13.76871
+],
 "piazza foraggi|trieste": [
 45.63993,
 13.7888
@@ -222,10 +298,17 @@
 45.64612,
 13.78116
 ],
+"piazza garibaldi|trieste": [
+45.64613,
+13.78073
+],
 "piazza giotti|trieste": [
 45.65361,
 13.78017
 ],
+"piazza goldoni 10|trieste": {
+"miss": "2026-10-15"
+},
 "piazza goldoni, 10, 34100 trieste ts|trieste": null,
 "piazza guglielmo oberdan|trieste": [
 45.65447,
@@ -235,6 +318,10 @@
 "miss": "2026-10-15"
 },
 "piazza liberta 1 turriaco|trieste": null,
+"piazza liberta 1|trieste": [
+45.65593,
+13.77102
+],
 "piazza nicolo tommaseo 4|trieste": {
 "miss": "2026-10-15"
 },
@@ -242,6 +329,9 @@
 45.65365,
 13.77625
 ],
+"piazza parugino|trieste": {
+"miss": "2026-10-15"
+},
 "piazza perugino|trieste": [
 45.64325,
 13.78553
@@ -253,6 +343,10 @@
 "piazza ponterosso|trieste": [
 45.65192,
 13.77173
+],
+"piazza puecher|trieste": [
+45.64408,
+13.77985
 ],
 "piazza sant'antonio|trieste": {
 "miss": "2026-10-15"
@@ -273,6 +367,10 @@
 45.64551,
 13.75926
 ],
+"rotonda del boschetto 3/1|trieste": [
+45.65518,
+13.79886
+],
 "rotonda del boschetto, 3/1|trieste": [
 45.65518,
 13.79886
@@ -280,6 +378,10 @@
 "salita alle mura 7|muggia": {
 "miss": "2026-10-15"
 },
+"salita di contovello|trieste": [
+45.69483,
+13.74223
+],
 "salita di gretta 13|trieste": [
 45.66572,
 13.76721
@@ -287,6 +389,10 @@
 "salita di gretta 15|trieste": [
 45.66581,
 13.76708
+],
+"salita di gretta|trieste": [
+45.66546,
+13.76776
 ],
 "salita di raute|trieste": [
 45.63124,
@@ -296,6 +402,10 @@
 "scala dell'erica 7|trieste": [
 45.66495,
 13.78178
+],
+"scala dell'erica|trieste": [
+45.66454,
+13.78133
 ],
 "scala ferolli|trieste": [
 45.65597,
@@ -313,10 +423,16 @@
 45.67032,
 13.77026
 ],
+"scala santa bassa|trieste": {
+"miss": "2026-10-15"
+},
 "scala santa, 41/1|trieste": [
 45.66924,
 13.77239
 ],
+"strada costiera 172|trieste": {
+"miss": "2026-10-15"
+},
 "strada costiera, 234|trieste": [
 45.73231,
 13.68312
@@ -338,6 +454,10 @@
 45.63872,
 13.79761
 ],
+"strada di fiume 370|trieste": [
+45.63505,
+13.82723
+],
 "strada di fiume, 370|trieste": [
 45.63505,
 13.82723
@@ -350,7 +470,13 @@
 45.76843,
 13.64953
 ],
-"strada per lazzaretto 2|muggia": null,
+"strada per basovizza|trieste": [
+45.65034,
+13.82052
+],
+"strada per lazzaretto 2|muggia": {
+"miss": "2026-10-15"
+},
 "strada per lazzaretto 41|muggia": [
 45.60894,
 13.73976
@@ -408,6 +534,10 @@
 45.6184,
 13.82725
 ],
+"via angelo emo 35|trieste": [
+45.64145,
+13.77495
+],
 "via angelo emo, 35|trieste": [
 45.64145,
 13.77495
@@ -432,6 +562,10 @@
 45.66167,
 13.77068
 ],
+"via antoni|trieste": [
+45.65299,
+13.80482
+],
 "via apiari 9|trieste": [
 45.66575,
 13.77449
@@ -443,6 +577,10 @@
 "via ariosto 3|trieste": [
 45.66034,
 13.77161
+],
+"via armando diaz|trieste": [
+45.64779,
+13.76467
 ],
 "via artemidoro 2|trieste": [
 45.65874,
@@ -456,7 +594,10 @@
 45.63008,
 13.78765
 ],
-"via baiamonti 56/13|trieste": null,
+"via baiamonti 56/13|trieste": [
+45.63056,
+13.78912
+],
 "via baiamonti|trieste": [
 45.63025,
 13.78849
@@ -473,9 +614,21 @@
 45.66435,
 13.77111
 ],
+"via bartoletti 8|trieste": [
+45.6428,
+13.79006
+],
 "via bartolomeo d'alviano 82|trieste": [
 45.63546,
 13.78112
+],
+"via baseggio|trieste": [
+45.66785,
+13.76618
+],
+"via basovizza 272|trieste": [
+45.68417,
+13.80142
 ],
 "via battaglia 10|trieste": [
 45.6486,
@@ -505,6 +658,10 @@
 45.70553,
 13.71718
 ],
+"via bellavista|trieste": [
+45.67002,
+13.79417
+],
 "via bellini|trieste": [
 45.65239,
 13.77087
@@ -512,6 +669,10 @@
 "via bellosguardo 58|trieste": [
 45.64288,
 13.76816
+],
+"via bellosguardo|trieste": [
+45.643,
+13.76722
 ],
 "via belpoggio 1|trieste": [
 45.64536,
@@ -528,6 +689,10 @@
 "via benedetto marcello|trieste": [
 45.64637,
 13.76712
+],
+"via besenghi 19|trieste": [
+45.64367,
+13.77367
 ],
 "via besenghi 23|trieste": [
 45.64344,
@@ -553,6 +718,10 @@
 45.64547,
 13.7737
 ],
+"via bruno zelik 3|trieste": [
+45.66423,
+13.77696
+],
 "via bruno zelik, 3|trieste": [
 45.66423,
 13.77696
@@ -564,6 +733,10 @@
 "via buonarroti|trieste": [
 45.65054,
 13.79008
+],
+"via buttazzoni 13|trieste": [
+45.61629,
+13.79232
 ],
 "via caboto|trieste": [
 45.61899,
@@ -619,6 +792,10 @@
 45.64931,
 13.77817
 ],
+"via carducci|trieste": [
+45.64927,
+13.77811
+],
 "via carli 6|trieste": [
 45.63899,
 13.76327
@@ -627,7 +804,9 @@
 45.63938,
 13.76366
 ],
-"via carlo e gian stuparich 19|trieste": null,
+"via carlo e gian stuparich 19|trieste": {
+"miss": "2026-10-15"
+},
 "via carlo favetti, cisternone, gretta, roiano-gretta-barcola-cologna-scorcola, opicina, trieste, friuli-venezia giulia, 34136, italia|trieste": null,
 "via carlo favetti|trieste": [
 45.67038,
@@ -650,6 +829,10 @@
 45.64047,
 13.80448
 ],
+"via carpaccio vettor 2|trieste": [
+45.64395,
+13.77019
+],
 "via carpaccio vettor, 2|trieste": [
 45.64395,
 13.77019
@@ -662,6 +845,9 @@
 45.68794,
 13.77516
 ],
+"via case cos 49|trieste": {
+"miss": "2026-10-15"
+},
 "via casimiro donadoni 31|trieste": [
 45.64341,
 13.78725
@@ -683,6 +869,10 @@
 45.62084,
 13.79631
 ],
+"via cesare rossi|trieste": [
+45.62011,
+13.79395
+],
 "via chiadino 13/1|trieste": [
 45.64941,
 13.79131
@@ -690,6 +880,10 @@
 "via chiadino|trieste": [
 45.64905,
 13.78919
+],
+"via cigotti|trieste": [
+45.64014,
+13.78271
 ],
 "via cividale|trieste": [
 45.67171,
@@ -699,6 +893,10 @@
 45.58997,
 13.77516
 ],
+"via coletti|trieste": [
+45.63815,
+13.76812
+],
 "via cologna 2|trieste": [
 45.65464,
 13.78643
@@ -707,9 +905,17 @@
 45.65462,
 13.78669
 ],
+"via cologna|trieste": [
+45.65859,
+13.79111
+],
 "via colombara di vignano, 6, muggia ts|muggia": [
 45.58598,
 13.80299
+],
+"via colombo|trieste": [
+45.64094,
+13.77827
 ],
 "via combi 17|trieste": [
 45.64126,
@@ -719,6 +925,13 @@
 45.64196,
 13.76368
 ],
+"via commerciale 160/3|trieste": [
+45.66457,
+13.78168
+],
+"via commerciale alta|trieste": {
+"miss": "2026-10-15"
+},
 "via commerciale, 160/3|trieste": [
 45.66457,
 13.78168
@@ -730,6 +943,10 @@
 "via concordia|trieste": [
 45.64181,
 13.77779
+],
+"via conti 11/3|trieste": [
+45.64397,
+13.78568
 ],
 "via conti, 11/3|trieste": [
 45.64397,
@@ -768,9 +985,17 @@
 45.65098,
 13.77856
 ],
+"via crispi|trieste": [
+45.65176,
+13.78313
+],
 "via cristoforo belli 4|trieste": [
 45.64155,
 13.7806
+],
+"via cumano|trieste": [
+45.63986,
+13.80397
 ],
 "via d'alviano 96|trieste": [
 45.63149,
@@ -787,6 +1012,10 @@
 "via d'azeglio|trieste": [
 45.64797,
 13.78207
+],
+"via dante vaglieri|trieste": [
+45.62687,
+13.81233
 ],
 "via de amicis|trieste": [
 45.64155,
@@ -812,6 +1041,9 @@
 45.64918,
 13.77293
 ],
+"via degli olmi alta|trieste": {
+"miss": "2026-10-15"
+},
 "via dei baiardi 118|trieste": [
 45.66799,
 13.79643
@@ -832,11 +1064,17 @@
 45.65491,
 13.79305
 ],
+"via dei calderai|muggia": [
+45.59724,
+13.77686
+],
 "via dei capuano|trieste": [
 45.64577,
 13.76533
 ],
-"via dei crevatini|muggia": null,
+"via dei crevatini|muggia": {
+"miss": "2026-10-15"
+},
 "via dei crociferi|trieste": [
 45.64679,
 13.76591
@@ -848,6 +1086,10 @@
 "via dei falchi|trieste": [
 45.6432,
 13.78376
+],
+"via dei giacinti 36|trieste": [
+45.66667,
+13.77124
 ],
 "via dei giacinti, 16|trieste": [
 45.66564,
@@ -868,6 +1110,10 @@
 "via dei giuliani|trieste": [
 45.6434,
 13.7802
+],
+"via dei gradi|trieste": [
+45.64349,
+13.78229
 ],
 "via dei gravisi|trieste": [
 45.62271,
@@ -902,6 +1148,10 @@
 45.64187,
 13.77241
 ],
+"via dei pagliaricci|trieste": [
+45.65758,
+13.80414
+],
 "via dei panzera|trieste": [
 45.68361,
 13.75192
@@ -926,6 +1176,10 @@
 45.64805,
 13.79137
 ],
+"via dei salici 22/1|trieste": [
+45.68822,
+13.78127
+],
 "via dei salici, 22/1|trieste": [
 45.68822,
 13.78127
@@ -947,6 +1201,13 @@
 13.77433
 ],
 "via del bergamino|duino-aurisina": {
+"miss": "2026-10-15"
+},
+"via del bergamino|trieste": [
+45.64227,
+13.81267
+],
+"via del biasoletto 17|trieste": {
 "miss": "2026-10-15"
 },
 "via del bosco 12|trieste": [
@@ -978,9 +1239,17 @@
 45.65636,
 13.78267
 ],
+"via del crocifisso 5|trieste": [
+45.64842,
+13.77126
+],
 "via del farnetello, 25, trieste ts|trieste": [
 45.65074,
 13.80887
+],
+"via del farneto|trieste": [
+45.65261,
+13.78735
 ],
 "via del fortino 5|trieste": [
 45.64809,
@@ -1003,6 +1272,9 @@
 45.63814,
 13.76906
 ],
+"via del marcello|trieste": {
+"miss": "2026-10-15"
+},
 "via del muraglione|trieste": [
 45.64366,
 13.78214
@@ -1027,6 +1299,10 @@
 "via del ponzanino|trieste": [
 45.64363,
 13.78176
+],
+"via del pozzo 4|trieste": [
+45.64364,
+13.78133
 ],
 "via del pozzo, 4|trieste": [
 45.64364,
@@ -1081,6 +1357,10 @@
 45.64083,
 13.78577
 ],
+"via dell'eremo 7|trieste": [
+45.64471,
+13.79123
+],
 "via dell'eremo, 7|trieste": [
 45.64471,
 13.79123
@@ -1093,7 +1373,9 @@
 45.66712,
 13.77891
 ],
-"via dell'hermada|trieste": null,
+"via dell'hermada|trieste": {
+"miss": "2026-10-15"
+},
 "via dell'industria 27|trieste": [
 45.64138,
 13.77813
@@ -1119,9 +1401,17 @@
 45.64774,
 13.77103
 ],
+"via della cattedrale 6|trieste": [
+45.64751,
+13.76934
+],
 "via della chiauchiara|trieste": [
 45.64846,
 13.77213
+],
+"via della concordia 21|trieste": [
+45.64143,
+13.77705
 ],
 "via della concordia, 21|trieste": [
 45.64143,
@@ -1207,11 +1497,25 @@
 45.64203,
 13.7892
 ],
+"via dello scoglio 137|trieste": {
+"miss": "2026-10-15"
+},
 "via dello scoglio 36|trieste": [
 45.66127,
 13.80057
 ],
 "via dello scoglio, 137, trieste ts|trieste": null,
+"via dello scoglio|trieste": [
+45.65866,
+13.79625
+],
+"via di basovizza sta per nascere|trieste": {
+"miss": "2026-10-15"
+},
+"via di campo marzio|trieste": [
+45.64443,
+13.75627
+],
 "via di cavana, 15|trieste": [
 45.64739,
 13.7656
@@ -1240,6 +1544,10 @@
 45.6394,
 13.80522
 ],
+"via di noghere 94|muggia": [
+45.59876,
+13.80505
+],
 "via di noghere, 94|muggia": [
 45.59876,
 13.80505
@@ -1252,6 +1560,9 @@
 45.59886,
 13.80532
 ],
+"via di prosecco 3|trieste": {
+"miss": "2026-10-15"
+},
 "via di prosecco, 3|trieste": null,
 "via di prosecco|trieste": [
 45.69146,
@@ -1261,6 +1572,10 @@
 45.66492,
 13.77135
 ],
+"via di romagna 37/1|trieste": [
+45.65891,
+13.78294
+],
 "via di romagna 54|trieste": [
 45.65784,
 13.77983
@@ -1268,6 +1583,10 @@
 "via di romagna, 37/1|trieste": [
 45.65891,
 13.78294
+],
+"via di s. barbara|muggia": [
+45.59058,
+13.7716
 ],
 "via di scorcola 2|trieste": [
 45.65738,
@@ -1329,9 +1648,21 @@
 45.65911,
 13.7904
 ],
+"via fabio severo 149/a|trieste": [
+45.66025,
+13.79282
+],
 "via fabio severo 21|trieste": [
 45.65598,
 13.78028
+],
+"via fabio severo 4|trieste": [
+45.65571,
+13.77913
+],
+"via fabio severo 71|trieste": [
+45.65623,
+13.78743
 ],
 "via fabio severo, 138, 34100 trieste ts|trieste": [
 45.65967,
@@ -1349,7 +1680,9 @@
 45.67038,
 13.76315
 ],
-"via federcio seismit doda 1|trieste": null,
+"via federcio seismit doda 1|trieste": {
+"miss": "2026-10-15"
+},
 "via felice venezian|trieste": [
 45.64742,
 13.76745
@@ -1361,6 +1694,10 @@
 "via filzi 17|trieste": [
 45.65382,
 13.77436
+],
+"via fiordalisi|trieste": [
+45.69182,
+13.77683
 ],
 "via flavia di stramare|muggia": [
 45.58779,
@@ -1381,6 +1718,10 @@
 "via foschiatti 4|trieste": [
 45.64829,
 13.78016
+],
+"via foscolo|trieste": [
+45.64862,
+13.78525
 ],
 "via fra' pace da vedano|trieste": [
 45.6464,
@@ -1403,7 +1744,14 @@
 13.77803
 ],
 "via frescobaldi 25 trieste trieste italy|trieste": null,
+"via frescobaldi 25|trieste": [
+45.62551,
+13.80371
+],
 "via g.grimani , 42|trieste": null,
+"via g.grimani 42|trieste": {
+"miss": "2026-10-15"
+},
 "via gaspare tonello 22|trieste": [
 45.63997,
 13.77115
@@ -1424,6 +1772,10 @@
 45.64116,
 13.78835
 ],
+"via giacinti|trieste": [
+45.66603,
+13.77035
+],
 "via giacomo puccini 68|trieste": [
 45.62366,
 13.80575
@@ -1432,6 +1784,10 @@
 45.6341,
 13.78405
 ],
+"via giardini|trieste": [
+45.62336,
+13.78418
+],
 "via ginnastica|trieste": [
 45.6514,
 13.78466
@@ -1439,7 +1795,9 @@
 "via gioacchino rossini|trieste": {
 "miss": "2026-10-15"
 },
-"via gioachino murat 8|trieste": null,
+"via gioachino murat 8|trieste": {
+"miss": "2026-10-15"
+},
 "via giorgio pitacco 34|trieste": [
 45.62362,
 13.78293
@@ -1457,6 +1815,10 @@
 13.78664
 ],
 "via giovanni pierluigi da palestrina|trieste": null,
+"via giovanni verga 22|trieste": [
+45.65757,
+13.79756
+],
 "via giovanni verga, 22|trieste": [
 45.65757,
 13.79756
@@ -1482,6 +1844,10 @@
 13.77044
 ],
 "via giuseppe picciola, piano s1|trieste": null,
+"via giuseppe picciola|trieste": [
+45.64309,
+13.75526
+],
 "via giuseppe vidali|trieste": [
 45.6479,
 13.78027
@@ -1518,6 +1884,10 @@
 45.63652,
 13.78962
 ],
+"via gruden 48|trieste": [
+45.64127,
+13.86148
+],
 "via guglielmo marconi|trieste": [
 45.65495,
 13.78416
@@ -1535,9 +1905,17 @@
 45.68159,
 13.75596
 ],
+"via ireneo della croce 5|trieste": [
+45.65321,
+13.78484
+],
 "via ireneo della croce, 5|trieste": [
 45.65321,
 13.78484
+],
+"via jenner|trieste": [
+45.62326,
+13.78964
 ],
 "via karl ludwig von bruck 26|trieste": [
 45.63719,
@@ -1567,6 +1945,10 @@
 45.65041,
 13.76964
 ],
+"via luigi ricci 4|trieste": [
+45.65506,
+13.78803
+],
 "via luigi ricci, 4|trieste": [
 45.65506,
 13.78803
@@ -1583,11 +1965,19 @@
 45.64682,
 13.78323
 ],
+"via maovaz|trieste": [
+45.61952,
+13.82879
+],
 "via marcello 2|trieste": [
 45.64636,
 13.76728
 ],
 "via marcello 4|trieste": [
+45.64624,
+13.76709
+],
+"via marcello benedetto 4|trieste": [
 45.64624,
 13.76709
 ],
@@ -1611,10 +2001,17 @@
 45.64122,
 13.77631
 ],
+"via marco valerio marziale 23|trieste": {
+"miss": "2026-10-15"
+},
 "via marco valerio marziale, 23|trieste": null,
 "via marconi 34|trieste": [
 45.65571,
 13.7851
+],
+"via martiri della liberta 6|trieste": [
+45.65599,
+13.77554
 ],
 "via martiri della liberta, 6|trieste": [
 45.65599,
@@ -1672,6 +2069,10 @@
 45.64298,
 13.78301
 ],
+"via molino vapore|trieste": [
+45.6461,
+13.77871
+],
 "via molino|trieste": [
 45.6386,
 13.78597
@@ -1711,6 +2112,10 @@
 "via montecchi 6|trieste": {
 "miss": "2026-10-15"
 },
+"via navali|trieste": [
+45.64004,
+13.77232
+],
 "via orlandini|trieste": [
 45.6398,
 13.78132
@@ -1726,6 +2131,10 @@
 "via ovidio|trieste": [
 45.66292,
 13.77687
+],
+"via paduina 5|trieste": [
+45.6516,
+13.78102
 ],
 "via paduina, 5|trieste": [
 45.6516,
@@ -1745,6 +2154,22 @@
 "via panfilo castaldi 3|trieste": [
 45.64526,
 13.78012
+],
+"via parini|trieste": [
+45.64724,
+13.78178
+],
+"via pascoli 5|trieste": [
+45.64608,
+13.78187
+],
+"via pascoli|trieste": [
+45.6472,
+13.78483
+],
+"via pasquale revoltella 22|trieste": [
+45.64246,
+13.79023
 ],
 "via pasquale revoltella, 22|trieste": [
 45.64246,
@@ -1778,6 +2203,14 @@
 45.62273,
 13.82885
 ],
+"via perarolo|trieste": [
+45.67707,
+13.75736
+],
+"via petrarca|trieste": [
+45.65082,
+13.78539
+],
 "via petronio|trieste": [
 45.64389,
 13.78743
@@ -1809,6 +2242,10 @@
 "via pollaiuolo|trieste": [
 45.64012,
 13.79251
+],
+"via ponchielli|trieste": [
+45.65121,
+13.77507
 ],
 "via ponziana 2|trieste": [
 45.6412,
@@ -1851,6 +2288,10 @@
 45.64462,
 13.77064
 ],
+"via rietti|trieste": [
+45.64018,
+13.80361
+],
 "via risorta 12|trieste": [
 45.64589,
 13.77377
@@ -1862,6 +2303,10 @@
 "via rittmeyer|trieste": [
 45.65638,
 13.77527
+],
+"via robert koch 3|trieste": [
+45.64115,
+13.82291
 ],
 "via robert koch, 3|trieste": [
 45.64115,
@@ -1899,6 +2344,10 @@
 45.62409,
 13.79825
 ],
+"via san benedetto 1|trieste": [
+45.63239,
+13.78448
+],
 "via san benedetto, 1|trieste": [
 45.63239,
 13.78448
@@ -1906,6 +2355,10 @@
 "via san benedetto|trieste": [
 45.6331,
 13.78533
+],
+"via san cilino 69|trieste": [
+45.65604,
+13.80101
 ],
 "via san cilino 77|trieste": [
 45.65608,
@@ -1943,6 +2396,10 @@
 45.638,
 13.77142
 ],
+"via san michele 6|trieste": [
+45.6471,
+13.76893
+],
 "via san michele, 6|trieste": [
 45.6471,
 13.76893
@@ -1967,6 +2424,14 @@
 45.65083,
 13.77133
 ],
+"via san nicolo|trieste": [
+45.65083,
+13.77133
+],
+"via san pasquale 19|trieste": [
+45.64318,
+13.80937
+],
 "via san pasquale, 13|trieste": [
 45.64298,
 13.81011
@@ -1983,6 +2448,10 @@
 45.6452,
 13.76778
 ],
+"via san vito|trieste": [
+45.64479,
+13.7685
+],
 "via sant anastasio|trieste": [
 45.65682,
 13.77431
@@ -1990,6 +2459,14 @@
 "via sant'anastasio|trieste": [
 45.65682,
 13.77431
+],
+"via sant'apollinare|trieste": [
+45.64702,
+13.77876
+],
+"via santa fosca 28|trieste": [
+45.68982,
+13.77489
 ],
 "via santa fosca, 28|trieste": [
 45.68982,
@@ -2014,6 +2491,14 @@
 "via schiaparelli|trieste": [
 45.63925,
 13.76798
+],
+"via segantini|trieste": [
+45.64411,
+13.7731
+],
+"via settefontane|trieste": [
+45.64379,
+13.78492
 ],
 "via severi 7|trieste": [
 45.64351,
@@ -2051,6 +2536,10 @@
 45.64598,
 13.78666
 ],
+"via stock 7|trieste": [
+45.6646,
+13.7709
+],
 "via stuparich, 2|trieste": [
 45.65055,
 13.78251
@@ -2059,7 +2548,9 @@
 45.633,
 13.78023
 ],
-"via svevo 14|trieste": null,
+"via svevo 14|trieste": {
+"miss": "2026-10-15"
+},
 "via tacco|trieste": [
 45.64026,
 13.77525
@@ -2083,6 +2574,10 @@
 "via tommaso luciani 20|trieste": [
 45.64425,
 13.7848
+],
+"via tommaso luciani|trieste": [
+45.64465,
+13.78471
 ],
 "via tonello|trieste": [
 45.63967,
@@ -2149,6 +2644,10 @@
 45.62942,
 13.78462
 ],
+"via umberto felluga 51|trieste": [
+45.64504,
+13.80008
+],
 "via umberto felluga, 34142 trieste ts, italia|trieste": null,
 "via umberto felluga, 51|trieste": [
 45.64504,
@@ -2170,6 +2669,10 @@
 45.6534,
 13.77354
 ],
+"via valentino pittoni 11|trieste": [
+45.62257,
+13.81025
+],
 "via valentino pittoni, 11|trieste": [
 45.62257,
 13.81025
@@ -2185,6 +2688,10 @@
 "via valmaura 19|trieste": [
 45.62346,
 13.79086
+],
+"via valmaura 29|trieste": [
+45.62322,
+13.78985
 ],
 "via valmaura 31|trieste": [
 45.62278,
@@ -2218,6 +2725,10 @@
 45.66501,
 13.78563
 ],
+"via vespucci|trieste": [
+45.64235,
+13.77777
+],
 "via vinicio lago 14|trieste": [
 45.62044,
 13.82341
@@ -2225,6 +2736,14 @@
 "via virgilio|trieste": [
 45.65965,
 13.77679
+],
+"via vitalba|trieste": [
+45.72151,
+13.69806
+],
+"via xxx ottobre|trieste": [
+45.65359,
+13.77542
 ],
 "viale campi elisi, 36/c, trieste ts|trieste": [
 45.63856,
@@ -2234,6 +2753,10 @@
 45.6394,
 13.77168
 ],
+"viale campi elisi|trieste": [
+45.63943,
+13.77378
+],
 "viale d'annunzio|trieste": [
 45.64105,
 13.78673
@@ -2241,6 +2764,10 @@
 "viale dei campi elisi 44|trieste": [
 45.63933,
 13.77079
+],
+"viale dell'ippodromo|trieste": [
+45.63964,
+13.7914
 ],
 "viale gabriele d'annunzio 40|trieste": [
 45.64212,
@@ -2258,11 +2785,24 @@
 45.68219,
 13.75286
 ],
-"viale miramare 13|trieste": null,
-"viale miramare 27|trieste": null,
+"viale miramare 13|trieste": {
+"miss": "2026-10-15"
+},
+"viale miramare 27|trieste": [
+45.66233,
+13.7701
+],
 "viale miramare 3/1 trieste (trieste)|trieste": [
 45.65784,
 13.77272
+],
+"viale miramare 53|trieste": [
+45.66519,
+13.76643
+],
+"viale miramare 75|trieste": [
+45.66669,
+13.76292
 ],
 "viale miramare 9|trieste": [
 45.65893,
@@ -2288,13 +2828,24 @@
 45.66822,
 13.76079
 ],
+"viale r. sanzio|trieste": {
+"miss": "2026-10-15"
+},
 "viale raffaello sanzio 16|trieste": [
 45.65521,
 13.80017
 ],
+"viale raffaello sanzio 27|trieste": [
+45.65558,
+13.80352
+],
 "viale terza armata|trieste": [
 45.64521,
 13.76452
+],
+"viale venti settembre 84|trieste": [
+45.65447,
+13.79086
 ],
 "viale venti settembre n. 84 piano s1 – 3 – 7|trieste": null,
 "viale xx settembre 12|trieste": {
@@ -2327,6 +2878,14 @@
 "vicolo dell'edera|trieste": [
 45.6571,
 13.79123
+],
+"vicolo delle rose 1|trieste": [
+45.66592,
+13.77257
+],
+"vicolo delle rose 61|trieste": [
+45.66788,
+13.78061
 ],
 "vicolo delle rose, 1|trieste": [
 45.66592,
