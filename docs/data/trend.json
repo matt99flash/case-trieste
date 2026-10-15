@@ -1,0 +1,1373 @@
+{
+ "updated": "2026-10-15",
+ "days": {
+  "2026-09-28": {
+   "Barriera": [
+    2386,
+    10
+   ],
+   "Borgo Franceschino / Giulia": [
+    2653,
+    9
+   ],
+   "Borgo Giuseppino / Cavana": [
+    2913,
+    8
+   ],
+   "Centro / Borgo Teresiano": [
+    3699,
+    12
+   ],
+   "Chiadino / Rozzol": [
+    2109,
+    5
+   ],
+   "Città Vecchia / San Giusto": [
+    5592,
+    5
+   ],
+   "Muggia": [
+    2202,
+    6
+   ],
+   "San Giacomo": [
+    2045,
+    5
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1969,
+    13
+   ],
+   "Tutta la provincia": [
+    2553,
+    97
+   ]
+  },
+  "2026-09-29": {
+   "Barcola / Grignano / Miramare": [
+    2697,
+    22
+   ],
+   "Barriera": [
+    2149,
+    59
+   ],
+   "Borgo Franceschino / Giulia": [
+    2567,
+    74
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    56
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2246,
+    23
+   ],
+   "Centro / Borgo Teresiano": [
+    2887,
+    105
+   ],
+   "Chiadino / Rozzol": [
+    2516,
+    35
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    34
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2778,
+    43
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2124,
+    12
+   ],
+   "Muggia": [
+    2947,
+    42
+   ],
+   "Roiano": [
+    2672,
+    44
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1920,
+    47
+   ],
+   "San Luigi / Guardiella": [
+    2176,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2946,
+    49
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1866,
+    80
+   ],
+   "Tutta la provincia": [
+    2444,
+    923
+   ]
+  },
+  "2026-09-30": {
+   "Barcola / Grignano / Miramare": [
+    2611,
+    21
+   ],
+   "Barriera": [
+    2149,
+    59
+   ],
+   "Borgo Franceschino / Giulia": [
+    2581,
+    73
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    55
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    24
+   ],
+   "Centro / Borgo Teresiano": [
+    2887,
+    105
+   ],
+   "Chiadino / Rozzol": [
+    2516,
+    35
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    34
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2778,
+    43
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2157,
+    13
+   ],
+   "Muggia": [
+    2977,
+    42
+   ],
+   "Roiano": [
+    2686,
+    44
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1953,
+    46
+   ],
+   "San Luigi / Guardiella": [
+    2176,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2946,
+    49
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1875,
+    81
+   ],
+   "Tutta la provincia": [
+    2444,
+    921
+   ]
+  },
+  "2026-10-01": {
+   "Barcola / Grignano / Miramare": [
+    2697,
+    24
+   ],
+   "Barriera": [
+    2150,
+    60
+   ],
+   "Borgo Franceschino / Giulia": [
+    2581,
+    73
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    56
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2266,
+    25
+   ],
+   "Centro / Borgo Teresiano": [
+    2899,
+    104
+   ],
+   "Chiadino / Rozzol": [
+    2516,
+    35
+   ],
+   "Città Vecchia / San Giusto": [
+    4333,
+    35
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2778,
+    43
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2157,
+    13
+   ],
+   "Muggia": [
+    2977,
+    42
+   ],
+   "Roiano": [
+    2692,
+    43
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1953,
+    46
+   ],
+   "San Luigi / Guardiella": [
+    2151,
+    40
+   ],
+   "San Vito / Campi Elisi": [
+    2964,
+    48
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1875,
+    81
+   ],
+   "Tutta la provincia": [
+    2451,
+    926
+   ]
+  },
+  "2026-10-02": {
+   "Barcola / Grignano / Miramare": [
+    2697,
+    24
+   ],
+   "Barriera": [
+    2149,
+    61
+   ],
+   "Borgo Franceschino / Giulia": [
+    2581,
+    75
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    56
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2899,
+    104
+   ],
+   "Chiadino / Rozzol": [
+    2516,
+    35
+   ],
+   "Città Vecchia / San Giusto": [
+    4333,
+    35
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2778,
+    43
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2091,
+    15
+   ],
+   "Muggia": [
+    2955,
+    43
+   ],
+   "Roiano": [
+    2692,
+    43
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1987,
+    45
+   ],
+   "San Luigi / Guardiella": [
+    2151,
+    40
+   ],
+   "San Vito / Campi Elisi": [
+    2964,
+    48
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    82
+   ],
+   "Tutta la provincia": [
+    2447,
+    934
+   ]
+  },
+  "2026-10-03": {
+   "Barcola / Grignano / Miramare": [
+    2697,
+    24
+   ],
+   "Barriera": [
+    2140,
+    61
+   ],
+   "Borgo Franceschino / Giulia": [
+    2581,
+    75
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    56
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2899,
+    104
+   ],
+   "Chiadino / Rozzol": [
+    2516,
+    35
+   ],
+   "Città Vecchia / San Giusto": [
+    4333,
+    35
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2746,
+    44
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2091,
+    15
+   ],
+   "Muggia": [
+    2955,
+    43
+   ],
+   "Roiano": [
+    2692,
+    43
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1987,
+    45
+   ],
+   "San Luigi / Guardiella": [
+    2151,
+    40
+   ],
+   "San Vito / Campi Elisi": [
+    2964,
+    48
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    83
+   ],
+   "Tutta la provincia": [
+    2447,
+    936
+   ]
+  },
+  "2026-10-04": {
+   "Barcola / Grignano / Miramare": [
+    2697,
+    24
+   ],
+   "Barriera": [
+    2140,
+    61
+   ],
+   "Borgo Franceschino / Giulia": [
+    2581,
+    75
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    56
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2899,
+    104
+   ],
+   "Chiadino / Rozzol": [
+    2516,
+    35
+   ],
+   "Città Vecchia / San Giusto": [
+    4333,
+    35
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2746,
+    44
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2091,
+    15
+   ],
+   "Muggia": [
+    2955,
+    43
+   ],
+   "Roiano": [
+    2692,
+    43
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1987,
+    45
+   ],
+   "San Luigi / Guardiella": [
+    2151,
+    40
+   ],
+   "San Vito / Campi Elisi": [
+    2964,
+    48
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    83
+   ],
+   "Tutta la provincia": [
+    2447,
+    936
+   ]
+  },
+  "2026-10-05": {
+   "Barcola / Grignano / Miramare": [
+    2697,
+    24
+   ],
+   "Barriera": [
+    2140,
+    61
+   ],
+   "Borgo Franceschino / Giulia": [
+    2581,
+    75
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    56
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2899,
+    104
+   ],
+   "Chiadino / Rozzol": [
+    2536,
+    36
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    36
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2746,
+    44
+   ],
+   "Duino-Aurisina": [
+    2662,
+    32
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2124,
+    16
+   ],
+   "Muggia": [
+    2947,
+    42
+   ],
+   "Roiano": [
+    2692,
+    43
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1953,
+    42
+   ],
+   "San Luigi / Guardiella": [
+    2151,
+    40
+   ],
+   "San Vito / Campi Elisi": [
+    2964,
+    48
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    81
+   ],
+   "Tutta la provincia": [
+    2456,
+    930
+   ]
+  },
+  "2026-10-06": {
+   "Barcola / Grignano / Miramare": [
+    2697,
+    24
+   ],
+   "Barriera": [
+    2146,
+    60
+   ],
+   "Borgo Franceschino / Giulia": [
+    2567,
+    76
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    57
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2887,
+    105
+   ],
+   "Chiadino / Rozzol": [
+    2536,
+    36
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    36
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2778,
+    45
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2124,
+    16
+   ],
+   "Muggia": [
+    3033,
+    40
+   ],
+   "Roiano": [
+    2692,
+    41
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1920,
+    43
+   ],
+   "San Luigi / Guardiella": [
+    2151,
+    40
+   ],
+   "San Vito / Campi Elisi": [
+    2964,
+    48
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    81
+   ],
+   "Tutta la provincia": [
+    2458,
+    931
+   ]
+  },
+  "2026-10-07": {
+   "Barcola / Grignano / Miramare": [
+    2697,
+    24
+   ],
+   "Barriera": [
+    2146,
+    60
+   ],
+   "Borgo Franceschino / Giulia": [
+    2581,
+    77
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3736,
+    55
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2887,
+    105
+   ],
+   "Chiadino / Rozzol": [
+    2536,
+    34
+   ],
+   "Città Vecchia / San Giusto": [
+    4333,
+    37
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2778,
+    45
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2124,
+    16
+   ],
+   "Muggia": [
+    3033,
+    40
+   ],
+   "Roiano": [
+    2692,
+    41
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1920,
+    43
+   ],
+   "San Luigi / Guardiella": [
+    2151,
+    40
+   ],
+   "San Vito / Campi Elisi": [
+    2946,
+    49
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    81
+   ],
+   "Tutta la provincia": [
+    2460,
+    931
+   ]
+  },
+  "2026-10-08": {
+   "Barcola / Grignano / Miramare": [
+    2611,
+    25
+   ],
+   "Barriera": [
+    2125,
+    62
+   ],
+   "Borgo Franceschino / Giulia": [
+    2617,
+    76
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    53
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2912,
+    107
+   ],
+   "Chiadino / Rozzol": [
+    2536,
+    34
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    36
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2778,
+    45
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2124,
+    16
+   ],
+   "Muggia": [
+    3033,
+    40
+   ],
+   "Roiano": [
+    2754,
+    39
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1920,
+    43
+   ],
+   "San Luigi / Guardiella": [
+    2127,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2946,
+    49
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    83
+   ],
+   "Tutta la provincia": [
+    2461,
+    932
+   ]
+  },
+  "2026-10-09": {
+   "Barcola / Grignano / Miramare": [
+    2611,
+    25
+   ],
+   "Barriera": [
+    2146,
+    62
+   ],
+   "Borgo Franceschino / Giulia": [
+    2567,
+    76
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    53
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2970,
+    107
+   ],
+   "Chiadino / Rozzol": [
+    2502,
+    34
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    36
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2798,
+    44
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2157,
+    15
+   ],
+   "Muggia": [
+    2981,
+    40
+   ],
+   "Roiano": [
+    2723,
+    38
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1857,
+    43
+   ],
+   "San Luigi / Guardiella": [
+    2127,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2946,
+    49
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    84
+   ],
+   "Tutta la provincia": [
+    2464,
+    930
+   ]
+  },
+  "2026-10-10": {
+   "Barcola / Grignano / Miramare": [
+    2611,
+    25
+   ],
+   "Barriera": [
+    2146,
+    62
+   ],
+   "Borgo Franceschino / Giulia": [
+    2567,
+    76
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3694,
+    52
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2970,
+    109
+   ],
+   "Chiadino / Rozzol": [
+    2516,
+    33
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    36
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2798,
+    44
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2157,
+    15
+   ],
+   "Muggia": [
+    2981,
+    40
+   ],
+   "Roiano": [
+    2723,
+    38
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1857,
+    43
+   ],
+   "San Luigi / Guardiella": [
+    2127,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2946,
+    49
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    86
+   ],
+   "Tutta la provincia": [
+    2461,
+    932
+   ]
+  },
+  "2026-10-11": {
+   "Barcola / Grignano / Miramare": [
+    2611,
+    25
+   ],
+   "Barriera": [
+    2146,
+    62
+   ],
+   "Borgo Franceschino / Giulia": [
+    2567,
+    76
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3694,
+    52
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2970,
+    109
+   ],
+   "Chiadino / Rozzol": [
+    2516,
+    33
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    36
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2798,
+    44
+   ],
+   "Duino-Aurisina": [
+    2688,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2157,
+    15
+   ],
+   "Muggia": [
+    2981,
+    40
+   ],
+   "Roiano": [
+    2723,
+    38
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1857,
+    43
+   ],
+   "San Luigi / Guardiella": [
+    2127,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2946,
+    49
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    86
+   ],
+   "Tutta la provincia": [
+    2461,
+    932
+   ]
+  },
+  "2026-10-12": {
+   "Barcola / Grignano / Miramare": [
+    2611,
+    25
+   ],
+   "Barriera": [
+    2125,
+    62
+   ],
+   "Borgo Franceschino / Giulia": [
+    2553,
+    75
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    51
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2970,
+    109
+   ],
+   "Chiadino / Rozzol": [
+    2536,
+    32
+   ],
+   "Città Vecchia / San Giusto": [
+    5323,
+    35
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2778,
+    45
+   ],
+   "Duino-Aurisina": [
+    2705,
+    32
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2157,
+    15
+   ],
+   "Muggia": [
+    2981,
+    40
+   ],
+   "Roiano": [
+    2721,
+    36
+   ],
+   "San Dorligo della Valle": [
+    1992,
+    11
+   ],
+   "San Giacomo": [
+    1857,
+    43
+   ],
+   "San Luigi / Guardiella": [
+    2127,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2914,
+    48
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    86
+   ],
+   "Tutta la provincia": [
+    2463,
+    923
+   ]
+  },
+  "2026-10-13": {
+   "Barcola / Grignano / Miramare": [
+    2611,
+    25
+   ],
+   "Barriera": [
+    2140,
+    61
+   ],
+   "Borgo Franceschino / Giulia": [
+    2553,
+    75
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3694,
+    52
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2970,
+    109
+   ],
+   "Chiadino / Rozzol": [
+    2580,
+    33
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    36
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2798,
+    46
+   ],
+   "Duino-Aurisina": [
+    2705,
+    32
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2157,
+    15
+   ],
+   "Muggia": [
+    2981,
+    40
+   ],
+   "Roiano": [
+    2721,
+    36
+   ],
+   "San Dorligo della Valle": [
+    2061,
+    10
+   ],
+   "San Giacomo": [
+    1857,
+    43
+   ],
+   "San Luigi / Guardiella": [
+    2127,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2914,
+    48
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1857,
+    86
+   ],
+   "Tutta la provincia": [
+    2469,
+    927
+   ]
+  },
+  "2026-10-14": {
+   "Barcola / Grignano / Miramare": [
+    2611,
+    25
+   ],
+   "Barriera": [
+    2159,
+    66
+   ],
+   "Borgo Franceschino / Giulia": [
+    2562,
+    76
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    50
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2912,
+    109
+   ],
+   "Chiadino / Rozzol": [
+    2556,
+    35
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    36
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2778,
+    47
+   ],
+   "Duino-Aurisina": [
+    2722,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2091,
+    17
+   ],
+   "Muggia": [
+    3067,
+    39
+   ],
+   "Roiano": [
+    2721,
+    36
+   ],
+   "San Dorligo della Valle": [
+    2061,
+    10
+   ],
+   "San Giacomo": [
+    1889,
+    44
+   ],
+   "San Luigi / Guardiella": [
+    2176,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2946,
+    51
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1864,
+    86
+   ],
+   "Tutta la provincia": [
+    2472,
+    945
+   ]
+  },
+  "2026-10-15": {
+   "Barcola / Grignano / Miramare": [
+    2611,
+    25
+   ],
+   "Barriera": [
+    2159,
+    66
+   ],
+   "Borgo Franceschino / Giulia": [
+    2562,
+    76
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3721,
+    50
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2256,
+    26
+   ],
+   "Centro / Borgo Teresiano": [
+    2899,
+    110
+   ],
+   "Chiadino / Rozzol": [
+    2556,
+    35
+   ],
+   "Città Vecchia / San Giusto": [
+    4828,
+    36
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2798,
+    48
+   ],
+   "Duino-Aurisina": [
+    2722,
+    33
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2091,
+    17
+   ],
+   "Muggia": [
+    3067,
+    39
+   ],
+   "Roiano": [
+    2721,
+    36
+   ],
+   "San Dorligo della Valle": [
+    2061,
+    10
+   ],
+   "San Giacomo": [
+    1889,
+    44
+   ],
+   "San Luigi / Guardiella": [
+    2176,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2946,
+    51
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1864,
+    86
+   ],
+   "Tutta la provincia": [
+    2474,
+    945
+   ]
+  }
+ }
+}

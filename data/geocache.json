@@ -70,6 +70,9 @@
 ],
 "appartamento in via del crocifisso 5|trieste": null,
 "attico su due piani in via besenghi 19|trieste": null,
+"borgo carsico|trieste": {
+"miss": "2026-10-15"
+},
 "borgo san mauro|duino-aurisina": [
 45.76639,
 13.64153
@@ -503,6 +506,10 @@
 13.77223
 ],
 "via carlo ghega, trieste, ts, italia|trieste": null,
+"via carlo ghega|trieste": [
+45.65541,
+13.7748
+],
 "via carlo wostry|trieste": [
 45.64047,
 13.80448
@@ -920,6 +927,10 @@
 45.64042,
 13.79525
 ],
+"via dello scoglio 36|trieste": [
+45.66127,
+13.80057
+],
 "via dello scoglio, 137, trieste ts|trieste": null,
 "via di cavana, 15|trieste": [
 45.64739,
@@ -1153,6 +1164,10 @@
 45.64201,
 13.78757
 ],
+"via locchi|trieste": [
+45.64078,
+13.7624
+],
 "via luigi einaudi 3|trieste": [
 45.65041,
 13.76964
@@ -1343,6 +1358,10 @@
 "via pisino, 8|trieste": [
 45.63144,
 13.78839
+],
+"via pollaiuolo|trieste": [
+45.64012,
+13.79251
 ],
 "via ponziana, ponziana, san giacomo, barriera vecchia-san giacomo, trieste, friuli-venezia giulia, 34137, italia|trieste": null,
 "via puccini|trieste": [
@@ -1567,6 +1586,10 @@
 45.66297,
 13.7711
 ],
+"via udine|trieste": [
+45.66259,
+13.77121
+],
 "via ugo foscolo 7|trieste": [
 45.64672,
 13.78154
@@ -1624,6 +1647,10 @@
 45.66501,
 13.78563
 ],
+"via vinicio lago 14|trieste": [
+45.62044,
+13.82341
+],
 "via virgilio|trieste": [
 45.65965,
 13.77679
@@ -1639,6 +1666,10 @@
 "viale d'annunzio|trieste": [
 45.64105,
 13.78673
+],
+"viale gabriele d'annunzio 40|trieste": [
+45.64212,
+13.78568
 ],
 "viale ippodromo, 10, 34100 trieste ts|trieste": [
 45.63984,
@@ -1718,6 +1749,10 @@
 "vicolo ospitale militare 16/1|trieste": [
 45.65936,
 13.78514
+],
+"vicolo san fortunato 5|trieste": [
+45.66553,
+13.76823
 ],
 "|monrupino": null,
 "|muggia": null,

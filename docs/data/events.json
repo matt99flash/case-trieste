@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T08:10:03+00:00",
+ "updated": "2026-10-15T08:16:58+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5928,6 +5928,20 @@
    "id": "b1-perla:lussuoso-appartamento-in-centro-citta",
    "source": "b1-perla",
    "price": 358000
+  },
+  {
+   "ts": "2026-10-15T08:16:58+00:00",
+   "type": "removed",
+   "id": "b1-perla:via-mazzini-locale-commerciale",
+   "source": "b1-perla",
+   "price": 400000
+  },
+  {
+   "ts": "2026-10-15T08:16:58+00:00",
+   "type": "new",
+   "id": "b1-project-immobiliare:150",
+   "source": "b1-project-immobiliare",
+   "price": 279000
   }
  ]
 }
