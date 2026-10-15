@@ -1,0 +1,40 @@
+# Batch F - Trieste - Greif Group, Agenzia Elle B, Omnia Costruzioni, Agenzia La Julia
+sources:
+  # ---------------------------------------------------------------- Greif Group (Next.js)
+  - id: greif-group
+    name: Greif Group (Gruppo Greif)
+    kind: agenzia
+    website: https://www.greif-group.com/
+    adapter: F_greif
+    delay: 1.2
+
+  # ---------------------------------------------------------------- Agenzia Immobiliare Elle B (Gorizia)
+  # Gestionale "Banca delle Case": NON impostare un comune di default, la maggior parte degli annunci è
+  # fuori provincia (Gorizia/Gradisca/Monfalcone/Romans d'Isonzo...); il comune è letto dal campo 'vals'
+  # dell'URL della scheda dall'adattatore stesso.
+  - id: agenzia-elle-b
+    name: Agenzia Immobiliare Elle B
+    kind: agenzia
+    website: https://www.agenziaelleb.it/
+    adapter: F_bancadellecase
+    delay: 1.2
+
+  # ---------------------------------------------------------------- Omnia Costruzioni (costruttore, Muggia)
+  - id: omnia-costruzioni
+    name: Omnia Costruzioni S.r.l.
+    kind: costruttore
+    website: https://www.omniacostruzionisrl.it/
+    adapter: F_omnia
+    delay: 1.0
+
+  # ---------------------------------------------------------------- Agenzia Immobiliare La Julia (Gorizia)
+  # CMS "WEBS" (55 annunci totali, quasi tutti fuori provincia): niente comune di default nel codice.
+  # L'adattatore F_lajulia filtra per comune lato API (criterio 'locationId' del motore di ricerca) e
+  # VERIFICA che il filtro sia davvero "Trieste" (solleva un'eccezione altrimenti), prima di assegnare
+  # il comune: non è una deduzione dal testo, ma una condizione controllata sulla richiesta stessa.
+  - id: la-julia
+    name: Agenzia Immobiliare La Julia
+    kind: agenzia
+    website: https://www.lajulia.it/
+    adapter: F_lajulia
+    delay: 1.2
