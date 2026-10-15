@@ -1,0 +1,498 @@
+{
+ "fetched": "2026-10-15",
+ "semestre": "2025/2",
+ "fonte": "Agenzia Entrate - OMI",
+ "zone": {
+  "L424/R1": {
+   "comune": "Trieste",
+   "zona": "R1",
+   "nome": "Regione Agraria 19 - I Borghi Dell`Altipiano",
+   "valori": {
+    "Abitazioni civili": [
+     1650,
+     2050,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1400,
+     1700,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1650,
+     2200,
+     "normale"
+    ]
+   }
+  },
+  "L424/D1": {
+   "comune": "Trieste",
+   "zona": "D1",
+   "nome": "Periferia Sud - S.M.M. Superiore - S.M.M. Inferiore - Zona Industriale - Altura - San Sergio",
+   "valori": {
+    "Abitazioni civili": [
+     1650,
+     1900,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1400,
+     1700,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1700,
+     2100,
+     "normale"
+    ]
+   }
+  },
+  "L424/B2": {
+   "comune": "Trieste",
+   "zona": "B2",
+   "nome": "Centro Storico",
+   "valori": {
+    "Abitazioni civili": [
+     2250,
+     3100,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1900,
+     2450,
+     "normale"
+    ]
+   }
+  },
+  "L424/C2": {
+   "comune": "Trieste",
+   "zona": "C2",
+   "nome": "San Giacomo - Chiarbola - Servola - Monte San Pantaleone",
+   "valori": {
+    "Abitazioni civili": [
+     1600,
+     1950,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1200,
+     1600,
+     "normale"
+    ]
+   }
+  },
+  "L424/C3": {
+   "comune": "Trieste",
+   "zona": "C3",
+   "nome": "Cologna - Roiano - Parte Gretta",
+   "valori": {
+    "Abitazioni civili": [
+     1650,
+     2100,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1350,
+     1700,
+     "normale"
+    ],
+    "Ville e Villini": [
+     2100,
+     3000,
+     "ottimo"
+    ]
+   }
+  },
+  "L424/C4": {
+   "comune": "Trieste",
+   "zona": "C4",
+   "nome": "Chiadino - Guardiella - San Giovanni - Rozzol",
+   "valori": {
+    "Abitazioni civili": [
+     1750,
+     2200,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1400,
+     1800,
+     "normale"
+    ],
+    "Ville e Villini": [
+     2000,
+     2750,
+     "ottimo"
+    ]
+   }
+  },
+  "L424/C5": {
+   "comune": "Trieste",
+   "zona": "C5",
+   "nome": "Scorcola",
+   "valori": {
+    "Abitazioni civili": [
+     1850,
+     2750,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1450,
+     1850,
+     "normale"
+    ],
+    "Ville e Villini": [
+     2500,
+     3200,
+     "ottimo"
+    ]
+   }
+  },
+  "L424/B1": {
+   "comune": "Trieste",
+   "zona": "B1",
+   "nome": "Centro Urbano",
+   "valori": {
+    "Abitazioni civili": [
+     1650,
+     2100,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1450,
+     1750,
+     "normale"
+    ]
+   }
+  },
+  "L424/C1": {
+   "comune": "Trieste",
+   "zona": "C1",
+   "nome": "San Vito",
+   "valori": {
+    "Abitazioni civili": [
+     1800,
+     2500,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1450,
+     1800,
+     "normale"
+    ]
+   }
+  },
+  "L424/D3": {
+   "comune": "Trieste",
+   "zona": "D3",
+   "nome": "Parte Gretta - Barcola - Costiera",
+   "valori": {
+    "Abitazioni civili": [
+     2000,
+     2900,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1500,
+     2000,
+     "normale"
+    ],
+    "Ville e Villini": [
+     2100,
+     2950,
+     "normale"
+    ]
+   }
+  },
+  "L424/D2": {
+   "comune": "Trieste",
+   "zona": "D2",
+   "nome": "Opicina",
+   "valori": {
+    "Abitazioni civili": [
+     1800,
+     2350,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1450,
+     1900,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1650,
+     2450,
+     "normale"
+    ]
+   }
+  },
+  "F795/R1": {
+   "comune": "Muggia",
+   "zona": "R1",
+   "nome": "Regione Agraria 19",
+   "valori": {}
+  },
+  "F795/D1": {
+   "comune": "Muggia",
+   "zona": "D1",
+   "nome": "Restante Territorio",
+   "valori": {
+    "Abitazioni civili": [
+     1550,
+     1850,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1250,
+     1650,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1500,
+     2200,
+     "normale"
+    ]
+   }
+  },
+  "F795/B1": {
+   "comune": "Muggia",
+   "zona": "B1",
+   "nome": "Centro Storico - Centro Urbano",
+   "valori": {
+    "Abitazioni civili": [
+     1650,
+     2000,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1350,
+     1750,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1550,
+     2250,
+     "normale"
+    ]
+   }
+  },
+  "F795/D2": {
+   "comune": "Muggia",
+   "zona": "D2",
+   "nome": "Porto San Rocco",
+   "valori": {
+    "Abitazioni civili": [
+     2400,
+     3200,
+     "normale"
+    ]
+   }
+  },
+  "D383/R1": {
+   "comune": "Duino-Aurisina",
+   "zona": "R1",
+   "nome": "Regione Agraria 19 - Medeazza - Slivia - S.Pelagio - Malchina",
+   "valori": {
+    "Abitazioni civili": [
+     1450,
+     1800,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1250,
+     1500,
+     "normale"
+    ],
+    "Ville e Villini": [
+     2100,
+     2800,
+     "ottimo"
+    ]
+   }
+  },
+  "D383/D1": {
+   "comune": "Duino-Aurisina",
+   "zona": "D1",
+   "nome": "Villaggio Del Pescatore - Sistiana - Visogliano - Aurisina Cave, Centro, Stazione",
+   "valori": {
+    "Abitazioni civili": [
+     1700,
+     2050,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1400,
+     1800,
+     "normale"
+    ],
+    "Ville e Villini": [
+     2100,
+     2900,
+     "ottimo"
+    ]
+   }
+  },
+  "D383/B1": {
+   "comune": "Duino-Aurisina",
+   "zona": "B1",
+   "nome": "Duino",
+   "valori": {
+    "Abitazioni civili": [
+     1750,
+     2100,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1450,
+     1850,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1800,
+     2600,
+     "normale"
+    ]
+   }
+  },
+  "D383/D2": {
+   "comune": "Duino-Aurisina",
+   "zona": "D2",
+   "nome": "Porto Piccolo",
+   "valori": {
+    "Abitazioni civili": [
+     5400,
+     7600,
+     "ottimo"
+    ]
+   }
+  },
+  "D324/R1": {
+   "comune": "San Dorligo della Valle",
+   "zona": "R1",
+   "nome": "Regione Agraria 19 - Sant`Antonio In Bosco - Grozzana - Prebenico - Caresana",
+   "valori": {
+    "Abitazioni civili": [
+     1450,
+     1800,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1250,
+     1550,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1400,
+     2000,
+     "normale"
+    ]
+   }
+  },
+  "D324/D1": {
+   "comune": "San Dorligo della Valle",
+   "zona": "D1",
+   "nome": "Restante Territorio Edificato",
+   "valori": {
+    "Abitazioni civili": [
+     1450,
+     1800,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1250,
+     1550,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1400,
+     2000,
+     "normale"
+    ]
+   }
+  },
+  "D324/B1": {
+   "comune": "San Dorligo della Valle",
+   "zona": "B1",
+   "nome": "Centro Storico San Dorligo Della Valle - Bagnoli Della Rosandra",
+   "valori": {
+    "Abitazioni di tipo economico": [
+     1100,
+     1450,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1400,
+     2000,
+     "normale"
+    ]
+   }
+  },
+  "I715/R1": {
+   "comune": "Sgonico",
+   "zona": "R1",
+   "nome": "Regione Agraria 19",
+   "valori": {
+    "Abitazioni civili": [
+     1450,
+     1900,
+     "normale"
+    ],
+    "Abitazioni di tipo economico": [
+     1200,
+     1550,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1500,
+     2150,
+     "normale"
+    ]
+   }
+  },
+  "I715/B1": {
+   "comune": "Sgonico",
+   "zona": "B1",
+   "nome": "Centro Storico Di Sgonico",
+   "valori": {
+    "Abitazioni di tipo economico": [
+     1200,
+     1550,
+     "normale"
+    ]
+   }
+  },
+  "F378/R1": {
+   "comune": "Monrupino",
+   "zona": "R1",
+   "nome": "Regione Agraria 19",
+   "valori": {
+    "Abitazioni di tipo economico": [
+     1100,
+     1600,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1950,
+     2700,
+     "ottimo"
+    ]
+   }
+  },
+  "F378/B1": {
+   "comune": "Monrupino",
+   "zona": "B1",
+   "nome": "Intero Territorio Del Comune",
+   "valori": {
+    "Abitazioni di tipo economico": [
+     1100,
+     1600,
+     "normale"
+    ],
+    "Ville e Villini": [
+     1950,
+     2700,
+     "ottimo"
+    ]
+   }
+  }
+ }
+}

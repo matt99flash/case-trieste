@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T08:16:58+00:00",
+ "updated": "2026-10-15T08:43:47+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -5942,6 +5942,41 @@
    "id": "b1-project-immobiliare:150",
    "source": "b1-project-immobiliare",
    "price": 279000
+  },
+  {
+   "ts": "2026-10-15T08:43:47+00:00",
+   "type": "new",
+   "id": "fiorini-immobiliare:via-concordia",
+   "source": "fiorini-immobiliare",
+   "price": 49000
+  },
+  {
+   "ts": "2026-10-15T08:43:47+00:00",
+   "type": "new",
+   "id": "fiorini-immobiliare:loft-centro-storico",
+   "source": "fiorini-immobiliare",
+   "price": 310000
+  },
+  {
+   "ts": "2026-10-15T08:43:47+00:00",
+   "type": "back",
+   "id": "fiorini-immobiliare:campo-romano",
+   "source": "fiorini-immobiliare",
+   "price": null
+  },
+  {
+   "ts": "2026-10-15T08:43:47+00:00",
+   "type": "new",
+   "id": "fiorini-immobiliare:semicentrale",
+   "source": "fiorini-immobiliare",
+   "price": 193000
+  },
+  {
+   "ts": "2026-10-15T08:43:47+00:00",
+   "type": "new",
+   "id": "fiorini-immobiliare:via-conti",
+   "source": "fiorini-immobiliare",
+   "price": 220000
   }
  ]
 }
