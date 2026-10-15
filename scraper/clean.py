@@ -3,6 +3,9 @@
 Si applica sia agli annunci appena letti sia a tutto l'archivio a ogni giro (è idempotente), così le
 correzioni valgono anche per gli annunci già salvati.
 """
+import re
+
+from .parse_utils import floor_level
 from .zones import ZONES_TRIESTE, detect_zone, norm
 
 # nomi alternativi usati da alcuni adattatori -> nome standard
@@ -13,6 +16,9 @@ PPM_MAX = 15_000      # €/m² oltre cui la superficie letta è certamente sbag
 PPM_MIN = 300         # sotto: quasi sempre è la metratura del terreno/giardino, non dell'abitazione
 MQ_MIN = 18
 # titoli che iniziano così sono box/posti auto anche se il sito li ha classificati come abitazione
+# testi di pagina finiti per errore nel campo indirizzo
+JUNK_ADDRESS = {"descrizione", "dettagli", "apri su google maps", "address", "indirizzo", "piani", "calcolatore di rata",
+                "caratteristiche", "superficie", "mappa", "posizione", "zona", "localita", "dove si trova"}
 BOX_STARTS = ("box", "garage", "posto auto", "posti auto", "posto moto", "posti moto", "autorimessa", "posto macchina")
 
 
@@ -30,7 +36,25 @@ def canonical_zone(rec: dict) -> str | None:
     return detect_zone(rec.get("address"), rec.get("title")) or detect_zone(rec.get("description"))
 
 
+def clean_address(a):
+    if not a:
+        return None
+    t = norm(a).strip(" :.,-")
+    if not re.search(r"[a-z]", t) or t in JUNK_ADDRESS:
+        return None
+    return a
+
+
+def clean_floor(f):
+    """Tiene il piano solo se è davvero un piano ("2°", "terra") o "su più livelli"; scarta ":" e testi di pagina."""
+    if f is None or floor_level(f) is not None or "livell" in norm(str(f)):
+        return f
+    return None
+
+
 def clean_record(rec: dict) -> dict:
+    rec["address"] = clean_address(rec.get("address"))
+    rec["floor"] = clean_floor(rec.get("floor"))
     feats = rec.get("features")
     if feats:
         for alias, std in FEATURE_ALIASES.items():

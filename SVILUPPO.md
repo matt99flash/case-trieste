@@ -8,10 +8,16 @@
   (JSON-LD, meta, coppie etichetta/valore, testo), `ref_from_url`, `soup_of`, `abs_url`.
 - `scraper/sources/generic.py` – adattatore configurabile (pagine elenco → link schede → dettaglio).
 - `scraper/models.py` – `Listing` (campi normalizzati). `finalize()` deduce comune, zona, tipologia, stato.
-- `scraper/store.py` – archivio in `docs/data/*.json`, eventi (new, price_down, price_up, removed, sold, back).
+- `scraper/store.py` – archivio in `docs/data/*.json` (`listings.json` leggero per la dashboard, testi e foto in
+  `details.json` caricato dopo; `last_seen` salvato solo come data per non riscrivere tutto l'archivio a ogni giro), eventi (new, price_down, price_up, removed, sold, back).
   Una fonte con pochi annunci che all'improvviso risulta vuota è "sospetta" (nessun annuncio rimosso) per 12 giri.
 - `scraper/clean.py` – pulizia applicata a ogni giro a tutto l'archivio: zone canoniche, nomi caratteristiche,
   superfici impossibili scartate, box scambiati per appartamenti.
+- `scraper/geocode.py` – posizione dalla via (indirizzo, poi titolo, poi descrizione "situato in via ...") con
+  OpenStreetMap; "non trovato" ritentato dopo 60 giorni; i punti condivisi da 6+ annunci della stessa fonte sono la sede
+  dell'agenzia e vengono scartati. La zona di Trieste si ricava dalla posizione.
+- `scraper/dedup.py` – stessa casa su più agenzie: prezzo/superficie vicini + luogo (stessa via, < 150 m o stessa zona);
+  vie diverse, piani diversi o > 600 m = case diverse. Due gruppi si uniscono solo se nessuna coppia è incompatibile.
 - `scraper/notify.py` – notifiche ntfy, avviso fonti rotte, riepilogo settimanale (primo giro dopo lunedì alle 7).
 - `scraper/favorites.py` + `.github/workflows/preferiti.yml` – preferiti condivisi tra i dispositivi collegati
   (issue "Preferiti ..." del proprietario → `docs/favorites.json`, codici FNV-1a a 8 cifre dell'id della casa).
@@ -31,5 +37,6 @@
 
 ## Prove
 ```
-python -m scraper.run --only id_fonte --no-notify
+python -m unittest discover tests                    # regole di lettura (anche su GitHub a ogni modifica)
+python -m scraper.run --only id_fonte --no-notify    # una fonte; con CASE_DATA_DIR=cartella usa una copia dei dati
 ```

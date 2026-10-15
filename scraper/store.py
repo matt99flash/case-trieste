@@ -10,6 +10,9 @@ DATA_DIR = os.environ.get("CASE_DATA_DIR") or os.path.join(os.path.dirname(os.pa
 LISTINGS_FILE = os.path.join(DATA_DIR, "listings.json")
 EVENTS_FILE = os.path.join(DATA_DIR, "events.json")
 SOURCES_FILE = os.path.join(DATA_DIR, "sources.json")
+# testi e foto in un file a parte: la dashboard mostra subito l'elenco (leggero) e li carica dopo
+DETAILS_FILE = os.path.join(DATA_DIR, "details.json")
+HEAVY_FIELDS = ("description", "images")
 
 MISSING_RUNS_TO_REMOVE = 2      # giri consecutivi senza vederlo prima di considerarlo "ritirato/venduto"
 MIN_RATIO_OK = 0.5              # se una fonte restituisce meno della metà del solito, il giro è sospetto
@@ -58,6 +61,11 @@ def _dump(path, obj, one_per_line_key=None):
 class Store:
     def __init__(self):
         raw = _load(LISTINGS_FILE, {"listings": []})
+        details = {x["id"]: x for x in _load(DETAILS_FILE, {"details": []}).get("details", [])}
+        for x in raw.get("listings", []):
+            for k in HEAVY_FIELDS:
+                if k in details.get(x["id"], {}):
+                    x[k] = details[x["id"]][k]
         self.listings: dict[str, dict] = {x["id"]: clean_record(x) for x in raw.get("listings", [])}
         ev = _load(EVENTS_FILE, {"events": []})
         self.events: list[dict] = ev.get("events", [])
@@ -155,7 +163,12 @@ class Store:
                     rec["price_history"].append([self.ts, new_price])
                 if rec.get("sold") and not was_sold:
                     self._event("sold", rec, price=new_price)
-            rec["last_seen"] = self.ts
+                if d.get("_nogeo"):
+                    # la posizione data dalla fonte era la sede dell'agenzia: via quella salvata e la zona che ne derivava
+                    rec["lat"] = rec["lon"] = rec["geo"] = None
+                    rec["zone"] = d.get("zone")
+            # solo la data: aggiornare l'ora a ogni giro riscriverebbe tutto l'archivio a ogni salvataggio
+            rec["last_seen"] = self.ts[:10]
             rec["missing_runs"] = 0
             if lid in (detail_ids or set()):
                 rec["detail_at"] = self.ts
@@ -190,7 +203,13 @@ class Store:
         self.events.extend(self.new_events)
         self.prune()
         listings = sorted(self.listings.values(), key=lambda r: r["id"])
-        _dump(LISTINGS_FILE, {"updated": self.ts, "listings": listings}, one_per_line_key="listings")
+        light, details = [], []
+        for r in listings:
+            light.append({**{k: v for k, v in r.items() if k not in HEAVY_FIELDS}, "images": (r.get("images") or [])[:1]})
+            if r.get("description") or len(r.get("images") or []) > 1:
+                details.append({"id": r["id"], **{k: r.get(k) for k in HEAVY_FIELDS}})
+        _dump(LISTINGS_FILE, {"updated": self.ts, "listings": light}, one_per_line_key="listings")
+        _dump(DETAILS_FILE, {"updated": self.ts, "details": details}, one_per_line_key="details")
         _dump(EVENTS_FILE, {"updated": self.ts, "weekly_at": self.weekly_at,
                             "weekly_stats": self.weekly_stats, "events": self.events})
         _dump(SOURCES_FILE, {"updated": self.ts, "sources": self.sources})

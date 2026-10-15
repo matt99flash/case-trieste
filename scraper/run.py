@@ -119,7 +119,7 @@ def main():
             enrich(r[1], geocoder)
     geocoder.save()
     if geocoder.done:
-        print(f"Geocodifica: {geocoder.done} indirizzi nuovi cercati")
+        print(f"Geocodifica: {geocoder.done} indirizzi nuovi cercati ({dict(geocoder.stats)})")
     by_id = {s["id"]: s for s in sources}
     for sid, items, err, detail_ids, stats in results:
         store.apply_source(sid, names[sid], items, err, detail_ids, stats)

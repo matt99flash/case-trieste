@@ -35,7 +35,9 @@ const S = { listings: [], byId: new Map(), groups: new Map(), events: [], source
 // ------------------------------------------------------------------ dati
 
 async function load() {
-  const get = async f => { const r = await fetch(`data/${f}?t=${Date.now()}`); if (!r.ok) throw new Error(f); return r.json(); };
+  // "no-cache": il browser chiede sempre al server, ma riscarica il file solo se è cambiato
+  // (i file piccoli impostati dall'utente, notify/favorites, saltano anche la cache di GitHub Pages)
+  const get = async f => { const r = await fetch(`data/${f}`, { cache: "no-cache" }); if (!r.ok) throw new Error(f); return r.json(); };
   const [l, e, s] = await Promise.all([get("listings.json"), get("events.json").catch(() => ({ events: [] })), get("sources.json").catch(() => ({ sources: {} }))]);
   S.updated = l.updated;
   S.notify = await fetch(`notify.json?t=${Date.now()}`).then(r => r.ok ? r.json() : null).catch(() => null);
@@ -52,6 +54,19 @@ async function load() {
     S.groups.get(g).push(r);
   }
   computeZoneMedians();
+}
+
+// testi e foto (file separato, più pesante): caricati dopo che l'elenco è già visibile
+function loadDetails() {
+  S.details = fetch("data/details.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : { details: [] }).then(d => {
+    for (const x of d.details || []) {
+      const r = S.byId.get(x.id);
+      if (!r) continue;
+      if (x.description) r.description = x.description;
+      if (x.images?.length) r.images = x.images;
+    }
+  }).catch(() => {}).finally(() => { S.detailsReady = true; });
+  return S.details;
 }
 
 // €/mq rispetto alla mediana della zona (solo appartamenti/attici; ogni casa conta una volta; nuove costruzioni escluse dal riferimento)
@@ -335,7 +350,7 @@ function renderMap() {
   setTimeout(() => S.map.invalidateSize(), 50);
 }
 
-function openDetail(gid) {
+function openDetail(gid, refresh) {
   const members = S.groups.get(gid);
   if (!members) return;
   const act = members.filter(m => m.status === "active");
@@ -365,8 +380,11 @@ function openDetail(gid) {
       <p class="muted small">Primo avvistamento: ${fmtDate(firstSeen)}. I dati sono letti in automatico dal sito dell'agenzia: verifica sempre sull'annuncio originale.</p>
     </div>`;
   const dlg = $("#detail");
+  S.openGid = gid;
   if (!dlg.open) dlg.showModal();
-  dlg.scrollTop = 0;
+  if (!refresh) dlg.scrollTop = 0;
+  // scheda aperta prima che arrivassero testi e foto: completala appena ci sono
+  if (!S.detailsReady && S.details) S.details.then(() => { if (dlg.open && S.openGid === gid) openDetail(gid, true); });
 }
 
 // ------------------------------------------------------------------ impostazioni notifiche
@@ -638,4 +656,6 @@ function bind() {
   buildFilters();
   if (!location.hash) history.replaceState(null, "", "#annunci");
   showTab();
+  // la ricerca per parole cerca anche nelle descrizioni: ripeti appena sono disponibili
+  loadDetails().then(() => { if (F.q || location.hash.startsWith("#notifiche")) render(); });
 })();

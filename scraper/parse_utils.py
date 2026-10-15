@@ -181,3 +181,26 @@ def clean_text(s: str | None, limit: int = 1500) -> str | None:
         return None
     s = re.sub(r"\s+", " ", s).strip()
     return s[:limit] if s else None
+
+
+_ORDINALS = {"primo": 1, "secondo": 2, "terzo": 3, "quarto": 4, "quinto": 5, "sesto": 6, "settimo": 7, "ottavo": 8,
+             "nono": 9, "decimo": 10}
+
+
+def floor_level(s) -> int | None:
+    """'2°', 'secondo', '2 piano', 'P2' -> 2; 'piano terra', 'T', 'rialzato' -> 0; 'seminterrato' -> -1.
+    None se il testo non indica un piano (es. 'su più livelli', 'Autonomo')."""
+    t = norm(str(s or "")).strip(" :.")
+    if not t:
+        return None
+    if re.search(r"seminterrat|interrat|sotto ?strada", t):
+        return -1
+    if re.search(r"\bterra\b|^t$|^pt$|^p\.?t\.?$|rialzat|ammezzat|piano strada", t):
+        return 0
+    m = re.search(r"(?<![\d/])(-?\d{1,2})(?![\d/])", t)
+    if m and abs(int(m.group(1))) <= 30:
+        return int(m.group(1))
+    for w, n in _ORDINALS.items():
+        if re.search(r"\b" + w + r"\b", t):
+            return n
+    return None
