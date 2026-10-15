@@ -518,6 +518,7 @@ class ERESource(GenericSource):
         excl = re.compile(cfg["exclude_regex"], re.I) if cfg.get("exclude_regex") else None
         max_pages = cfg.get("max_pages", 40)
         links: dict[str, None] = {}
+        locations: dict[str, str] = {}
         for start in cfg["start_urls"]:
             url, page, visited = start, cfg.get("page_start", 2), set()
             for _ in range(max_pages):
@@ -537,6 +538,12 @@ class ERESource(GenericSource):
                     u = abs_url(url, a["href"])
                     if u and link_rx.search(u) and not (excl and excl.search(u)):
                         links.setdefault(u)
+                # città scritta sulla scheda dell'elenco ("Trieste", "Udine"...): più affidabile del testo
+                if cfg.get("card_location"):
+                    for card in soup.select(cfg["card_location"]["card"]):
+                        a, loc = card.find("a", href=True), card.select_one(cfg["card_location"]["location"])
+                        if a and loc and loc.get_text(strip=True):
+                            locations[abs_url(url, a["href"])] = loc.get_text(" ", strip=True)
                 if len(links) == before:
                     break
                 if cfg.get("page_template"):
@@ -569,6 +576,9 @@ class ERESource(GenericSource):
                 ctx.merge_known(L)
             _fix_town(L)
             _infer_town(L)
+            if locations.get(u):
+                # "Udine" non è un comune della provincia: l'annuncio verrà scartato come fuori provincia
+                L.town = detect_town(locations[u]) or locations[u]
             out.append(L)
         _dedupe_suspicious_prices(out)
         return out

@@ -11,8 +11,6 @@ sources:
     link_regex: 'omegatrieste\.it/property/[^/]+/?$'
 
   - id: fiorini-immobiliare
-    # agenzia triestina: le schede spesso citano solo la via o il rione, senza "Trieste"
-    default_town_if_unrecognized: true
     name: Agenzia Immobiliare Fiorini
     kind: agenzia
     website: https://www.immobiliarefiorini.it/
@@ -21,6 +19,8 @@ sources:
     start_urls:
       - https://www.immobiliarefiorini.it/property-status/vendita/
     page_template: 'https://www.immobiliarefiorini.it/property-status/vendita/page/{n}/'
+    # la città è scritta solo sulla scheda dell'elenco (le pagine dei singoli annunci spesso non la citano)
+    card_location: {card: '.property-block', location: '.location'}
     link_regex: '/elenco-immobili/[a-z0-9-]+/?$'
 
   - id: urban-real-estate

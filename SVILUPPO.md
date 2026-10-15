@@ -22,6 +22,12 @@
   della dashboard); se il file manca ricostruisce i giorni passati dall'archivio.
 - Dashboard, strumenti per decidere: storia della casa, calcolo del costo vero e della rata, stato e appunti
   (solo nel browser, `localStorage`: il repository è pubblico), confronto dei preferiti.
+- `scraper/omi.py` – quotazioni ufficiali OMI (Agenzia Entrate) dalla consultazione pubblica geopoi_omi, aggiornate al
+  massimo una volta al mese: valori in `docs/data/omi.json`, confini in `data/omi_zone.json`; ogni casa con posizione
+  precisa riceve il campo `omi` ("codice comune/zona"). Attenzione: nei confini un "Polygon" può contenere più pezzi
+  separati, per questo si usa la regola pari-dispari su tutti gli anelli.
+- Posizione data dalla fonte fuori provincia: se il testo cita un luogo fuori provincia l'annuncio si scarta,
+  altrimenti si toglie solo la posizione (`run.py`).
 - `scraper/notify.py` – notifiche ntfy, avviso fonti rotte, riepilogo settimanale (primo giro dopo lunedì alle 7).
 - `scraper/favorites.py` + `.github/workflows/preferiti.yml` – preferiti condivisi tra i dispositivi collegati
   (issue "Preferiti ..." del proprietario → `docs/favorites.json`, codici FNV-1a a 8 cifre dell'id della casa).

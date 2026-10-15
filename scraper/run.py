@@ -15,13 +15,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import yaml
 
-from . import dedup, notify, trend
-from .geocode import Geocoder, enrich
+from . import dedup, notify, omi, trend
+from .geocode import BOX, Geocoder, enrich
 from .http import Http
 from .sources import load_all
 from .sources.base import Context
 from .store import Store
-from .zones import detect_zone, in_province, infer_trieste
+from .zones import FOREIGN_RX, detect_zone, in_province, infer_trieste, norm
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
 _print_lock = threading.Lock()
@@ -77,10 +77,19 @@ def run_source(cfg, adapters, store, time_budget):
             L.zone = L.zone or detect_zone(L.address, L.title) or detect_zone(L.description)
         if L.agency is None and cfg.get("agency"):
             L.agency = cfg["agency"]
+        nogeo = False
+        if L.lat is not None and not (BOX[0] <= L.lat <= BOX[2] and BOX[1] <= L.lon <= BOX[3]):
+            # posizione della fonte fuori provincia: se anche il testo cita un luogo fuori provincia
+            # (Cervignano, Gradisca, "(UD)"...) l'annuncio non è nostro; altrimenti è la posizione a essere sbagliata
+            if FOREIGN_RX.search(" " + norm(" ".join(x for x in (L.title, L.address, L.description) if x)) + " "):
+                skipped += 1
+                continue
+            L.lat = L.lon = L.geo = None
+            nogeo = True
         if not in_province(L.town):
             skipped += 1
             continue
-        out.append(L.to_dict())
+        out.append({**L.to_dict(), **({"_nogeo": True} if nogeo else {})})
     # stesso annuncio elencato due volte: tieni il primo
     uniq = {}
     for d in out:
@@ -128,6 +137,13 @@ def main():
     if not args.only:
         store.disable_missing_sources(all_ids)
     dedup.assign_groups(store.listings)
+    if not args.only:
+        try:
+            if omi.refresh():
+                print("Quotazioni OMI aggiornate")
+        except Exception as e:   # sito dell'Agenzia non raggiungibile: si riprova al prossimo giro
+            print("Quotazioni OMI non aggiornate:", e)
+    omi.assign(store.listings)
     all_names = {s["id"]: s["name"] for s in load_sources()}
     if not args.no_notify:
         notify.send(store, all_names)

@@ -52,6 +52,7 @@ async function load() {
   const [l, e, s, t] = await Promise.all([get("listings.json"), get("events.json").catch(() => ({ events: [] })),
     get("sources.json").catch(() => ({ sources: {} })), get("trend.json").catch(() => ({ days: {} }))]);
   S.trend = t.days || {};
+  S.omi = await get("omi.json").catch(() => null);
   S.updated = l.updated;
   S.notify = await fetch(`notify.json?t=${Date.now()}`).then(r => r.ok ? r.json() : null).catch(() => null);
   S.sources = s.sources || {};
@@ -425,6 +426,7 @@ function openDetail(gid, refresh) {
     <div class="d-body">
       <div class="facts">${facts.map(([v, l]) => `<div class="fact"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join("")}</div>
       ${zoneTrendHtml(r)}
+      ${omiHtml(r, members)}
       <div class="story"><h3>Storia della casa</h3><ul>${houseStory(members).map(x => `<li>${x}</li>`).join("")}</ul></div>
       ${mineHtml(gid)}
       ${list.some(m => m.price) && act.length ? calcHtml(Math.min(...list.map(m => m.price || Infinity)), r) : ""}
@@ -608,7 +610,51 @@ function renderPrices() {
         <td class="n">${c ? `<span class="${c.pct <= -0.5 ? "dn" : c.pct >= 0.5 ? "upc" : "muted"}">${c.pct >= 0 ? "+" : "−"}${Math.abs(c.pct).toFixed(1).replace(".", ",")}%</span>` : "–"}</td>
         <td class="hide-m">${lineChart(s, { w: 120, h: 28, mini: true })}</td></tr>`;
     }).join("")}</tbody></table>
-    <p class="muted small">Zone con almeno 5 case confrontabili. Sono prezzi richiesti negli annunci, non prezzi di vendita effettivi.</p>`;
+    <p class="muted small">Zone con almeno 5 case confrontabili. Sono prezzi richiesti negli annunci, non prezzi di vendita effettivi.</p>
+    ${omiTableHtml()}`;
+}
+
+// ---- quotazioni ufficiali OMI (Agenzia delle Entrate), per la zona OMI in cui cade la casa
+const omiTip = (r, z) => ["villa", "casa"].includes(r.type) && z.valori["Ville e Villini"] ? "Ville e Villini" : "Abitazioni civili";
+function omiCompare(r, members) {
+  const key = (members || [r]).map(m => m.omi).find(Boolean);
+  const z = key && S.omi?.zone?.[key];
+  if (!z || !r.ppm || !DEAL_TYPES.concat(["villa", "casa"]).includes(r.type)) return null;
+  const tip = omiTip(r, z), v = z.valori[tip];
+  if (!v) return null;
+  const [lo, hi, stato] = v;
+  const pct = r.ppm > hi ? (r.ppm / hi - 1) * 100 : r.ppm < lo ? (r.ppm / lo - 1) * 100 : 0;
+  return { z, tip, lo, hi, stato, pct };
+}
+function omiHtml(r, members) {
+  const c = omiCompare(r, members);
+  if (!c) return "";
+  const where = c.pct > 0 ? `<b>${Math.round(c.pct)}% sopra il massimo</b>` : c.pct < 0 ? `<b>${Math.round(-c.pct)}% sotto il minimo</b>` : "<b>dentro la forbice</b>";
+  return `<div class="zt omi"><div>Quotazione ufficiale OMI, zona ${esc(c.z.zona)} ${esc(c.z.nome)} (${esc(S.omi.semestre)}):
+    ${esc(c.tip.toLowerCase())} da <b>${num(c.lo)}</b> a <b>${num(c.hi)} €/mq</b> in stato ${esc(c.stato)}. Questa casa: ${num(r.ppm)} €/mq, ${where}.
+    <span class="muted small">Ristrutturate e nuove stanno di solito sopra. Fonte: Agenzia Entrate - OMI.</span></div></div>`;
+}
+
+function omiTableHtml() {
+  if (!S.omi?.zone) return "";
+  const asked = new Map();   // zona OMI -> €/mq chiesti (appartamenti usati, una volta per casa)
+  for (const members of S.groups.values()) {
+    const r = members.find(m => m.status === "active" && m.omi && m.ppm && DEAL_TYPES.includes(m.type) && m.condition !== "nuovo" && !m.features?._project);
+    if (!r) continue;
+    if (!asked.has(r.omi)) asked.set(r.omi, []);
+    asked.get(r.omi).push(r.ppm);
+  }
+  const med = v => { const a = v.slice().sort((x, y) => x - y), n = a.length; return n % 2 ? a[(n - 1) / 2] : (a[n / 2 - 1] + a[n / 2]) / 2; };
+  const rows = Object.entries(S.omi.zone).filter(([, z]) => z.valori["Abitazioni civili"])
+    .map(([k, z]) => ({ k, z, v: z.valori["Abitazioni civili"], a: (asked.get(k) || []).length >= 5 ? med(asked.get(k)) : null, n: (asked.get(k) || []).length }))
+    .sort((x, y) => (y.z.comune === "Trieste") - (x.z.comune === "Trieste") || x.z.comune.localeCompare(y.z.comune) || x.z.zona.localeCompare(y.z.zona));
+  return `<h2 class="sec">Prezzi chiesti e quotazioni ufficiali</h2>
+    <p class="muted small">Quotazioni OMI dell'Agenzia delle Entrate (${esc(S.omi.semestre)}), abitazioni civili in stato normale, confrontate con il €/mq medio chiesto negli annunci di appartamenti usati che cadono in quella zona OMI. Fonte: Agenzia Entrate - OMI.</p>
+    <table class="src-table prices omi-t"><thead><tr><th>Zona OMI</th><th class="n">Ufficiale €/mq</th><th class="n">Chiesto €/mq</th><th class="n hide-m">Case</th></tr></thead><tbody>
+    ${rows.map(({ z, v, a, n }) => `<tr><td>${esc(z.comune === "Trieste" ? "" : z.comune + " · ")}${esc(z.zona)} ${esc(z.nome)}</td>
+      <td class="n">${num(v[0])}–${num(v[1])}</td>
+      <td class="n">${a ? `<b>${num(a)}</b>${a > v[1] ? ` <span class="upc">(${pctTxt((a / v[1] - 1) * 100)})</span>` : ""}` : "–"}</td>
+      <td class="n hide-m">${n || ""}</td></tr>`).join("")}</tbody></table>`;
 }
 
 // ---- quanto costa davvero (stime; impostazioni ricordate su questo dispositivo)
@@ -701,6 +747,7 @@ function compareHtml(list) {
     ["Superficie", h => h.rep.mq ? h.rep.mq + " mq" : "–", h => h.rep.mq && h.rep.mq === bmq],
     ["€/mq", h => h.rep.ppm ? num(h.rep.ppm) : "–", h => h.rep.ppm && h.rep.ppm === bppm],
     ["Rispetto alla zona", h => h.rep.zoneCmp ? pctTxt(h.rep.zoneCmp.pct) : "–"],
+    ["Quotazione OMI", h => { const c = omiCompare(h.rep, h.members); return c ? `${num(c.lo)}–${num(c.hi)}` + (c.pct ? ` (${Math.round(Math.abs(c.pct))}% ${c.pct > 0 ? "sopra" : "sotto"})` : "") : "–"; }],
     ["Zona", h => esc(where(h.rep))],
     ["Locali", h => h.rep.rooms || "–"], ["Bagni", h => h.rep.bathrooms || "–"], ["Piano", h => esc(h.rep.floor || "–")],
     ["Stato", h => esc(COND_LABELS[h.rep.condition] || "–")], ["Classe energetica", h => esc(h.rep.energy || "–")],
