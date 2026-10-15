@@ -6,6 +6,11 @@
 <title>Case Trieste</title>
 <meta name="description" content="Annunci di case in vendita a Trieste, raccolti direttamente dai siti delle agenzie.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f6e7c">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Case Trieste">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -78,6 +83,7 @@
       <div id="events"></div>
     </section>
     <section id="tab-annunci" class="tab" hidden>
+      <div id="since" class="since" hidden></div>
       <div class="bar"><p id="count" class="muted"></p>
         <label class="inline sortbox">Ordina per
           <select class="sort-top" aria-label="Ordina per">

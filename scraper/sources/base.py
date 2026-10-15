@@ -251,7 +251,8 @@ def _longest_description(soup) -> str | None:
             continue
         t = tag.get_text(" ", strip=True)
         if 150 <= len(t) <= 6000 and (best is None or len(t) > len(best)):
-            if not re.search(r"cookie|privacy|copyright|p\.? ?iva", t[:300], re.I):
+            # testi di banner cookie/consenso (anche senza la parola "cookie": "L'archiviazione tecnica o l'accesso...")
+            if not re.search(r"cookie|privacy|copyright|p\.? ?iva|archiviazione tecnica|consenso|gdpr", t[:300], re.I):
                 best = t
     return best
 

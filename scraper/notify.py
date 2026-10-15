@@ -156,14 +156,22 @@ def send(store, source_names: dict):
 
 
 def send_health(store):
-    """Avviso una tantum quando una fonte non si legge da ~1 giorno (9 giri): probabilmente il sito è cambiato."""
+    """Avviso una tantum quando una fonte non si legge da ~1 giorno (9 giri): probabilmente il sito è cambiato.
+    Avviso anche quando una fonte si legge ma da 3 giri arrivano annunci senza prezzo/superficie/foto."""
     topic = os.environ.get("NTFY_TOPIC")
     broken = [m["name"] for m in store.sources.values() if m.get("fail_streak") == 9]
-    if not broken or not topic:
+    poor = [f"{m['name']} ({m['quality_issue']})" for m in store.sources.values()
+            if m.get("quality_streak") == 3 and m.get("quality_issue")]
+    if not (broken or poor) or not topic:
         return
+    parts = []
+    if broken:
+        parts.append("Non riesco più a leggere: " + ", ".join(broken) + ".")
+    if poor:
+        parts.append("Dati incompleti da: " + "; ".join(poor) + ".")
     dashboard = os.environ.get("DASHBOARD_URL", "")
     msg = {"topic": topic, "title": "⚠️ Case Trieste: fonti da controllare",
-           "message": "Non riesco più a leggere: " + ", ".join(broken) + ". Probabilmente il sito è cambiato.",
+           "message": " ".join(parts) + " Probabilmente il sito è cambiato.",
            "tags": ["warning"], "priority": 2}
     if dashboard:
         msg["click"] = f"{dashboard}#fonti"

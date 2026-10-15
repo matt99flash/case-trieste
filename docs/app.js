@@ -31,6 +31,15 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage non disponibile */ } },
 };
 
+// ultima visita: una "visita" finisce dopo 30 minuti senza aprire la dashboard
+const VISIT = (() => {
+  const v = store.get("visit", {}), now = Date.now();
+  if (!v.last || now - v.last > 30 * 60e3) v.prev = v.last || null;
+  v.last = now;
+  store.set("visit", v);
+  return v.prev ? new Date(v.prev).toISOString() : null;
+})();
+
 const S = { listings: [], byId: new Map(), groups: new Map(), events: [], sources: {}, updated: null,
   favs: new Set(store.get("favs", [])), shown: 60, map: null, markers: null };
 
@@ -58,6 +67,20 @@ async function load() {
     S.groups.get(g).push(r);
   }
   computeZoneMedians();
+  computeSince();
+}
+
+// case nuove, ribassate o tornate online dall'ultima visita: gid -> motivo
+function computeSince() {
+  S.since = new Map();
+  if (!VISIT) return;
+  for (const e of S.events) {
+    if (e.ts <= VISIT || !["new", "price_down", "back"].includes(e.type)) continue;
+    const r = S.byId.get(e.id);
+    if (!r || r.status !== "active") continue;
+    const g = r.group || r.id, cur = S.since.get(g);
+    if (!cur || cur === "back" || (cur === "price_down" && e.type === "new")) S.since.set(g, e.type);
+  }
 }
 
 // testi e foto (file separato, più pesante): caricati dopo che l'elenco è già visibile
@@ -230,7 +253,7 @@ function card(h) {
   const r = h.rep, pc = priceChange(r), img = r.images?.[0];
   const badges = [
     !h.active && `<span class="badge gone">Non più online</span>`,
-    h.active && isNew(h) && `<span class="badge new">Nuovo</span>`,
+    h.active && S.since?.get(h.gid) === "new" ? `<span class="badge fresh">Nuovo per te</span>` : h.active && isNew(h) && `<span class="badge new">Nuovo</span>`,
     pc && pc.pct < 0 && `<span class="badge down">${pc.pct.toFixed(0)}%</span>`,
     pc && pc.pct > 0 && `<span class="badge up">+${pc.pct.toFixed(0)}%</span>`,
     r.sold && `<span class="badge gone">Venduto / trattativa</span>`,
@@ -260,9 +283,25 @@ function syncSort() {
   if (f) f.elements.sort.value = F.sort;
 }
 
+let ONLY_SINCE = false;
+function renderSince(all) {
+  const box = $("#since");
+  const fresh = all.filter(h => S.since?.has(h.gid));
+  if (!VISIT || (!fresh.length && !ONLY_SINCE)) { box.hidden = true; ONLY_SINCE = false; return; }
+  const n = t => fresh.filter(h => S.since.get(h.gid) === t).length;
+  const parts = [[n("new"), "nuove", "nuova"], [n("price_down"), "ribassate", "ribassata"], [n("back"), "tornate online", "tornata online"]]
+    .filter(([c]) => c).map(([c, pl, sg]) => `<b>${c}</b> ${c === 1 ? sg : pl}`);
+  const when = new Date(VISIT).toLocaleString("it-IT", { weekday: "long", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  box.hidden = false;
+  box.innerHTML = `<span>Dalla tua ultima visita (${esc(when)}), con questi filtri: ${parts.length ? parts.join(", ") : "nessuna novità"}.</span>
+    ${fresh.length || ONLY_SINCE ? `<button type="button" class="btn ${ONLY_SINCE ? "" : "ghost"}" data-since>${ONLY_SINCE ? "Mostra tutte" : "Mostra solo queste"}</button>` : ""}`;
+}
+
 function renderGrid() {
   syncSort();
-  const list = sortHouses(houses(F.removed).filter(matchHouse));
+  const all = sortHouses(houses(F.removed).filter(matchHouse));
+  renderSince(all);
+  const list = ONLY_SINCE ? all.filter(h => S.since.has(h.gid)) : all;
   $("#count").textContent = `${list.length.toLocaleString("it-IT")} immobili corrispondono ai filtri`;
   $("#grid").innerHTML = list.length ? list.slice(0, S.shown).map(card).join("") : `<div class="empty">Nessun immobile con questi filtri.</div>`;
   $("#more").hidden = list.length <= S.shown;
@@ -324,10 +363,10 @@ function renderSources() {
   const ok = rows.filter(([, s]) => s.last_ok && !s.fail_streak).length;
   $("#sources").innerHTML = `<p class="small">${ok} fonti su ${rows.length} lette correttamente all'ultimo controllo · ${active.length.toLocaleString("it-IT")} annunci attivi.</p>
   <table class="src-table"><thead><tr><th>Fonte</th><th class="n">Annunci</th><th class="hide-m">Ultima lettura riuscita</th><th class="hide-m">Note</th></tr></thead><tbody>${rows.map(([id, s]) => {
-    const cls = !s.last_ok ? "err" : s.fail_streak ? "warn" : "";
+    const cls = !s.last_ok ? "err" : s.fail_streak || s.quality_issue ? "warn" : "";
     return `<tr><td><span class="dot ${cls}"></span>${s.website ? `<a href="${esc(s.website)}" target="_blank" rel="noopener">${esc(s.name)}</a>` : esc(s.name)}<br><span class="muted small">${esc(KINDS[s.kind] || s.kind || "")}</span></td>
       <td class="n">${cnt[id] || 0}</td><td class="hide-m">${s.last_ok ? fmtDate(s.last_ok) + " " + new Date(s.last_ok).toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit" }) : "mai"}</td>
-      <td class="hide-m small muted">${esc(s.fail_streak ? s.last_error || "" : "")}</td></tr>`;
+      <td class="hide-m small muted">${esc(s.fail_streak ? s.last_error || "" : s.quality_issue ? "Dati incompleti: " + s.quality_issue : "")}</td></tr>`;
   }).join("")}</tbody></table>`;
 }
 
@@ -924,6 +963,7 @@ function bind() {
     if (fs) { favSyncAction(fs.dataset.favsync); return; }
     const fav = e.target.closest("[data-fav]");
     if (fav) { e.stopPropagation(); toggleFav(fav.dataset.fav); if (location.hash === "#preferiti") renderFavs(); return; }
+    if (e.target.closest("[data-since]")) { ONLY_SINCE = !ONLY_SINCE; S.shown = 60; renderGrid(); return; }
     const st = e.target.closest("[data-status]");
     if (st) { setStatus(st.dataset.gid, st.dataset.status); return; }
     const fv = e.target.closest("[data-favview]");
@@ -951,6 +991,8 @@ function bind() {
 
 (async function init() {
   bind();
+  // installabile come app e consultabile anche senza connessione (ultima versione scaricata)
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
   try {
     await load();
     S.remoteFavs = await loadRemoteFavs();
@@ -961,7 +1003,7 @@ function bind() {
     return;
   }
   const act = S.listings.filter(r => r.status === "active").length;
-  $("#updated").textContent = `${act.toLocaleString("it-IT")} annunci da ${Object.keys(S.sources).length} fonti · aggiornato ${new Date(S.updated).toLocaleString("it-IT", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}`;
+  $("#updated").textContent = (navigator.onLine ? "" : "Sei offline: dati salvati · ") + `${act.toLocaleString("it-IT")} annunci da ${Object.keys(S.sources).length} fonti · aggiornato ${new Date(S.updated).toLocaleString("it-IT", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}`;
   buildFilters();
   if (!location.hash) history.replaceState(null, "", "#annunci");
   showTab();

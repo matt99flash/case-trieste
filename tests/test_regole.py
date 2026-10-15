@@ -111,6 +111,24 @@ class Posizione(unittest.TestCase):
         self.assertTrue(all(a["lat"] == 45.64218 for a in ann))
 
 
+class Qualita(unittest.TestCase):
+    def test_crollo_prezzi_segnalato_dopo_riferimento(self):
+        from scraper.store import Store
+        st = Store.__new__(Store)
+        meta = {}
+        ok = [{"price": 100000, "mq": 50, "images": ["x"]}] * 10
+        st._check_quality(meta, ok)
+        self.assertNotIn("quality_issue", meta)
+        rotto = [{"price": None, "mq": 50, "images": ["x"]}] * 10
+        st._check_quality(meta, rotto)
+        st._check_quality(meta, rotto)
+        self.assertIn("prezzo", meta["quality_issue"])
+        self.assertEqual(meta["quality_streak"], 2)
+        self.assertEqual(meta["quality"]["price"], 1.0)   # il riferimento non si abbassa
+        st._check_quality(meta, ok)
+        self.assertNotIn("quality_issue", meta)
+
+
 class Comune(unittest.TestCase):
     def test_in_grado_non_e_grado(self):
         self.assertTrue(infer_trieste("Appartamento (TS)", None, None, "in grado di soddisfare"))

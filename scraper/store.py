@@ -18,6 +18,10 @@ MISSING_RUNS_TO_REMOVE = 2      # giri consecutivi senza vederlo prima di consid
 MIN_RATIO_OK = 0.5              # se una fonte restituisce meno della metà del solito, il giro è sospetto
 EMPTY_ACCEPT_RUNS = 12          # una fonte piccola che risulta vuota è sospetta; dopo ~1 giorno e mezzo si accetta
 KEEP_REMOVED_DAYS = 120
+# qualità dei dati per fonte: quota di annunci con prezzo/superficie/foto. Se crolla rispetto al solito
+# il sito è probabilmente cambiato anche se gli annunci si leggono ancora (guasto "silenzioso")
+QUALITY_FIELDS = {"price": "prezzo", "mq": "superficie", "images": "foto"}
+QUALITY_MIN_RESULTS = 5
 KEEP_EVENTS_DAYS = 90
 DETAIL_REFRESH_DAYS = 10
 
@@ -111,6 +115,7 @@ class Store:
             suspicious = True
         meta["last_count"] = len(results)
         meta["stats"] = stats or {}
+        self._check_quality(meta, results)
         if suspicious:
             meta["last_error"] = f"sospetto: {len(results)} annunci contro {len(prev_active)} del giro precedente"
             meta["fail_streak"] = meta.get("fail_streak", 0) + 1
@@ -183,6 +188,24 @@ class Store:
                 rec["status"] = "removed"
                 rec["removed_at"] = self.ts
                 self._event("removed", rec, price=rec.get("price"))
+
+    def _check_quality(self, meta: dict, results: list[dict]):
+        if len(results) < QUALITY_MIN_RESULTS:
+            return
+        now = {k: sum(1 for d in results if d.get(k)) / len(results) for k in QUALITY_FIELDS}
+        base = meta.get("quality")
+        issues = [f"{label} letto per il {round(now[k] * 100)}% degli annunci (di solito {round(base[k] * 100)}%)"
+                  for k, label in QUALITY_FIELDS.items()
+                  if base and base.get(k, 0) >= 0.5 and now[k] < 0.5 * base[k]]
+        if issues:
+            meta["quality_issue"] = "; ".join(issues)
+            meta["quality_streak"] = meta.get("quality_streak", 0) + 1
+            return   # il riferimento "di solito" non si abbassa mentre il problema dura
+        meta.pop("quality_issue", None)
+        meta["quality_streak"] = 0
+        # media mobile: si adatta piano piano ai cambiamenti normali della fonte
+        meta["quality"] = {k: round(0.8 * base.get(k, now[k]) + 0.2 * now[k], 3) if base else round(now[k], 3)
+                           for k in QUALITY_FIELDS}
 
     def disable_missing_sources(self, active_ids: set):
         """Fonti tolte dalla configurazione: i loro annunci escono dall'archivio senza generare notifiche."""
