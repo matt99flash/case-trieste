@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T09:37:45+00:00",
+ "updated": "2026-10-15T11:36:38+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -6041,6 +6041,41 @@
    "source": "tam-immobiliare",
    "old_price": 150000,
    "price": 200000
+  },
+  {
+   "ts": "2026-10-15T11:36:38+00:00",
+   "type": "new",
+   "id": "subito-privati:664625894",
+   "source": "subito-privati",
+   "price": 79000
+  },
+  {
+   "ts": "2026-10-15T11:36:38+00:00",
+   "type": "new",
+   "id": "tecnocasa:61285484",
+   "source": "tecnocasa",
+   "price": 168000
+  },
+  {
+   "ts": "2026-10-15T11:36:38+00:00",
+   "type": "new",
+   "id": "b1-audace:appartamento-via-armando-crisciani-8-borgo-san-sergio-trieste",
+   "source": "b1-audace",
+   "price": 225000
+  },
+  {
+   "ts": "2026-10-15T11:36:38+00:00",
+   "type": "new",
+   "id": "imobilia-trieste:233",
+   "source": "imobilia-trieste",
+   "price": null
+  },
+  {
+   "ts": "2026-10-15T11:36:38+00:00",
+   "type": "new",
+   "id": "il-quadrifoglio:appartamento-a-trieste-viale-xx-settembre-zona-giorno-1-stanza",
+   "source": "il-quadrifoglio",
+   "price": 175000
   }
  ]
 }

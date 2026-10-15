@@ -88,6 +88,9 @@
 "borgo grotta adiacenze avalon|trieste": {
 "miss": "2026-10-15"
 },
+"borgo grotta gigante|san dorligo della valle": {
+"miss": "2026-10-15"
+},
 "borgo san mauro|duino-aurisina": [
 45.76639,
 13.64153
@@ -398,6 +401,10 @@
 45.63124,
 13.81141
 ],
+"salita monte valerio 31|trieste": [
+45.66213,
+13.7937
+],
 "salita monte valerio, 31, 34127 trieste ts, italia|trieste": null,
 "scala dell'erica 7|trieste": [
 45.66495,
@@ -450,6 +457,9 @@
 45.69575,
 13.74282
 ],
+"strada del pilone|trieste": {
+"miss": "2026-10-15"
+},
 "strada di cattinara|trieste": [
 45.63872,
 13.79761
@@ -578,6 +588,10 @@
 45.66034,
 13.77161
 ],
+"via armando crisciani 8|trieste": [
+45.61745,
+13.82816
+],
 "via armando diaz|trieste": [
 45.64779,
 13.76467
@@ -613,6 +627,10 @@
 "via barbariga 6|trieste": [
 45.66435,
 13.77111
+],
+"via barbariga|trieste": [
+45.66389,
+13.77096
 ],
 "via bartoletti 8|trieste": [
 45.6428,
@@ -749,6 +767,10 @@
 "via calderai|muggia": [
 45.59724,
 13.77686
+],
+"via canova|trieste": [
+45.64791,
+13.78623
 ],
 "via cantu'|trieste": [
 45.66056,
@@ -1033,6 +1055,10 @@
 45.69023,
 13.78889
 ],
+"via degli apiari 37|trieste": [
+45.66562,
+13.77656
+],
 "via degli apiari, 37|trieste": [
 45.66562,
 13.77656
@@ -1160,6 +1186,10 @@
 45.69331,
 13.7758
 ],
+"via dei pellegrini 0|trieste": [
+45.64235,
+13.81417
+],
 "via dei pellegrini, 0|trieste": [
 45.64235,
 13.81417
@@ -1218,6 +1248,9 @@
 45.64561,
 13.78035
 ],
+"via del bosco s.n.c|trieste": {
+"miss": "2026-10-15"
+},
 "via del bosco|trieste": [
 45.64531,
 13.77681
@@ -1283,6 +1316,10 @@
 45.62325,
 13.78548
 ],
+"via del ponticello 25/11|trieste": [
+45.62058,
+13.78378
+],
 "via del ponticello, 25/11, 34146 trieste ts, italia|trieste": null,
 "via del ponticello|trieste": [
 45.62206,
@@ -1345,6 +1382,10 @@
 13.76895
 ],
 "via del toro, 34125 trieste ts, italia|trieste": null,
+"via del toro|trieste": [
+45.65067,
+13.77898
+],
 "via del veltro 83|trieste": [
 45.63721,
 13.78853
@@ -1397,9 +1438,17 @@
 13.78149
 ],
 "via dell'oliveto, trieste, ts, italia|trieste": null,
+"via dell'oliveto|trieste": [
+45.65597,
+13.79522
+],
 "via dell'ospitale 12|trieste": [
 45.64774,
 13.77103
+],
+"via dell'universita|trieste": [
+45.64491,
+13.76114
 ],
 "via della cattedrale 6|trieste": [
 45.64751,
@@ -1441,6 +1490,9 @@
 45.64332,
 13.78089
 ],
+"via della guardia s.n.c|trieste": {
+"miss": "2026-10-15"
+},
 "via della pieta|trieste": [
 45.64931,
 13.78422
@@ -1583,6 +1635,10 @@
 "via di romagna, 37/1|trieste": [
 45.65891,
 13.78294
+],
+"via di romagna|trieste": [
+45.6577,
+13.7809
 ],
 "via di s. barbara|muggia": [
 45.59058,
@@ -1768,6 +1824,9 @@
 45.65571,
 13.77353
 ],
+"via ghirlandaio/settefontane|trieste": {
+"miss": "2026-10-15"
+},
 "via ghirlandaio|trieste": [
 45.64116,
 13.78835
@@ -1839,6 +1898,10 @@
 45.62121,
 13.81004
 ],
+"via giuseppe giusti 20|trieste": [
+45.66848,
+13.77044
+],
 "via giuseppe giusti, 20|trieste": [
 45.66848,
 13.77044
@@ -1863,6 +1926,10 @@
 "via giusti|trieste": [
 45.66849,
 13.7701
+],
+"via grandi|trieste": [
+45.61946,
+13.83006
 ],
 "via graziadio ascoli|trieste": [
 45.67047,
@@ -1897,6 +1964,10 @@
 13.78216
 ],
 "via guido grimani, trieste, ts, italia|trieste": null,
+"via guido grimani|trieste": [
+45.64135,
+13.80425
+],
 "via hermet, 6|trieste": [
 45.64301,
 13.755
@@ -1976,6 +2047,10 @@
 "via marcello 4|trieste": [
 45.64624,
 13.76709
+],
+"via marcello benedetto 2|trieste": [
+45.64636,
+13.76728
 ],
 "via marcello benedetto 4|trieste": [
 45.64624,
@@ -2163,6 +2238,9 @@
 45.64608,
 13.78187
 ],
+"via pascoli/via manzoni|trieste": {
+"miss": "2026-10-15"
+},
 "via pascoli|trieste": [
 45.6472,
 13.78483
@@ -2230,6 +2308,10 @@
 "via pietro zorutti, 10|trieste": [
 45.6361,
 13.78255
+],
+"via pinguente|trieste": [
+45.62854,
+13.78644
 ],
 "via pirano|trieste": [
 45.63065,
@@ -2480,6 +2562,9 @@
 45.64621,
 13.76449
 ],
+"via sanzio 33|trieste": {
+"miss": "2026-10-15"
+},
 "via sara davis|trieste": [
 45.66389,
 13.77554
@@ -2653,6 +2738,10 @@
 45.64504,
 13.80008
 ],
+"via umberto felluga|trieste": [
+45.64536,
+13.7996
+],
 "via valdirivo 16|trieste": [
 45.65375,
 13.77261
@@ -2781,6 +2870,10 @@
 45.63965,
 13.79289
 ],
+"viale miramare 117|trieste": [
+45.6812,
+13.75334
+],
 "viale miramare 123/1|trieste": [
 45.68219,
 13.75286
@@ -2878,6 +2971,10 @@
 "vicolo dell'edera|trieste": [
 45.6571,
 13.79123
+],
+"vicolo dell'ospitale militare|trieste": [
+45.66019,
+13.78515
 ],
 "vicolo delle rose 1|trieste": [
 45.66592,

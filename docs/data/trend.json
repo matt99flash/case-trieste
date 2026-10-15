@@ -1314,7 +1314,7 @@
    ],
    "Centro / Borgo Teresiano": [
     3000,
-    100
+    102
    ],
    "Chiadino / Rozzol": [
     2516,
@@ -1325,16 +1325,16 @@
     40
    ],
    "Cologna / Scorcola / Gretta": [
-    2762,
-    50
+    2750,
+    51
    ],
    "Duino-Aurisina": [
     2722,
     33
    ],
    "Montebello / Rotonda del Boschetto": [
-    2091,
-    17
+    2124,
+    18
    ],
    "Muggia": [
     3067,
@@ -1361,12 +1361,12 @@
     53
    ],
    "Servola / Valmaura / Borgo San Sergio": [
-    1875,
-    101
+    1880,
+    102
    ],
    "Tutta la provincia": [
-    2472,
-    949
+    2470,
+    952
    ]
   }
  }
