@@ -1920,6 +1920,9 @@
 45.6464,
 13.7946
 ],
+"via franca|muggia": {
+"miss": "2026-10-16"
+},
 "via franca|trieste": [
 45.64243,
 13.7593
@@ -1961,6 +1964,9 @@
 45.65189,
 13.78242
 ],
+"via geppa|trieste": {
+"miss": "2026-10-16"
+},
 "via gerolamo frescobaldi|trieste": [
 45.62566,
 13.80221

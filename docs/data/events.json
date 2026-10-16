@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T15:36:23+00:00",
+ "updated": "2026-10-16T17:33:28+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -6457,6 +6457,125 @@
    "id": "trieste-villas:san-giusto-bilocale-con-terrazza-privata-e-vista-citta-rxyu9",
    "source": "trieste-villas",
    "price": 325000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "new",
+   "id": "opera-immobiliare:frescobaldi-panoramico-bilocale-allultimo-piano",
+   "source": "opera-immobiliare",
+   "price": 110000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "new",
+   "id": "opera-immobiliare:zona-ospedale-maggiore-quadrilocale-ristrutturato-in-palazzo-depoca",
+   "source": "opera-immobiliare",
+   "price": 298000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "new",
+   "id": "trieste-villas:casa-romantica-nel-borgo-di-contovello-h8h7h",
+   "source": "trieste-villas",
+   "price": 335000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "new",
+   "id": "trieste-villas:appartamento-con-terrazza-a-barcola-j0bet",
+   "source": "trieste-villas",
+   "price": 585000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "new",
+   "id": "trieste-villas:palazzo-haggi-app-9-97-m-4-piano-san-vito-trieste-byg3i",
+   "source": "trieste-villas",
+   "price": 495000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "new",
+   "id": "trieste-villas:appartamento-vista-mare-via-franca-san-vito-txyye",
+   "source": "trieste-villas",
+   "price": 440000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "new",
+   "id": "trieste-villas:recente-con-giardino-strada-per-basovizza-p7khy",
+   "source": "trieste-villas",
+   "price": 520000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "removed",
+   "id": "trieste-villas:attico-con-rooftop-viale-miramare-barcola-0",
+   "source": "trieste-villas",
+   "price": 1450000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "removed",
+   "id": "trieste-villas:attico-largo-canal-lastrico-solare-gigante-0",
+   "source": "trieste-villas",
+   "price": 1250000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "removed",
+   "id": "trieste-villas:maxi-appartamento-con-giardino-in-centro-verdemare-rive-0",
+   "source": "trieste-villas",
+   "price": 790000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "removed",
+   "id": "trieste-villas:san-giusto-bilocale-con-terrazza-privata-e-vista-citta-0",
+   "source": "trieste-villas",
+   "price": 325000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "removed",
+   "id": "trieste-villas:villa-3-piani-in-via-chiadino-san-luigi-0",
+   "source": "trieste-villas",
+   "price": 1180000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "removed",
+   "id": "trieste-villas:villetta-con-giardino-le-vigne-duino-0",
+   "source": "trieste-villas",
+   "price": 575000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "removed",
+   "id": "trieste-villas:villino-pluri-unita-con-parco-gigante-vista-mare-via-degli-o-0",
+   "source": "trieste-villas",
+   "price": 795000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "new",
+   "id": "spazio-casa:25097",
+   "source": "spazio-casa",
+   "price": 68500
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "new",
+   "id": "spazio-casa:25098",
+   "source": "spazio-casa",
+   "price": 336000
+  },
+  {
+   "ts": "2026-10-16T17:33:28+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21659",
+   "source": "e1-hometrieste",
+   "price": 89000
   }
  ]
 }
