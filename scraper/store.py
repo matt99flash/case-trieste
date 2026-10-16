@@ -29,6 +29,7 @@ DETAIL_REFRESH_DAYS = 10
 LISTING_FIELDS = ["source", "ref", "url", "title", "price", "mq", "rooms", "bedrooms", "bathrooms", "type", "condition",
                   "town", "zone", "address", "lat", "lon", "floor", "energy", "description", "images", "features",
                   "sold", "private", "agency", "geo"]
+TEXT_FIELDS = ("rooms", "bedrooms", "floor")   # possono venire dalla descrizione (clean.fill_from_text)
 
 
 def now_iso() -> str:
@@ -60,6 +61,21 @@ def _dump(path, obj, one_per_line_key=None):
         else:
             json.dump(obj, f, ensure_ascii=False, indent=1)
     os.replace(tmp, path)
+
+
+def _merge_txt(rec: dict, d: dict):
+    """Campi ricavati dalla descrizione (clean.fill_from_text): se il giro ha letto il valore dal sito il segno va
+    tolto, se l'ha ricavato dal testo va messo, se non l'ha letto affatto resta com'era."""
+    txt = set(rec.get("txt") or [])
+    for k in TEXT_FIELDS:
+        if d.get(k):
+            txt.discard(k)
+            if k in (d.get("txt") or []):
+                txt.add(k)
+    if txt:
+        rec["txt"] = sorted(txt)
+    else:
+        rec.pop("txt", None)
 
 
 class Store:
@@ -134,6 +150,8 @@ class Store:
             if rec is None:
                 rec = {"id": lid, "first_seen": self.ts, "price_history": [], "status": "active"}
                 rec.update({k: d.get(k) for k in LISTING_FIELDS})
+                if d.get("txt"):
+                    rec["txt"] = d["txt"]
                 if d.get("price"):
                     rec["price_history"].append([self.ts, d["price"]])
                 self.listings[lid] = rec
@@ -153,6 +171,7 @@ class Store:
                     if not full and k == "features" and rec.get(k):
                         v = {**rec[k], **v}
                     rec[k] = v
+                _merge_txt(rec, d)
                 if d.get("price") is None and old_price is not None and lid not in (detail_ids or set()):
                     rec["price"] = old_price  # prezzo non letto in questo giro: mantieni
                 new_price = rec.get("price")

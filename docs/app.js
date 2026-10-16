@@ -205,7 +205,7 @@ function matchListing(r) {
   if ((pmin || pmax) && !r.price && !F.noprice) return false;
   if (mqmin && (!r.mq || r.mq < mqmin)) return false;
   if (mqmax && r.mq && r.mq > mqmax) return false;
-  if (rooms && (!r.rooms || r.rooms < rooms)) return false;
+  if (rooms && (!roomsOf(r) || roomsOf(r) < rooms)) return false;
   if (F.types.length && !F.types.includes(r.type || "altro")) return false;
   if (F.conditions.length && !F.conditions.includes(r.condition || "nd")) return false;
   if (F.towns.length && !F.towns.includes(r.town)) return false;
@@ -220,6 +220,8 @@ function matchListing(r) {
   return true;
 }
 const matchHouse = h => h.members.some(matchListing);
+// locali; se mancano ma si sanno le camere, si contano camere + soggiorno (un "trilocale" ha di solito due camere)
+const roomsOf = r => r.rooms || (r.bedrooms ? r.bedrooms + 1 : null);
 
 function sortHouses(list) {
   const by = {
@@ -812,7 +814,7 @@ function notifyMatches(r, f) {
   if (f.price_max && r.price && r.price > f.price_max) return false;
   if (f.mq_min && (!r.mq || r.mq < f.mq_min)) return false;
   if (f.mq_max && r.mq && r.mq > f.mq_max) return false;
-  if (f.rooms_min && (!r.rooms || r.rooms < f.rooms_min)) return false;
+  if (f.rooms_min && (!roomsOf(r) || roomsOf(r) < f.rooms_min)) return false;
   if (f.types?.length && !f.types.includes(r.type || "altro")) return false;
   if (f.conditions?.length && !f.conditions.includes(r.condition || "nd")) return false;
   if (f.towns?.length && !f.towns.includes(r.town)) return false;

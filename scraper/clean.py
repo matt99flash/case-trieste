@@ -5,13 +5,14 @@ correzioni valgono anche per gli annunci già salvati.
 """
 import re
 
-from .parse_utils import floor_level
+from .parse_utils import bedrooms_from_text, floor_from_text, floor_level, rooms_from_text
 from .zones import ZONES_TRIESTE, detect_zone, norm
 
 # nomi alternativi usati da alcuni adattatori -> nome standard
 FEATURE_ALIASES = {"giardino": "garden", "ascensore": "elevator", "balcone": "terrace", "terrazzo": "terrace",
                    "box": "garage", "vista_mare": "sea_view"}
 RESIDENTIAL = {"appartamento", "attico", "casa", "villa"}
+FLAT = {"appartamento", "attico"}
 PPM_MAX = 15_000      # €/m² oltre cui la superficie letta è certamente sbagliata (es. 8 m² a 155.000 €)
 PPM_MIN = 300         # sotto: quasi sempre è la metratura del terreno/giardino, non dell'abitazione
 MQ_MIN = 18
@@ -52,6 +53,29 @@ def clean_floor(f):
     return None
 
 
+def fill_from_text(rec: dict):
+    """Locali, camere e piano mancanti presi dalla descrizione (solo appartamenti/attici). I campi ricavati così sono
+    elencati in rec["txt"], per poterli distinguere (e togliere) se una regola si rivelasse sbagliata."""
+    if rec.get("type") not in FLAT or (rec.get("features") or {}).get("_project"):
+        return
+    txt = set(rec.get("txt") or [])
+    text = " ".join(x for x in (rec.get("title"), rec.get("description")) if x)
+    if not rec.get("rooms"):
+        rec["rooms"] = rooms_from_text(text, rec.get("mq"))
+        if rec["rooms"]:
+            txt.add("rooms")
+    if not rec.get("bedrooms"):
+        rec["bedrooms"] = bedrooms_from_text(text)
+        if rec["bedrooms"]:
+            txt.add("bedrooms")
+    if not rec.get("floor"):
+        rec["floor"] = floor_from_text(rec.get("description"))
+        if rec["floor"]:
+            txt.add("floor")
+    if txt:
+        rec["txt"] = sorted(txt)
+
+
 def clean_record(rec: dict) -> dict:
     rec["address"] = clean_address(rec.get("address"))
     rec["floor"] = clean_floor(rec.get("floor"))
@@ -64,6 +88,7 @@ def clean_record(rec: dict) -> dict:
                     feats[std] = v
     if rec.get("type") in RESIDENTIAL and norm(rec.get("title") or "").strip().startswith(BOX_STARTS):
         rec["type"] = "box"
+    fill_from_text(rec)
     rec["zone"] = canonical_zone(rec)
     mq, price = rec.get("mq"), rec.get("price")
     if mq and rec.get("type") in RESIDENTIAL and not (feats or {}).get("_project"):

@@ -4,10 +4,10 @@ Uso: python -m unittest discover tests
 """
 import unittest
 
-from scraper.clean import clean_address, clean_floor
+from scraper.clean import clean_address, clean_floor, fill_from_text
 from scraper.dedup import assign_groups
 from scraper.geocode import enrich, street_of
-from scraper.parse_utils import floor_level
+from scraper.parse_utils import bedrooms_from_text, floor_from_text, floor_level, rooms_from_text
 from scraper.zones import infer_trieste
 
 
@@ -55,6 +55,40 @@ class Piano(unittest.TestCase):
         self.assertEqual(clean_floor("Su due livelli"), "Su due livelli")
         self.assertIsNone(clean_address("Apri su Google Maps"))
         self.assertEqual(clean_address("Valmaura 33"), "Valmaura 33")
+
+
+class DallaDescrizione(unittest.TestCase):
+    def test_piano(self):
+        for testo, atteso in [
+            ("Appartamento situato al secondo piano con ascensore", "2"),
+            ("situata al 5° piano di uno stabile d'epoca", "5"),
+            ("al piano terra di una palazzina del 1910", "terra"),
+            ("si trova al terzo piano di uno stabile di cinque piani; cantina al piano terra", "3"),
+            ("al primo piano la zona notte, al piano terra la zona giorno", None),      # casa su due piani
+            ("al secondo piano. Completa la proprietà un garage al piano terra", "2"),
+            ("al primo piano con soppalco, collegato da scala interna", None),
+            ("al terzo piano con vista. Oppure un'altra al primo piano", None),          # due piani diversi
+        ]:
+            with self.subTest(testo):
+                self.assertEqual(floor_from_text(testo), atteso)
+
+    def test_locali_e_camere(self):
+        self.assertEqual(rooms_from_text("Proponiamo un luminoso trilocale con poggiolo", 70), 3)
+        self.assertEqual(rooms_from_text("Bilocale con possibilità di ricavare un trilocale", 60), 2)
+        self.assertIsNone(rooms_from_text("monolocale", 150))                           # superficie incompatibile
+        self.assertIsNone(rooms_from_text("2 locali commerciali al piano terra", 80))
+        self.assertEqual(bedrooms_from_text("zona notte composta da due camere matrimoniali"), 2)
+        self.assertEqual(bedrooms_from_text("elegante bicamere ristrutturato"), 2)
+        self.assertIsNone(bedrooms_from_text("due camere matrimoniali e una singola"))
+        self.assertIsNone(bedrooms_from_text("possibilità di ricavare una camera"))
+
+    def test_solo_appartamenti(self):
+        villa = {"type": "villa", "description": "al primo piano la zona notte con tre camere"}
+        fill_from_text(villa)
+        self.assertNotIn("floor", villa)
+        app = {"type": "appartamento", "title": "Trilocale", "description": "situato al quarto piano", "rooms": None}
+        fill_from_text(app)
+        self.assertEqual((app["rooms"], app["floor"], app["txt"]), (3, "4", ["floor", "rooms"]))
 
 
 def _ann(id_, source, price, mq, **kw):

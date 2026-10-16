@@ -74,6 +74,90 @@ def parse_rooms(s) -> int | None:
     return None
 
 
+# Locali e piano cercati nella DESCRIZIONE (solo appartamenti/attici: in una villa "al primo piano la zona notte"
+# non è il piano dell'immobile). Si prende il valore solo se il testo ne cita uno solo, e mai se è un'ipotesi
+# ("possibilità di ricavare un trilocale").
+_ROOMS_TXT = re.compile(r"(?<![a-z])(monolocale|bilocale|trilocale|quadrilocale|pentalocale)(?![a-z])"
+                        r"|(?<![\d,.])(\d{1,2})\s*(?:locali|vani)(?![a-z])(?!\s+(?:catastal|commercial|access|tecnic|di servizio))")
+_HYPOTHESIS = re.compile(r"ricava|trasformabil|possibilit|ottener|frazionab|adattabil|oppure|ipotes|progett|realizzar|cerco|cerchiamo")
+
+
+def rooms_from_text(text: str | None, mq: int | None = None) -> int | None:
+    if not text:
+        return None
+    t = norm(text)
+    found = set()
+    for m in _ROOMS_TXT.finditer(t):
+        if _HYPOTHESIS.search(t[max(0, m.start() - 40):m.start()]):
+            continue
+        found.add(_ROOM_WORDS[m.group(1)] if m.group(1) else int(m.group(2)))
+    if len(found) != 1:
+        return None
+    v = found.pop()
+    if not 1 <= v <= 8 or (mq and not 12 <= mq / v <= 70):
+        return None
+    return v
+
+
+_NUM_WORDS = {"una": 1, "un": 1, "due": 2, "tre": 3, "quattro": 4, "cinque": 5}
+_BEDROOMS_TXT = re.compile(r"(?<![a-z])(bi|tri|quadri)camere(?![a-z])"
+                           r"|(?<![a-z\d])(una|due|tre|quattro|cinque|[1-5])\s+(?:(?:ampie|ampia|grandi|grande|spaziose|spaziosa|comode|comoda|luminose|luminosa|belle)\s+)?"
+                           r"(?:camer[ae]|stanz[ae] da letto)(?![a-z])")
+# "... e una singola", "più una cameretta": il numero letto non è il totale delle camere
+_EXTRA_ROOM = re.compile(r"[^.;]{0,30}?(?<![a-z])(?:e|piu|oltre a)\s+(?:una\s+|un'\s*)?(?:(?:camera|stanza)\s+)?(?:singola|cameretta|studio)")
+
+
+def bedrooms_from_text(text: str | None) -> int | None:
+    """'due camere', 'tre ampie camere da letto', 'bicamere' -> 2, 3, 2. None se il testo dà numeri diversi
+    ('due camere matrimoniali e una singola') o se è un'ipotesi ('possibilità di ricavare una terza camera')."""
+    if not text:
+        return None
+    t = norm(text)
+    found = set()
+    for m in _BEDROOMS_TXT.finditer(t):
+        if _HYPOTHESIS.search(t[max(0, m.start() - 40):m.start()]):
+            continue
+        if _EXTRA_ROOM.match(t, m.end()):
+            return None
+        if m.group(1):
+            found.add({"bi": 2, "tri": 3, "quadri": 4}[m.group(1)])
+        else:
+            found.add(_NUM_WORDS.get(m.group(2)) or int(m.group(2)))
+    return found.pop() if len(found) == 1 else None
+
+
+_FLOOR_WORD = r"(terra|rialzato|primo|secondo|terzo|quarto|quinto|sesto|settimo|ottavo|\d{1,2}\s*[°ºo]?)"
+_FLOOR_TXT = re.compile(r"(?<![a-z])(?:al|sito al|posto al|situato al|ubicato al)\s+(?:" + _FLOOR_WORD + r"\s+piano|piano\s+" + _FLOOR_WORD + r")(?![a-z\d])")
+# il piano citato riguarda un'altra parte dell'immobile (cantina, garage...) o la casa è su più piani
+_FLOOR_OTHER = re.compile(r"cantin|soffitt|garage|box|posto auto|posti auto|lavanderi|deposit|magazzin|"
+                          r"zona notte|zona giorno|taverna|portineria|androne|negozi|local[ei] commercial")
+_MULTI_LEVEL = re.compile(r"due livelli|piu livelli|tre livelli|duplex|bilivello|su due piani|su tre piani|su piu piani|scala interna")
+
+
+def floor_from_text(text: str | None) -> str | None:
+    """'situato al secondo piano' -> '2'; 'al piano terra' -> 'terra'; None se ambiguo."""
+    if not text:
+        return None
+    t = norm(text)
+    if _MULTI_LEVEL.search(t):
+        return None
+    found = set()
+    for m in _FLOOR_TXT.finditer(t):
+        # stessa frase, poche parole prima e dopo: "cantina al piano terra", "al piano terra il garage"
+        before = re.split(r"[.;!?]", t[max(0, m.start() - 30):m.start()])[-1]
+        after = re.split(r"[.;!?]", t[m.end():m.end() + 35])[0]
+        if _FLOOR_OTHER.search(before + " " + after):
+            continue
+        w = m.group(1) or m.group(2)
+        lvl = w if w in ("terra", "rialzato") else floor_level(re.sub(r"(\d)\s*[°ºo]$", r"\1", w))
+        if lvl is not None:
+            found.add(str(lvl))
+    if len(found) != 1:
+        return None
+    v = found.pop()
+    return v if v in ("terra", "rialzato") or 0 < int(v) <= 15 else None
+
+
 def parse_small_count(s, words) -> int | None:
     """Camere/bagni: '2 camere', 'Bagni: 2'."""
     if s is None:

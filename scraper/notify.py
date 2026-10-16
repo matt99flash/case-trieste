@@ -39,7 +39,8 @@ def _matches(rec: dict, flt: dict, kind: str) -> bool:
         return False
     if flt.get("mq_max") and mq and mq > flt["mq_max"]:
         return False
-    if flt.get("rooms_min") and (not rec.get("rooms") or rec["rooms"] < flt["rooms_min"]):
+    rooms = rec.get("rooms") or (rec["bedrooms"] + 1 if rec.get("bedrooms") else None)   # camere + soggiorno
+    if flt.get("rooms_min") and (not rooms or rooms < flt["rooms_min"]):
         return False
     if flt.get("types") and (rec.get("type") or "altro") not in flt["types"]:
         return False
