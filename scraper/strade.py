@@ -83,8 +83,7 @@ def build(only: list[str] | None = None) -> dict:
 def main():
     data = build(sys.argv[1:] or None)   # es. "python -m scraper.strade Trieste": solo quel comune
     os.makedirs(os.path.dirname(FILE), exist_ok=True)
-    with open(FILE, "w", encoding="utf-8", newline="
-") as f:
+    with open(FILE, "w", encoding="utf-8", newline="\n") as f:
         json.dump(data, f, ensure_ascii=False, indent=0, sort_keys=True)
 
 
