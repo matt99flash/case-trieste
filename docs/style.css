@@ -298,3 +298,9 @@ h2.sec { font-size: 18px; margin: 22px 0 4px; }
   #map { height: calc(100vh - 230px); }
   .src-table .hide-m { display: none; }
 }
+
+/* stima del prezzo giusto */
+.price small.est { display: block; font-size: 12px; font-weight: 500; color: var(--muted); }
+.zt.stima { border-left: 3px solid var(--accent); }
+.hist.sim td { vertical-align: top; }
+.hist.sim a { color: inherit; font-weight: 600; }

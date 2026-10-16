@@ -3,10 +3,11 @@
 Si applica sia agli annunci appena letti sia a tutto l'archivio a ogni giro (è idempotente), così le
 correzioni valgono anche per gli annunci già salvati.
 """
+import math
 import re
 
 from .parse_utils import bedrooms_from_text, floor_from_text, floor_level, rooms_from_text
-from .zones import ZONES_TRIESTE, detect_zone, norm
+from .zones import ZONES_TRIESTE, detect_zone, norm, title_town
 
 # nomi alternativi usati da alcuni adattatori -> nome standard
 FEATURE_ALIASES = {"giardino": "garden", "ascensore": "elevator", "balcone": "terrace", "terrazzo": "terrace",
@@ -76,6 +77,21 @@ def fill_from_text(rec: dict):
         rec["txt"] = sorted(txt)
 
 
+TRIESTE_CENTER = (45.6495, 13.7768)
+
+
+def fix_town(rec: dict):
+    """Il sito dice "Trieste" ma il titolo nomina un altro comune della provincia ("Casetta Frazione Sistiana",
+    "Villa a Gabrovizza"): vale il titolo. La posizione, se è in città, era quella dell'agenzia o di una via omonima."""
+    other = title_town(rec.get("title"))
+    if rec.get("town") != "Trieste" or not other or other == "Trieste":
+        return
+    rec["town"], rec["zone"] = other, None
+    if rec.get("lat") is not None and math.hypot((rec["lat"] - TRIESTE_CENTER[0]) * 111, (rec["lon"] - TRIESTE_CENTER[1]) * 78) < 4:
+        rec["lat"] = rec["lon"] = rec["geo"] = None
+        rec["_nogeo"] = True
+
+
 def clean_record(rec: dict) -> dict:
     rec["address"] = clean_address(rec.get("address"))
     rec["floor"] = clean_floor(rec.get("floor"))
@@ -89,6 +105,7 @@ def clean_record(rec: dict) -> dict:
     if rec.get("type") in RESIDENTIAL and norm(rec.get("title") or "").strip().startswith(BOX_STARTS):
         rec["type"] = "box"
     fill_from_text(rec)
+    fix_town(rec)
     rec["zone"] = canonical_zone(rec)
     mq, price = rec.get("mq"), rec.get("price")
     if mq and rec.get("type") in RESIDENTIAL and not (feats or {}).get("_project"):

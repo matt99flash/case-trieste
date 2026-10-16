@@ -7,6 +7,7 @@ Uso:
 """
 import argparse
 import os
+import re
 import sys
 import threading
 import time
@@ -15,16 +16,17 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import yaml
 
-from . import dedup, notify, omi, trend
+from . import dedup, notify, omi, stima, trend
 from .geocode import BOX, Geocoder, enrich
 from .http import Http
 from .sources import load_all
 from .sources.base import Context
 from .store import Store
-from .zones import FOREIGN_RX, detect_zone, in_province, infer_trieste, norm
+from .zones import FOREIGN_RX, detect_zone, foreign_title, in_province, infer_trieste, norm
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
 _print_lock = threading.Lock()
+WANTED_AD = re.compile(r"\s*(cerco|cerchiamo|cercasi|compro|acquisto|acquistiamo)\b")
 
 
 def log(src, msg):
@@ -69,7 +71,12 @@ def run_source(cfg, adapters, store, time_budget):
         return sid, None, str(e)[:300], set(), {"requests": http.requests, "seconds": round(time.time() - t0)}
     out, skipped = [], 0
     for L in items:
+        if WANTED_AD.match(norm(L.title or "")):
+            continue   # "Cerco casa tricamere...": richiesta di un privato, non un immobile in vendita
         L.finalize(default_town=src.default_town)
+        if foreign_title(L.title):
+            skipped += 1   # "Appartamento a Monfalcone": il titolo dice fuori provincia, qualunque comune dia il sito
+            continue
         if not L.town and infer_trieste(L.title, L.address, L.zone, L.description,
                                         zone_fallback=cfg.get("zone_fallback", False),
                                         unrecognized=cfg.get("default_town_if_unrecognized", False)):
@@ -144,6 +151,10 @@ def main():
         except Exception as e:   # sito dell'Agenzia non raggiungibile: si riprova al prossimo giro
             print("Quotazioni OMI non aggiornate:", e)
     omi.assign(store.listings)
+    res = stima.apply(store)
+    if res:
+        print(f"Stima del prezzo: {len(res['est'])} case, errore tipico {res['mdape'] * 100:.0f}% "
+              f"(campione di {res['n']} annunci)")
     all_names = {s["id"]: s["name"] for s in load_sources()}
     if not args.no_notify:
         notify.send(store, all_names)

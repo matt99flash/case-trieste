@@ -1,0 +1,9788 @@
+{
+"Duino-Aurisina": {
+"area 202 sistiana": [
+"Area 202 Sistiana",
+45.76945,
+13.64683,
+0.0
+],
+"area di servizio duino nord": [
+"Area di servizio Duino Nord",
+45.77732,
+13.60774,
+0.0
+],
+"area di servizio duino sud": [
+"Area di servizio Duino Sud",
+45.77666,
+13.6081,
+0.0
+],
+"autostrada serenissima": [
+"Autostrada Serenissima",
+45.7979,
+13.58425,
+0.01
+],
+"cai 79": [
+"CAI 79",
+45.80352,
+13.60763,
+0.0
+],
+"carraia di locavaz": [
+"Carraia di Locavaz",
+45.79332,
+13.58642,
+0.0
+],
+"cesta / strada igo gruden": [
+"Cesta / Strada Igo Gruden",
+45.74875,
+13.67372,
+0.34
+],
+"corte sconta": [
+"Corte sconta",
+45.76635,
+13.63593,
+0.0
+],
+"erta del cantinon": [
+"Erta del cantinon",
+45.76515,
+13.6374,
+0.01
+],
+"ex svincolo sistiana": [
+"ex svincolo Sistiana",
+45.77241,
+13.64371,
+0.0
+],
+"i giardini": [
+"I giardini",
+45.76501,
+13.63702,
+0.03
+],
+"i pastini": [
+"I pastini",
+45.76417,
+13.63749,
+0.0
+],
+"i portici": [
+"I portici",
+45.76587,
+13.63708,
+0.04
+],
+"la diga": [
+"La diga",
+45.7636,
+13.63721,
+0.0
+],
+"largo ai giardini": [
+"Largo Ai giardini",
+45.76477,
+13.63732,
+0.0
+],
+"largo dei tre archi": [
+"Largo dei tre archi",
+45.76485,
+13.63752,
+0.01
+],
+"largo del cantinon": [
+"Largo del cantinon",
+45.76535,
+13.63756,
+0.01
+],
+"largo della torretta": [
+"Largo della torretta",
+45.76663,
+13.63756,
+0.01
+],
+"le botteghe": [
+"Le botteghe",
+45.76572,
+13.63727,
+0.08
+],
+"le mura alte": [
+"Le mura alte",
+45.76692,
+13.6363,
+0.04
+],
+"le mura basse": [
+"Le mura basse",
+45.76627,
+13.63718,
+0.07
+],
+"nuova strada anas 56 di sistiana": [
+"Nuova Strada ANAS 56 di Sistiana",
+45.76468,
+13.6477,
+0.44
+],
+"piazza barone goffredo de banfield": [
+"Piazza Barone Goffredo de Banfield",
+45.77236,
+13.62756,
+0.0
+],
+"piazza caduti per la liberta / trg padlih za svobodo": [
+"Piazza Caduti per la Libertà / Trg padlih za svobodo",
+45.75401,
+13.65936,
+0.01
+],
+"plac": [
+"Plac",
+45.78534,
+13.65972,
+0.0
+],
+"raccordo autostradale 13 sistiana-padriciano": [
+"Raccordo Autostradale 13 Sistiana-Padriciano",
+45.75964,
+13.66973,
+0.14
+],
+"s.t.e.": [
+"S.T.E.",
+45.79054,
+13.62286,
+0.0
+],
+"salita alle mura": [
+"Salita alle Mura",
+45.76639,
+13.63606,
+0.02
+],
+"salita del borgo": [
+"Salita del borgo",
+45.76562,
+13.6374,
+0.02
+],
+"salita della torretta": [
+"Salita della torretta",
+45.76646,
+13.63741,
+0.02
+],
+"sentiero dei pescatori / ribiska pot": [
+"Sentiero dei pescatori / Ribiška pot",
+45.74923,
+13.65957,
+0.04
+],
+"sentiero della salvia": [
+"Sentiero della salvia",
+45.74853,
+13.66231,
+0.0
+],
+"sentiero giallo s.a.g.": [
+"Sentiero giallo S.A.G.",
+45.78884,
+13.62733,
+0.0
+],
+"sentiero rainer maria rilke": [
+"Sentiero Rainer Maria Rilke",
+45.77263,
+13.61077,
+0.09
+],
+"sentiero storico-naturalistivo di quota 28 “punta bratina”": [
+"Sentiero storico-naturalistivo di quota 28 “Punta Bratina”",
+45.78395,
+13.58748,
+0.13
+],
+"strada della baia": [
+"Strada della baia",
+45.766,
+13.63529,
+0.1
+],
+"strada della salvia / zajbljeva pot": [
+"Strada della Salvia / Žajbljeva pot",
+45.7463,
+13.66621,
+0.0
+],
+"strada di portopiccolo": [
+"Strada di Portopiccolo",
+45.76659,
+13.63762,
+0.26
+],
+"strada regionale 55 dell'isonzo": [
+"Strada regionale 55 dell'Isonzo",
+45.79881,
+13.58804,
+0.66
+],
+"strada statale 14 della venezia giulia": [
+"Strada Statale 14 della Venezia Giulia",
+45.79463,
+13.58353,
+0.23
+],
+"terna": [
+"Terna",
+45.76139,
+13.69931,
+0.0
+],
+"via cesare augusto colombo": [
+"Via Cesare Augusto Colombo",
+45.79655,
+13.58161,
+0.0
+],
+"vicolo sconto": [
+"Vicolo sconto",
+45.76664,
+13.63601,
+0.0
+],
+"volto del cantinon": [
+"Volto del cantinon",
+45.76529,
+13.63741,
+0.0
+]
+},
+"Monrupino": {
+"27": [
+"27",
+45.73506,
+13.78493,
+0.0
+],
+"raccordo autostradale 14": [
+"Raccordo Autostradale 14",
+45.69739,
+13.83199,
+0.44
+],
+"sentiero dei poeti / pot pesnikov": [
+"Sentiero dei poeti / Pot pesnikov",
+45.71959,
+13.80629,
+0.0
+],
+"sentiero di san giacomo / jakobova pot": [
+"Sentiero di San Giacomo / Jakobova pot",
+45.7216,
+13.80642,
+0.22
+],
+"strada statale 58 della carniola": [
+"Strada Statale 58 della Carniola",
+45.69905,
+13.83312,
+0.17
+],
+"via di monrupino": [
+"Via di Monrupino",
+45.70313,
+13.80035,
+0.0
+]
+},
+"Muggia": {
+"autostrada sistiana-rabuiese (tronco ii)": [
+"Autostrada Sistiana-Rabuiese (tronco II)",
+45.59637,
+13.80618,
+0.25
+],
+"azzalini energie": [
+"Azzalini energie",
+45.60568,
+13.80752,
+0.0
+],
+"borgo san cristoforo": [
+"Borgo San Cristoforo",
+45.60597,
+13.76208,
+0.05
+],
+"borgo san pietro": [
+"Borgo San Pietro",
+45.60469,
+13.76226,
+0.0
+],
+"borgo zindis stradello a": [
+"Borgo Zindis Stradello A",
+45.60708,
+13.74866,
+0.08
+],
+"borgo zindis stradello b": [
+"Borgo Zindis Stradello B",
+45.60781,
+13.74829,
+0.0
+],
+"borgo zindis stradello c": [
+"Borgo Zindis Stradello C",
+45.60684,
+13.74659,
+0.06
+],
+"calle alessandro volta": [
+"Calle Alessandro Volta",
+45.60374,
+13.76655,
+0.0
+],
+"calle bachiocco": [
+"Calle Bachiocco",
+45.60451,
+13.76813,
+0.0
+],
+"calle de bernardis": [
+"Calle De Bernardis",
+45.60351,
+13.76769,
+0.0
+],
+"calle dei budigna": [
+"Calle dei Budigna",
+45.60423,
+13.76575,
+0.0
+],
+"calle dei fermapase": [
+"Calle dei Fermapase",
+45.60411,
+13.7654,
+0.0
+],
+"calle dei graziadio": [
+"Calle dei Graziadio",
+45.60391,
+13.76716,
+0.0
+],
+"calle dei landi": [
+"Calle dei Landi",
+45.60371,
+13.76663,
+0.0
+],
+"calle dei lauri": [
+"Calle dei Lauri",
+45.60469,
+13.76586,
+0.0
+],
+"calle dei luca": [
+"Calle dei Luca",
+45.6043,
+13.7666,
+0.01
+],
+"calle dei naccari": [
+"Calle dei Naccari",
+45.60374,
+13.76887,
+0.0
+],
+"calle dei pancera": [
+"Calle dei Pancera",
+45.60345,
+13.7673,
+0.0
+],
+"calle dei petracca": [
+"Calle dei Petracca",
+45.60421,
+13.7663,
+0.0
+],
+"calle dei senesi": [
+"Calle dei Senesi",
+45.60422,
+13.76599,
+0.0
+],
+"calle del castello": [
+"Calle del Castello",
+45.6048,
+13.7665,
+0.01
+],
+"calle del ghetto": [
+"Calle del Ghetto",
+45.60331,
+13.76708,
+0.0
+],
+"calle del pozzo": [
+"Calle del Pozzo",
+45.60458,
+13.76752,
+0.0
+],
+"calle delle monache": [
+"Calle delle Monache",
+45.60423,
+13.76642,
+0.0
+],
+"calle farra bombizza": [
+"Calle Farra Bombizza",
+45.60371,
+13.76866,
+0.0
+],
+"calle giambattista tiepolo": [
+"Calle Giambattista Tiepolo",
+45.60457,
+13.76718,
+0.0
+],
+"calle giovanni apostoli": [
+"Calle Giovanni Apostoli",
+45.60421,
+13.76836,
+0.0
+],
+"calle giuseppe parini": [
+"Calle Giuseppe Parini",
+45.60358,
+13.7679,
+0.0
+],
+"calle giuseppe verdi": [
+"Calle Giuseppe Verdi",
+45.6042,
+13.76595,
+0.06
+],
+"calle guglielmo oberdan": [
+"Calle Guglielmo Oberdan",
+45.60372,
+13.76792,
+0.0
+],
+"calle luca farra": [
+"Calle Luca Farra",
+45.6041,
+13.76791,
+0.0
+],
+"calle monte albano": [
+"Calle Monte Albano",
+45.60441,
+13.76674,
+0.0
+],
+"calle monticula": [
+"Calle Monticula",
+45.6048,
+13.76656,
+0.03
+],
+"calle pietro moro": [
+"Calle Pietro Moro",
+45.6042,
+13.76829,
+0.0
+],
+"calle san francesco": [
+"Calle San Francesco",
+45.60373,
+13.76621,
+0.01
+],
+"calle scala d'oro": [
+"Calle Scala d'Oro",
+45.60429,
+13.76615,
+0.0
+],
+"calle secundis": [
+"Calle Secundis",
+45.60401,
+13.76584,
+0.01
+],
+"calle squero vecchio": [
+"Calle Squero vecchio",
+45.6041,
+13.76868,
+0.0
+],
+"ciclabile trieste": [
+"Ciclabile Trieste",
+45.58965,
+13.79763,
+0.37
+],
+"corso giacomo puccini": [
+"Corso Giacomo Puccini",
+45.60399,
+13.76721,
+0.06
+],
+"galleria antonio parladori": [
+"Galleria Antonio Parladori",
+45.60434,
+13.76602,
+0.0
+],
+"galleria monte d'oro": [
+"Galleria Monte d'Oro",
+45.6013,
+13.81687,
+0.02
+],
+"largo amulia": [
+"Largo Amulia",
+45.60484,
+13.76713,
+0.0
+],
+"largo caduti per la liberta": [
+"Largo Caduti per la Libertà",
+45.60365,
+13.76983,
+0.03
+],
+"largo lavoratori raffineria aquila": [
+"Largo Lavoratori Raffineria Aquila",
+45.6024,
+13.80603,
+0.04
+],
+"largo nazario sauro": [
+"Largo Nazario Sauro",
+45.60534,
+13.76686,
+0.02
+],
+"localita chiampore": [
+"Località Chiampore",
+45.59776,
+13.7436,
+0.02
+],
+"localita noghere": [
+"Località Noghere",
+45.59113,
+13.80884,
+0.13
+],
+"localita pisciolon": [
+"Località Pisciolon",
+45.59602,
+13.75639,
+0.32
+],
+"localita punta sottile": [
+"Località Punta Sottile",
+45.60343,
+13.72485,
+0.13
+],
+"localita rabuiese": [
+"Località Rabuiese",
+45.58649,
+13.79641,
+0.05
+],
+"localita rio storto": [
+"Località Rio Storto",
+45.59826,
+13.75881,
+0.47
+],
+"localita vignano": [
+"Località Vignano",
+45.58249,
+13.81029,
+0.0
+],
+"lungomare venezia": [
+"Lungomare Venezia",
+45.60634,
+13.76301,
+0.1
+],
+"molo cristoforo colombo": [
+"Molo Cristoforo Colombo",
+45.60617,
+13.76707,
+0.0
+],
+"molo de le piere": [
+"Molo de le Piere",
+45.60569,
+13.76695,
+0.0
+],
+"molo dell'illusione": [
+"Molo dell'Illusione",
+45.60644,
+13.766,
+0.0
+],
+"monstertruck": [
+"monstertruck",
+45.58778,
+13.81878,
+0.0
+],
+"muggia": [
+"Muggia",
+45.60254,
+13.77015,
+0.0
+],
+"passo marcuzzi": [
+"Passo Marcuzzi",
+45.60402,
+13.7677,
+0.0
+],
+"passo roncalli": [
+"Passo Roncalli",
+45.60378,
+13.76936,
+0.0
+],
+"piazza della repubblica": [
+"Piazza della Repubblica",
+45.60343,
+13.76916,
+0.04
+],
+"piazza galileo galilei": [
+"Piazza Galileo Galilei",
+45.60434,
+13.76792,
+0.0
+],
+"piazza guglielmo marconi": [
+"Piazza Guglielmo Marconi",
+45.60419,
+13.76749,
+0.0
+],
+"piazza i maggio": [
+"Piazza I Maggio",
+45.59807,
+13.77874,
+0.0
+],
+"piazza primo maggio": [
+"Piazza Primo Maggio",
+45.59821,
+13.77866,
+0.0
+],
+"piazza santa lucia": [
+"Piazza Santa Lucia",
+45.60412,
+13.76653,
+0.0
+],
+"piazzale alto adriatico": [
+"Piazzale Alto Adriatico",
+45.60204,
+13.77574,
+0.01
+],
+"piazzale arciduca lodovico salvatore": [
+"Piazzale Arciduca Lodovico Salvatore",
+45.60698,
+13.75757,
+0.0
+],
+"piazzale eddie walter cosina": [
+"Piazzale Eddie Walter Cosina",
+45.60513,
+13.80809,
+0.04
+],
+"piazzale eugenio curiel": [
+"Piazzale Eugenio Curiel",
+45.6027,
+13.76998,
+0.02
+],
+"piazzale gabriele foschiatti": [
+"Piazzale Gabriele Foschiatti",
+45.6023,
+13.77009,
+0.02
+],
+"piazzale giorgio menguzzato": [
+"Piazzale Giorgio Menguzzato",
+45.60156,
+13.80616,
+0.02
+],
+"piazzale udine": [
+"Piazzale Udine",
+45.6072,
+13.75765,
+0.0
+],
+"piazzetta fratelli giulio e libero marassi": [
+"Piazzetta fratelli Giulio e Libero Marassi",
+45.59788,
+13.7432,
+0.0
+],
+"portico guglielmo marconi": [
+"Portico Guglielmo Marconi",
+45.60431,
+13.76745,
+0.0
+],
+"rana2022": [
+"Rana2022",
+45.59113,
+13.77686,
+3.27
+],
+"riva edmondo de amicis": [
+"Riva Edmondo de Amicis",
+45.60488,
+13.7678,
+0.02
+],
+"salita ai piai": [
+"Salita ai Piai",
+45.60504,
+13.76587,
+0.05
+],
+"salita delle mura": [
+"Salita delle Mura",
+45.60381,
+13.76507,
+0.05
+],
+"salita gianpaolo ubaldini": [
+"Salita Gianpaolo Ubaldini",
+45.6021,
+13.76154,
+0.26
+],
+"salita muggia vecchia": [
+"Salita Muggia Vecchia",
+45.60234,
+13.75753,
+0.58
+],
+"san floriano-ligon": [
+"San Floriano-Ligon",
+45.60366,
+13.73243,
+0.18
+],
+"strada della luna": [
+"Strada della Luna",
+45.60585,
+13.75045,
+0.0
+],
+"strada delle saline": [
+"Strada delle Saline",
+45.59559,
+13.79459,
+0.61
+],
+"strada di san clemente": [
+"Strada di San Clemente",
+45.59205,
+13.80105,
+0.45
+],
+"strada per chiampore": [
+"Strada per Chiampore",
+45.60341,
+13.74351,
+0.49
+],
+"strada per fontanella": [
+"Strada per Fontanella",
+45.60495,
+13.75174,
+0.02
+],
+"strada per i laghetti": [
+"Strada per i Laghetti",
+45.58688,
+13.80724,
+0.4
+],
+"strada per la fortezza": [
+"Strada per la Fortezza",
+45.60563,
+13.75557,
+0.0
+],
+"strada per lazzaretto": [
+"Strada per Lazzaretto",
+45.60117,
+13.72882,
+2.14
+],
+"strada provinciale farnei": [
+"Strada provinciale Farnei",
+45.5919,
+13.79464,
+0.98
+],
+"via alessandro manzoni": [
+"Via Alessandro Manzoni",
+45.60438,
+13.76861,
+0.03
+],
+"via alle cave": [
+"Via alle Cave",
+45.58826,
+13.7899,
+0.0
+],
+"via alma vivoda": [
+"Via Alma Vivoda",
+45.59924,
+13.74905,
+0.18
+],
+"via borgolauro": [
+"Via Borgolauro",
+45.60111,
+13.76705,
+0.06
+],
+"via caduti della r. a. m. b.": [
+"Via Caduti della R. A. M. B.",
+45.59211,
+13.80465,
+0.0
+],
+"via caduti sul lavoro": [
+"Via Caduti sul Lavoro",
+45.59136,
+13.80407,
+0.19
+],
+"via cesare battisti": [
+"Via Cesare Battisti",
+45.60417,
+13.77108,
+0.13
+],
+"via colombara di vignano": [
+"Via Colombara di Vignano",
+45.58676,
+13.80386,
+0.0
+],
+"via dante alighieri": [
+"Via Dante Alighieri",
+45.60401,
+13.76752,
+0.12
+],
+"via degli elettricisti": [
+"Via degli Elettricisti",
+45.5991,
+13.77624,
+0.0
+],
+"via dei berzulla": [
+"Via dei Berzulla",
+45.59873,
+13.76697,
+0.0
+],
+"via dei bonomo": [
+"Via dei Bonomo",
+45.60561,
+13.76011,
+0.0
+],
+"via dei calafati": [
+"Via dei Calafati",
+45.59669,
+13.77772,
+0.05
+],
+"via dei calderai": [
+"Via dei Calderai",
+45.59719,
+13.77684,
+0.0
+],
+"via dei carpentieri": [
+"Via dei Carpentieri",
+45.59912,
+13.77697,
+0.15
+],
+"via dei cavalieri di malta": [
+"Via dei Cavalieri di Malta",
+45.59439,
+13.79909,
+0.0
+],
+"via dei fabbri": [
+"Via dei Fabbri",
+45.59855,
+13.77573,
+0.03
+],
+"via dei fonditori": [
+"Via dei Fonditori",
+45.60007,
+13.77633,
+0.0
+],
+"via dei marangoni": [
+"Via dei Marangoni",
+45.59814,
+13.77977,
+0.03
+],
+"via dei meccanici": [
+"Via dei Meccanici",
+45.59759,
+13.7785,
+0.07
+],
+"via dei mulini": [
+"Via dei Mulini",
+45.5931,
+13.76542,
+0.32
+],
+"via dei templari": [
+"Via dei Templari",
+45.5931,
+13.79799,
+0.0
+],
+"via del canneto": [
+"Via del Canneto",
+45.58692,
+13.80893,
+0.21
+],
+"via del fugnan": [
+"Via del Fugnan",
+45.59832,
+13.76649,
+0.0
+],
+"via del serbatoio": [
+"Via del Serbatoio",
+45.5931,
+13.78718,
+0.36
+],
+"via della raffineria": [
+"Via della Raffineria",
+45.60033,
+13.80217,
+0.13
+],
+"via della stazione": [
+"Via della Stazione",
+45.59453,
+13.78467,
+0.24
+],
+"via della torre": [
+"Via della Torre",
+45.60337,
+13.76665,
+0.02
+],
+"via di crevatini": [
+"Via di Crevatini",
+45.59449,
+13.76177,
+0.24
+],
+"via di monte d'oro": [
+"Via di Monte d'Oro",
+45.60041,
+13.80906,
+0.26
+],
+"via di monte san giovanni": [
+"Via di Monte San Giovanni",
+45.59913,
+13.80824,
+0.09
+],
+"via di noghere": [
+"Via di Noghere",
+45.59914,
+13.80533,
+0.15
+],
+"via di pianezzi": [
+"Via di Pianezzi",
+45.59905,
+13.76489,
+0.0
+],
+"via di santa barbara": [
+"Via di Santa Barbara",
+45.59871,
+13.77292,
+0.84
+],
+"via di santa barbara stradello a": [
+"Via di Santa Barbara Stradello A",
+45.59701,
+13.77531,
+0.17
+],
+"via di stramare": [
+"Via di Stramare",
+45.60105,
+13.80199,
+0.1
+],
+"via di trieste": [
+"Via di Trieste",
+45.59846,
+13.78469,
+1.52
+],
+"via di zaule": [
+"Via di Zaule",
+45.60326,
+13.80693,
+0.19
+],
+"via edoardo strudthoff": [
+"Via Edoardo Strudthoff",
+45.60412,
+13.75696,
+0.27
+],
+"via flavia di aquilinia": [
+"Via Flavia di Aquilinia",
+45.60337,
+13.8069,
+0.72
+],
+"via flavia di stramare": [
+"Via Flavia di Stramare",
+45.59076,
+13.80428,
+1.06
+],
+"via francesco bembo": [
+"Via Francesco Bembo",
+45.60052,
+13.77079,
+0.16
+],
+"via gabriele d'annunzio": [
+"Via Gabriele D'Annunzio",
+45.60066,
+13.76652,
+0.32
+],
+"via giacomo matteotti": [
+"Via Giacomo Matteotti",
+45.60287,
+13.77132,
+0.05
+],
+"via giosue carducci": [
+"Via Giosuè Carducci",
+45.60453,
+13.76776,
+0.0
+],
+"via giuseppe garibaldi": [
+"Via Giuseppe Garibaldi",
+45.60569,
+13.76582,
+0.03
+],
+"via giuseppe mazzini": [
+"Via Giuseppe Mazzini",
+45.60263,
+13.7683,
+0.0
+],
+"via giuseppe tonello": [
+"Via Giuseppe Tonello",
+45.60314,
+13.76975,
+0.0
+],
+"via goffredo mameli": [
+"Via Goffredo Mameli",
+45.60004,
+13.76113,
+0.25
+],
+"via marianna di domenico": [
+"Via Marianna Di Domenico",
+45.59776,
+13.78828,
+0.0
+],
+"via mazzarei": [
+"Via Mazzarei",
+45.60147,
+13.77024,
+0.03
+],
+"via mocenigo": [
+"Via Mocenigo",
+45.60456,
+13.76364,
+0.02
+],
+"via natale colarich": [
+"Via Natale Colarich",
+45.59562,
+13.77256,
+0.67
+],
+"via nereo martinelli": [
+"Via Nereo Martinelli",
+45.59129,
+13.80531,
+0.16
+],
+"via oliviero petronio": [
+"Via Oliviero Petronio",
+45.59228,
+13.80347,
+0.14
+],
+"via paolo reti": [
+"Via Paolo Reti",
+45.60026,
+13.76732,
+0.0
+],
+"via pier paolo deluca": [
+"Via Pier Paolo Deluca",
+45.60283,
+13.77087,
+0.0
+],
+"via roma": [
+"Via Roma",
+45.60296,
+13.76748,
+0.08
+],
+"via san giovanni": [
+"Via San Giovanni",
+45.6019,
+13.76874,
+0.11
+],
+"via sergio forti": [
+"Via Sergio Forti",
+45.59675,
+13.7656,
+0.0
+],
+"via signolo": [
+"Via Signolo",
+45.6025,
+13.76943,
+0.0
+],
+"via umberto felluga": [
+"Via Umberto Felluga",
+45.60133,
+13.76554,
+0.0
+],
+"viale luigi frausin": [
+"Viale Luigi Frausin",
+45.60348,
+13.77125,
+0.0
+],
+"viale venticinque aprile": [
+"Viale Venticinque Aprile",
+45.59844,
+13.76699,
+0.23
+]
+},
+"San Dorligo della Valle": {
+"1": [
+"1",
+45.61205,
+13.86571,
+0.0
+],
+"autostrada sistiana-rabuiese (tronco ii)": [
+"Autostrada Sistiana-Rabuiese (tronco II)",
+45.60718,
+13.82885,
+0.54
+],
+"biscottone trail": [
+"Biscottone Trail",
+45.62524,
+13.86821,
+0.0
+],
+"g'rica": [
+"G'rica",
+45.61467,
+13.85921,
+0.0
+],
+"galleria monte d'oro": [
+"Galleria Monte d'Oro",
+45.6013,
+13.81687,
+0.02
+],
+"grozzana trail": [
+"Grozzana Trail",
+45.63567,
+13.9025,
+0.0
+],
+"jazere+bigolo": [
+"jazere+bigolo",
+45.62951,
+13.88547,
+0.0
+],
+"localita crociata di prebenico": [
+"Località Crociata di Prebenico",
+45.58393,
+13.83756,
+0.0
+],
+"localita san dorligo della valle": [
+"Località San Dorligo della Valle",
+45.60508,
+13.85567,
+0.02
+],
+"monstertruck": [
+"monstertruck",
+45.58778,
+13.81878,
+0.0
+],
+"nuova sopraelevata": [
+"Nuova Sopraelevata",
+45.6137,
+13.83868,
+1.89
+],
+"ponte": [
+"Ponte",
+45.59995,
+13.85986,
+0.0
+],
+"ponte_torrente_dolina": [
+"ponte_torrente_dolina",
+45.59917,
+13.86036,
+0.0
+],
+"rana2022": [
+"Rana2022",
+45.58355,
+13.82874,
+0.0
+],
+"sp11": [
+"SP11",
+45.59028,
+13.85084,
+0.0
+],
+"strada complanare occidentale interna siot": [
+"strada complanare occidentale interna SIOT",
+45.59795,
+13.84181,
+0.02
+],
+"strada provinciale 12b della rosandra": [
+"Strada provinciale 12b della Rosandra",
+45.60593,
+13.85054,
+0.03
+],
+"via flavia di aquilinia": [
+"Via Flavia di Aquilinia",
+45.60606,
+13.80788,
+0.0
+],
+"via josip ressel / ulica josip ressel": [
+"Via Josip Ressel / Ulica Josip Ressel",
+45.61149,
+13.82648,
+0.26
+],
+"via muggia / ulica muggia": [
+"Via Muggia / Ulica Muggia",
+45.60725,
+13.82229,
+0.32
+],
+"via travnik / ulica travnik": [
+"Via Travnik / Ulica Travnik",
+45.60931,
+13.82971,
+0.23
+]
+},
+"Sgonico": {
+"40a": [
+"40a",
+45.74082,
+13.76171,
+0.39
+],
+"adriaenergy": [
+"AdriaEnergy",
+45.70869,
+13.7443,
+0.0
+],
+"alpe adria trail": [
+"Alpe Adria Trail",
+45.74222,
+13.75188,
+0.0
+],
+"bristie / brisce": [
+"Bristie / Brišče",
+45.73078,
+13.70373,
+0.0
+],
+"cai n.3": [
+"CAI N.3",
+45.74312,
+13.77871,
+0.0
+],
+"dolina riselce": [
+"Dolina Riselce",
+45.72651,
+13.74605,
+0.0
+],
+"galleria prosecco": [
+"Galleria Prosecco",
+45.70966,
+13.74194,
+0.01
+],
+"m. skabar": [
+"M. Skabar",
+45.74961,
+13.76657,
+0.0
+],
+"riselce": [
+"Riselce",
+45.72563,
+13.74912,
+0.27
+],
+"sentiero / pespot rekikenca": [
+"Sentiero / Pešpot Rekikenca",
+45.74541,
+13.73927,
+0.0
+],
+"sentiero del torsolo": [
+"Sentiero del Torsolo",
+45.74242,
+13.77935,
+0.0
+],
+"sp35": [
+"SP35",
+45.71211,
+13.73887,
+0.25
+]
+},
+"Trieste": {
+"access to monte gaia trails": [
+"Access to Monte Gaia Trails",
+45.66325,
+13.85593,
+0.0
+],
+"androna almerico d'este": [
+"Androna Almerico d'Este",
+45.64176,
+13.81805,
+0.04
+],
+"androna barriera vecchia": [
+"Androna Barriera Vecchia",
+45.64881,
+13.77769,
+0.01
+],
+"androna campo marzio": [
+"Androna Campo Marzio",
+45.64386,
+13.75746,
+0.0
+],
+"androna cherso": [
+"Androna Cherso",
+45.62978,
+13.7929,
+0.0
+],
+"androna chiusa": [
+"Androna Chiusa",
+45.64859,
+13.76792,
+0.0
+],
+"androna cristoforo colombo": [
+"Androna Cristoforo Colombo",
+45.64229,
+13.7764,
+0.0
+],
+"androna degli orti": [
+"Androna degli Orti",
+45.64741,
+13.76888,
+0.03
+],
+"androna degli scalini": [
+"Androna degli Scalini",
+45.64875,
+13.77107,
+0.02
+],
+"androna dei coppa": [
+"Androna dei Coppa",
+45.64888,
+13.76723,
+0.0
+],
+"androna dei grigioni": [
+"Androna dei Grigioni",
+45.64836,
+13.76875,
+0.01
+],
+"androna del pane": [
+"Androna del Pane",
+45.64949,
+13.76966,
+0.02
+],
+"androna del pozzo": [
+"Androna del Pozzo",
+45.64899,
+13.76831,
+0.0
+],
+"androna del torchio": [
+"Androna del Torchio",
+45.64869,
+13.76692,
+0.0
+],
+"androna dell'olio": [
+"Androna dell'Olio",
+45.64819,
+13.76754,
+0.02
+],
+"androna della corte": [
+"Androna della Corte",
+45.64794,
+13.76797,
+0.0
+],
+"androna della ferriera": [
+"Androna della Ferriera",
+45.64561,
+13.78254,
+0.0
+],
+"androna della torre": [
+"Androna della Torre",
+45.64923,
+13.77007,
+0.0
+],
+"androna di cavana": [
+"Androna di Cavana",
+45.64799,
+13.76664,
+0.0
+],
+"androna di romagna": [
+"Androna di Romagna",
+45.65553,
+13.77596,
+0.01
+],
+"androna ettore oliani": [
+"Androna Ettore Oliani",
+45.64173,
+13.81875,
+0.0
+],
+"androna fra' paolo naldini": [
+"Androna Fra' Paolo Naldini",
+45.63537,
+13.7909,
+0.0
+],
+"androna melchiorre cesarotti": [
+"Androna Melchiorre Cesarotti",
+45.6586,
+13.79735,
+0.0
+],
+"androna riparata": [
+"Androna Riparata",
+45.64425,
+13.7812,
+0.0
+],
+"androna san cilino": [
+"Androna San Cilino",
+45.65593,
+13.79668,
+0.0
+],
+"androna san fortunato": [
+"Androna San Fortunato",
+45.66589,
+13.76821,
+0.03
+],
+"androna san saverio": [
+"Androna San Saverio",
+45.64805,
+13.77052,
+0.0
+],
+"androna san sebastiano": [
+"Androna San Sebastiano",
+45.64878,
+13.76753,
+0.0
+],
+"androna san silvestro": [
+"Androna San Silvestro",
+45.64801,
+13.76865,
+0.0
+],
+"androna sant'eufemia": [
+"Androna Sant'Eufemia",
+45.64419,
+13.7594,
+0.0
+],
+"androna santa tecla": [
+"Androna Santa Tecla",
+45.64386,
+13.7593,
+0.0
+],
+"androna sporcavilla": [
+"Androna Sporcavilla",
+45.64764,
+13.76767,
+0.01
+],
+"autostrada sistiana-rabuiese (tronco i)": [
+"Autostrada Sistiana-Rabuiese (tronco I)",
+45.63993,
+13.83175,
+2.32
+],
+"belvedere guido de santi": [
+"Belvedere Guido De Santi",
+45.62621,
+13.78223,
+0.0
+],
+"calabroni": [
+"Calabroni",
+45.69447,
+13.74452,
+0.0
+],
+"campo claudio monteverdi": [
+"Campo Claudio Monteverdi",
+45.62499,
+13.80565,
+0.02
+],
+"campo pietro metastasio": [
+"Campo Pietro Metastasio",
+45.6247,
+13.80763,
+0.05
+],
+"campo sacro / bozje polje": [
+"Campo Sacro / Božje polje",
+45.71569,
+13.72663,
+0.0
+],
+"campo san giacomo": [
+"Campo San Giacomo",
+45.64265,
+13.77931,
+0.11
+],
+"campo san luigi": [
+"Campo San Luigi",
+45.65271,
+13.78887,
+0.01
+],
+"capo di piazza gianni bartoli": [
+"Capo di Piazza Gianni Bartoli",
+45.64985,
+13.76896,
+0.0
+],
+"capo di piazza monsignor antonio santin": [
+"Capo di Piazza Monsignor Antonio Santin",
+45.64928,
+13.76784,
+0.0
+],
+"ciclabile trieste-miramare": [
+"Ciclabile Trieste-Miramare",
+45.68255,
+13.74768,
+1.98
+],
+"ciclopedonale giordano cottur": [
+"Ciclopedonale Giordano Cottur",
+45.62956,
+13.82492,
+0.0
+],
+"clivo artemisio": [
+"Clivo Artemisio",
+45.66535,
+13.79848,
+0.22
+],
+"corso camillo benso conte di cavour": [
+"Corso Camillo Benso Conte di Cavour",
+45.65526,
+13.7709,
+0.11
+],
+"corso cavour": [
+"Corso Cavour",
+45.65426,
+13.77037,
+0.0
+],
+"corso italia": [
+"Corso Italia",
+45.64985,
+13.77359,
+0.2
+],
+"corso umberto saba": [
+"Corso Umberto Saba",
+45.6489,
+13.77787,
+0.05
+],
+"erta dei pruni": [
+"Erta dei Pruni",
+45.672,
+13.76131,
+0.12
+],
+"erta di sant'anna": [
+"Erta di Sant'Anna",
+45.62775,
+13.80966,
+0.1
+],
+"esso": [
+"Esso",
+45.61475,
+13.81719,
+0.39
+],
+"esso di piazza dei foraggi": [
+"Esso di Piazza dei Foraggi",
+45.64003,
+13.78897,
+0.0
+],
+"ex caserma polizia stradale di roiano": [
+"Ex Caserma Polizia Stradale di Roiano",
+45.66634,
+13.77182,
+0.0
+],
+"ex cedas": [
+"Ex Cedas",
+45.68744,
+13.74551,
+0.0
+],
+"foro ulpiano": [
+"Foro Ulpiano",
+45.65496,
+13.77921,
+0.01
+],
+"galleria arrigo protti": [
+"Galleria Arrigo Protti",
+45.65006,
+13.77141,
+0.02
+],
+"galleria carso": [
+"Galleria Carso",
+45.64501,
+13.83955,
+0.01
+],
+"galleria cattinara": [
+"Galleria Cattinara",
+45.635,
+13.83099,
+0.0
+],
+"galleria cattinara ii": [
+"Galleria Cattinara II",
+45.63489,
+13.82912,
+0.03
+],
+"galleria di chiarbola": [
+"Galleria di Chiarbola",
+45.63568,
+13.79045,
+0.0
+],
+"galleria di montebello": [
+"Galleria di Montebello",
+45.63577,
+13.78977,
+0.0
+],
+"galleria fenice": [
+"Galleria Fenice",
+45.65212,
+13.7779,
+0.03
+],
+"galleria marco besso": [
+"Galleria Marco Besso",
+45.65112,
+13.77818,
+0.0
+],
+"galleria prosecco": [
+"Galleria Prosecco",
+45.70742,
+13.74556,
+0.75
+],
+"galleria san vito": [
+"Galleria San Vito",
+45.6433,
+13.77584,
+0.0
+],
+"galleria scipione de sandrinelli": [
+"Galleria Scipione De Sandrinelli",
+45.64742,
+13.77575,
+0.0
+],
+"galleria tergesteo": [
+"Galleria Tergesteo",
+45.65041,
+13.76937,
+0.02
+],
+"galleria trebiciano i": [
+"Galleria Trebiciano I",
+45.67671,
+13.81809,
+0.01
+],
+"galleria trebiciano ii": [
+"Galleria Trebiciano II",
+45.6673,
+13.82511,
+0.01
+],
+"galleria vittorio rossoni": [
+"Galleria Vittorio Rossoni",
+45.64955,
+13.7732,
+0.03
+],
+"giardino chiara longo": [
+"Giardino Chiara Longo",
+45.61868,
+13.82107,
+0.02
+],
+"ip": [
+"IP",
+45.62674,
+13.79491,
+0.0
+],
+"largo a roiano": [
+"Largo a Roiano",
+45.66335,
+13.76966,
+0.02
+],
+"largo antonio bertoloni (gia largo bertolini)": [
+"Largo Antonio Bertoloni (già Largo Bertolini)",
+45.68435,
+13.77529,
+0.01
+],
+"largo caduti di nassiriya": [
+"Largo Caduti di Nassiriya",
+45.64519,
+13.81054,
+0.03
+],
+"largo citta di santos": [
+"Largo Città di Santos",
+45.65669,
+13.77084,
+0.08
+],
+"largo dei granatieri": [
+"Largo dei Granatieri",
+45.64926,
+13.76908,
+0.0
+],
+"largo del pestalozzi": [
+"Largo del Pestalozzi",
+45.6397,
+13.78411,
+0.02
+],
+"largo del promontorio": [
+"Largo del Promontorio",
+45.64263,
+13.7622,
+0.01
+],
+"largo della barriera vecchia": [
+"Largo della Barriera Vecchia",
+45.64789,
+13.77908,
+0.06
+],
+"largo don francesco bonifacio": [
+"Largo Don Francesco Bonifacio",
+45.65154,
+13.77785,
+0.01
+],
+"largo ermete alessandro mario": [
+"Largo Ermete Alessandro Mario",
+45.64678,
+13.76323,
+0.01
+],
+"largo fulvio tomizza": [
+"Largo Fulvio Tomizza",
+45.65402,
+13.7857,
+0.01
+],
+"largo giambattista niccolini": [
+"Largo Giambattista Niccolini",
+45.64739,
+13.784,
+0.03
+],
+"largo giorgio gaber": [
+"Largo Giorgio Gaber",
+45.65257,
+13.78443,
+0.0
+],
+"largo giulio ascanio canal": [
+"Largo Giulio Ascanio Canal",
+45.64513,
+13.77243,
+0.0
+],
+"largo lino savorani": [
+"Largo Lino Savorani",
+45.65245,
+13.78398,
+0.0
+],
+"largo martiri della risiera": [
+"Largo Martiri della Risiera",
+45.62099,
+13.79005,
+0.0
+],
+"largo milite ignoto": [
+"Largo Milite Ignoto",
+45.64851,
+13.77237,
+0.0
+],
+"largo monsignor stanislav zorko": [
+"Largo Monsignor Stanislav Zorko",
+45.6724,
+13.78078,
+0.0
+],
+"largo odorico panfili": [
+"Largo Odorico Panfili",
+45.65477,
+13.77209,
+0.0
+],
+"largo osoppo": [
+"Largo Osoppo",
+45.66956,
+13.7667,
+0.01
+],
+"largo papa giovanni ventitreesimo": [
+"Largo Papa Giovanni Ventitreesimo",
+45.64576,
+13.76325,
+0.04
+],
+"largo petazzi": [
+"Largo Petazzi",
+45.66562,
+13.77111,
+0.0
+],
+"largo piave": [
+"Largo Piave",
+45.65368,
+13.77833,
+0.02
+],
+"largo raffaello battaglia": [
+"Largo Raffaello Battaglia",
+45.64586,
+13.80564,
+0.0
+],
+"largo riborgo": [
+"Largo Riborgo",
+45.64989,
+13.77225,
+0.01
+],
+"largo riccardo pitteri": [
+"Largo Riccardo Pitteri",
+45.64908,
+13.76768,
+0.01
+],
+"largo san tommaso": [
+"Largo San Tommaso",
+45.68997,
+13.77661,
+0.03
+],
+"largo santorio santorio": [
+"Largo Santorio Santorio",
+45.65014,
+13.77801,
+0.0
+],
+"largo sidney sonnino": [
+"Largo Sidney Sonnino",
+45.6447,
+13.78222,
+0.0
+],
+"largo silvio vardabasso": [
+"Largo Silvio Vardabasso",
+45.63475,
+13.78236,
+0.02
+],
+"largo sottomonte": [
+"Largo Sottomonte",
+45.67612,
+13.78108,
+0.04
+],
+"largo ugo irneri": [
+"Largo Ugo Irneri",
+45.63985,
+13.75935,
+0.09
+],
+"largo ugo mioni": [
+"Largo Ugo Mioni",
+45.64221,
+13.78497,
+0.0
+],
+"lipica": [
+"Lipica",
+45.65475,
+13.88433,
+0.0
+],
+"localita basovizza": [
+"Località Basovizza",
+45.64352,
+13.866,
+0.0
+],
+"lungomare benedetto croce": [
+"Lungomare Benedetto Croce",
+45.68475,
+13.74847,
+0.0
+],
+"molo audace": [
+"Molo Audace",
+45.65207,
+13.76648,
+0.01
+],
+"molo dei bersaglieri": [
+"Molo dei Bersaglieri",
+45.6503,
+13.76331,
+0.01
+],
+"molo della pescheria": [
+"Molo della Pescheria",
+45.6487,
+13.76226,
+0.0
+],
+"molo fratelli bandiera": [
+"Molo Fratelli Bandiera",
+45.64742,
+13.75521,
+0.08
+],
+"molo iv": [
+"Molo IV",
+45.65456,
+13.76876,
+0.11
+],
+"molo sartorio": [
+"Molo Sartorio",
+45.64675,
+13.76005,
+0.0
+],
+"molo venezia": [
+"Molo Venezia",
+45.64753,
+13.76153,
+0.08
+],
+"monkey trail": [
+"Monkey Trail",
+45.66898,
+13.81626,
+0.0
+],
+"nuova sopraelevata": [
+"Nuova Sopraelevata",
+45.62596,
+13.80301,
+3.47
+],
+"opicina / opcine": [
+"Opicina / Opčine",
+45.69361,
+13.7821,
+0.0
+],
+"padriciano": [
+"Padriciano",
+45.65887,
+13.82886,
+0.0
+],
+"passaggio joyce": [
+"Passaggio Joyce",
+45.65249,
+13.77112,
+0.0
+],
+"passaggio sergio rossoni": [
+"Passaggio Sergio Rossoni",
+45.64944,
+13.77309,
+0.0
+],
+"passeggio sant'andrea": [
+"Passeggio Sant'Andrea",
+45.64092,
+13.75561,
+0.4
+],
+"passerella": [
+"Passerella",
+45.62256,
+13.77929,
+0.0
+],
+"passo carlo goldoni": [
+"Passo Carlo Goldoni",
+45.64946,
+13.77787,
+0.0
+],
+"passo costanzi": [
+"Passo Costanzi",
+45.64887,
+13.76898,
+0.02
+],
+"passo della portizza": [
+"Passo della Portizza",
+45.65002,
+13.77014,
+0.01
+],
+"passo di piazza antonio fonda savio": [
+"Passo di Piazza Antonio Fonda Savio",
+45.65035,
+13.76837,
+0.0
+],
+"passo fausto pecorari": [
+"Passo Fausto Pecorari",
+45.65134,
+13.77686,
+0.0
+],
+"pendice dello scoglietto": [
+"Pendice dello Scoglietto",
+45.65652,
+13.79163,
+0.05
+],
+"percorso ciclopedonale \"protetto\" galleria di montebello": [
+"percorso ciclopedonale \"protetto\" galleria di Montebello",
+45.63576,
+13.78969,
+0.0
+],
+"piazza alberto e kathleen casali": [
+"Piazza Alberto e Kathleen Casali",
+45.65701,
+13.77696,
+0.01
+],
+"piazza attilio hortis": [
+"Piazza Attilio Hortis",
+45.64713,
+13.76481,
+0.05
+],
+"piazza barbacan": [
+"Piazza Barbacan",
+45.64752,
+13.76861,
+0.0
+],
+"piazza carlo alberto": [
+"Piazza Carlo Alberto",
+45.64251,
+13.75575,
+0.07
+],
+"piazza carlo goldoni": [
+"Piazza Carlo Goldoni",
+45.64978,
+13.77707,
+0.05
+],
+"piazza cornelia romana": [
+"Piazza Cornelia Romana",
+45.6463,
+13.76597,
+0.0
+],
+"piazza dalmazia": [
+"Piazza Dalmazia",
+45.65503,
+13.77533,
+0.03
+],
+"piazza dei foraggi": [
+"Piazza dei Foraggi",
+45.63976,
+13.78914,
+0.05
+],
+"piazza dei volontari giuliani": [
+"Piazza dei Volontari Giuliani",
+45.65441,
+13.78922,
+0.04
+],
+"piazza del perugino": [
+"Piazza del Perugino",
+45.64328,
+13.78554,
+0.03
+],
+"piazza del ponterosso": [
+"Piazza del Ponterosso",
+45.65192,
+13.77173,
+0.0
+],
+"piazza del sansovino": [
+"Piazza del Sansovino",
+45.64566,
+13.77578,
+0.04
+],
+"piazza dell'ospitale": [
+"Piazza dell'Ospitale",
+45.6495,
+13.7805,
+0.05
+],
+"piazza della borsa": [
+"Piazza della Borsa",
+45.65028,
+13.77003,
+0.05
+],
+"piazza della cattedrale": [
+"Piazza della Cattedrale",
+45.64666,
+13.77218,
+0.06
+],
+"piazza della liberta": [
+"Piazza della Libertà",
+45.6567,
+13.77227,
+0.08
+],
+"piazza della valle": [
+"Piazza della Valle",
+45.64653,
+13.76871,
+0.0
+],
+"piazza dello squero vecchio": [
+"Piazza dello Squero Vecchio",
+45.64948,
+13.76717,
+0.0
+],
+"piazza di cavana": [
+"Piazza di Cavana",
+45.64845,
+13.76708,
+0.0
+],
+"piazza di donota": [
+"Piazza di Donota",
+45.64897,
+13.77248,
+0.01
+],
+"piazza edmondo puecher": [
+"Piazza Edmondo Puecher",
+45.64419,
+13.77986,
+0.01
+],
+"piazza giambattista vico": [
+"Piazza Giambattista Vico",
+45.6453,
+13.77499,
+0.04
+],
+"piazza giuseppe garibaldi": [
+"Piazza Giuseppe Garibaldi",
+45.64601,
+13.78075,
+0.03
+],
+"piazza giuseppe verdi": [
+"Piazza Giuseppe Verdi",
+45.65064,
+13.76884,
+0.01
+],
+"piazza guglielmo oberdan": [
+"Piazza Guglielmo Oberdan",
+45.6542,
+13.77598,
+0.04
+],
+"piazza leonardo da vinci": [
+"Piazza Leonardo da Vinci",
+45.65553,
+13.78646,
+0.01
+],
+"piazza luigi amedeo duca degli abruzzi": [
+"Piazza Luigi Amedeo Duca degli Abruzzi",
+45.6537,
+13.76979,
+0.04
+],
+"piazza niccolo tommaseo": [
+"Piazza Niccolò Tommaseo",
+45.65117,
+13.76914,
+0.01
+],
+"piazza piccola": [
+"Piazza Piccola",
+45.64921,
+13.76861,
+0.01
+],
+"piazza san cipriano": [
+"Piazza San Cipriano",
+45.64711,
+13.77024,
+0.0
+],
+"piazza san giovanni": [
+"Piazza San Giovanni",
+45.65118,
+13.77656,
+0.03
+],
+"piazza sant'antonio nuovo": [
+"Piazza Sant'Antonio Nuovo",
+45.65179,
+13.77368,
+0.05
+],
+"piazza silvio benco": [
+"Piazza Silvio Benco",
+45.64944,
+13.77391,
+0.0
+],
+"piazza tra i rivi": [
+"Piazza tra i Rivi",
+45.66531,
+13.77245,
+0.04
+],
+"piazza trauner": [
+"Piazza Trauner",
+45.64779,
+13.76788,
+0.0
+],
+"piazza unita d'italia": [
+"Piazza Unità d'Italia",
+45.65,
+13.76812,
+0.09
+],
+"piazza vecchia": [
+"Piazza Vecchia",
+45.64942,
+13.77035,
+0.02
+],
+"piazza venezia": [
+"Piazza Venezia",
+45.64701,
+13.76233,
+0.05
+],
+"piazza virgilio giotti": [
+"Piazza Virgilio Giotti",
+45.65355,
+13.78015,
+0.01
+],
+"piazza vittorio veneto": [
+"Piazza Vittorio Veneto",
+45.65433,
+13.77363,
+0.05
+],
+"piazza xxv aprile": [
+"Piazza XXV Aprile",
+45.61952,
+13.82428,
+0.04
+],
+"piazzale 11 settembre 2001": [
+"Piazzale 11 Settembre 2001",
+45.68225,
+13.75154,
+0.05
+],
+"piazzale agostino straulino e nicolo rode": [
+"Piazzale Agostino Straulino e Nicolò Rode",
+45.64677,
+13.76076,
+0.03
+],
+"piazzale alcide de gasperi": [
+"Piazzale Alcide De Gasperi",
+45.63942,
+13.7948,
+0.09
+],
+"piazzale alessandro moissi": [
+"Piazzale Alessandro Moissi",
+45.64019,
+13.80497,
+0.0
+],
+"piazzale anton dreher": [
+"Piazzale Anton Dreher",
+45.65467,
+13.79409,
+0.03
+],
+"piazzale antonio baiamonti": [
+"Piazzale Antonio Baiamonti",
+45.63136,
+13.79181,
+0.05
+],
+"piazzale antonio de berti": [
+"Piazzale Antonio De Berti",
+45.61652,
+13.82642,
+0.02
+],
+"piazzale antonio rosmin": [
+"Piazzale Antonio Rosmin",
+45.64031,
+13.76639,
+0.0
+],
+"piazzale antonio rosmini": [
+"Piazzale Antonio Rosmini",
+45.64065,
+13.76656,
+0.05
+],
+"piazzale atleti azzurri d'italia": [
+"Piazzale Atleti Azzurri d'Italia",
+45.62141,
+13.79073,
+0.01
+],
+"piazzale ave ninchi": [
+"Piazzale Ave Ninchi",
+45.65494,
+13.78544,
+0.0
+],
+"piazzale biagio marin": [
+"Piazzale Biagio Marin",
+45.68484,
+13.74882,
+0.03
+],
+"piazzale chino alessi": [
+"Piazzale Chino Alessi",
+45.64426,
+13.75433,
+0.05
+],
+"piazzale danilo stiepovich": [
+"Piazzale Danilo Stiepovich",
+45.61617,
+13.82637,
+0.0
+],
+"piazzale dei legnami": [
+"Piazzale dei Legnami",
+45.6312,
+13.77907,
+0.0
+],
+"piazzale della resistenza": [
+"Piazzale della Resistenza",
+45.63983,
+13.76614,
+0.01
+],
+"piazzale delle puglie": [
+"Piazzale delle Puglie",
+45.63287,
+13.78263,
+0.09
+],
+"piazzale di giarizzole": [
+"Piazzale di Giarizzole",
+45.62136,
+13.79704,
+0.03
+],
+"piazzale di valmaura": [
+"Piazzale di Valmaura",
+45.62551,
+13.79499,
+0.07
+],
+"piazzale eugenio popovich": [
+"Piazzale Eugenio Popovich",
+45.64621,
+13.80404,
+0.01
+],
+"piazzale europa": [
+"Piazzale Europa",
+45.65871,
+13.79348,
+0.15
+],
+"piazzale giuseppe capolino": [
+"Piazzale Giuseppe Capolino",
+45.65125,
+13.81196,
+0.0
+],
+"piazzale luigi canestrini": [
+"Piazzale Luigi Canestrini",
+45.65757,
+13.801,
+0.04
+],
+"piazzale marinai d'italia": [
+"Piazzale Marinai d'Italia",
+45.64956,
+13.76472,
+0.03
+],
+"piazzale monte re": [
+"Piazzale Monte Re",
+45.68641,
+13.788,
+0.0
+],
+"piazzale monte re / nanoski trg": [
+"Piazzale Monte Re / Nanoški trg",
+45.68642,
+13.78769,
+0.03
+],
+"piazzale rodolfo sartori": [
+"Piazzale Rodolfo Sartori",
+45.61964,
+13.82696,
+0.02
+],
+"piazzale sergio de simone": [
+"Piazzale Sergio De Simone",
+45.62096,
+13.7884,
+0.09
+],
+"piazzale umberto cagni": [
+"Piazzale Umberto Cagni",
+45.62113,
+13.80031,
+0.02
+],
+"piazzale vincenzo gioberti": [
+"Piazzale Vincenzo Gioberti",
+45.65628,
+13.80559,
+0.03
+],
+"piazzale vittime della strada": [
+"Piazzale Vittime della Strada",
+45.64468,
+13.81489,
+0.02
+],
+"piazzetta manlio cecovini": [
+"Piazzetta Manlio Cecovini",
+45.6476,
+13.76793,
+0.0
+],
+"piazzetta marcello spaccini": [
+"Piazzetta Marcello Spaccini",
+45.64774,
+13.76809,
+0.01
+],
+"piazzetta riccardo": [
+"Piazzetta Riccardo",
+45.64784,
+13.76892,
+0.0
+],
+"piazzetta san silvestro": [
+"Piazzetta San Silvestro",
+45.64804,
+13.76904,
+0.01
+],
+"piazzetta santa lucia": [
+"Piazzetta Santa Lucia",
+45.64694,
+13.76551,
+0.0
+],
+"piazzetta tor cucherna": [
+"Piazzetta Tor Cucherna",
+45.64854,
+13.77174,
+0.01
+],
+"piazzetta vincenzo bronzin": [
+"Piazzetta Vincenzo Bronzin",
+45.64981,
+13.77064,
+0.0
+],
+"pista del ciuffo/pot za skedanc": [
+"Pista del Ciuffo/Pot za Skedanc",
+45.72223,
+13.70335,
+0.0
+],
+"ponte della fabra": [
+"Ponte della Fabra",
+45.65006,
+13.7775,
+0.02
+],
+"pontile istria": [
+"Pontile Istria",
+45.64629,
+13.75938,
+0.0
+],
+"punto franco nuovo": [
+"Punto Franco Nuovo",
+45.6359,
+13.75612,
+1.14
+],
+"punto franco vecchio": [
+"Punto Franco Vecchio",
+45.66595,
+13.76157,
+1.11
+],
+"q8": [
+"Q8",
+45.64183,
+13.75722,
+0.0
+],
+"raccordo autostradale 13 sistiana-padriciano": [
+"Raccordo Autostradale 13 Sistiana-Padriciano",
+45.65788,
+13.83124,
+0.2
+],
+"raccordo autostradale 14": [
+"Raccordo Autostradale 14",
+45.69443,
+13.82249,
+0.59
+],
+"raccordo autostradale 14 diramazione di fernetti": [
+"Raccordo Autostradale 14 diramazione di Fernetti",
+45.69387,
+13.81651,
+0.04
+],
+"ratto dei mandrieri": [
+"Ratto dei Mandrieri",
+45.64029,
+13.8181,
+0.0
+],
+"ratto della pileria": [
+"Ratto della Pileria",
+45.62243,
+13.78762,
+0.04
+],
+"riva alvise cadamosto": [
+"Riva Alvise Cadamosto",
+45.6114,
+13.81091,
+0.28
+],
+"riva caduti per l'italianita di trieste": [
+"Riva Caduti per l'Italianità di Trieste",
+45.65075,
+13.76724,
+0.02
+],
+"riva del mandracchio": [
+"Riva del Mandracchio",
+45.65,
+13.76585,
+0.06
+],
+"riva giovanni da verrazzano": [
+"Riva Giovanni da Verrazzano",
+45.61335,
+13.80927,
+0.0
+],
+"riva grumula": [
+"Riva Grumula",
+45.64558,
+13.75928,
+0.1
+],
+"riva massimiliano e carlotta": [
+"Riva Massimiliano e Carlotta",
+45.70708,
+13.71366,
+0.15
+],
+"riva nazario sauro": [
+"Riva Nazario Sauro",
+45.64843,
+13.76376,
+0.13
+],
+"riva tommaso gulli": [
+"Riva Tommaso Gulli",
+45.64661,
+13.76101,
+0.1
+],
+"riva traiana": [
+"Riva Traiana",
+45.64593,
+13.75266,
+0.18
+],
+"riva tre novembre": [
+"Riva Tre Novembre",
+45.65187,
+13.7689,
+0.14
+],
+"rotonda del boschetto": [
+"Rotonda del Boschetto",
+45.65479,
+13.79836,
+0.06
+],
+"rotonda ernesto illy": [
+"Rotonda Ernesto Illy",
+45.61645,
+13.81926,
+0.02
+],
+"salita a conconello": [
+"Salita a Conconello",
+45.66732,
+13.78919,
+0.04
+],
+"salita al fonte": [
+"Salita al Fonte",
+45.64263,
+13.78332,
+0.0
+],
+"salita al monbeu": [
+"Salita al Monbeu",
+45.63559,
+13.8199,
+0.0
+],
+"salita al promontorio": [
+"Salita al Promontorio",
+45.64344,
+13.76085,
+0.15
+],
+"salita alla madonna di gretta": [
+"Salita alla Madonna di Gretta",
+45.6689,
+13.76259,
+0.1
+],
+"salita dei montanelli": [
+"Salita dei Montanelli",
+45.64559,
+13.7644,
+0.0
+],
+"salita della trenovia": [
+"Salita della Trenovia",
+45.66038,
+13.77621,
+0.2
+],
+"salita di cedassamare": [
+"Salita di Cedassamare",
+45.69321,
+13.74136,
+0.0
+],
+"salita di contovello": [
+"Salita di Contovello",
+45.69049,
+13.74535,
+0.53
+],
+"salita di gretta": [
+"Salita di Gretta",
+45.66649,
+13.76682,
+0.13
+],
+"salita di raute": [
+"Salita di Raute",
+45.63115,
+13.81119,
+0.2
+],
+"salita di vuardel": [
+"Salita di Vuardel",
+45.65969,
+13.80723,
+0.05
+],
+"salita di zugnano": [
+"Salita di Zugnano",
+45.62578,
+13.80025,
+0.3
+],
+"salita ezio de marchi": [
+"Salita Ezio De Marchi",
+45.62661,
+13.78277,
+0.04
+],
+"salita monte valerio": [
+"Salita Monte Valerio",
+45.6618,
+13.79365,
+0.22
+],
+"scala al belvedere": [
+"Scala al Belvedere",
+45.65929,
+13.77238,
+0.02
+],
+"scala al monticello": [
+"Scala al Monticello",
+45.65576,
+13.79515,
+0.02
+],
+"scala angelo cecchelin": [
+"Scala Angelo Cecchelin",
+45.64939,
+13.77218,
+0.01
+],
+"scala dei campi elisi": [
+"Scala dei Campi Elisi",
+45.63914,
+13.76557,
+0.0
+],
+"scala dei cappuccini": [
+"Scala dei Cappuccini",
+45.64681,
+13.7779,
+0.04
+],
+"scala dei fabbri": [
+"Scala dei Fabbri",
+45.64655,
+13.76566,
+0.0
+],
+"scala dei giaggioli": [
+"Scala dei Giaggioli",
+45.66643,
+13.78422,
+0.04
+],
+"scala dei giganti": [
+"Scala dei Giganti",
+45.64867,
+13.77612,
+0.02
+],
+"scala dei lauri": [
+"Scala dei Lauri",
+45.65923,
+13.77383,
+0.04
+],
+"scala dell'erica": [
+"Scala dell'Erica",
+45.66557,
+13.78201,
+0.13
+],
+"scala delle vacche": [
+"Scala delle Vacche",
+45.63367,
+13.8406,
+0.0
+],
+"scala di montuzza": [
+"Scala di Montuzza",
+45.64871,
+13.77556,
+0.0
+],
+"scala dirac": [
+"Scala Dirac",
+45.70418,
+13.7178,
+0.0
+],
+"scala don giuseppe mainati": [
+"Scala Don Giuseppe Mainati",
+45.6522,
+13.78594,
+0.02
+],
+"scala dublino": [
+"Scala Dublino",
+45.64475,
+13.77544,
+0.03
+],
+"scala enrico ferolli": [
+"Scala Enrico Ferolli",
+45.65606,
+13.78917,
+0.0
+],
+"scala eugenio geiringer": [
+"Scala Eugenio Geiringer",
+45.67531,
+13.75797,
+0.0
+],
+"scala giorgio e carlo polli": [
+"Scala Giorgio e Carlo Polli",
+45.67465,
+13.75928,
+0.04
+],
+"scala giorgio voghera": [
+"Scala Giorgio Voghera",
+45.65631,
+13.78814,
+0.0
+],
+"scala giovanni gioacchino winckelmann": [
+"Scala Giovanni Gioacchino Winckelmann",
+45.64675,
+13.77531,
+0.04
+],
+"scala giuseppe sforzi": [
+"Scala Giuseppe Sforzi",
+45.67513,
+13.75824,
+0.0
+],
+"scala james joyce": [
+"Scala James Joyce",
+45.64519,
+13.77397,
+0.0
+],
+"scala jan palach": [
+"Scala Jan Palach",
+45.65822,
+13.79276,
+0.06
+],
+"scala properzio": [
+"Scala Properzio",
+45.66084,
+13.77776,
+0.05
+],
+"scala reale": [
+"Scala Reale",
+45.65092,
+13.76679,
+0.0
+],
+"scala ruggero bonghi": [
+"Scala Ruggero Bonghi",
+45.64297,
+13.79991,
+0.15
+],
+"scala san luigi": [
+"Scala San Luigi",
+45.65318,
+13.78882,
+0.03
+],
+"scala santa": [
+"Scala Santa",
+45.67318,
+13.77382,
+0.69
+],
+"scala silvano buffa": [
+"Scala Silvano Buffa",
+45.6481,
+13.77565,
+0.02
+],
+"scala stendhal (henri beyle)": [
+"Scala Stendhal (Henri Beyle)",
+45.64486,
+13.77699,
+0.03
+],
+"scalinata delle medaglie d'oro": [
+"Scalinata delle Medaglie d'Oro",
+45.6484,
+13.7693,
+0.02
+],
+"sentiero burgstaller bidischini": [
+"Sentiero Burgstaller Bidischini",
+45.67621,
+13.79931,
+0.0
+],
+"sentiero cividin": [
+"Sentiero Cividin",
+45.67951,
+13.78302,
+0.0
+],
+"sentiero del capriolo": [
+"Sentiero del Capriolo",
+45.68956,
+13.81249,
+0.83
+],
+"sentiero del cristo": [
+"Sentiero del Cristo",
+45.65542,
+13.85921,
+0.0
+],
+"sentiero foresta d'acqua / pot vodni gozd": [
+"Sentiero foresta d'acqua / Pot vodni gozd",
+45.65312,
+13.87206,
+0.24
+],
+"sentiero naturalistico del monte valerio": [
+"Sentiero naturalistico del Monte Valerio",
+45.66229,
+13.79674,
+0.17
+],
+"sentiero nicolo cobolli": [
+"Sentiero Nicolò Cobolli",
+45.68292,
+13.77238,
+0.31
+],
+"shell": [
+"Shell",
+45.63792,
+13.81498,
+0.0
+],
+"stazione di servizio esso di riva stefano": [
+"Stazione di servizio ESSO di Riva Stefano",
+45.62536,
+13.79538,
+0.0
+],
+"strada al monte d'oro": [
+"Strada al Monte d'Oro",
+45.6087,
+13.81567,
+0.16
+],
+"strada berda": [
+"Strada Berda",
+45.70629,
+13.72364,
+0.0
+],
+"strada costiera": [
+"Strada Costiera",
+45.71361,
+13.70791,
+3.81
+],
+"strada costiera / obalna cesta": [
+"Strada Costiera / Obalna cesta",
+45.74134,
+13.67167,
+0.0
+],
+"strada del friuli": [
+"Strada del Friuli",
+45.68235,
+13.75549,
+1.64
+],
+"strada del friuli / furlanska cesta": [
+"Strada del Friuli / Furlanska cesta",
+45.69193,
+13.74721,
+0.77
+],
+"strada della rosandra": [
+"Strada della Rosandra",
+45.61426,
+13.82313,
+0.24
+],
+"strada della salvia / zajbljeva pot": [
+"Strada della Salvia / Žajbljeva pot",
+45.74251,
+13.67212,
+0.66
+],
+"strada di cattinara": [
+"Strada di Cattinara",
+45.63788,
+13.79935,
+0.26
+],
+"strada di fiume": [
+"Strada di Fiume",
+45.63537,
+13.82567,
+2.82
+],
+"strada di guardiella": [
+"Strada di Guardiella",
+45.65448,
+13.80322,
+0.16
+],
+"strada di rozzol": [
+"Strada di Rozzol",
+45.64148,
+13.80787,
+0.48
+],
+"strada moscovina": [
+"Strada Moscovina",
+45.70668,
+13.72074,
+0.05
+],
+"strada nuova per opicina": [
+"Strada Nuova per Opicina",
+45.66765,
+13.79824,
+1.85
+],
+"strada per basovizza": [
+"Strada per Basovizza",
+45.64881,
+13.82651,
+2.5
+],
+"strada per longera": [
+"Strada per Longera",
+45.64414,
+13.82451,
+1.71
+],
+"strada per monte spaccato": [
+"Strada per Monte Spaccato",
+45.65478,
+13.81671,
+0.2
+],
+"strada per vienna": [
+"Strada per Vienna",
+45.69059,
+13.80061,
+1.78
+],
+"strada romana / rimska cesta": [
+"Strada romana / Rimska cesta",
+45.65387,
+13.8211,
+0.0
+],
+"strada statale 202 dir triestina": [
+"Strada Statale 202 dir Triestina",
+45.63539,
+13.83506,
+0.32
+],
+"strada stefania / stara stefanska pot": [
+"Strada Stefania / Stara štefanska pot",
+45.68919,
+13.75643,
+0.93
+],
+"strada vecchia dell'istria": [
+"Strada Vecchia dell'Istria",
+45.62236,
+13.79868,
+0.23
+],
+"strada vicentina": [
+"Strada Vicentina",
+45.69069,
+13.75659,
+2.26
+],
+"trail del spago": [
+"Trail del Spago",
+45.67128,
+13.8558,
+0.0
+],
+"traversale verniellis": [
+"Traversale Verniellis",
+45.66547,
+13.78402,
+0.02
+],
+"vertikala": [
+"Vertikala",
+45.63997,
+13.86916,
+0.0
+],
+"via / ulica robert baden-powell": [
+"Via / Ulica Robert Baden-Powell",
+45.6907,
+13.76302,
+0.79
+],
+"via achille grandi": [
+"Via Achille Grandi",
+45.61934,
+13.82969,
+0.08
+],
+"via adolfo leghissa": [
+"Via Adolfo Leghissa",
+45.64586,
+13.77994,
+0.0
+],
+"via adolfo levier": [
+"Via Adolfo Levier",
+45.65074,
+13.81314,
+0.09
+],
+"via adolfo rebez": [
+"Via Adolfo Rebez",
+45.61679,
+13.82813,
+0.04
+],
+"via al cisternone": [
+"Via al Cisternone",
+45.66726,
+13.76789,
+0.29
+],
+"via alberto boccardi": [
+"Via Alberto Boccardi",
+45.64874,
+13.76576,
+0.04
+],
+"via alberto bois de chesne": [
+"Via Alberto Bois de Chesne",
+45.64994,
+13.79537,
+0.0
+],
+"via alberto nota": [
+"Via Alberto Nota",
+45.64903,
+13.77806,
+0.0
+],
+"via alberto puschi": [
+"Via Alberto Puschi",
+45.62096,
+13.79248,
+0.09
+],
+"via albino zenatti": [
+"Via Albino Zenatti",
+45.61944,
+13.79611,
+0.13
+],
+"via albona": [
+"Via Albona",
+45.63181,
+13.78583,
+0.0
+],
+"via aldo barbaro": [
+"Via Aldo Barbaro",
+45.61647,
+13.82706,
+0.0
+],
+"via aldo brandolin": [
+"Via Aldo Brandolin",
+45.61692,
+13.8258,
+0.0
+],
+"via aldo manuzio": [
+"Via Aldo Manuzio",
+45.63973,
+13.76938,
+0.0
+],
+"via aldo oberdorfer": [
+"Via Aldo Oberdorfer",
+45.66561,
+13.77472,
+0.0
+],
+"via aldraga": [
+"Via Aldraga",
+45.64792,
+13.76864,
+0.0
+],
+"via aleardo aleardi": [
+"Via Aleardo Aleardi",
+45.65765,
+13.77726,
+0.0
+],
+"via alessandro de almerigotti": [
+"Via Alessandro De Almerigotti",
+45.63417,
+13.79711,
+0.15
+],
+"via alessandro la marmora": [
+"Via Alessandro La Marmora",
+45.64072,
+13.79545,
+0.08
+],
+"via alessandro malaspina": [
+"Via Alessandro Malaspina",
+45.61581,
+13.81453,
+0.16
+],
+"via alessandro manzoni": [
+"Via Alessandro Manzoni",
+45.64582,
+13.78307,
+0.0
+],
+"via alessandro vittoria": [
+"Via Alessandro Vittoria",
+45.64534,
+13.77607,
+0.0
+],
+"via alessandro volta": [
+"Via Alessandro Volta",
+45.655,
+13.7856,
+0.0
+],
+"via alexander fleming": [
+"Via Alexander Fleming",
+45.66376,
+13.7966,
+0.24
+],
+"via alfonso canciani": [
+"Via Alfonso Canciani",
+45.65017,
+13.81377,
+0.07
+],
+"via alfonso valerio": [
+"Via Alfonso Valerio",
+45.66055,
+13.80369,
+0.83
+],
+"via alfredo catalani": [
+"Via Alfredo Catalani",
+45.62238,
+13.80462,
+0.0
+],
+"via alfredo oriani": [
+"Via Alfredo Oriani",
+45.64688,
+13.77999,
+0.04
+],
+"via alfredo testoni": [
+"Via Alfredo Testoni",
+45.63092,
+13.7848,
+0.0
+],
+"via alle cave": [
+"Via alle Cave",
+45.65664,
+13.80881,
+0.12
+],
+"via alle tre croci": [
+"Via alle Tre Croci",
+45.62537,
+13.80762,
+0.02
+],
+"via almerigo grilz": [
+"Via Almerigo Grilz",
+45.68152,
+13.75234,
+0.0
+],
+"via alpina": [
+"Via Alpina",
+45.64496,
+13.89422,
+0.0
+],
+"via amerigo vespucci": [
+"Via Amerigo Vespucci",
+45.64236,
+13.77778,
+0.0
+],
+"via amilcare ponchielli": [
+"Via Amilcare Ponchielli",
+45.65121,
+13.77507,
+0.0
+],
+"via andrea antico": [
+"Via Andrea Antico",
+45.6346,
+13.79981,
+0.06
+],
+"via andrea mantegna": [
+"Via Andrea Mantegna",
+45.6408,
+13.79093,
+0.0
+],
+"via andrea palladio": [
+"Via Andrea Palladio",
+45.65032,
+13.78456,
+0.06
+],
+"via andrea pollitzer": [
+"Via Andrea Pollitzer",
+45.66011,
+13.79279,
+0.02
+],
+"via andrea rapicio": [
+"Via Andrea Rapicio",
+45.65343,
+13.78557,
+0.0
+],
+"via angelo cattaruzza": [
+"Via Angelo Cattaruzza",
+45.61879,
+13.82749,
+0.06
+],
+"via angelo de valentini": [
+"Via Angelo De Valentini",
+45.64413,
+13.79694,
+0.05
+],
+"via angelo emo": [
+"Via Angelo Emo",
+45.64144,
+13.77421,
+0.15
+],
+"via angelo vivante": [
+"Via Angelo Vivante",
+45.63077,
+13.81384,
+0.01
+],
+"via anton kuhelj": [
+"Via Anton Kuhelj",
+45.68876,
+13.78955,
+0.0
+],
+"via antonino di peco": [
+"Via Antonino di Peco",
+45.62256,
+13.8288,
+0.18
+],
+"via antonio baiamonti": [
+"Via Antonio Baiamonti",
+45.63062,
+13.7894,
+0.37
+],
+"via antonio barsan": [
+"Via Antonio Barsan",
+45.62001,
+13.81431,
+0.0
+],
+"via antonio bazzarini": [
+"Via Antonio Bazzarini",
+45.63596,
+13.78863,
+0.0
+],
+"via antonio caccia": [
+"Via Antonio Caccia",
+45.64758,
+13.78045,
+0.0
+],
+"via antonio camaur": [
+"Via Antonio Camaur",
+45.6709,
+13.76347,
+0.04
+],
+"via antonio canova": [
+"Via Antonio Canova",
+45.64922,
+13.78517,
+0.0
+],
+"via antonio fogazzaro": [
+"Via Antonio Fogazzaro",
+45.65777,
+13.79424,
+0.03
+],
+"via antonio gazzoletti": [
+"Via Antonio Gazzoletti",
+45.66175,
+13.77069,
+0.0
+],
+"via antonio gramsci": [
+"Via Antonio Gramsci",
+45.64111,
+13.78081,
+0.02
+],
+"via antonio grego": [
+"Via Antonio Grego",
+45.61989,
+13.81826,
+0.36
+],
+"via antonio grossich": [
+"Via Antonio Grossich",
+45.63652,
+13.78962,
+0.0
+],
+"via antonio illersberg": [
+"Via Antonio Illersberg",
+45.68111,
+13.75579,
+0.0
+],
+"via antonio ive": [
+"Via Antonio Ive",
+45.61826,
+13.81686,
+0.0
+],
+"via antonio leonardis": [
+"Via Antonio Leonardis",
+45.62587,
+13.81781,
+0.0
+],
+"via antonio lonza": [
+"Via Antonio Lonza",
+45.64271,
+13.79725,
+0.0
+],
+"via antonio madonizza": [
+"Via Antonio Madonizza",
+45.64209,
+13.76764,
+0.0
+],
+"via antonio meucci": [
+"Via Antonio Meucci",
+45.63948,
+13.76922,
+0.0
+],
+"via antonio mollari": [
+"Via Antonio Mollari",
+45.6751,
+13.76468,
+0.0
+],
+"via antonio pacinotti": [
+"Via Antonio Pacinotti",
+45.6461,
+13.77465,
+0.03
+],
+"via antonio pigafetta": [
+"Via Antonio Pigafetta",
+45.61963,
+13.79972,
+0.0
+],
+"via antonio pollaiuolo": [
+"Via Antonio Pollaiuolo",
+45.64012,
+13.79251,
+0.0
+],
+"via antonio racheli": [
+"Via Antonio Racheli",
+45.61815,
+13.79474,
+0.22
+],
+"via antonio smareglia": [
+"Via Antonio Smareglia",
+45.62455,
+13.7986,
+0.01
+],
+"via antonio somma": [
+"Via Antonio Somma",
+45.66293,
+13.77031,
+0.02
+],
+"via antonio stoppani": [
+"Via Antonio Stoppani",
+45.65603,
+13.78505,
+0.0
+],
+"via antonio stradivari": [
+"Via Antonio Stradivari",
+45.67714,
+13.76734,
+0.04
+],
+"via antonio tribel": [
+"Via Antonio Tribel",
+45.61994,
+13.7909,
+0.05
+],
+"via antonio vidacovich": [
+"Via Antonio Vidacovich",
+45.64278,
+13.79631,
+0.0
+],
+"via antonio vivaldi": [
+"Via Antonio Vivaldi",
+45.62523,
+13.80468,
+0.0
+],
+"via antoniotto usodimare": [
+"Via Antoniotto Usodimare",
+45.61315,
+13.80282,
+0.0
+],
+"via aquileia": [
+"Via Aquileia",
+45.66951,
+13.76433,
+0.06
+],
+"via arcangelo corelli": [
+"Via Arcangelo Corelli",
+45.62453,
+13.807,
+0.09
+],
+"via argio orell": [
+"Via Argio Orell",
+45.65258,
+13.80639,
+0.0
+],
+"via armando crisciani": [
+"Via Armando Crisciani",
+45.61731,
+13.82698,
+0.08
+],
+"via armando diaz": [
+"Via Armando Diaz",
+45.64792,
+13.76477,
+0.15
+],
+"via arnaldo fusinato": [
+"Via Arnaldo Fusinato",
+45.65992,
+13.79889,
+0.0
+],
+"via arrigo boito": [
+"Via Arrigo Boito",
+45.62321,
+13.80442,
+0.0
+],
+"via artemidoro": [
+"Via Artemidoro",
+45.65897,
+13.78054,
+0.0
+],
+"via arturo castiglioni": [
+"Via Arturo Castiglioni",
+45.64173,
+13.82131,
+0.0
+],
+"via arturo colautti": [
+"Via Arturo Colautti",
+45.64127,
+13.76542,
+0.06
+],
+"via arturo fittke": [
+"Via Arturo Fittke",
+45.64066,
+13.79868,
+0.0
+],
+"via arturo nathan": [
+"Via Arturo Nathan",
+45.6412,
+13.79895,
+0.0
+],
+"via arturo rietti": [
+"Via Arturo Rietti",
+45.64078,
+13.80345,
+0.07
+],
+"via arturo toscanini": [
+"Via Arturo Toscanini",
+45.67606,
+13.7687,
+0.03
+],
+"via auguste piccard": [
+"Via Auguste Piccard",
+45.73982,
+13.67317,
+0.05
+],
+"via aurelio brovedani": [
+"Via Aurelio Brovedani",
+45.62629,
+13.82277,
+0.11
+],
+"via aurelio e fabio nordio": [
+"Via Aurelio e Fabio Nordio",
+45.65083,
+13.77967,
+0.06
+],
+"via aurelio nicolodi": [
+"Via Aurelio Nicolodi",
+45.68276,
+13.75299,
+0.1
+],
+"via baccio ziliotto": [
+"Via Baccio Ziliotto",
+45.63498,
+13.78416,
+0.0
+],
+"via bartolomeo biasoletto": [
+"Via Bartolomeo Biasoletto",
+45.65149,
+13.79099,
+0.22
+],
+"via bartolomeo budrio": [
+"Via Bartolomeo Budrio",
+45.63255,
+13.80203,
+0.07
+],
+"via bartolomeo colleoni": [
+"Via Bartolomeo Colleoni",
+45.64013,
+13.78072,
+0.04
+],
+"via bartolomeo d'alviano": [
+"Via Bartolomeo D'Alviano",
+45.63448,
+13.78008,
+0.67
+],
+"via bartolomeo gianelli": [
+"Via Bartolomeo Gianelli",
+45.63544,
+13.79187,
+0.0
+],
+"via bartolomeo legat": [
+"Via Bartolomeo Legat",
+45.62608,
+13.81747,
+0.0
+],
+"via beato angelico": [
+"Via Beato Angelico",
+45.65723,
+13.8029,
+0.11
+],
+"via beirut": [
+"Via Beirut",
+45.7032,
+13.71931,
+0.29
+],
+"via bellosguardo": [
+"Via Bellosguardo",
+45.64245,
+13.76592,
+0.25
+],
+"via belpoggio": [
+"Via Belpoggio",
+45.64407,
+13.75926,
+0.0
+],
+"via benedetto marcello": [
+"Via Benedetto Marcello",
+45.64638,
+13.76711,
+0.0
+],
+"via benvenuto cellini": [
+"Via Benvenuto Cellini",
+45.65618,
+13.77323,
+0.0
+],
+"via bergamasco": [
+"Via Bergamasco",
+45.64065,
+13.78472,
+0.06
+],
+"via bernardin parenzan": [
+"Via Bernardin Parenzan",
+45.643,
+13.80183,
+0.04
+],
+"via bernardo benussi": [
+"Via Bernardo Benussi",
+45.62285,
+13.80551,
+0.12
+],
+"via bonafata": [
+"Via Bonafata",
+45.68063,
+13.75692,
+0.16
+],
+"via bonaparte": [
+"Via Bonaparte",
+45.64454,
+13.76328,
+0.06
+],
+"via bonomea": [
+"Via Bonomea",
+45.67907,
+13.77327,
+0.69
+],
+"via brandesia": [
+"Via Brandesia",
+45.65823,
+13.8058,
+0.09
+],
+"via brigata casale": [
+"Via Brigata Casale",
+45.62867,
+13.81168,
+1.29
+],
+"via brigata osoppo": [
+"Via Brigata Osoppo",
+45.61772,
+13.82624,
+0.03
+],
+"via brigata sassari": [
+"Via Brigata Sassari",
+45.64014,
+13.79589,
+0.0
+],
+"via bruno buozzi": [
+"Via Bruno Buozzi",
+45.61976,
+13.83007,
+0.0
+],
+"via bruno busecchian": [
+"Via Bruno Busecchian",
+45.61837,
+13.82637,
+0.0
+],
+"via bruno castro": [
+"Via Bruno Castro",
+45.61708,
+13.82582,
+0.0
+],
+"via bruno croatto": [
+"Via Bruno Croatto",
+45.65185,
+13.80814,
+0.01
+],
+"via bruno pincherle": [
+"Via Bruno Pincherle",
+45.63119,
+13.81314,
+0.0
+],
+"via bruno zelik": [
+"Via Bruno Zelik",
+45.66463,
+13.77772,
+0.0
+],
+"via buie d'istria": [
+"Via Buie d'Istria",
+45.66106,
+13.79,
+0.04
+],
+"via caduti sul lavoro": [
+"Via Caduti sul Lavoro",
+45.63812,
+13.77662,
+0.0
+],
+"via calpurnio": [
+"Via Calpurnio",
+45.66456,
+13.80015,
+0.06
+],
+"via campo romano": [
+"Via Campo Romano",
+45.68325,
+13.77902,
+0.0
+],
+"via capitolina": [
+"Via Capitolina",
+45.64739,
+13.77527,
+0.23
+],
+"via capodistria": [
+"Via Capodistria",
+45.63074,
+13.78712,
+0.3
+],
+"via carbonara": [
+"Via Carbonara",
+45.64032,
+13.77805,
+0.01
+],
+"via carinzia": [
+"Via Carinzia",
+45.68915,
+13.79243,
+0.0
+],
+"via carlo antoni": [
+"Via Carlo Antoni",
+45.65291,
+13.80496,
+0.05
+],
+"via carlo archi": [
+"Via Carlo Archi",
+45.65167,
+13.79157,
+0.14
+],
+"via carlo banelli": [
+"Via Carlo Banelli",
+45.62639,
+13.78378,
+0.04
+],
+"via carlo buttazzoni": [
+"Via Carlo Buttazzoni",
+45.61669,
+13.7919,
+0.06
+],
+"via carlo cattaneo": [
+"Via Carlo Cattaneo",
+45.6612,
+13.7834,
+0.0
+],
+"via carlo combi": [
+"Via Carlo Combi",
+45.64163,
+13.76471,
+0.08
+],
+"via carlo de franceschi": [
+"Via Carlo De Franceschi",
+45.62024,
+13.81406,
+0.13
+],
+"via carlo de marchesetti": [
+"Via Carlo De Marchesetti",
+45.64121,
+13.81939,
+2.6
+],
+"via carlo e giani stuparich": [
+"Via Carlo e Giani Stuparich",
+45.65075,
+13.78425,
+0.12
+],
+"via carlo errera": [
+"Via Carlo Errera",
+45.61566,
+13.80297,
+0.36
+],
+"via carlo favetti": [
+"Via Carlo Favetti",
+45.67038,
+13.76314,
+0.0
+],
+"via carlo forlanini": [
+"Via Carlo Forlanini",
+45.63679,
+13.82876,
+0.68
+],
+"via carlo ghega": [
+"Via Carlo Ghega",
+45.65569,
+13.7739,
+0.1
+],
+"via carlo gregorutti": [
+"Via Carlo Gregorutti",
+45.64298,
+13.78479,
+0.0
+],
+"via carlo hollan": [
+"Via Carlo Hollan",
+45.64084,
+13.8055,
+0.0
+],
+"via carlo junker": [
+"Via Carlo Junker",
+45.70673,
+13.71499,
+0.05
+],
+"via carlo kunz": [
+"Via Carlo Kunz",
+45.64179,
+13.77009,
+0.0
+],
+"via carlo lona": [
+"Via Carlo Lona",
+45.643,
+13.81899,
+0.0
+],
+"via carlo petitti di roreto": [
+"Via Carlo Petitti di Roreto",
+45.64121,
+13.7835,
+0.04
+],
+"via carlo ravasini": [
+"Via Carlo Ravasini",
+45.64267,
+13.82006,
+0.02
+],
+"via carlo sbisa": [
+"Via Carlo Sbisà",
+45.64087,
+13.80067,
+0.0
+],
+"via carlo schiffrer": [
+"Via Carlo Schiffrer",
+45.63105,
+13.81261,
+0.0
+],
+"via carlo schmidl": [
+"Via Carlo Schmidl",
+45.61829,
+13.79141,
+0.31
+],
+"via carlo ucekar": [
+"Via Carlo Ucekar",
+45.63826,
+13.78216,
+0.0
+],
+"via carlo wostry": [
+"Via Carlo Wostry",
+45.64031,
+13.80407,
+0.01
+],
+"via carmelitani": [
+"Via Carmelitani",
+45.66999,
+13.76526,
+0.0
+],
+"via carnaro": [
+"Via Carnaro",
+45.63613,
+13.80343,
+2.01
+],
+"via carpison": [
+"Via Carpison",
+45.65505,
+13.7826,
+0.0
+],
+"via carsia": [
+"Via Carsia",
+45.68772,
+13.77647,
+0.37
+],
+"via casimiro donadoni": [
+"Via Casimiro Donadoni",
+45.64456,
+13.78735,
+0.0
+],
+"via castelmonte": [
+"Via Castelmonte",
+45.674,
+13.76996,
+0.1
+],
+"via catullo": [
+"Via Catullo",
+45.6576,
+13.78318,
+0.18
+],
+"via cecilia de rittmeyer": [
+"Via Cecilia De Rittmeyer",
+45.65626,
+13.7753,
+0.06
+],
+"via cesare balbo": [
+"Via Cesare Balbo",
+45.66137,
+13.78351,
+0.0
+],
+"via cesare battisti": [
+"Via Cesare Battisti",
+45.65272,
+13.78039,
+0.24
+],
+"via cesare beccaria": [
+"Via Cesare Beccaria",
+45.65389,
+13.77724,
+0.0
+],
+"via cesare cantu": [
+"Via Cesare Cantù",
+45.66124,
+13.79164,
+0.44
+],
+"via cesare dell'acqua": [
+"Via Cesare dell'Acqua",
+45.6298,
+13.80611,
+0.28
+],
+"via cesare rossi": [
+"Via Cesare Rossi",
+45.61756,
+13.79107,
+0.34
+],
+"via cesare sofianopulo": [
+"Via Cesare Sofianopulo",
+45.64123,
+13.81481,
+0.0
+],
+"via cesare zarotti": [
+"Via Cesare Zarotti",
+45.63336,
+13.80299,
+0.01
+],
+"via ciriaco catraro": [
+"Via Ciriaco Catraro",
+45.64388,
+13.76779,
+0.03
+],
+"via cittanova d'istria": [
+"Via Cittanova d'Istria",
+45.62954,
+13.78539,
+0.0
+],
+"via cividale": [
+"Via Cividale",
+45.67175,
+13.76649,
+0.03
+],
+"via claudio pulcro": [
+"Via Claudio Pulcro",
+45.62874,
+13.78879,
+0.04
+],
+"via col melon": [
+"Via Col Melon",
+45.61821,
+13.79593,
+0.0
+],
+"via commerciale": [
+"Via Commerciale",
+45.66407,
+13.781,
+1.37
+],
+"via conti": [
+"Via Conti",
+45.64395,
+13.78551,
+0.15
+],
+"via cormons": [
+"Via Cormons",
+45.6693,
+13.76775,
+0.09
+],
+"via corti": [
+"Via Corti",
+45.6456,
+13.76162,
+0.0
+],
+"via costalunga": [
+"Via Costalunga",
+45.63147,
+13.7974,
+1.57
+],
+"via costantino costantinides": [
+"Via Costantino Costantinides",
+45.65657,
+13.79957,
+0.02
+],
+"via costantino cumano": [
+"Via Costantino Cumano",
+45.63974,
+13.80021,
+0.32
+],
+"via costantino ressmann": [
+"Via Costantino Ressmann",
+45.6501,
+13.78971,
+0.0
+],
+"via cristoforo belli": [
+"Via Cristoforo Belli",
+45.64165,
+13.78058,
+0.0
+],
+"via cristoforo cancellieri": [
+"Via Cristoforo Cancellieri",
+45.63993,
+13.78258,
+0.0
+],
+"via cristoforo colombo": [
+"Via Cristoforo Colombo",
+45.64141,
+13.7783,
+0.0
+],
+"via d'isella": [
+"Via d'Isella",
+45.63745,
+13.78145,
+0.13
+],
+"via damiano chiesa": [
+"Via Damiano Chiesa",
+45.65506,
+13.81274,
+0.27
+],
+"via dante alighieri": [
+"Via Dante Alighieri",
+45.65063,
+13.7738,
+0.05
+],
+"via dante vaglieri": [
+"Via Dante Vaglieri",
+45.62685,
+13.81284,
+0.18
+],
+"via de' fin": [
+"Via De' Fin",
+45.64475,
+13.7693,
+0.02
+],
+"via degli aceri": [
+"Via degli Aceri",
+45.68776,
+13.78335,
+0.05
+],
+"via degli alpini": [
+"Via degli Alpini",
+45.69107,
+13.79044,
+0.48
+],
+"via degli alti forni": [
+"Via degli Alti Forni",
+45.62819,
+13.7786,
+0.0
+],
+"via degli antenorei": [
+"Via degli Antenorei",
+45.64144,
+13.77761,
+0.0
+],
+"via degli apiari": [
+"Via degli Apiari",
+45.6656,
+13.77467,
+0.07
+],
+"via degli argento": [
+"Via degli Argento",
+45.64628,
+13.76127,
+0.0
+],
+"via degli artisti": [
+"Via degli Artisti",
+45.64929,
+13.77318,
+0.0
+],
+"via degli olmi": [
+"Via degli Olmi",
+45.67349,
+13.78529,
+0.31
+],
+"via degli stella": [
+"Via degli Stella",
+45.65875,
+13.77243,
+0.0
+],
+"via dei baiardi": [
+"Via dei Baiardi",
+45.66461,
+13.7938,
+0.41
+],
+"via dei barbariga": [
+"Via dei Barbariga",
+45.66423,
+13.7713,
+0.05
+],
+"via dei baseggio": [
+"Via dei Baseggio",
+45.66731,
+13.76663,
+0.07
+],
+"via dei battaglia": [
+"Via dei Battaglia",
+45.64867,
+13.7721,
+0.01
+],
+"via dei battigelli": [
+"Via dei Battigelli",
+45.64069,
+13.82715,
+0.0
+],
+"via dei berlam": [
+"Via dei Berlam",
+45.67242,
+13.76055,
+0.09
+],
+"via dei bidischini": [
+"Via dei Bidischini",
+45.67244,
+13.79283,
+0.12
+],
+"via dei bonomo": [
+"Via dei Bonomo",
+45.65445,
+13.79311,
+0.05
+],
+"via dei burlo": [
+"Via dei Burlo",
+45.64583,
+13.76056,
+0.0
+],
+"via dei caldana": [
+"Via dei Caldana",
+45.63427,
+13.78938,
+0.0
+],
+"via dei calderai": [
+"Via dei Calderai",
+45.6379,
+13.77237,
+0.05
+],
+"via dei capitelli": [
+"Via dei Capitelli",
+45.64795,
+13.76772,
+0.0
+],
+"via dei capuano": [
+"Via dei Capuano",
+45.64577,
+13.76532,
+0.0
+],
+"via dei cardi": [
+"Via dei Cardi",
+45.68646,
+13.79157,
+0.17
+],
+"via dei cavazzeni": [
+"Via dei Cavazzeni",
+45.64841,
+13.76762,
+0.0
+],
+"via dei cergna": [
+"Via dei Cergna",
+45.64173,
+13.81423,
+0.02
+],
+"via dei cipressi": [
+"Via dei Cipressi",
+45.69245,
+13.78034,
+0.07
+],
+"via dei civrani": [
+"Via dei Civrani",
+45.65005,
+13.79385,
+0.0
+],
+"via dei colombi": [
+"Via dei Colombi",
+45.64773,
+13.76923,
+0.0
+],
+"via dei coppa": [
+"Via dei Coppa",
+45.64832,
+13.76631,
+0.0
+],
+"via dei cordaroli": [
+"Via dei Cordaroli",
+45.66373,
+13.7731,
+0.05
+],
+"via dei cosulich": [
+"Via dei Cosulich",
+45.61555,
+13.81622,
+0.0
+],
+"via dei crociferi": [
+"Via dei Crociferi",
+45.64676,
+13.76592,
+0.0
+],
+"via dei cunicoli": [
+"Via dei Cunicoli",
+45.6552,
+13.78974,
+0.0
+],
+"via dei fabbri": [
+"Via dei Fabbri",
+45.646,
+13.76501,
+0.0
+],
+"via dei falchi": [
+"Via dei Falchi",
+45.64317,
+13.78369,
+0.02
+],
+"via dei fiordalisi": [
+"Via dei Fiordalisi",
+45.69268,
+13.77817,
+0.25
+],
+"via dei fornelli": [
+"Via dei Fornelli",
+45.64835,
+13.76616,
+0.0
+],
+"via dei frassini": [
+"Via dei Frassini",
+45.68715,
+13.78723,
+0.0
+],
+"via dei frigessi": [
+"Via dei Frigessi",
+45.61252,
+13.82028,
+0.13
+],
+"via dei gelsomini": [
+"Via dei Gelsomini",
+45.66686,
+13.7698,
+0.07
+],
+"via dei gerani": [
+"Via dei Gerani",
+45.66721,
+13.78148,
+0.0
+],
+"via dei giacinti": [
+"Via dei Giacinti",
+45.66517,
+13.7697,
+0.09
+],
+"via dei giaggioli": [
+"Via dei Giaggioli",
+45.66654,
+13.78515,
+0.06
+],
+"via dei giardini": [
+"Via dei Giardini",
+45.6228,
+13.78321,
+0.1
+],
+"via dei ginepri": [
+"Via dei Ginepri",
+45.68642,
+13.78505,
+0.0
+],
+"via dei giuliani": [
+"Via dei Giuliani",
+45.64405,
+13.7788,
+0.14
+],
+"via dei giustinelli": [
+"Via dei Giustinelli",
+45.64557,
+13.76718,
+0.03
+],
+"via dei gradi": [
+"Via dei Gradi",
+45.64345,
+13.78222,
+0.02
+],
+"via dei gravisi": [
+"Via dei Gravisi",
+45.62163,
+13.81088,
+0.13
+],
+"via dei lavoratori": [
+"Via dei Lavoratori",
+45.63687,
+13.77844,
+0.0
+],
+"via dei leo": [
+"Via dei Leo",
+45.64711,
+13.78643,
+0.06
+],
+"via dei macelli": [
+"Via dei Macelli",
+45.62411,
+13.79302,
+0.02
+],
+"via dei mille": [
+"Via dei Mille",
+45.64682,
+13.80061,
+0.0
+],
+"via dei mirissa": [
+"Via dei Mirissa",
+45.63496,
+13.80573,
+0.11
+],
+"via dei mirti": [
+"Via dei Mirti",
+45.66582,
+13.77331,
+0.0
+],
+"via dei modiano": [
+"Via dei Modiano",
+45.63677,
+13.79944,
+0.09
+],
+"via dei molini": [
+"Via dei Molini",
+45.67108,
+13.7822,
+0.24
+],
+"via dei montecchi": [
+"Via dei Montecchi",
+45.64244,
+13.78201,
+0.0
+],
+"via dei moreri": [
+"Via dei Moreri",
+45.6696,
+13.77588,
+0.46
+],
+"via dei narcisi": [
+"Via dei Narcisi",
+45.66677,
+13.78748,
+0.07
+],
+"via dei navali": [
+"Via dei Navali",
+45.64289,
+13.77226,
+0.3
+],
+"via dei noci": [
+"Via dei Noci",
+45.6759,
+13.78126,
+0.0
+],
+"via dei pagliaricci": [
+"Via dei Pagliaricci",
+45.65854,
+13.8047,
+0.19
+],
+"via dei pallini": [
+"Via dei Pallini",
+45.64618,
+13.77595,
+0.03
+],
+"via dei panzera": [
+"Via dei Panzera",
+45.68428,
+13.75174,
+0.07
+],
+"via dei papaveri": [
+"Via dei Papaveri",
+45.69252,
+13.77647,
+0.35
+],
+"via dei pellegrini": [
+"Via dei Pellegrini",
+45.64342,
+13.81281,
+0.16
+],
+"via dei piccardi": [
+"Via dei Piccardi",
+45.64502,
+13.78862,
+0.0
+],
+"via dei porta": [
+"Via dei Porta",
+45.64777,
+13.79101,
+0.38
+],
+"via dei rettori": [
+"Via dei Rettori",
+45.6493,
+13.7698,
+0.0
+],
+"via dei righetti": [
+"Via dei Righetti",
+45.67985,
+13.7635,
+0.1
+],
+"via dei salici": [
+"Via dei Salici",
+45.68846,
+13.78341,
+0.29
+],
+"via dei saltuari": [
+"Via dei Saltuari",
+45.66433,
+13.77087,
+0.0
+],
+"via dei sartorio": [
+"Via dei Sartorio",
+45.63536,
+13.80262,
+0.11
+],
+"via dei soncini": [
+"Via dei Soncini",
+45.62703,
+13.78713,
+0.32
+],
+"via dei tigli": [
+"Via dei Tigli",
+45.68786,
+13.78189,
+0.02
+],
+"via dei toffani": [
+"Via dei Toffani",
+45.66734,
+13.76721,
+0.0
+],
+"via dei tominz": [
+"Via dei Tominz",
+45.64056,
+13.80144,
+0.0
+],
+"via dei vergottini": [
+"Via dei Vergottini",
+45.62613,
+13.81132,
+0.04
+],
+"via dei verzieri": [
+"Via dei Verzieri",
+45.64834,
+13.7721,
+0.02
+],
+"via dei vigneti": [
+"Via dei Vigneti",
+45.62653,
+13.79148,
+0.41
+],
+"via dei volpi": [
+"Via dei Volpi",
+45.68529,
+13.77422,
+0.0
+],
+"via del bastione": [
+"Via del Bastione",
+45.64742,
+13.76733,
+0.01
+],
+"via del bergamino": [
+"via del Bergamino",
+45.64253,
+13.81182,
+0.11
+],
+"via del biancospino": [
+"Via del Biancospino",
+45.69093,
+13.78167,
+0.35
+],
+"via del bosco": [
+"Via del Bosco",
+45.64551,
+13.77811,
+0.11
+],
+"via del botro": [
+"Via del Botro",
+45.63245,
+13.82269,
+0.04
+],
+"via del boveto": [
+"Via del Boveto",
+45.67846,
+13.75683,
+0.12
+],
+"via del broletto": [
+"Via del Broletto",
+45.64005,
+13.77608,
+0.06
+],
+"via del calcare": [
+"Via del Calcare",
+45.6857,
+13.78238,
+0.07
+],
+"via del canale piccolo": [
+"Via del Canale Piccolo",
+45.65085,
+13.76975,
+0.0
+],
+"via del capofonte": [
+"Via del Capofonte",
+45.6575,
+13.81139,
+0.1
+],
+"via del caprile": [
+"Via del Caprile",
+45.66669,
+13.77557,
+0.03
+],
+"via del caravaggio": [
+"Via del Caravaggio",
+45.65742,
+13.80677,
+0.0
+],
+"via del carpineto": [
+"Via del Carpineto",
+45.62418,
+13.78992,
+0.0
+],
+"via del castelliere": [
+"Via del Castelliere",
+45.63362,
+13.81669,
+0.57
+],
+"via del castello": [
+"Via del Castello",
+45.64717,
+13.77101,
+0.0
+],
+"via del cerreto": [
+"Via del Cerreto",
+45.67977,
+13.75575,
+0.0
+],
+"via del cisternone": [
+"Via del Cisternone",
+45.6683,
+13.76833,
+0.0
+],
+"via del collegio": [
+"Via del Collegio",
+45.64842,
+13.7702,
+0.0
+],
+"via del collio": [
+"Via del Collio",
+45.67252,
+13.76873,
+0.12
+],
+"via del coroneo": [
+"Via del Coroneo",
+45.6543,
+13.77947,
+0.35
+],
+"via del correggio": [
+"Via del Correggio",
+45.65007,
+13.81698,
+0.04
+],
+"via del crocifisso": [
+"Via del Crocifisso",
+45.64849,
+13.77125,
+0.0
+],
+"via del destriero": [
+"Via del Destriero",
+45.63891,
+13.78873,
+0.03
+],
+"via del dittamo": [
+"Via del Dittamo",
+45.66685,
+13.77042,
+0.0
+],
+"via del donatello": [
+"Via del Donatello",
+45.65525,
+13.80073,
+0.04
+],
+"via del farnetello": [
+"Via del Farnetello",
+45.65064,
+13.81102,
+0.37
+],
+"via del farneto": [
+"Via del Farneto",
+45.65237,
+13.78749,
+0.0
+],
+"via del fico": [
+"Via del Fico",
+45.6479,
+13.76672,
+0.0
+],
+"via del follatoio": [
+"Via del Follatoio",
+45.62058,
+13.80323,
+0.12
+],
+"via del fortino": [
+"Via del Fortino",
+45.64811,
+13.76631,
+0.0
+],
+"via del ghirlandaio": [
+"Via del Ghirlandaio",
+45.64082,
+13.79018,
+0.15
+],
+"via del giambellino": [
+"Via del Giambellino",
+45.64358,
+13.77038,
+0.0
+],
+"via del lavareto": [
+"Via del Lavareto",
+45.68378,
+13.75362,
+0.16
+],
+"via del lavatoio": [
+"Via del Lavatoio",
+45.65397,
+13.77501,
+0.0
+],
+"via del lazzaretto vecchio": [
+"Via del Lazzaretto Vecchio",
+45.64563,
+13.76074,
+0.0
+],
+"via del lloyd": [
+"Via del Lloyd",
+45.63849,
+13.76915,
+0.04
+],
+"via del marcese": [
+"Via del Marcese",
+45.62683,
+13.80289,
+0.04
+],
+"via del molino a vento": [
+"Via del Molino a Vento",
+45.64189,
+13.78343,
+0.46
+],
+"via del monte": [
+"Via del Monte",
+45.64864,
+13.77565,
+0.07
+],
+"via del monte cengio": [
+"Via del Monte Cengio",
+45.65746,
+13.78615,
+0.0
+],
+"via del montello": [
+"Via del Montello",
+45.66045,
+13.78418,
+0.0
+],
+"via del muraglione": [
+"Via del Muraglione",
+45.64365,
+13.78214,
+0.0
+],
+"via del pane": [
+"Via del Pane",
+45.64955,
+13.7698,
+0.0
+],
+"via del pane bianco": [
+"Via del Pane Bianco",
+45.62597,
+13.78587,
+0.26
+],
+"via del panorama": [
+"Via del Panorama",
+45.66223,
+13.77498,
+0.02
+],
+"via del perarolo": [
+"Via del Perarolo",
+45.67785,
+13.75917,
+0.16
+],
+"via del pesce": [
+"Via del Pesce",
+45.6484,
+13.76657,
+0.0
+],
+"via del pilone": [
+"Via del Pilone",
+45.6549,
+13.78926,
+0.0
+],
+"via del pinturicchio": [
+"Via del Pinturicchio",
+45.65711,
+13.80318,
+0.02
+],
+"via del ponte": [
+"Via del Ponte",
+45.64971,
+13.77033,
+0.0
+],
+"via del ponticello": [
+"Via del Ponticello",
+45.62166,
+13.78434,
+0.12
+],
+"via del ponzanino": [
+"Via del Ponzanino",
+45.64352,
+13.78191,
+0.08
+],
+"via del pordenone": [
+"Via del Pordenone",
+45.64096,
+13.79162,
+0.04
+],
+"via del pozzo": [
+"Via del Pozzo",
+45.64337,
+13.78067,
+0.0
+],
+"via del pratello": [
+"Via del Pratello",
+45.66592,
+13.77542,
+0.03
+],
+"via del prato": [
+"Via del Prato",
+45.65758,
+13.79369,
+0.0
+],
+"via del pucino": [
+"Via del Pucino",
+45.71935,
+13.70416,
+2.25
+],
+"via del refosco": [
+"Via del Refosco",
+45.68612,
+13.80011,
+0.29
+],
+"via del ricreatorio": [
+"Via del Ricreatorio",
+45.68417,
+13.78939,
+0.31
+],
+"via del rivo": [
+"Via del Rivo",
+45.64411,
+13.78043,
+0.0
+],
+"via del roncheto": [
+"Via del Roncheto",
+45.63088,
+13.78921,
+0.54
+],
+"via del ronco": [
+"Via del Ronco",
+45.65586,
+13.78384,
+0.0
+],
+"via del rosario": [
+"Via del Rosario",
+45.6492,
+13.77039,
+0.0
+],
+"via del sabotino": [
+"Via del Sabotino",
+45.68672,
+13.77906,
+0.04
+],
+"via del sale": [
+"Via del Sale",
+45.64858,
+13.76676,
+0.0
+],
+"via del seminario": [
+"Via del Seminario",
+45.64828,
+13.77059,
+0.0
+],
+"via del sommacco": [
+"Via del Sommacco",
+45.66686,
+13.80065,
+0.09
+],
+"via del teatro": [
+"Via del Teatro",
+45.65017,
+13.76893,
+0.0
+],
+"via del teatro romano": [
+"Via del Teatro Romano",
+45.64917,
+13.77021,
+0.0
+],
+"via del terrano": [
+"Via del Terrano",
+45.68784,
+13.79418,
+0.0
+],
+"via del timo": [
+"Via del Timo",
+45.65063,
+13.81787,
+0.24
+],
+"via del tintoretto": [
+"Via del Tintoretto",
+45.65743,
+13.80695,
+0.02
+],
+"via del toro": [
+"Via del Toro",
+45.6507,
+13.77897,
+0.06
+],
+"via del trionfo": [
+"Via del Trionfo",
+45.64775,
+13.76885,
+0.01
+],
+"via del veltro": [
+"Via del Veltro",
+45.63804,
+13.78842,
+0.23
+],
+"via del vento": [
+"Via del Vento",
+45.64387,
+13.78107,
+0.0
+],
+"via del vignola": [
+"Via del Vignola",
+45.64964,
+13.78834,
+0.0
+],
+"via dell'agro": [
+"Via dell'Agro",
+45.64083,
+13.78582,
+0.03
+],
+"via dell'annunziata": [
+"Via dell'Annunziata",
+45.64797,
+13.76449,
+0.03
+],
+"via dell'arsenale": [
+"Via dell'Arsenale",
+45.65109,
+13.76875,
+0.0
+],
+"via dell'asilo": [
+"Via dell'Asilo",
+45.64821,
+13.77201,
+0.0
+],
+"via dell'assenzio": [
+"Via dell'Assenzio",
+45.68801,
+13.7969,
+0.2
+],
+"via dell'eremo": [
+"Via dell'Eremo",
+45.64482,
+13.79725,
+1.05
+],
+"via dell'erica": [
+"Via dell'Erica",
+45.66733,
+13.77983,
+0.04
+],
+"via dell'ermada": [
+"Via dell'Ermada",
+45.68269,
+13.78623,
+0.35
+],
+"via dell'industria": [
+"Via dell'Industria",
+45.64173,
+13.77896,
+0.24
+],
+"via dell'istria": [
+"Via dell'Istria",
+45.63539,
+13.78742,
+1.22
+],
+"via dell'officina": [
+"Via dell'Officina",
+45.64177,
+13.76207,
+0.0
+],
+"via dell'oliveto": [
+"Via dell'Oliveto",
+45.65597,
+13.79522,
+0.0
+],
+"via dell'orologio": [
+"Via dell'Orologio",
+45.64959,
+13.76697,
+0.02
+],
+"via dell'ospitale": [
+"Via dell'Ospitale",
+45.64771,
+13.77062,
+0.0
+],
+"via dell'universita": [
+"Via dell'Università",
+45.64491,
+13.76113,
+0.0
+],
+"via dell'uva": [
+"Via dell'Uva",
+45.67918,
+13.75804,
+0.01
+],
+"via della bastia": [
+"Via della Bastia",
+45.64038,
+13.78399,
+0.01
+],
+"via della bellavista": [
+"Via della Bellavista",
+45.67231,
+13.79586,
+0.6
+],
+"via della bora": [
+"Via della Bora",
+45.64778,
+13.7694,
+0.0
+],
+"via della calcara": [
+"Via della Calcara",
+45.62731,
+13.78411,
+0.1
+],
+"via della cassa di risparmio": [
+"Via della Cassa di Risparmio",
+45.6515,
+13.7706,
+0.05
+],
+"via della cattedrale": [
+"Via della Cattedrale",
+45.64681,
+13.7708,
+0.1
+],
+"via della cereria": [
+"Via della Cereria",
+45.64608,
+13.76893,
+0.06
+],
+"via della chiauchiara": [
+"Via della Chiauchiara",
+45.64845,
+13.77213,
+0.0
+],
+"via della concordia": [
+"Via della Concordia",
+45.64181,
+13.77779,
+0.0
+],
+"via della corte": [
+"Via della Corte",
+45.64789,
+13.76773,
+0.0
+],
+"via della fabbrica": [
+"Via della Fabbrica",
+45.64386,
+13.78377,
+0.0
+],
+"via della ferrovia": [
+"Via della Ferrovia",
+45.69269,
+13.79001,
+0.19
+],
+"via della ferrovia / zelezniska ulica": [
+"Via della Ferrovia / Železniška ulica",
+45.69335,
+13.79049,
+0.21
+],
+"via della fonderia": [
+"Via della Fonderia",
+45.64872,
+13.78019,
+0.0
+],
+"via della fontana": [
+"Via della Fontana",
+45.65568,
+13.77996,
+0.0
+],
+"via della fornace": [
+"Via della Fornace",
+45.64603,
+13.77495,
+0.0
+],
+"via della galleria": [
+"Via della Galleria",
+45.6455,
+13.77006,
+0.0
+],
+"via della geppa": [
+"Via della Geppa",
+45.65544,
+13.77309,
+0.0
+],
+"via della ginnastica": [
+"Via della Ginnastica",
+45.65153,
+13.78485,
+0.34
+],
+"via della guardia": [
+"Via della Guardia",
+45.6442,
+13.78,
+0.11
+],
+"via della liburnia": [
+"Via della Liburnia",
+45.63039,
+13.79246,
+0.07
+],
+"via della madonna del mare": [
+"Via della Madonna del Mare",
+45.64694,
+13.76778,
+0.06
+],
+"via della madonnina": [
+"Via della Madonnina",
+45.64637,
+13.77806,
+0.0
+],
+"via della maiolica": [
+"Via della Maiolica",
+45.64919,
+13.77915,
+0.0
+],
+"via della mandria": [
+"Via della Mandria",
+45.68026,
+13.75926,
+0.08
+],
+"via della muda vecchia": [
+"Via della Muda Vecchia",
+45.64888,
+13.76871,
+0.0
+],
+"via della pace": [
+"Via della Pace",
+45.63182,
+13.79406,
+0.06
+],
+"via della pescheria": [
+"Via della Pescheria",
+45.64895,
+13.76674,
+0.03
+],
+"via della piccola fornace": [
+"Via della Piccola Fornace",
+45.64889,
+13.77288,
+0.0
+],
+"via della pieta": [
+"Via della Pietà",
+45.64954,
+13.78556,
+0.3
+],
+"via della pineta": [
+"Via della Pineta",
+45.68595,
+13.77522,
+0.0
+],
+"via della procureria": [
+"Via della Procureria",
+45.64923,
+13.76817,
+0.0
+],
+"via della raffineria": [
+"Via della Raffineria",
+45.64535,
+13.78182,
+0.04
+],
+"via della rampa": [
+"Via della Rampa",
+45.63683,
+13.76475,
+0.17
+],
+"via della rotonda": [
+"Via della Rotonda",
+45.64702,
+13.76836,
+0.0
+],
+"via della scaletta": [
+"Via della Scaletta",
+45.64399,
+13.78064,
+0.01
+],
+"via della scalinata": [
+"Via della Scalinata",
+45.64472,
+13.78076,
+0.03
+],
+"via della sorgente": [
+"Via della Sorgente",
+45.64972,
+13.77867,
+0.0
+],
+"via della tesa": [
+"Via della Tesa",
+45.6407,
+13.78704,
+0.0
+],
+"via della torretta": [
+"Via della Torretta",
+45.64883,
+13.76705,
+0.0
+],
+"via della valle": [
+"Via della Valle",
+45.64642,
+13.76884,
+0.03
+],
+"via della vedetta": [
+"Via della Vedetta",
+45.6849,
+13.77628,
+0.0
+],
+"via della vena": [
+"Via della Vena",
+45.68707,
+13.78608,
+0.07
+],
+"via della vitalba": [
+"Via della Vitalba",
+45.72158,
+13.69809,
+0.0
+],
+"via della zonta": [
+"Via della Zonta",
+45.65211,
+13.77538,
+0.05
+],
+"via delle aiuole": [
+"Via delle Aiuole",
+45.64542,
+13.78988,
+0.0
+],
+"via delle alpi giulie": [
+"Via delle Alpi Giulie",
+45.62725,
+13.81896,
+0.29
+],
+"via delle beatitudini": [
+"Via delle Beatitudini",
+45.66542,
+13.80546,
+0.09
+],
+"via delle beccherie": [
+"Via delle Beccherie",
+45.64979,
+13.76976,
+0.0
+],
+"via delle beccherie vecchie": [
+"Via delle Beccherie Vecchie",
+45.64793,
+13.76695,
+0.0
+],
+"via delle campanelle": [
+"Via delle Campanelle",
+45.63329,
+13.80147,
+0.95
+],
+"via delle candele": [
+"Via delle Candele",
+45.64871,
+13.77225,
+0.0
+],
+"via delle docce": [
+"Via delle Docce",
+45.65785,
+13.80859,
+0.15
+],
+"via delle erbette": [
+"Via delle Erbette",
+45.64992,
+13.77863,
+0.0
+],
+"via delle fiamme gialle": [
+"Via delle Fiamme Gialle",
+45.63885,
+13.76281,
+0.13
+],
+"via delle ginestre": [
+"Via delle Ginestre",
+45.66569,
+13.77018,
+0.04
+],
+"via delle linfe": [
+"Via delle Linfe",
+45.65469,
+13.80291,
+0.0
+],
+"via delle lodole": [
+"Via delle Lodole",
+45.64412,
+13.7811,
+0.03
+],
+"via delle milizie": [
+"Via delle Milizie",
+45.64089,
+13.79554,
+0.06
+],
+"via delle monache": [
+"Via delle Monache",
+45.64761,
+13.77031,
+0.0
+],
+"via delle mura": [
+"Via delle Mura",
+45.64769,
+13.7672,
+0.07
+],
+"via delle ombrelle": [
+"Via delle Ombrelle",
+45.64973,
+13.76999,
+0.02
+],
+"via delle peonie": [
+"Via delle Peonie",
+45.68629,
+13.79,
+0.0
+],
+"via delle pulsatille": [
+"Via delle Pulsatille",
+45.6875,
+13.79006,
+0.05
+],
+"via delle quercie": [
+"Via delle Quercie",
+45.66627,
+13.7753,
+0.03
+],
+"via delle robinie": [
+"Via delle Robinie",
+45.67587,
+13.78018,
+0.07
+],
+"via delle scuole": [
+"Via delle Scuole",
+45.64805,
+13.77001,
+0.0
+],
+"via delle settefontane": [
+"Via delle Settefontane",
+45.64274,
+13.78735,
+0.44
+],
+"via delle torri": [
+"Via delle Torri",
+45.65114,
+13.77597,
+0.0
+],
+"via delle viole": [
+"Via delle Viole",
+45.66636,
+13.78767,
+0.0
+],
+"via delle zudecche": [
+"Via delle Zudecche",
+45.64899,
+13.7775,
+0.0
+],
+"via dello scalo legnami": [
+"Via dello Scalo Legnami",
+45.62941,
+13.77873,
+0.12
+],
+"via dello scoglio": [
+"Via dello Scoglio",
+45.65773,
+13.79586,
+0.39
+],
+"via dello squero vecchio": [
+"Via dello Squero Vecchio",
+45.64953,
+13.76746,
+0.0
+],
+"via dello sterpeto": [
+"Via dello Sterpeto",
+45.64605,
+13.78661,
+0.0
+],
+"via demetrio livaditi": [
+"Via Demetrio Livaditi",
+45.64926,
+13.78771,
+0.0
+],
+"via di basovizza": [
+"Via di Basovizza",
+45.68412,
+13.79899,
+0.53
+],
+"via di caboro": [
+"Via di Caboro",
+45.64863,
+13.77387,
+0.05
+],
+"via di calvola": [
+"Via di Calvola",
+45.64083,
+13.77043,
+0.0
+],
+"via di campo marzio": [
+"Via di Campo Marzio",
+45.64498,
+13.75713,
+0.08
+],
+"via di cavana": [
+"Via di Cavana",
+45.64768,
+13.76613,
+0.06
+],
+"via di chiadino": [
+"Via di Chiadino",
+45.64944,
+13.79139,
+0.33
+],
+"via di cologna": [
+"Via di Cologna",
+45.65798,
+13.78979,
+0.53
+],
+"via di conconello": [
+"Via di Conconello",
+45.68409,
+13.79266,
+0.37
+],
+"via di crosada": [
+"Via di Crosada",
+45.64822,
+13.76799,
+0.02
+],
+"via di donota": [
+"Via di Donota",
+45.64913,
+13.77203,
+0.05
+],
+"via di giarizzole": [
+"Via Di Giarizzole",
+45.61947,
+13.79716,
+0.42
+],
+"via di melara": [
+"Via di Melara",
+45.64248,
+13.81853,
+0.03
+],
+"via di mercato vecchio": [
+"Via di Mercato Vecchio",
+45.64968,
+13.76625,
+0.0
+],
+"via di monrupino": [
+"Via di Monrupino",
+45.69712,
+13.79834,
+0.71
+],
+"via di monrupino / repentaborska ulica": [
+"Via di Monrupino / Repentaborska ulica",
+45.69026,
+13.79386,
+0.0
+],
+"via di montebello": [
+"Via di Montebello",
+45.63902,
+13.80691,
+0.46
+],
+"via di montecucco": [
+"Via di Montecucco",
+45.64412,
+13.77344,
+0.07
+],
+"via di prosecco": [
+"Via di Prosecco",
+45.69023,
+13.78729,
+0.31
+],
+"via di rivalto": [
+"Via di Rivalto",
+45.64192,
+13.78239,
+0.0
+],
+"via di roiano": [
+"Via di Roiano",
+45.66485,
+13.77138,
+0.0
+],
+"via di romagna": [
+"Via di Romagna",
+45.65817,
+13.77937,
+0.36
+],
+"via di scorcola": [
+"Via di Scorcola",
+45.65948,
+13.77929,
+0.24
+],
+"via di servola": [
+"Via di Servola",
+45.62588,
+13.78291,
+0.32
+],
+"via di silvula": [
+"Via di Silvula",
+45.62821,
+13.7853,
+0.0
+],
+"via di tor bandena": [
+"Via di Tor Bandena",
+45.64977,
+13.77089,
+0.0
+],
+"via di tor san lorenzo": [
+"Via di Tor San Lorenzo",
+45.64578,
+13.77112,
+0.0
+],
+"via di torre bianca": [
+"Via di Torre Bianca",
+45.6526,
+13.77467,
+0.27
+],
+"via di vallicula": [
+"Via di Vallicula",
+45.67967,
+13.75783,
+0.03
+],
+"via di verniellis": [
+"Via di Verniellis",
+45.66563,
+13.78408,
+0.16
+],
+"via dignano": [
+"Via Dignano",
+45.63165,
+13.78567,
+0.0
+],
+"via doberdo": [
+"Via Doberdò",
+45.68877,
+13.78534,
+0.48
+],
+"via domenico cimarosa": [
+"Via Domenico Cimarosa",
+45.62358,
+13.80261,
+0.0
+],
+"via domenico lovisato": [
+"Via Domenico Lovisato",
+45.64905,
+13.79499,
+0.04
+],
+"via domenico rossetti": [
+"Via Domenico Rossetti",
+45.64747,
+13.78769,
+0.85
+],
+"via domenico stanich": [
+"Via Domenico Stanich",
+45.61977,
+13.81412,
+0.0
+],
+"via domus civica": [
+"Via Domus Civica",
+45.62418,
+13.79574,
+0.01
+],
+"via don edoardo marzari": [
+"Via Don Edoardo Marzari",
+45.64538,
+13.76361,
+0.0
+],
+"via don giovanni minzoni": [
+"Via Don Giovanni Minzoni",
+45.64384,
+13.76662,
+0.05
+],
+"via don luigi sturzo": [
+"Via Don Luigi Sturzo",
+45.64046,
+13.76804,
+0.0
+],
+"via don pietro cenati": [
+"Via Don Pietro Cenati",
+45.61879,
+13.82427,
+0.08
+],
+"via donato bramante": [
+"Via Donato Bramante",
+45.64547,
+13.7737,
+0.0
+],
+"via dragotin kette / kettejeva ulica": [
+"Via Dragotin Kette / Kettejeva ulica",
+45.64066,
+13.86311,
+0.02
+],
+"via edgardo morpurgo": [
+"Via Edgardo Morpurgo",
+45.61482,
+13.82414,
+0.18
+],
+"via edgardo rascovich": [
+"Via Edgardo Rascovich",
+45.62072,
+13.82747,
+0.0
+],
+"via edgardo sambo": [
+"Via Edgardo Sambo",
+45.64107,
+13.80185,
+0.07
+],
+"via edmondo de amicis": [
+"Via Edmondo De Amicis",
+45.64194,
+13.76621,
+0.1
+],
+"via edoardo borghi": [
+"Via Edoardo Borghi",
+45.66524,
+13.77804,
+0.09
+],
+"via edoardo gardoni": [
+"Via Edoardo Gardoni",
+45.61639,
+13.82997,
+0.0
+],
+"via edoardo gasser": [
+"Via Edoardo Gasser",
+45.64679,
+13.80278,
+0.03
+],
+"via edoardo gridelli": [
+"Via Edoardo Gridelli",
+45.64557,
+13.80565,
+0.05
+],
+"via edoardo pospichal": [
+"Via Edoardo Pospichal",
+45.6497,
+13.79524,
+0.02
+],
+"via edoardo weiss": [
+"Via Edoardo Weiss",
+45.66029,
+13.80262,
+0.27
+],
+"via elisa baciocchi": [
+"Via Elisa Baciocchi",
+45.64529,
+13.76094,
+0.0
+],
+"via emanuele filiberto duca d'aosta": [
+"Via Emanuele Filiberto Duca d'Aosta",
+45.64632,
+13.76394,
+0.0
+],
+"via emilio comici": [
+"Via Emilio Comici",
+45.6528,
+13.80925,
+0.0
+],
+"via emilio scauro": [
+"Via Emilio Scauro",
+45.65969,
+13.79084,
+0.03
+],
+"via emo tarabochia": [
+"Via Emo Tarabochia",
+45.64988,
+13.77948,
+0.04
+],
+"via enea silvio piccolomini": [
+"Via Enea Silvio Piccolomini",
+45.65309,
+13.7835,
+0.0
+],
+"via enrico dandolo": [
+"Via Enrico Dandolo",
+45.64057,
+13.77377,
+0.0
+],
+"via enrico elia": [
+"Via Enrico Elia",
+45.66351,
+13.77454,
+0.08
+],
+"via enrico fonda": [
+"Via Enrico Fonda",
+45.63025,
+13.80251,
+0.11
+],
+"via enrico paolo salem": [
+"Via Enrico Paolo Salem",
+45.64243,
+13.78413,
+0.0
+],
+"via enrico toti": [
+"Via Enrico Toti",
+45.64614,
+13.77905,
+0.0
+],
+"via ercolano salvi": [
+"Via Ercolano Salvi",
+45.62905,
+13.78749,
+0.03
+],
+"via ercole miani": [
+"Via Ercole Miani",
+45.62211,
+13.79537,
+0.24
+],
+"via ermanno toneatti": [
+"Via Ermanno Toneatti",
+45.62101,
+13.82484,
+0.05
+],
+"via ettore daurant": [
+"Via Ettore Daurant",
+45.64291,
+13.77022,
+0.06
+],
+"via eugenio boegan": [
+"Via Eugenio Boegan",
+45.6542,
+13.80645,
+0.03
+],
+"via eugenio colorni": [
+"Via Eugenio Colorni",
+45.61934,
+13.82736,
+0.12
+],
+"via eugenio curiel": [
+"Via Eugenio Curiel",
+45.61876,
+13.82488,
+0.34
+],
+"via eugenio scomparini": [
+"Via Eugenio Scomparini",
+45.64097,
+13.79799,
+0.11
+],
+"via evangelista torricelli": [
+"Via Evangelista Torricelli",
+45.65588,
+13.78619,
+0.0
+],
+"via fabio cusin": [
+"Via Fabio Cusin",
+45.63154,
+13.81294,
+0.04
+],
+"via fabio filzi": [
+"Via Fabio Filzi",
+45.6539,
+13.77436,
+0.12
+],
+"via fabio severo": [
+"Via Fabio Severo",
+45.65878,
+13.78881,
+1.0
+],
+"via federico seismit doda": [
+"Via Federico Seismit Doda",
+45.63322,
+13.78175,
+0.18
+],
+"via felice machlig": [
+"Via Felice Machlig",
+45.65184,
+13.79244,
+0.09
+],
+"via felice schiavoni": [
+"Via Felice Schiavoni",
+45.64142,
+13.8092,
+0.02
+],
+"via felice venezian": [
+"Via Felice Venezian",
+45.64841,
+13.76547,
+0.18
+],
+"via ferdinand de lesseps": [
+"Via Ferdinand De Lesseps",
+45.7386,
+13.67549,
+0.02
+],
+"via ferruccio busoni": [
+"Via Ferruccio Busoni",
+45.67641,
+13.76532,
+0.07
+],
+"via ferruccio dardi": [
+"Via Ferruccio Dardi",
+45.61764,
+13.82605,
+0.0
+],
+"via ferruccio suppan": [
+"Via Ferruccio Suppan",
+45.62804,
+13.81548,
+0.04
+],
+"via fianona": [
+"Via Fianona",
+45.62812,
+13.79418,
+0.24
+],
+"via filippo brunelleschi": [
+"Via Filippo Brunelleschi",
+45.65588,
+13.80247,
+0.0
+],
+"via filippo corridoni": [
+"Via Filippo Corridoni",
+45.64611,
+13.77987,
+0.03
+],
+"via filippo lippi": [
+"Via Filippo Lippi",
+45.65479,
+13.80027,
+0.0
+],
+"via filippo zamboni": [
+"Via Filippo Zamboni",
+45.64446,
+13.76817,
+0.0
+],
+"via flavia": [
+"Via Flavia",
+45.61577,
+13.81362,
+1.67
+],
+"via flavio gioia": [
+"Via Flavio Gioia",
+45.65756,
+13.77142,
+0.04
+],
+"via fonte oppia": [
+"Via Fonte Oppia",
+45.63309,
+13.79021,
+0.0
+],
+"via fra' pace da vedano": [
+"Via fra' Pace da Vedano",
+45.64585,
+13.79592,
+0.1
+],
+"via fra' paolo naldini": [
+"Via Fra' Paolo Naldini",
+45.63532,
+13.79051,
+0.04
+],
+"via franca": [
+"Via Franca",
+45.64255,
+13.7593,
+0.0
+],
+"via francesco beda": [
+"Via Francesco Beda",
+45.64201,
+13.80974,
+0.0
+],
+"via francesco bonazza": [
+"Via Francesco Bonazza",
+45.63729,
+13.80551,
+0.19
+],
+"via francesco cappello": [
+"Via Francesco Cappello",
+45.64539,
+13.76967,
+0.04
+],
+"via francesco carletti": [
+"Via Francesco Carletti",
+45.61687,
+13.81991,
+0.1
+],
+"via francesco cilea": [
+"Via Francesco Cilea",
+45.67718,
+13.76823,
+0.0
+],
+"via francesco collotti": [
+"Via Francesco Collotti",
+45.66511,
+13.77813,
+0.0
+],
+"via francesco crispi": [
+"Via Francesco Crispi",
+45.65206,
+13.78305,
+0.0
+],
+"via francesco dall'ongaro": [
+"Via Francesco dall'Ongaro",
+45.64141,
+13.76245,
+0.0
+],
+"via francesco denza": [
+"Via Francesco Denza",
+45.64446,
+13.7678,
+0.04
+],
+"via francesco domenico guerrazzi": [
+"Via Francesco Domenico Guerrazzi",
+45.6464,
+13.77438,
+0.0
+],
+"via francesco e gianantonio de' guardi": [
+"Via Francesco e Gianantonio de' Guardi",
+45.64358,
+13.77142,
+0.02
+],
+"via francesco erberti": [
+"Via Francesco Erberti",
+45.64104,
+13.77395,
+0.0
+],
+"via francesco filippo inzaghi": [
+"Via Francesco Filippo Inzaghi",
+45.62678,
+13.81604,
+0.03
+],
+"via francesco fortunio": [
+"Via Francesco Fortunio",
+45.64391,
+13.78867,
+0.0
+],
+"via francesco guicciardini": [
+"Via Francesco Guicciardini",
+45.66165,
+13.78206,
+0.0
+],
+"via francesco hermet": [
+"Via Francesco Hermet",
+45.64307,
+13.75454,
+0.01
+],
+"via francesco malacrea": [
+"Via Francesco Malacrea",
+45.65225,
+13.8076,
+0.0
+],
+"via francesco parisi": [
+"Via Francesco Parisi",
+45.61273,
+13.82044,
+0.06
+],
+"via francesco patrizio": [
+"Via Francesco Patrizio",
+45.63622,
+13.79335,
+0.08
+],
+"via francesco petrarca": [
+"Via Francesco Petrarca",
+45.65037,
+13.78563,
+0.05
+],
+"via francesco redi": [
+"Via Francesco Redi",
+45.64654,
+13.78938,
+0.02
+],
+"via francesco rismondo": [
+"Via Francesco Rismondo",
+45.65427,
+13.78134,
+0.05
+],
+"via francesco salata": [
+"Via Francesco Salata",
+45.63224,
+13.79071,
+0.06
+],
+"via francesco trevisani": [
+"Via Francesco Trevisani",
+45.64237,
+13.80261,
+0.0
+],
+"via francesco vercelli": [
+"Via Francesco Vercelli",
+45.64884,
+13.79469,
+0.02
+],
+"via fratelli bartoletti": [
+"Via fratelli Bartoletti",
+45.64288,
+13.78944,
+0.0
+],
+"via fratelli fonda savio": [
+"Via Fratelli Fonda Savio",
+45.6211,
+13.82699,
+0.06
+],
+"via fratelli reiss-romoli": [
+"Via Fratelli Reiss-Romoli",
+45.62146,
+13.82571,
+0.03
+],
+"via fratelli rosselli": [
+"Via Fratelli Rosselli",
+45.62081,
+13.82534,
+0.03
+],
+"via frugifero": [
+"Via Frugifero",
+45.62628,
+13.81535,
+0.0
+],
+"via fulvio testi": [
+"Via Fulvio Testi",
+45.645,
+13.77118,
+0.03
+],
+"via gabriele foschiatti": [
+"Via Gabriele Foschiatti",
+45.64831,
+13.77992,
+0.03
+],
+"via gabriello chiabrera": [
+"Via Gabriello Chiabrera",
+45.64657,
+13.78629,
+0.02
+],
+"via gaetano donizetti": [
+"Via Gaetano Donizetti",
+45.65303,
+13.77994,
+0.0
+],
+"via galileo ferraris": [
+"Via Galileo Ferraris",
+45.64597,
+13.77549,
+0.01
+],
+"via galileo galilei": [
+"Via Galileo Galilei",
+45.65504,
+13.78733,
+0.13
+],
+"via gaspara stampa": [
+"Via Gaspara Stampa",
+45.64641,
+13.76662,
+0.0
+],
+"via gaspare gozzi": [
+"Via Gaspare Gozzi",
+45.65848,
+13.77385,
+0.0
+],
+"via gaspare tonello": [
+"Via Gaspare Tonello",
+45.63956,
+13.77046,
+0.0
+],
+"via gemona": [
+"Via Gemona",
+45.67014,
+13.76647,
+0.0
+],
+"via genova": [
+"Via Genova",
+45.65154,
+13.7722,
+0.13
+],
+"via gerolamo frescobaldi": [
+"Via Gerolamo Frescobaldi",
+45.62566,
+13.8015,
+0.05
+],
+"via gerolamo rovetta": [
+"Via Gerolamo Rovetta",
+45.63125,
+13.78512,
+0.0
+],
+"via giacinto gallina": [
+"Via Giacinto Gallina",
+45.65054,
+13.77715,
+0.02
+],
+"via giacomo ciamician": [
+"Via Giacomo Ciamician",
+45.64592,
+13.76529,
+0.1
+],
+"via giacomo leopardi": [
+"Via Giacomo Leopardi",
+45.6623,
+13.77068,
+0.02
+],
+"via giacomo matteotti": [
+"Via Giacomo Matteotti",
+45.64484,
+13.78543,
+0.0
+],
+"via giacomo puccini": [
+"Via Giacomo Puccini",
+45.62345,
+13.80405,
+0.37
+],
+"via giacomo zammattio": [
+"Via Giacomo Zammattio",
+45.63647,
+13.79033,
+0.0
+],
+"via giacomo zanella": [
+"Via Giacomo Zanella",
+45.65948,
+13.79885,
+0.13
+],
+"via giambattista morgagni": [
+"Via Giambattista Morgagni",
+45.63905,
+13.76706,
+0.02
+],
+"via giambattista tiepolo": [
+"Via Giambattista Tiepolo",
+45.64503,
+13.77367,
+0.05
+],
+"via giampaolo polesini": [
+"Via Giampaolo Polesini",
+45.62863,
+13.80283,
+0.05
+],
+"via gian rinaldo carli": [
+"Via Gian Rinaldo Carli",
+45.64011,
+13.76375,
+0.08
+],
+"via giandomenico romagnosi": [
+"Via Giandomenico Romagnosi",
+45.66181,
+13.78186,
+0.0
+],
+"via giandomenico tacco": [
+"Via Giandomenico Tacco",
+45.64013,
+13.77561,
+0.03
+],
+"via giangiorgio trissino": [
+"Via Giangiorgio Trissino",
+45.63404,
+13.78506,
+0.09
+],
+"via gianni marin": [
+"Via Gianni Marin",
+45.64376,
+13.80672,
+0.0
+],
+"via giglio padovan": [
+"Via Giglio Padovan",
+45.64146,
+13.78794,
+0.0
+],
+"via gilberto parlotti": [
+"Via Gilberto Parlotti",
+45.60938,
+13.81098,
+0.1
+],
+"via gino parin": [
+"Via Gino Parin",
+45.64053,
+13.81767,
+0.0
+],
+"via gioacchino murat": [
+"Via Gioacchino Murat",
+45.64279,
+13.75377,
+0.08
+],
+"via gioachino rossini": [
+"Via Gioachino Rossini",
+45.6523,
+13.77243,
+0.07
+],
+"via giorgio carmelich": [
+"Via Giorgio Carmelich",
+45.64076,
+13.81482,
+0.01
+],
+"via giorgio fano": [
+"Via Giorgio Fano",
+45.62078,
+13.79558,
+0.0
+],
+"via giorgio galatti": [
+"Via Giorgio Galatti",
+45.65477,
+13.77382,
+0.17
+],
+"via giorgio levitz": [
+"Via Giorgio Levitz",
+45.61792,
+13.82684,
+0.07
+],
+"via giorgio nicolich": [
+"Via Giorgio Nicolich",
+45.63499,
+13.82117,
+0.04
+],
+"via giorgio pitacco": [
+"Via Giorgio Pitacco",
+45.62423,
+13.78055,
+0.04
+],
+"via giorgio strehler": [
+"Via Giorgio Strehler",
+45.65224,
+13.78398,
+0.0
+],
+"via giorgio vasari": [
+"Via Giorgio Vasari",
+45.64771,
+13.78193,
+0.07
+],
+"via giorgio ventura": [
+"Via Giorgio Ventura",
+45.63268,
+13.79908,
+0.09
+],
+"via giorgio vincenti": [
+"Via Giorgio Vincenti",
+45.63589,
+13.79226,
+0.0
+],
+"via giosue carducci": [
+"Via Giosuè Carducci",
+45.65175,
+13.777,
+0.4
+],
+"via giotto": [
+"Via Giotto",
+45.6529,
+13.78274,
+0.0
+],
+"via giovanni amendola": [
+"Via Giovanni Amendola",
+45.66517,
+13.78766,
+0.06
+],
+"via giovanni battista goineo": [
+"Via Giovanni Battista Goineo",
+45.64263,
+13.76568,
+0.0
+],
+"via giovanni battista monfalcon": [
+"Via Giovanni Battista Monfalcon",
+45.63551,
+13.79709,
+0.0
+],
+"via giovanni battista pergolesi": [
+"Via Giovanni Battista Pergolesi",
+45.62407,
+13.80068,
+0.0
+],
+"via giovanni berchet": [
+"Via Giovanni Berchet",
+45.65735,
+13.79619,
+0.0
+],
+"via giovanni boccaccio": [
+"Via Giovanni Boccaccio",
+45.66114,
+13.77143,
+0.0
+],
+"via giovanni buich": [
+"Via Giovanni Buich",
+45.66514,
+13.77652,
+0.01
+],
+"via giovanni cesca": [
+"Via Giovanni Cesca",
+45.62028,
+13.79485,
+0.23
+],
+"via giovanni e demetrio economo": [
+"Via Giovanni e Demetrio Economo",
+45.64458,
+13.75821,
+0.04
+],
+"via giovanni e sebastiano caboto": [
+"Via Giovanni e Sebastiano Caboto",
+45.61694,
+13.80748,
+0.89
+],
+"via giovanni kobler": [
+"Via Giovanni Kobler",
+45.63647,
+13.79689,
+0.04
+],
+"via giovanni moise": [
+"Via Giovanni Moise",
+45.63586,
+13.7946,
+0.0
+],
+"via giovanni oliva": [
+"Via Giovanni Oliva",
+45.63486,
+13.78343,
+0.02
+],
+"via giovanni orlandini": [
+"Via Giovanni Orlandini",
+45.6391,
+13.78158,
+0.37
+],
+"via giovanni paisiello": [
+"Via Giovanni Paisiello",
+45.6248,
+13.80505,
+0.45
+],
+"via giovanni palatucci": [
+"Via Giovanni Palatucci",
+45.6218,
+13.78909,
+0.05
+],
+"via giovanni pascoli": [
+"Via Giovanni Pascoli",
+45.6473,
+13.78496,
+0.19
+],
+"via giovanni ruffini": [
+"Via Giovanni Ruffini",
+45.65936,
+13.79799,
+0.0
+],
+"via giovanni sai": [
+"Via Giovanni Sai",
+45.65684,
+13.80099,
+0.05
+],
+"via giovanni schiaparelli": [
+"Via Giovanni Schiaparelli",
+45.63912,
+13.76878,
+0.09
+],
+"via giovanni segantini": [
+"Via Giovanni Segantini",
+45.64439,
+13.77299,
+0.0
+],
+"via giovanni tagliapietra": [
+"Via Giovanni Tagliapietra",
+45.6424,
+13.75383,
+0.04
+],
+"via giovanni verga": [
+"Via Giovanni Verga",
+45.6568,
+13.79741,
+0.27
+],
+"via giovanni zangrando": [
+"Via Giovanni Zangrando",
+45.64084,
+13.79933,
+0.0
+],
+"via giovenale": [
+"Via Giovenale",
+45.66271,
+13.77659,
+0.0
+],
+"via girolamo muzio": [
+"Via Girolamo Muzio",
+45.64196,
+13.7664,
+0.05
+],
+"via girolamo vida": [
+"Via Girolamo Vida",
+45.63096,
+13.79994,
+0.2
+],
+"via giulia": [
+"Via Giulia",
+45.65429,
+13.78785,
+0.61
+],
+"via giulio camber-barni": [
+"Via Giulio Camber-Barni",
+45.66382,
+13.77449,
+0.11
+],
+"via giulio cesare": [
+"Via Giulio Cesare",
+45.64553,
+13.75506,
+0.0
+],
+"via giulio cubi": [
+"Via Giulio Cubi",
+45.62002,
+13.82753,
+0.0
+],
+"via giulio kugy": [
+"Via Giulio Kugy",
+45.64981,
+13.79563,
+0.0
+],
+"via giulio solitro": [
+"Via Giulio Solitro",
+45.66351,
+13.77155,
+0.03
+],
+"via giuseppe baretti": [
+"Via Giuseppe Baretti",
+45.65889,
+13.77571,
+0.0
+],
+"via giuseppe barison": [
+"Via Giuseppe Barison",
+45.64165,
+13.80052,
+0.04
+],
+"via giuseppe bernardi": [
+"Via Giuseppe Bernardi",
+45.68444,
+13.75694,
+0.03
+],
+"via giuseppe bernardino bison": [
+"Via Giuseppe Bernardino Bison",
+45.6706,
+13.76265,
+0.0
+],
+"via giuseppe bruni": [
+"Via Giuseppe Bruni",
+45.67519,
+13.76062,
+0.21
+],
+"via giuseppe caprin": [
+"Via Giuseppe Caprin",
+45.64443,
+13.78006,
+0.0
+],
+"via giuseppe de coletti": [
+"Via Giuseppe De Coletti",
+45.63917,
+13.76841,
+0.12
+],
+"via giuseppe di vittorio": [
+"Via Giuseppe Di Vittorio",
+45.62155,
+13.81009,
+0.22
+],
+"via giuseppe e luca del mestri": [
+"Via Giuseppe e Luca Del Mestri",
+45.64752,
+13.79376,
+0.08
+],
+"via giuseppe farinelli": [
+"Via Giuseppe Farinelli",
+45.62503,
+13.79963,
+0.0
+],
+"via giuseppe giacosa": [
+"Via Giuseppe Giacosa",
+45.63151,
+13.78549,
+0.0
+],
+"via giuseppe giusti": [
+"Via Giuseppe Giusti",
+45.66848,
+13.77,
+0.0
+],
+"via giuseppe lorenzo gatteri": [
+"Via Giuseppe Lorenzo Gatteri",
+45.65017,
+13.78347,
+0.24
+],
+"via giuseppe marenzi": [
+"Via Giuseppe Marenzi",
+45.63771,
+13.78591,
+0.04
+],
+"via giuseppe mazzini": [
+"Via Giuseppe Mazzini",
+45.65092,
+13.77268,
+0.3
+],
+"via giuseppe muller": [
+"Via Giuseppe Müller",
+45.64152,
+13.81924,
+0.0
+],
+"via giuseppe pagano": [
+"Via Giuseppe Pagano",
+45.62756,
+13.80532,
+0.06
+],
+"via giuseppe parini": [
+"Via Giuseppe Parini",
+45.64728,
+13.78185,
+0.0
+],
+"via giuseppe picciola": [
+"Via Giuseppe Picciola",
+45.64309,
+13.75526,
+0.0
+],
+"via giuseppe ressel": [
+"Via Giuseppe Ressel",
+45.64155,
+13.76412,
+0.02
+],
+"via giuseppe revere": [
+"Via Giuseppe Revere",
+45.64099,
+13.76775,
+0.02
+],
+"via giuseppe rota": [
+"Via Giuseppe Rota",
+45.64797,
+13.77157,
+0.06
+],
+"via giuseppe sillani": [
+"Via Giuseppe Sillani",
+45.6213,
+13.819,
+0.08
+],
+"via giuseppe sinico": [
+"Via Giuseppe Sinico",
+45.643,
+13.80333,
+0.22
+],
+"via giuseppe vidali": [
+"Via Giuseppe Vidali",
+45.64789,
+13.78027,
+0.0
+],
+"via giustiniano": [
+"Via Giustiniano",
+45.65455,
+13.7773,
+0.02
+],
+"via giusto dei girardi": [
+"Via Giusto dei Girardi",
+45.64591,
+13.78986,
+0.06
+],
+"via giusto muratti": [
+"Via Giusto Muratti",
+45.65106,
+13.77791,
+0.0
+],
+"via glauco cambon": [
+"Via Glauco Cambon",
+45.6411,
+13.8109,
+0.02
+],
+"via goffredo mameli": [
+"Via Goffredo Mameli",
+45.64432,
+13.79227,
+0.0
+],
+"via gorizia": [
+"Via Gorizia",
+45.6681,
+13.76769,
+0.0
+],
+"via gradisca": [
+"Via Gradisca",
+45.67013,
+13.7672,
+0.0
+],
+"via graz": [
+"Via Graz",
+45.68949,
+13.79176,
+0.09
+],
+"via graziadio ascoli": [
+"Via Graziadio Ascoli",
+45.6704,
+13.76351,
+0.1
+],
+"via gregorio ananian": [
+"Via Gregorio Ananian",
+45.64332,
+13.78946,
+0.08
+],
+"via gregorio mansanta": [
+"Via Gregorio Mansanta",
+45.64068,
+13.78184,
+0.02
+],
+"via grignano": [
+"Via Grignano",
+45.70721,
+13.7143,
+0.07
+],
+"via grisignana d'istria": [
+"Via Grisignana d'Istria",
+45.63423,
+13.78291,
+0.0
+],
+"via gruzzulis": [
+"Via Gruzzulis",
+45.64876,
+13.77182,
+0.0
+],
+"via guglielmo de pastrovich": [
+"Via Guglielmo De Pastrovich",
+45.66034,
+13.80333,
+0.07
+],
+"via guglielmo marconi": [
+"Via Guglielmo Marconi",
+45.65494,
+13.78418,
+0.0
+],
+"via guido brunner": [
+"Via Guido Brunner",
+45.65135,
+13.78194,
+0.0
+],
+"via guido corsi": [
+"Via Guido Corsi",
+45.65482,
+13.77188,
+0.0
+],
+"via guido grimani": [
+"Via Guido Grimani",
+45.64039,
+13.80449,
+0.08
+],
+"via guido reni": [
+"Via Guido Reni",
+45.64332,
+13.75697,
+0.06
+],
+"via guido zanetti": [
+"Via Guido Zanetti",
+45.65358,
+13.7802,
+0.0
+],
+"via igo gruden": [
+"Via Igo Gruden",
+45.64119,
+13.86157,
+0.34
+],
+"via ippolito nievo": [
+"Via Ippolito Nievo",
+45.65753,
+13.79333,
+0.02
+],
+"via ippolito pindemonte": [
+"Via Ippolito Pindemonte",
+45.65385,
+13.79434,
+0.27
+],
+"via ireneo della croce": [
+"Via Ireneo della Croce",
+45.65261,
+13.78514,
+0.08
+],
+"via isidoro furlani": [
+"Via Isidoro Furlani",
+45.63589,
+13.79645,
+0.0
+],
+"via isidoro grunhut": [
+"Via Isidoro Grünhut",
+45.64045,
+13.79924,
+0.0
+],
+"via isidoro piani": [
+"Via Isidoro Piani",
+45.67544,
+13.76085,
+0.0
+],
+"via isola d'istria": [
+"Via Isola d'Istria",
+45.63125,
+13.78715,
+0.0
+],
+"via italo svevo": [
+"Via Italo Svevo",
+45.63276,
+13.78009,
+0.55
+],
+"via jacopo cavalli": [
+"Via Jacopo Cavalli",
+45.64834,
+13.78322,
+0.03
+],
+"via jacopone da todi": [
+"Via Jacopone da Todi",
+45.66638,
+13.80247,
+0.0
+],
+"via jakob ukmar": [
+"Via Jakob Ukmar",
+45.6265,
+13.81563,
+0.03
+],
+"via karl ludwig von bruck": [
+"Via Karl Ludwig von Bruck",
+45.63697,
+13.77207,
+0.07
+],
+"via karl von zinzendorf": [
+"Via Karl Von Zinzendorf",
+45.68953,
+13.79947,
+0.03
+],
+"via laura e silvano petracco": [
+"Via Laura e Silvano Petracco",
+45.61708,
+13.82227,
+0.19
+],
+"via leon battista alberti": [
+"Via Leon Battista Alberti",
+45.64022,
+13.77479,
+0.1
+],
+"via leone fortis": [
+"Via Leone Fortis",
+45.64211,
+13.77333,
+0.04
+],
+"via leopoldo mauroner": [
+"Via Leopoldo Mauroner",
+45.64974,
+13.79332,
+0.04
+],
+"via leopoldo metlicovitz": [
+"Via Leopoldo Metlicovitz",
+45.65494,
+13.81271,
+0.07
+],
+"via licio giorgieri": [
+"Via Licio Giorgieri",
+45.66102,
+13.79521,
+0.22
+],
+"via limitanea": [
+"Via Limitanea",
+45.64208,
+13.78684,
+0.0
+],
+"via lionello stock": [
+"Via Lionello Stock",
+45.66434,
+13.77051,
+0.08
+],
+"via livia": [
+"Via Livia",
+45.70929,
+13.71607,
+0.1
+],
+"via lodovico braidotti": [
+"Via Lodovico Braidotti",
+45.67608,
+13.75865,
+0.0
+],
+"via lorenzo bernini": [
+"Via Lorenzo Bernini",
+45.64527,
+13.77672,
+0.0
+],
+"via lorenzo butti": [
+"Via Lorenzo Butti",
+45.6405,
+13.81576,
+0.03
+],
+"via lorenzo da ponte": [
+"Via Lorenzo da Ponte",
+45.62446,
+13.80895,
+0.03
+],
+"via lorenzo ghiberti": [
+"Via Lorenzo Ghiberti",
+45.65638,
+13.77431,
+0.0
+],
+"via lorenzo lorenzetti": [
+"Via Lorenzo Lorenzetti",
+45.63489,
+13.78188,
+0.2
+],
+"via lorenzo lotto": [
+"Via Lorenzo Lotto",
+45.6512,
+13.81492,
+0.04
+],
+"via louis pasteur": [
+"Via Louis Pasteur",
+45.63968,
+13.82515,
+0.0
+],
+"via luca signorelli": [
+"Via Luca Signorelli",
+45.64065,
+13.78858,
+0.0
+],
+"via luciano laurana": [
+"Via Luciano Laurana",
+45.62895,
+13.79988,
+0.0
+],
+"via luciano manli": [
+"Via Luciano Manli",
+45.61925,
+13.82607,
+0.0
+],
+"via lucio papiriano": [
+"Via Lucio Papiriano",
+45.64132,
+13.7778,
+0.0
+],
+"via lucio pisa": [
+"Via Lucio Pisa",
+45.61967,
+13.82617,
+0.02
+],
+"via lucio sala": [
+"Via Lucio Sala",
+45.62109,
+13.8294,
+0.04
+],
+"via lucio vero": [
+"Via Lucio Vero",
+45.65678,
+13.78763,
+0.0
+],
+"via lucrezio": [
+"Via Lucrezio",
+45.66262,
+13.77608,
+0.04
+],
+"via ludovico antonio muratori": [
+"Via Ludovico Antonio Muratori",
+45.66229,
+13.78247,
+0.06
+],
+"via ludovico ariosto": [
+"Via Ludovico Ariosto",
+45.66048,
+13.77178,
+0.03
+],
+"via luigi cadorna": [
+"Via Luigi Cadorna",
+45.64824,
+13.76472,
+0.13
+],
+"via luigi cherubini": [
+"Via Luigi Cherubini",
+45.62376,
+13.8034,
+0.04
+],
+"via luigi de jenner": [
+"Via Luigi De Jenner",
+45.62263,
+13.78912,
+0.08
+],
+"via luigi einaudi": [
+"Via Luigi Einaudi",
+45.65073,
+13.76941,
+0.02
+],
+"via luigi fogar": [
+"Via Luigi Fogar",
+45.62665,
+13.81674,
+0.04
+],
+"via luigi frausin": [
+"Via Luigi Frausin",
+45.64403,
+13.77782,
+0.04
+],
+"via luigi galvani": [
+"Via Luigi Galvani",
+45.65546,
+13.78656,
+0.0
+],
+"via luigi mercantini": [
+"Via Luigi Mercantini",
+45.65709,
+13.79511,
+0.08
+],
+"via luigi negrelli": [
+"Via Luigi Negrelli",
+45.64042,
+13.77112,
+0.0
+],
+"via luigi pecenco": [
+"Via Luigi Pecenco",
+45.65745,
+13.78956,
+0.0
+],
+"via luigi pirandello": [
+"Via Luigi Pirandello",
+45.62457,
+13.78562,
+0.04
+],
+"via luigi ricci": [
+"Via Luigi Ricci",
+45.65483,
+13.78796,
+0.0
+],
+"via luigi settembrini": [
+"Via Luigi Settembrini",
+45.66189,
+13.78333,
+0.1
+],
+"via lussinpiccolo": [
+"Via Lussinpiccolo",
+45.63082,
+13.7859,
+0.0
+],
+"via maestri del lavoro": [
+"Via Maestri del Lavoro",
+45.64055,
+13.76024,
+0.0
+],
+"via mafalda di savoia": [
+"Via Mafalda di Savoia",
+45.62083,
+13.79912,
+0.06
+],
+"via malcanton": [
+"Via Malcanton",
+45.64929,
+13.76939,
+0.04
+],
+"via manlio vulsone": [
+"Via Manlio Vulsone",
+45.62792,
+13.78916,
+0.0
+],
+"via mantovani": [
+"Via Mantovani",
+45.66935,
+13.79384,
+0.09
+],
+"via marcello dudovich": [
+"Via Marcello Dudovich",
+45.6552,
+13.81118,
+0.0
+],
+"via marco polo": [
+"Via Marco Polo",
+45.64152,
+13.77595,
+0.13
+],
+"via marco praga": [
+"Via Marco Praga",
+45.62735,
+13.78996,
+0.0
+],
+"via marco tullio cicerone": [
+"Via Marco Tullio Cicerone",
+45.65457,
+13.77802,
+0.0
+],
+"via margherita": [
+"Via Margherita",
+45.65508,
+13.79108,
+0.1
+],
+"via mario codermatz": [
+"Via Mario Codermatz",
+45.61744,
+13.82599,
+0.0
+],
+"via mario haipel": [
+"Via Mario Haipel",
+45.61747,
+13.83083,
+0.13
+],
+"via mario maovaz": [
+"Via Mario Maovaz",
+45.61992,
+13.8288,
+0.26
+],
+"via marsala": [
+"Via Marsala",
+45.64948,
+13.79634,
+0.0
+],
+"via martiri della liberta": [
+"Via Martiri della Libertà",
+45.65598,
+13.77577,
+0.06
+],
+"via marziale": [
+"Via Marziale",
+45.66372,
+13.78332,
+0.19
+],
+"via masaccio": [
+"Via Masaccio",
+45.65167,
+13.81554,
+0.27
+],
+"via massimiliano d'angeli": [
+"Via Massimiliano d'Angeli",
+45.64335,
+13.79849,
+0.03
+],
+"via massimiliano gortan": [
+"Via Massimiliano Gortan",
+45.64195,
+13.81894,
+0.05
+],
+"via massimo d'azeglio": [
+"Via Massimo D'Azeglio",
+45.64778,
+13.7822,
+0.11
+],
+"via matteo demenego e pierluigi rotta": [
+"Via Matteo Demenego e Pierluigi Rotta",
+45.64934,
+13.77091,
+0.0
+],
+"via matteo giulio bartoli": [
+"Via Matteo Giulio Bartoli",
+45.61903,
+13.81454,
+0.16
+],
+"via matteo pertsch": [
+"Via Matteo Pertsch",
+45.6765,
+13.76044,
+0.09
+],
+"via matteo renato imbriani": [
+"Via Matteo Renato Imbriani",
+45.65021,
+13.77582,
+0.04
+],
+"via max fabiani": [
+"Via Max Fabiani",
+45.64151,
+13.83047,
+0.17
+],
+"via mazzini": [
+"Via Mazzini",
+45.65191,
+13.76905,
+0.01
+],
+"via michelangelo buonarroti": [
+"Via Michelangelo Buonarroti",
+45.65043,
+13.78963,
+0.39
+],
+"via michele della vedova": [
+"Via Michele della Vedova",
+45.63467,
+13.78796,
+0.05
+],
+"via michele fachinetti": [
+"Via Michele Fachinetti",
+45.63591,
+13.79388,
+0.0
+],
+"via milano": [
+"Via Milano",
+45.65386,
+13.77364,
+0.14
+],
+"via moise luzzatto": [
+"Via Moisè Luzzatto",
+45.67083,
+13.76216,
+0.0
+],
+"via molino a vapore": [
+"Via Molino a Vapore",
+45.6461,
+13.77871,
+0.0
+],
+"via moncolano": [
+"Via Moncolano",
+45.68213,
+13.75507,
+0.18
+],
+"via montasio": [
+"Via Montasio",
+45.63128,
+13.82063,
+0.1
+],
+"via monte canin": [
+"Via Monte Canin",
+45.62627,
+13.81927,
+0.06
+],
+"via monte carso": [
+"Via Monte Carso",
+45.63269,
+13.8115,
+0.05
+],
+"via monte coglians": [
+"Via Monte Coglians",
+45.62935,
+13.81082,
+0.0
+],
+"via monte grappa": [
+"Via Monte Grappa",
+45.659,
+13.7876,
+0.11
+],
+"via monte lanaro": [
+"Via Monte Lanaro",
+45.63078,
+13.80937,
+0.05
+],
+"via monte mangart": [
+"Via Monte Mangart",
+45.62873,
+13.82096,
+0.14
+],
+"via monte peralba": [
+"Via Monte Peralba",
+45.6279,
+13.81881,
+0.14
+],
+"via monte san gabriele": [
+"Via Monte San Gabriele",
+45.65873,
+13.78749,
+0.33
+],
+"via monte sernio": [
+"Via Monte Sernio",
+45.63021,
+13.8081,
+0.08
+],
+"via montona": [
+"Via Montona",
+45.62851,
+13.79091,
+0.0
+],
+"via montorsino": [
+"Via Montorsino",
+45.66641,
+13.77165,
+0.02
+],
+"via muggia / ulica muggia": [
+"Via Muggia / Ulica Muggia",
+45.60815,
+13.81932,
+0.0
+],
+"via napoleone cozzi": [
+"Via Napoleone Cozzi",
+45.65395,
+13.80561,
+0.0
+],
+"via nazionale": [
+"Via Nazionale",
+45.68409,
+13.78463,
+0.55
+],
+"via niccolo machiavelli": [
+"Via Niccolò Machiavelli",
+45.65267,
+13.7728,
+0.13
+],
+"via niclas hamilton": [
+"Via Niclas Hamilton",
+45.6898,
+13.79999,
+0.01
+],
+"via nicoletto d'alessio": [
+"Via Nicoletto D'Alessio",
+45.63523,
+13.78865,
+0.06
+],
+"via nicolo bottacin": [
+"Via Nicolò Bottacin",
+45.66126,
+13.80384,
+0.06
+],
+"via nicolo cigotti": [
+"Via Nicolò Cigotti",
+45.64003,
+13.7825,
+0.02
+],
+"via nicolo de rin": [
+"Via Nicolò De Rin",
+45.64273,
+13.76913,
+0.0
+],
+"via nicolo degli aldegardi": [
+"Via Nicolò degli Aldegardi",
+45.64775,
+13.79545,
+0.02
+],
+"via nicolo paganini": [
+"Via Nicolò Paganini",
+45.65152,
+13.77525,
+0.0
+],
+"via norma cossetto": [
+"Via Norma Cossetto",
+45.62992,
+13.78527,
+0.05
+],
+"via odorico politi": [
+"Via Odorico Politi",
+45.66907,
+13.76625,
+0.0
+],
+"via orazio": [
+"Via Orazio",
+45.65869,
+13.77866,
+0.02
+],
+"via orsenigo": [
+"Via Orsenigo",
+45.66533,
+13.79535,
+0.13
+],
+"via orsera": [
+"Via Orsera",
+45.63207,
+13.78737,
+0.05
+],
+"via oscar sinigaglia": [
+"Via Oscar Sinigaglia",
+45.62133,
+13.82617,
+0.0
+],
+"via ottaviano augusto": [
+"Via Ottaviano Augusto",
+45.6463,
+13.75632,
+0.17
+],
+"via ovidio": [
+"Via Ovidio",
+45.66323,
+13.77758,
+0.05
+],
+"via pacifico valussi": [
+"Via Pacifico Valussi",
+45.65013,
+13.78892,
+0.0
+],
+"via paduina": [
+"Via Paduina",
+45.65113,
+13.78131,
+0.06
+],
+"via palmanova": [
+"Via Palmanova",
+45.66877,
+13.76649,
+0.0
+],
+"via panfilo castaldi": [
+"Via Panfilo Castaldi",
+45.64494,
+13.77993,
+0.06
+],
+"via panzera": [
+"Via Panzera",
+45.68592,
+13.75213,
+0.0
+],
+"via paolo de ralli": [
+"Via Paolo De Ralli",
+45.65778,
+13.80006,
+0.11
+],
+"via paolo diacono": [
+"Via Paolo Diacono",
+45.64499,
+13.77824,
+0.05
+],
+"via paolo ferrari": [
+"Via Paolo Ferrari",
+45.65826,
+13.79764,
+0.0
+],
+"via paolo giacometti": [
+"Via Paolo Giacometti",
+45.62764,
+13.78717,
+0.03
+],
+"via paolo reti": [
+"Via Paolo Reti",
+45.65174,
+13.77669,
+0.0
+],
+"via paolo tedeschi": [
+"Via Paolo Tedeschi",
+45.64172,
+13.75624,
+0.03
+],
+"via paolo toscanelli": [
+"Via Paolo Toscanelli",
+45.63911,
+13.76621,
+0.04
+],
+"via paolo veronese": [
+"Via Paolo Veronese",
+45.64366,
+13.77571,
+0.0
+],
+"via papa giovanni paolo secondo": [
+"Via Papa Giovanni Paolo Secondo",
+45.69645,
+13.74727,
+0.52
+],
+"via papiniano": [
+"Via Papiniano",
+45.65605,
+13.78159,
+0.0
+],
+"via parenzo": [
+"Via Parenzo",
+45.63214,
+13.78593,
+0.03
+],
+"via pasquale besenghi": [
+"Via Pasquale Besenghi",
+45.64314,
+13.77263,
+0.22
+],
+"via pasquale revoltella": [
+"Via Pasquale Revoltella",
+45.64222,
+13.79272,
+0.72
+],
+"via pauliana": [
+"Via Pauliana",
+45.6583,
+13.77538,
+0.1
+],
+"via pellegrino matteucci": [
+"Via Pellegrino Matteucci",
+45.64149,
+13.75709,
+0.0
+],
+"via petronio": [
+"Via Petronio",
+45.64386,
+13.78789,
+0.05
+],
+"via piemonte d'istria": [
+"Via Piemonte d'istria",
+45.63252,
+13.78694,
+0.0
+],
+"via pier paolo vergerio": [
+"Via Pier Paolo Vergerio",
+45.6412,
+13.79026,
+0.0
+],
+"via pierluigi da palestrina": [
+"Via Pierluigi da Palestrina",
+45.65295,
+13.77901,
+0.0
+],
+"via piero della francesca": [
+"Via Piero della Francesca",
+45.65741,
+13.80922,
+0.01
+],
+"via piero lucano": [
+"Via Piero Lucano",
+45.64152,
+13.80501,
+0.0
+],
+"via piero marussig": [
+"Via Piero Marussig",
+45.64765,
+13.79437,
+0.0
+],
+"via piero sticotti": [
+"Via Piero Sticotti",
+45.64219,
+13.76131,
+0.0
+],
+"via pietraferrata": [
+"Via Pietraferrata",
+45.61882,
+13.81063,
+0.44
+],
+"via pietro comuzzi": [
+"Via Pietro Comuzzi",
+45.62585,
+13.78613,
+0.01
+],
+"via pietro coppo": [
+"Via Pietro Coppo",
+45.63546,
+13.78814,
+0.04
+],
+"via pietro cossa": [
+"Via Pietro Cossa",
+45.62501,
+13.79,
+0.02
+],
+"via pietro fragiacomo": [
+"Via Pietro Fragiacomo",
+45.63358,
+13.80585,
+0.0
+],
+"via pietro kandler": [
+"Via Pietro Kandler",
+45.65553,
+13.78847,
+0.05
+],
+"via pietro mascagni": [
+"Via Pietro Mascagni",
+45.62236,
+13.80051,
+0.07
+],
+"via pietro nobile": [
+"Via Pietro Nobile",
+45.65581,
+13.7847,
+0.0
+],
+"via pietro querini": [
+"Via Pietro Querini",
+45.61575,
+13.81235,
+0.0
+],
+"via pietro savorgnan di brazza": [
+"Via Pietro Savorgnan di Brazzà",
+45.64095,
+13.7576,
+0.02
+],
+"via pietro stancovich": [
+"Via Pietro Stancovich",
+45.63578,
+13.79507,
+0.0
+],
+"via pietro valdoni": [
+"Via Pietro Valdoni",
+45.6327,
+13.82707,
+0.25
+],
+"via pietro zorutti": [
+"Via Pietro Zorutti",
+45.63493,
+13.78267,
+0.12
+],
+"via pinguente": [
+"Via Pinguente",
+45.62855,
+13.78643,
+0.0
+],
+"via pio riego gambini": [
+"Via Pio Riego Gambini",
+45.64552,
+13.78558,
+0.23
+],
+"via piranella": [
+"Via Piranella",
+45.64759,
+13.76943,
+0.0
+],
+"via pirano": [
+"Via Pirano",
+45.63065,
+13.78842,
+0.0
+],
+"via pisino": [
+"Via Pisino",
+45.63112,
+13.78798,
+0.0
+],
+"via plinio": [
+"Via Plinio",
+45.70524,
+13.72025,
+0.28
+],
+"via pola": [
+"Via Pola",
+45.63011,
+13.78236,
+0.09
+],
+"via pompeo de brigido": [
+"Via Pompeo De Brigido",
+45.64708,
+13.79461,
+0.0
+],
+"via pondares": [
+"Via Pondares",
+45.64693,
+13.77818,
+0.04
+],
+"via ponziana": [
+"Via Ponziana",
+45.6405,
+13.78147,
+0.3
+],
+"via portole": [
+"Via Portole",
+45.62859,
+13.7904,
+0.01
+],
+"via pozzo del mare": [
+"Via Pozzo del Mare",
+45.64932,
+13.76745,
+0.0
+],
+"via pozzo di crosada": [
+"Via Pozzo di Crosada",
+45.64779,
+13.76746,
+0.0
+],
+"via prelaser": [
+"Via Prelaser",
+45.6486,
+13.77156,
+0.0
+],
+"via principe di montfort": [
+"Via Principe di Montfort",
+45.64492,
+13.76409,
+0.0
+],
+"via punta del forno": [
+"Via Punta del Forno",
+45.64878,
+13.76804,
+0.0
+],
+"via quinto baieno blassiano": [
+"Via Quinto Baieno Blassiano",
+45.65887,
+13.79087,
+0.0
+],
+"via raffaele abro": [
+"Via Raffaele Abro",
+45.63671,
+13.78318,
+0.0
+],
+"via raffaele zovenzoni": [
+"Via Raffaele Zovenzoni",
+45.65321,
+13.78419,
+0.0
+],
+"via raimondo battera": [
+"Via Raimondo Battera",
+45.6367,
+13.78339,
+0.17
+],
+"via renato rinaldi": [
+"Via Renato Rinaldi",
+45.63549,
+13.7941,
+0.03
+],
+"via riccardo": [
+"Via Riccardo",
+45.64792,
+13.76875,
+0.0
+],
+"via riccardo bazzoni": [
+"Via Riccardo Bazzoni",
+45.64432,
+13.77074,
+0.0
+],
+"via riccardo selvatico": [
+"Via Riccardo Selvatico",
+45.6314,
+13.7853,
+0.0
+],
+"via riccardo zampieri": [
+"Via Riccardo Zampieri",
+45.64675,
+13.8024,
+0.02
+],
+"via riccardo zandonai": [
+"Via Riccardo Zandonai",
+45.62334,
+13.799,
+0.0
+],
+"via richard francis burton": [
+"Via Richard Francis Burton",
+45.65019,
+13.79457,
+0.02
+],
+"via rigutti": [
+"Via Rigutti",
+45.6425,
+13.78374,
+0.12
+],
+"via rinaldo scarlicchio": [
+"Via Rinaldo Scarlicchio",
+45.62545,
+13.81417,
+0.25
+],
+"via rio corgnoleto": [
+"Via Rio Corgnoleto",
+45.63646,
+13.80553,
+0.26
+],
+"via rio primario": [
+"Via Rio Primario",
+45.61828,
+13.78782,
+0.0
+],
+"via rio spinoleto": [
+"Via Rio Spinoleto",
+45.63192,
+13.81773,
+0.0
+],
+"via rio storto": [
+"Via Rio Storto",
+45.62959,
+13.83026,
+0.62
+],
+"via risano": [
+"Via Risano",
+45.63178,
+13.81405,
+0.06
+],
+"via risorta": [
+"Via Risorta",
+45.64554,
+13.77429,
+0.03
+],
+"via rita rosani": [
+"Via Rita Rosani",
+45.61631,
+13.82774,
+0.15
+],
+"via robert hlavaty": [
+"Via Robert Hlavaty",
+45.68862,
+13.7901,
+0.0
+],
+"via robert koch": [
+"Via Robert Koch",
+45.64157,
+13.82259,
+0.0
+],
+"via roberto bracco": [
+"Via Roberto Bracco",
+45.63112,
+13.78492,
+0.0
+],
+"via roberto de' visiani": [
+"Via Roberto De' Visiani",
+45.64832,
+13.79586,
+0.02
+],
+"via rodolfo batagely": [
+"Via Rodolfo Batagely",
+45.61695,
+13.82638,
+0.0
+],
+"via rodolfo donaggio": [
+"Via Rodolfo Donaggio",
+45.61789,
+13.82808,
+0.07
+],
+"via rodolfo pedrazzani": [
+"Via Rodolfo Pedrazzani",
+45.62609,
+13.81704,
+0.0
+],
+"via roma": [
+"Via Roma",
+45.65286,
+13.77257,
+0.25
+],
+"via rosazzo": [
+"Via Rosazzo",
+45.67271,
+13.76888,
+0.02
+],
+"via rovigno": [
+"Via Rovigno",
+45.63274,
+13.7867,
+0.08
+],
+"via ruggero leoncavallo": [
+"Via Ruggero Leoncavallo",
+45.62498,
+13.79659,
+0.0
+],
+"via ruggero manna": [
+"Via Ruggero Manna",
+45.65771,
+13.77513,
+0.12
+],
+"via ruggero timeus": [
+"Via Ruggero Timeus",
+45.65098,
+13.78038,
+0.06
+],
+"via salvatore barzilai": [
+"Via Salvatore Barzilai",
+45.6463,
+13.80347,
+0.0
+],
+"via salvatore segre": [
+"Via Salvatore Segrè",
+45.64541,
+13.80661,
+0.0
+],
+"via salvore": [
+"Via Salvore",
+45.6291,
+13.78368,
+0.02
+],
+"via samuele romanin": [
+"Via Samuele Romanin",
+45.64089,
+13.76943,
+0.04
+],
+"via san benedetto": [
+"Via San Benedetto",
+45.63316,
+13.78552,
+0.02
+],
+"via san biagio": [
+"Via San Biagio",
+45.68922,
+13.77679,
+0.01
+],
+"via san bortolo": [
+"Via San Bortolo",
+45.67799,
+13.75757,
+0.04
+],
+"via san carlo": [
+"Via San Carlo",
+45.65082,
+13.76819,
+0.0
+],
+"via san cilino": [
+"Via San Cilino",
+45.65577,
+13.80088,
+0.49
+],
+"via san cipriano": [
+"Via San Cipriano",
+45.6477,
+13.76968,
+0.0
+],
+"via san daniele": [
+"Via San Daniele",
+45.64532,
+13.76682,
+0.0
+],
+"via san donato": [
+"Via San Donato",
+45.65547,
+13.79719,
+0.08
+],
+"via san felice": [
+"Via San Felice",
+45.65553,
+13.79816,
+0.0
+],
+"via san francesco d'assisi": [
+"Via San Francesco d'Assisi",
+45.65315,
+13.77872,
+0.21
+],
+"via san giacomo in monte": [
+"Via San Giacomo in Monte",
+45.64458,
+13.77678,
+0.14
+],
+"via san giorgio": [
+"Via San Giorgio",
+45.64744,
+13.76374,
+0.0
+],
+"via san giovanni bosco": [
+"Via San Giovanni Bosco",
+45.63729,
+13.78162,
+0.13
+],
+"via san giusto": [
+"Via San Giusto",
+45.6459,
+13.77291,
+0.06
+],
+"via san lazzaro": [
+"Via San Lazzaro",
+45.65115,
+13.77551,
+0.17
+],
+"via san lorenzo in selva": [
+"Via San Lorenzo in Selva",
+45.62282,
+13.7809,
+0.14
+],
+"via san marco": [
+"Via San Marco",
+45.63992,
+13.77387,
+0.3
+],
+"via san martino": [
+"Via San Martino",
+45.64749,
+13.7989,
+0.11
+],
+"via san maurizio": [
+"Via San Maurizio",
+45.64906,
+13.77979,
+0.0
+],
+"via san mauro": [
+"Via San Mauro",
+45.68953,
+13.77844,
+0.08
+],
+"via san michele": [
+"Via San Michele",
+45.64625,
+13.7705,
+0.0
+],
+"via san nazario": [
+"Via San Nazario",
+45.70202,
+13.73867,
+0.51
+],
+"via san nicolo": [
+"Via San Nicolò",
+45.65083,
+13.77133,
+0.0
+],
+"via san pantaleone": [
+"Via San Pantaleone",
+45.62112,
+13.79681,
+0.07
+],
+"via san pasquale": [
+"Via San Pasquale",
+45.64321,
+13.80954,
+0.26
+],
+"via san pelagio": [
+"Via San Pelagio",
+45.6579,
+13.80805,
+0.1
+],
+"via san pellegrino": [
+"Via San Pellegrino",
+45.6908,
+13.77675,
+0.04
+],
+"via san pio decimo": [
+"Via San Pio Decimo",
+45.64225,
+13.80527,
+0.0
+],
+"via san primo": [
+"Via San Primo",
+45.65555,
+13.799,
+0.01
+],
+"via san rocco": [
+"Via San Rocco",
+45.64905,
+13.76721,
+0.0
+],
+"via san sabba": [
+"Via San Sabba",
+45.6186,
+13.78889,
+0.0
+],
+"via san sebastiano": [
+"Via San Sebastiano",
+45.64883,
+13.76743,
+0.0
+],
+"via san sergio": [
+"Via San Sergio",
+45.6458,
+13.77771,
+0.0
+],
+"via san servolo": [
+"Via San Servolo",
+45.64475,
+13.77887,
+0.05
+],
+"via san silvestro": [
+"Via San Silvestro",
+45.64806,
+13.76879,
+0.0
+],
+"via san spiridione": [
+"Via San Spiridione",
+45.6509,
+13.77271,
+0.05
+],
+"via san vito": [
+"Via San Vito",
+45.64473,
+13.76846,
+0.0
+],
+"via san zaccaria": [
+"Via San Zaccaria",
+45.65058,
+13.77854,
+0.0
+],
+"via san zenone": [
+"Via San Zenone",
+45.64346,
+13.78008,
+0.0
+],
+"via sandro botticelli": [
+"Via Sandro Botticelli",
+45.65574,
+13.80155,
+0.0
+],
+"via sant'anastasio": [
+"Via Sant'Anastasio",
+45.65716,
+13.77513,
+0.07
+],
+"via sant'apollinare": [
+"Via Sant'Apollinare",
+45.64702,
+13.77876,
+0.0
+],
+"via sant'ermacora": [
+"Via Sant'Ermacora",
+45.66543,
+13.77165,
+0.0
+],
+"via sant'isidoro": [
+"Via Sant'Isidoro",
+45.69018,
+13.77626,
+0.09
+],
+"via santa caterina da siena": [
+"Via Santa Caterina da Siena",
+45.65046,
+13.77446,
+0.05
+],
+"via santa fosca": [
+"Via Santa Fosca",
+45.68959,
+13.77493,
+0.12
+],
+"via santa giustina": [
+"Via Santa Giustina",
+45.64255,
+13.7594,
+0.06
+],
+"via santa maria in siaris": [
+"Via Santa Maria in Siaris",
+45.63174,
+13.8219,
+0.0
+],
+"via santa maria maddalena": [
+"Via Santa Maria Maddalena",
+45.62661,
+13.79965,
+0.16
+],
+"via santa maria maggiore": [
+"Via Santa Maria Maggiore",
+45.6483,
+13.76911,
+0.0
+],
+"via santa rita": [
+"Via Santa Rita",
+45.64201,
+13.76003,
+0.0
+],
+"via santa teresa": [
+"Via Santa Teresa",
+45.66369,
+13.76976,
+0.0
+],
+"via santi martiri": [
+"Via Santi Martiri",
+45.64624,
+13.76447,
+0.0
+],
+"via santo gavardo": [
+"Via Santo Gavardo",
+45.63918,
+13.78332,
+0.03
+],
+"via sara davis": [
+"Via Sara Davis",
+45.66465,
+13.77464,
+0.14
+],
+"via saverio mercadante": [
+"Via Saverio Mercadante",
+45.65304,
+13.77566,
+0.0
+],
+"via scipio slataper": [
+"Via Scipio Slataper",
+45.65017,
+13.77993,
+0.07
+],
+"via sebastiano santi": [
+"Via Sebastiano Santi",
+45.66983,
+13.76595,
+0.0
+],
+"via sebastiano venier": [
+"Via Sebastiano Venier",
+45.64262,
+13.77669,
+0.0
+],
+"via segnano": [
+"Via Segnano",
+45.6307,
+13.81251,
+0.0
+],
+"via semenj": [
+"Via Semenj",
+45.68943,
+13.79362,
+0.0
+],
+"via sergio forti": [
+"Via Sergio Forti",
+45.62039,
+13.82237,
+0.41
+],
+"via sergio laghi": [
+"Via Sergio Laghi",
+45.64228,
+13.75734,
+0.0
+],
+"via severi": [
+"Via Severi",
+45.64363,
+13.7842,
+0.0
+],
+"via sigmund freud": [
+"Via Sigmund Freud",
+45.68899,
+13.79774,
+0.08
+],
+"via silvio negri": [
+"Via Silvio Negri",
+45.62655,
+13.80926,
+0.0
+],
+"via silvio pellico": [
+"Via Silvio Pellico",
+45.64924,
+13.7766,
+0.02
+],
+"via solferino": [
+"Via Solferino",
+45.6489,
+13.79797,
+0.11
+],
+"via sottomonte": [
+"Via Sottomonte",
+45.67355,
+13.77986,
+0.47
+],
+"via sottoripa": [
+"Via Sottoripa",
+45.65828,
+13.79013,
+0.0
+],
+"via spiro tipaldo xydias": [
+"Via Spiro Tipaldo Xydias",
+45.6521,
+13.77979,
+0.0
+],
+"via sporcavilla": [
+"Via Sporcavilla",
+45.64769,
+13.76752,
+0.0
+],
+"via srecko kosovel": [
+"Via Srečko Kosovel",
+45.64333,
+13.86302,
+0.18
+],
+"via stiria": [
+"Via Stiria",
+45.68933,
+13.79296,
+0.0
+],
+"via strabone": [
+"Via Strabone",
+45.65948,
+13.78105,
+0.07
+],
+"via sulpicio gallo": [
+"Via Sulpicio Gallo",
+45.62567,
+13.7879,
+0.0
+],
+"via teodoro mayer": [
+"Via Teodoro Mayer",
+45.6436,
+13.81772,
+0.0
+],
+"via terenzio mamiani": [
+"Via Terenzio Mamiani",
+45.63989,
+13.76942,
+0.0
+],
+"via terstenico": [
+"Via Terstenico",
+45.67704,
+13.7663,
+0.07
+],
+"via terstenico / trsteniska ulica": [
+"Via Terstenico / Trsteniška ulica",
+45.67635,
+13.76654,
+0.04
+],
+"via tibullo": [
+"Via Tibullo",
+45.65738,
+13.78231,
+0.08
+],
+"via tigor": [
+"Via Tigor",
+45.64508,
+13.76628,
+0.21
+],
+"via timignano": [
+"Via Timignano",
+45.65304,
+13.8118,
+0.15
+],
+"via tivarnella": [
+"Via Tivarnella",
+45.65727,
+13.77348,
+0.0
+],
+"via tiziano vecellio": [
+"Via Tiziano Vecellio",
+45.64814,
+13.78421,
+0.0
+],
+"via tolmezzo": [
+"Via Tolmezzo",
+45.66805,
+13.76444,
+0.01
+],
+"via tommaso grossi": [
+"Via Tommaso Grossi",
+45.64742,
+13.77541,
+0.13
+],
+"via tommaso luciani": [
+"Via Tommaso Luciani",
+45.64465,
+13.7847,
+0.0
+],
+"via tonino amatori": [
+"Via Tonino Amatori",
+45.62185,
+13.83214,
+0.27
+],
+"via tor san piero": [
+"Via Tor San Piero",
+45.66417,
+13.76938,
+0.2
+],
+"via torino": [
+"Via Torino",
+45.64675,
+13.76394,
+0.0
+],
+"via torquato tasso": [
+"Via Torquato Tasso",
+45.65991,
+13.77211,
+0.03
+],
+"via trauner": [
+"Via Trauner",
+45.64773,
+13.76835,
+0.0
+],
+"via trenta ottobre": [
+"Via Trenta Ottobre",
+45.65305,
+13.77512,
+0.13
+],
+"via trento": [
+"Via Trento",
+45.65442,
+13.77214,
+0.14
+],
+"via udine": [
+"Via Udine",
+45.66044,
+13.77245,
+0.53
+],
+"via ugo flumiani": [
+"Via Ugo Flumiani",
+45.6427,
+13.79778,
+0.0
+],
+"via ugo foscolo": [
+"Via Ugo Foscolo",
+45.64758,
+13.78316,
+0.13
+],
+"via ugo inchiostri": [
+"Via Ugo Inchiostri",
+45.62153,
+13.79478,
+0.0
+],
+"via ugo polonio": [
+"Via Ugo Polonio",
+45.65252,
+13.78121,
+0.0
+],
+"via ulderico moro": [
+"Via Ulderico Moro",
+45.68301,
+13.75951,
+0.31
+],
+"via umago": [
+"Via Umago",
+45.62934,
+13.78415,
+0.04
+],
+"via umberto diena": [
+"Via Umberto Diena",
+45.62523,
+13.82361,
+0.11
+],
+"via umberto felluga": [
+"Via Umberto Felluga",
+45.64714,
+13.79727,
+0.26
+],
+"via umberto giordano": [
+"Via Umberto Giordano",
+45.67518,
+13.7651,
+0.0
+],
+"via umberto veruda": [
+"Via Umberto Veruda",
+45.63977,
+13.79847,
+0.0
+],
+"via valdemaro slavich": [
+"Via Valdemaro Slavich",
+45.63092,
+13.79288,
+0.08
+],
+"via valdirivo": [
+"Via Valdirivo",
+45.65339,
+13.77354,
+0.0
+],
+"via valentino pittoni": [
+"Via Valentino Pittoni",
+45.62237,
+13.80961,
+0.06
+],
+"via valerio festo": [
+"Via Valerio Festo",
+45.62412,
+13.78883,
+0.0
+],
+"via valmartinaga": [
+"Via Valmartinaga",
+45.66653,
+13.76982,
+0.0
+],
+"via valmaura": [
+"Via Valmaura",
+45.62306,
+13.79054,
+0.43
+],
+"via ventiquattro maggio": [
+"Via Ventiquattro Maggio",
+45.65491,
+13.77646,
+0.0
+],
+"via venzone": [
+"Via Venzone",
+45.66813,
+13.76728,
+0.0
+],
+"via verrocchio": [
+"Via Verrocchio",
+45.65578,
+13.81143,
+0.05
+],
+"via vettor carpaccio": [
+"Via Vettor Carpaccio",
+45.64344,
+13.77003,
+0.08
+],
+"via vettor pisani": [
+"Via Vettor Pisani",
+45.64294,
+13.77631,
+0.0
+],
+"via villan de bachino": [
+"Via Villan De Bachino",
+45.66695,
+13.77199,
+0.02
+],
+"via vincenzo bellini": [
+"Via Vincenzo Bellini",
+45.65202,
+13.7722,
+0.11
+],
+"via vincenzo gigante": [
+"Via Vincenzo Gigante",
+45.6193,
+13.82665,
+0.15
+],
+"via vincenzo monti": [
+"Via Vincenzo Monti",
+45.66144,
+13.7715,
+0.0
+],
+"via vincenzo scussa": [
+"Via Vincenzo Scussa",
+45.65355,
+13.78608,
+0.0
+],
+"via vinicio lago": [
+"Via Vinicio Lago",
+45.61972,
+13.82224,
+0.03
+],
+"via virgilio": [
+"Via Virgilio",
+45.65975,
+13.7777,
+0.1
+],
+"via visinada": [
+"Via Visinada",
+45.63265,
+13.78463,
+0.09
+],
+"via vito timmel": [
+"Via Vito Timmel",
+45.64272,
+13.8059,
+0.05
+],
+"via vittoria colonna": [
+"Via Vittoria Colonna",
+45.6466,
+13.76657,
+0.02
+],
+"via vittorino da feltre": [
+"Via Vittorino da Feltre",
+45.64337,
+13.78773,
+0.07
+],
+"via vittorio alfieri": [
+"Via Vittorio Alfieri",
+45.64786,
+13.78543,
+0.06
+],
+"via vittorio bersezio": [
+"Via Vittorio Bersezio",
+45.6271,
+13.7862,
+0.04
+],
+"via vittorio bolaffio": [
+"Via Vittorio Bolaffio",
+45.64165,
+13.80843,
+0.01
+],
+"via vittorio bottego": [
+"Via Vittorio Bottego",
+45.64148,
+13.75807,
+0.0
+],
+"via vittorio locchi": [
+"Via Vittorio Locchi",
+45.64099,
+13.76147,
+0.23
+],
+"via vladimir bartol": [
+"Via Vladimir Bartol",
+45.68841,
+13.78927,
+0.0
+],
+"via zara": [
+"Via Zara",
+45.6289,
+13.79128,
+0.14
+],
+"via zeffirino pisoni": [
+"Via Zeffirino Pisoni",
+45.65581,
+13.7924,
+0.03
+],
+"via ziga zois": [
+"Via Žiga Zois",
+45.69064,
+13.78985,
+0.08
+],
+"viale al cacciatore": [
+"Viale al Cacciatore",
+45.65291,
+13.80131,
+0.56
+],
+"viale dei campi elisi": [
+"Viale dei Campi Elisi",
+45.63899,
+13.76976,
+0.45
+],
+"viale dei lecci": [
+"Viale dei Lecci",
+45.70213,
+13.71413,
+0.0
+],
+"viale dell'ippodromo": [
+"Viale dell'Ippodromo",
+45.63961,
+13.7915,
+0.17
+],
+"viale della rimembranza": [
+"Viale della Rimembranza",
+45.64743,
+13.77403,
+0.03
+],
+"viale della terza armata": [
+"Viale della Terza Armata",
+45.64462,
+13.76445,
+0.1
+],
+"viale gabriele d'annunzio": [
+"Viale Gabriele D'Annunzio",
+45.64327,
+13.78389,
+0.32
+],
+"viale giuseppe tartini": [
+"Viale Giuseppe Tartini",
+45.63783,
+13.76741,
+0.08
+],
+"viale martiri delle foibe": [
+"Viale Martiri delle Foibe",
+45.64813,
+13.77493,
+0.02
+],
+"viale miramare": [
+"Viale Miramare",
+45.676,
+13.75313,
+4.3
+],
+"viale monumentale": [
+"Viale Monumentale",
+45.65734,
+13.7675,
+0.42
+],
+"viale raffaello sanzio": [
+"Viale Raffaello Sanzio",
+45.65534,
+13.80148,
+0.13
+],
+"viale ragazzi del '99": [
+"Viale Ragazzi del '99",
+45.64768,
+13.77464,
+0.05
+],
+"viale romolo gessi": [
+"Viale Romolo Gessi",
+45.64158,
+13.75498,
+0.19
+],
+"viale venti settembre": [
+"Viale Venti Settembre",
+45.65278,
+13.78438,
+0.7
+],
+"vicolo ai plai": [
+"Vicolo ai Plai",
+45.6257,
+13.80726,
+0.0
+],
+"vicolo degli scaglioni": [
+"Vicolo degli Scaglioni",
+45.64626,
+13.79311,
+0.09
+],
+"vicolo dei calafai": [
+"Vicolo dei Calafai",
+45.64295,
+13.76346,
+0.02
+],
+"vicolo dei gattorno": [
+"Vicolo dei Gattorno",
+45.66091,
+13.77467,
+0.0
+],
+"vicolo dei roveri": [
+"Vicolo dei Roveri",
+45.65651,
+13.79831,
+0.06
+],
+"vicolo del castagneto": [
+"Vicolo del Castagneto",
+45.65789,
+13.78807,
+0.28
+],
+"vicolo dell'edera": [
+"Vicolo dell'Edera",
+45.65687,
+13.79013,
+0.13
+],
+"vicolo dell'ospitale militare": [
+"Vicolo dell'Ospitale Militare",
+45.65893,
+13.7849,
+0.28
+],
+"vicolo della salvia": [
+"Vicolo della Salvia",
+45.62892,
+13.7859,
+0.07
+],
+"vicolo delle primule": [
+"Vicolo delle Primule",
+45.65872,
+13.79165,
+0.06
+],
+"vicolo delle rose": [
+"Vicolo delle Rose",
+45.66784,
+13.78309,
+0.32
+],
+"vicolo delle ville": [
+"Vicolo delle Ville",
+45.64316,
+13.76328,
+0.05
+],
+"vicolo rio martesin": [
+"Vicolo Rio Martesin",
+45.67072,
+13.76834,
+0.03
+],
+"vicolo san fortunato": [
+"Vicolo San Fortunato",
+45.66601,
+13.76789,
+0.0
+],
+"vicolo santa chiara": [
+"Vicolo Santa Chiara",
+45.64879,
+13.77238,
+0.0
+],
+"villa giulia": [
+"Villa Giulia",
+45.66461,
+13.79412,
+0.0
+],
+"volti di chiozza": [
+"Volti di Chiozza",
+45.65143,
+13.77739,
+0.01
+],
+"zievoline": [
+"Zievoline",
+45.68076,
+13.77169,
+0.0
+]
+}
+}

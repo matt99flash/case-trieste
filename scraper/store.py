@@ -247,7 +247,9 @@ class Store:
         listings = sorted(self.listings.values(), key=lambda r: r["id"])
         light, details = [], []
         for r in listings:
-            light.append({**{k: v for k, v in r.items() if k not in HEAVY_FIELDS}, "images": (r.get("images") or [])[:1]})
+            # le chiavi che iniziano con "_" sono di lavoro (calcolate a ogni giro): non si salvano
+            light.append({**{k: v for k, v in r.items() if k not in HEAVY_FIELDS and not k.startswith("_")},
+                          "images": (r.get("images") or [])[:1]})
             if r.get("description") or len(r.get("images") or []) > 1:
                 details.append({"id": r["id"], **{k: r.get(k) for k in HEAVY_FIELDS}})
         _dump(LISTINGS_FILE, {"updated": self.ts, "listings": light}, one_per_line_key="listings")

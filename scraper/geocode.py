@@ -217,6 +217,109 @@ class Geocoder:
         return val
 
 
+# ---- vie scritte "a metà" ("BATTISTI 20", "Zona Baiamonti", "V.Del Carpineto") riconosciute con l'elenco delle vie
+# di OpenStreetMap (data/strade.json, vedi scraper/strade.py). Se l'indirizzo preciso non si trova, la casa va al
+# centro della via (geo "via": posizione approssimata, non usata per OMI e doppioni) purché la via sia corta.
+STREETS_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "strade.json")
+STREET_MAX_SPREAD_KM = 0.6
+_TYPE = {"via", "viale", "piazza", "piazzale", "piazzetta", "largo", "strada", "salita", "androna", "riva", "scala",
+         "scalinata", "passeggio", "galleria", "corso", "vicolo", "calle", "rotonda", "campo", "localita", "borgo",
+         "contrada", "rampa", "sentiero", "passo", "molo", "lungomare", "belvedere", "giardino", "parco", "ponte", "v",
+         "p", "pzza", "pza", "vle", "loc"}
+_ART = {"del", "della", "dei", "degli", "delle", "dello", "di", "al", "alla", "alle", "ai", "d"}
+# nomi di vie uguali a parole comuni o a luoghi: da soli non bastano a dire "è quella via"
+_KEY_STOP = {norm(k) for kws in ZONES_TRIESTE.values() for k in kws} | {
+    "trieste", "muggia", "duino", "aurisina", "sistiana", "opicina", "centro", "mare", "stazione", "ospedale", "porto",
+    "castello", "chiesa", "bosco", "villa", "fonte", "monte", "colle", "molo", "scuola", "stadio", "universita",
+    "tribunale", "borsa", "teatro", "cimitero", "faro", "duomo", "costiera", "carso", "sole", "fiori", "rose", "pini",
+    "vigne", "ulivi", "cacciatore", "mercato", "pescheria", "lanterna", "salice", "vigneti", "boschetto", "panorama",
+    "vista", "residenza", "palazzo", "giardini", "piscina", "terrazzo", "attico", "villetta", "casa", "nuova", "nuovo",
+    "storico", "storica", "liberty", "elegante", "luminoso", "luminosa", "prestigioso", "prestigiosa", "porticciolo",
+    "spiaggia", "golfo", "baia", "conca", "pineta", "campagna", "alta", "bassa", "vecchia", "vecchio", "grande",
+    "piccolo", "piccola", "san", "santa", "sant", "roma", "italia", "europa", "venezia", "milano", "garibaldi"}
+_LEAD = {"zona", "via", "v", "viale", "vle", "piazza", "p", "pzza", "pza", "largo", "ang", "angolo", "salita", "strada", "androna", "riva"}
+_TOKEN = re.compile(r"[a-z0-9']+|[|,;()\-–—:]")
+_STREETS = None
+
+
+def _tokens(s: str) -> list[str]:
+    return _TOKEN.findall(norm(s).replace("’", "'"))
+
+
+def _street_index() -> dict:
+    """comune -> {chiave: [[nome, lat, lon, estensione_km], ...]} (chiave: nome intero, nome senza "via",
+    cognome finale: "via cesare battisti", "cesare battisti", "battisti")."""
+    global _STREETS
+    if _STREETS is not None:
+        return _STREETS
+    try:
+        with open(STREETS_FILE, encoding="utf-8") as f:
+            raw = json.load(f)
+    except FileNotFoundError:
+        raw = {}
+    _STREETS = {}
+    for town, streets in raw.items():
+        keys = defaultdict(set)
+        for full, rec in streets.items():
+            tok = [t for t in _tokens(full) if re.match(r"[a-z0-9]", t)]
+            if not tok:
+                continue
+            keys[" ".join(tok)].add(full)
+            rest = tok[1:] if tok[0] in _TYPE else tok
+            if rest:
+                keys[" ".join(rest)].add(full)
+                if rest[0] in _ART and len(rest) > 1:
+                    keys[" ".join(rest[1:])].add(full)
+                if len(rest) > 1 and rest[-1] not in _ART:
+                    keys[rest[-1]].add(full)        # "via Cesare Battisti" -> "battisti"
+        _STREETS[town] = {k: [streets[f] for f in sorted(fs)] for k, fs in keys.items()
+                          if k not in _KEY_STOP and len(k.replace(" ", "")) >= 4 and not k.isdigit()}
+    return _STREETS
+
+
+_TYPE_CANON = {"v": "via", "vle": "viale", "p": "piazza", "pzza": "piazza", "pza": "piazza", "loc": "localita"}
+
+
+def _pick(cands: list, prev: str):
+    """La via giusta tra quelle con la stessa chiave: se il testo dice il tipo ("borgo", "piazza") deve coincidere;
+    se restano più vie, vanno bene solo se sono tutte nello stesso posto (es. Via e Piazzale Baiamonti)."""
+    kind = _TYPE_CANON.get(prev, prev) if prev in _TYPE else None
+    if kind:
+        cands = [c for c in cands if _tokens(c[0])[0] == kind]
+    if not cands:
+        return None
+    a = cands[0]
+    if any(math.hypot((c[1] - a[1]) * 111, (c[2] - a[2]) * 78) > 0.5 for c in cands[1:]):
+        return None
+    return a
+
+
+def osm_street(text: str | None, town: str | None, *, title: bool = False):
+    """Via di OpenStreetMap citata nel testo: (nome, civico, lat, lon, estensione_km) oppure None.
+    Serve un indizio che si parli proprio di una via: il civico subito dopo ("Godeas 99"), una parola come
+    "zona"/"via" subito prima ("Zona Baiamonti", "V.Del Carpineto"), o (nel titolo) il nome all'inizio seguito da
+    un separatore ("DIAZ – Ristorante")."""
+    idx = _street_index().get(town or "")
+    if not text or not idx:
+        return None
+    tok = _tokens(text)
+    for n in (4, 3, 2, 1):
+        for i in range(len(tok) - n + 1):
+            key = " ".join(tok[i:i + n])
+            if key not in idx:
+                continue
+            nxt = tok[i + n] if i + n < len(tok) else ""
+            prev = tok[i - 1] if i else ""
+            rec = _pick(idx[key], prev)
+            if not rec:
+                continue
+            number = nxt if re.fullmatch(r"\d{1,4}[a-z]?", nxt) and not (i + n + 1 < len(tok) and tok[i + n + 1] in ("mq", "m2", "locali", "vani", "camere", "anni")) else None
+            at_start = title and i == 0 and (not nxt or nxt in "|,;()-–—:" or number)
+            if number or prev in _LEAD or at_start:
+                return rec[0], number, rec[1], rec[2], rec[3]
+    return None
+
+
 def _shared_values(listings, key) -> set:
     """Valori (punti o indirizzi) condivisi da tanti annunci della stessa fonte che parlano di luoghi diversi:
     sono la sede dell'agenzia o il centro città. Un cantiere con tanti appartamenti nello stesso posto resta valido."""
@@ -253,15 +356,25 @@ def enrich(listings: list[dict], geocoder: Geocoder):
         if d.get("lat") is None and d.get("town"):
             address = None if norm(d.get("address") or "").strip() in fake_addresses else d.get("address")
             street = street_of(address, d.get("title"), d.get("description"), d["town"])
+            # via scritta a metà o senza la parola "via": riconosciuta con l'elenco delle vie
+            osm = osm_street(street, d["town"]) if street else (
+                osm_street(d.get("title"), d["town"], title=True) or osm_street(address, d["town"], title=True))
+            if osm and not street:
+                street = f"{osm[0]} {osm[1] or ''}".strip()
             ll = geocoder.lookup(street, d["town"]) if street else None
             if ll:
                 d["lat"], d["lon"] = ll
                 d["geo"] = "indirizzo"
                 d.pop("_nogeo", None)
+            elif osm and osm[4] <= STREET_MAX_SPREAD_KM:
+                d["lat"], d["lon"] = osm[2], osm[3]   # centro della via: posizione approssimata
+                d["geo"] = "via"
+                d.pop("_nogeo", None)
             elif address is None and d.get("address"):
                 d["_nogeo"] = True   # posizione ricavata in passato dall'indirizzo dell'agenzia: da togliere
         elif d.get("lat") is not None and not d.get("geo"):
             d["geo"] = "fonte"
-        if d.get("town") == "Trieste" and d.get("lat") is not None:
+        # posizione approssimata (centro della via): la zona scritta nell'annuncio, se c'è, vale di più
+        if d.get("town") == "Trieste" and d.get("lat") is not None and not (d.get("geo") == "via" and d.get("zone")):
             if BOX[0] <= d["lat"] <= BOX[2] and BOX[1] <= d["lon"] <= BOX[3]:
                 d["zone"] = zone_from_point(d["lat"], d["lon"])

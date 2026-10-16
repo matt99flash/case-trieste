@@ -87,6 +87,8 @@ _FOREIGN_TERMS = [
     "doberdo", "savogna", "sagrado", "gradisca", "ronchi dei legionari", "slovenia", "slovenij", "croazia", "croatia",
     "istria", "istra", "capodistria", "koper", "umago", "umag", "portoroz", "savudrija", "pirano", "buje",
     "verteneglio", "kobdilj", "vigolana", "folgaria", "caldonazzo", "forni avoltri",
+    # Veneto ("venezia" e "veneto" no: Piazza Venezia e Piazza Vittorio Veneto sono a Trieste)
+    "treviso", "vicenza", "padova", "verona", "belluno", "rovigo", "asolo", "bassano del grappa", "jesolo",
 ]
 # con i confini di parola: "istra" non deve colpire "amministrazione", "grado" non deve colpire "in grado di"
 _FOREIGN_PATTERNS = [r"(?<![a-z])" + re.escape(t) + r"(?![a-z])" for t in _FOREIGN_TERMS if t != "grado"]
@@ -117,3 +119,23 @@ def infer_trieste(title, address, zone, description, *, zone_fallback: bool = Fa
         return False
     blob = " " + norm(" ".join(x for x in (title, address, zone) if x)) + " "
     return any(re.search(r"(?<![a-z])" + re.escape(kw) + r"(?![a-z])", blob) for kw in _FALLBACK_ZONE_KW)
+
+
+# "Via Udine", "Strada del Friuli", "Via del Lazzaretto Vecchio": nomi di vie di Trieste, non luoghi
+_STREET_PHRASE = re.compile(r"(?<![a-z])(?:via|viale|strada|piazza|piazzale|largo|riva|salita|androna|scala|passeggio|corso)"
+                            r"\s+(?:dell'|d'|(?:della|dello|delle|degli|dei|del|di)\s+)?[a-z]+(?:\s+(?:vecchio|nuovo|alto|basso))?")
+
+
+def without_streets(text: str | None) -> str:
+    return " " + _STREET_PHRASE.sub(" ", norm(text or "")) + " "
+
+
+def title_town(title: str | None) -> str | None:
+    """Comune citato nel titolo come luogo (non come nome di via)."""
+    return detect_town(without_streets(title))
+
+
+def foreign_title(title: str | None) -> bool:
+    """Il titolo dice che la casa è fuori provincia ("Appartamento a Monfalcone"), senza citare un comune nostro."""
+    t = without_streets(title)
+    return bool(FOREIGN_RX.search(t)) and not detect_town(t)

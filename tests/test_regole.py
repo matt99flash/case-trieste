@@ -4,11 +4,11 @@ Uso: python -m unittest discover tests
 """
 import unittest
 
-from scraper.clean import clean_address, clean_floor, fill_from_text
+from scraper.clean import clean_address, clean_floor, fill_from_text, fix_town
 from scraper.dedup import assign_groups
 from scraper.geocode import enrich, street_of
 from scraper.parse_utils import bedrooms_from_text, floor_from_text, floor_level, rooms_from_text
-from scraper.zones import infer_trieste
+from scraper.zones import foreign_title, infer_trieste, title_town
 
 
 class Via(unittest.TestCase):
@@ -136,7 +136,9 @@ class Posizione(unittest.TestCase):
         ann = [{"id": str(i), "town": "Trieste", "lat": 45.64670, "lon": 13.76316, "title": t, "address": "Via Torino 34"}
                for i, t in enumerate(titoli)]
         enrich(ann, self.NoGeo())
-        self.assertTrue(all(a["lat"] is None and a.get("_nogeo") for a in ann))
+        # via il punto dell'agenzia; resta al più il centro della via citata nel titolo ("Villa via Buonarroti")
+        self.assertTrue(all(a["lat"] != 45.64670 for a in ann))
+        self.assertTrue(all(a.get("_nogeo") if a["lat"] is None else a["geo"] == "via" for a in ann))
 
     def test_cantiere_nello_stesso_punto_resta(self):
         ann = [{"id": str(i), "town": "Trieste", "lat": 45.64218, "lon": 13.7654, "title": f"San Vito nuovo complesso {i}"}
@@ -166,6 +168,90 @@ class Qualita(unittest.TestCase):
 class Comune(unittest.TestCase):
     def test_in_grado_non_e_grado(self):
         self.assertTrue(infer_trieste("Appartamento (TS)", None, None, "in grado di soddisfare"))
+
+    def test_vie_con_nomi_di_luoghi(self):
+        for t in ["VIA DELL’ISTRIA | Box", "STRADA DEL FRIULI VISTA MARE", "PIAZZA VITTORIO VENETO – ATTICO", "Via Udine, 30"]:
+            with self.subTest(t):
+                self.assertFalse(foreign_title(t))
+        self.assertTrue(foreign_title("Appartamento con terrazza nel verde a Monfalcone"))
+        self.assertTrue(foreign_title("Grado zona pedonale"))
+
+    def test_comune_dal_titolo(self):
+        self.assertEqual(title_town("Appartamento Fraz. Aurisina Cave, Trieste"), "Duino-Aurisina")
+        self.assertEqual(title_town("Trieste - Iconica villa a Gabrovizza"), "Sgonico")
+        self.assertIsNone(title_town("Appartamento via del Lazzaretto Vecchio"))
+        r = {"title": "Casetta Frazione Sistiana, Trieste", "town": "Trieste", "zone": "Cavana", "lat": 45.6467, "lon": 13.7631, "geo": "fonte"}
+        fix_town(r)
+        self.assertEqual((r["town"], r["zone"], r["lat"], r.get("_nogeo")), ("Duino-Aurisina", None, None, True))
+
+
+class ViaDaElenco(unittest.TestCase):
+    def setUp(self):
+        import scraper.geocode as g
+        self.g = g
+        self._old = g._STREETS
+        battisti = ["Via Cesare Battisti", 45.6527, 13.7804, 0.24]
+        g._STREETS = {"Trieste": {"via cesare battisti": [battisti], "cesare battisti": [battisti], "battisti": [battisti],
+                                  "baiamonti": [["Piazzale Antonio Baiamonti", 45.6313, 13.7918, 0.05],
+                                                ["Via Antonio Baiamonti", 45.6306, 13.7894, 0.37]],
+                                  "aquileia": [["Via Aquileia", 45.6695, 13.7643, 0.06]],
+                                  "giulia": [["Via Giulia", 45.65, 13.79, 0.1], ["Strada Giulia", 45.70, 13.85, 0.1]]}}
+
+    def tearDown(self):
+        self.g._STREETS = self._old
+
+    def test_vie_a_meta(self):
+        f = self.g.osm_street
+        self.assertEqual(f("BATTISTI 20 – Attico mansardato", "Trieste", title=True)[:2], ("Via Cesare Battisti", "20"))
+        self.assertEqual(f("ZONA BAIAMONTI | Trilocale", "Trieste", title=True)[0], "Piazzale Antonio Baiamonti")
+        self.assertIsNone(f("BORGO AQUILEIA, 5 – Bilocale", "Trieste", title=True))      # "borgo" non è "via"
+        self.assertIsNone(f("Appartamento con vista su Battisti", "Trieste", title=True))  # nessun indizio di via
+        self.assertIsNone(f("zona Giulia", "Trieste", title=True))                         # due vie lontane
+
+
+class Stima(unittest.TestCase):
+    def test_modello_ritrova_i_prezzi(self):
+        import math
+        from scraper import stima
+        rows = []
+        for i in range(200):
+            mq = 40 + i % 90
+            centro = i % 2 == 0
+            x = {"log_mq": math.log(mq), "area:z:a" if centro else "area:z:b": 1.0}
+            rows.append((x, math.log(2000 * mq * (1.3 if centro else 1.0))))
+        coef = stima.fit(rows)
+        x = {"log_mq": math.log(100), "area:z:a": 1.0}
+        self.assertAlmostEqual(stima.predict(coef, x) / 260000, 1, delta=0.05)
+
+    def test_affare_solo_se_affidabile(self):
+        from scraper.stima import deal_pct
+        e = {"v": 200000, "n": 30, "special": False, "dealable": True}
+        self.assertAlmostEqual(deal_pct(e, 130000, 0.3), -0.35)
+        self.assertIsNone(deal_pct(e, 150000, 0.3))                            # solo 25% sotto
+        self.assertIsNone(deal_pct({**e, "special": True}, 130000, 0.3))       # nuda proprietà, locato...
+        self.assertIsNone(deal_pct({**e, "dealable": False}, 130000, 0.3))     # stato ignoto o villa
+        self.assertIsNone(deal_pct({**e, "n": 3}, 130000, 0.3))                # zona con pochi annunci
+        self.assertIsNone(deal_pct(e, 60000, 0.3))                             # -70%: dato sbagliato
+
+    def test_una_notifica_sola_per_l_affare(self):
+        from scraper import notify
+        rec = {"id": "s:1", "source": "s", "group": "s:1", "status": "active", "type": "appartamento", "price": 120000,
+               "mq": 80, "town": "Trieste", "first_seen": "2026-10-16", "_stima": {"v": 200000, "n": 30, "special": False, "dealable": True}}
+
+        class St:
+            listings = {"s:1": rec}
+            sources = {}
+            stima = {"deal": 0.3}
+            new_events = [{"type": "new", "id": "s:1", "source": "s", "price": 120000}]
+        old = notify.load_config
+        notify.load_config = lambda: {"enabled": True, "events": ["new", "deal"], "filters": {}}
+        try:
+            items = notify.select_events(St())
+        finally:
+            notify.load_config = old
+        self.assertEqual(len(items), 1)
+        self.assertIn("deal", items[0][0])
+        self.assertIn("Possibile affare", notify._line(items[0][0], rec, {})[0])
 
 
 if __name__ == "__main__":

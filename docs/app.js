@@ -53,6 +53,7 @@ async function load() {
     get("sources.json").catch(() => ({ sources: {} })), get("trend.json").catch(() => ({ days: {} }))]);
   S.trend = t.days || {};
   S.omi = await get("omi.json").catch(() => null);
+  S.stima = await get("stima.json").catch(() => null);
   S.updated = l.updated;
   S.notify = await fetch(`notify.json?t=${Date.now()}`).then(r => r.ok ? r.json() : null).catch(() => null);
   S.sources = s.sources || {};
@@ -126,6 +127,19 @@ function computeZoneMedians() {
 }
 const pctTxt = p => (p > 0 ? "+" : "−") + Math.abs(Math.round(p)) + "%";
 
+// ---- stima del prezzo giusto (docs/data/stima.json, calcolata da scraper/stima.py)
+// est[gid] = [valore stimato, annunci della zona nel campione, può essere un affare 0/1, prezzo "speciale" 0/1]
+function stimaOf(h) {
+  const e = S.stima?.est?.[h.gid];
+  if (!e) return null;
+  const [v, n, dealable, special] = e;
+  let pct = h.price ? (h.price / v - 1) * 100 : null;
+  // scarti enormi sono quasi sempre dati letti male (superficie del terreno, nuda proprietà...): non mostrarli
+  if (pct != null && (pct <= -50 || pct > 100)) pct = null;
+  const deal = pct != null && dealable && !special && pct <= -S.stima.deal * 100;
+  return { v, n, pct, deal, special: !!special, lo: v * (1 - S.stima.mdape), hi: v * (1 + S.stima.mdape) };
+}
+
 // Una "casa" = gruppo di annunci (stesso immobile su più agenzie). Rappresentante: attivo, con più dati, prezzo minore.
 function houses(includeRemoved) {
   const out = [];
@@ -135,8 +149,10 @@ function houses(includeRemoved) {
     if (!pool.length) continue;
     const rep = pool.slice().sort((a, b) => score(b) - score(a))[0];
     const firstSeen = members.reduce((m, x) => x.first_seen < m ? x.first_seen : m, rep.first_seen);
-    out.push({ gid, rep, members: pool, all: members, active: act.length > 0, firstSeen,
-      price: Math.min(...pool.map(m => m.price || Infinity)) === Infinity ? null : Math.min(...pool.map(m => m.price || Infinity)) });
+    const h = { gid, rep, members: pool, all: members, active: act.length > 0, firstSeen,
+      price: Math.min(...pool.map(m => m.price || Infinity)) === Infinity ? null : Math.min(...pool.map(m => m.price || Infinity)) };
+    h.stima = h.active ? stimaOf(h) : null;
+    out.push(h);
   }
   return out;
 }
@@ -230,6 +246,7 @@ function sortHouses(list) {
     price_desc: (a, b) => (b.price || 0) - (a.price || 0),
     ppm_asc: (a, b) => (a.rep.ppm || 9e12) - (b.rep.ppm || 9e12),
     zone_deal: (a, b) => (a.rep.zoneCmp?.pct ?? 9e9) - (b.rep.zoneCmp?.pct ?? 9e9),
+    stima: (a, b) => (a.stima?.pct ?? 9e9) - (b.stima?.pct ?? 9e9),
     mq_desc: (a, b) => (b.rep.mq || 0) - (a.rep.mq || 0),
     drop: (a, b) => (priceChange(a.rep)?.pct ?? 0) - (priceChange(b.rep)?.pct ?? 0),
   }[F.sort] || (() => 0);
@@ -261,18 +278,22 @@ function card(h) {
     pc && pc.pct > 0 && `<span class="badge up">+${pc.pct.toFixed(0)}%</span>`,
     r.sold && `<span class="badge gone">Venduto / trattativa</span>`,
     r.private && `<span class="badge priv">Privato</span>`,
-    h.active && r.zoneCmp && r.zoneCmp.pct <= -15 && `<span class="badge deal" title="Prezzo al mq rispetto alla media della zona">${pctTxt(r.zoneCmp.pct)} zona</span>`,
+    // stima del prezzo giusto quando c'è; altrimenti il confronto con la media della zona (mai entrambi: possono discordare)
+    h.stima?.deal && `<span class="badge deal" title="Prezzo molto sotto la stima: possibile affare, da verificare">${pctTxt(h.stima.pct)} stima</span>`,
+    h.active && !h.stima && r.zoneCmp && r.zoneCmp.pct <= -15 && `<span class="badge deal" title="Prezzo al mq rispetto alla media della zona">${pctTxt(r.zoneCmp.pct)} zona</span>`,
     notes.get(h.gid).status && `<span class="badge mine">${esc(STATUS[notes.get(h.gid).status])}</span>`,
   ].filter(Boolean).join("");
-  const zc = r.zoneCmp && Math.abs(r.zoneCmp.pct) >= 5
-    ? ` <span class="${r.zoneCmp.pct < 0 ? "deal" : "dear"}" title="Rispetto alla media della zona (${num(r.zoneCmp.med)} €/mq)">(${pctTxt(r.zoneCmp.pct)} zona)</span>` : "";
+  const zc = h.stima ? (h.stima.pct != null && Math.abs(h.stima.pct) >= 5
+      ? ` <span class="${h.stima.pct < 0 ? "deal" : "dear"}" title="Rispetto al prezzo stimato (${eur(h.stima.v)})">(${pctTxt(h.stima.pct)} stima)</span>` : "")
+    : r.zoneCmp && Math.abs(r.zoneCmp.pct) >= 5
+      ? ` <span class="${r.zoneCmp.pct < 0 ? "deal" : "dear"}" title="Rispetto alla media della zona (${num(r.zoneCmp.med)} €/mq)">(${pctTxt(r.zoneCmp.pct)} zona)</span>` : "";
   const others = h.members.length > 1 ? ` · anche su altre ${h.members.length - 1}` : "";
   return `<article class="card ${h.active ? "" : "gone"}" data-gid="${esc(h.gid)}">
     <div class="thumb">${img ? `<img loading="lazy" src="${esc(img)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}<div class="noimg">${img ? "" : "Nessuna foto"}</div>
       <div class="badges">${badges}</div>
       <button class="star ${S.favs.has(h.gid) ? "on" : ""}" data-fav="${esc(h.gid)}" aria-label="Preferito" title="Aggiungi ai preferiti">★</button></div>
     <div class="body">
-      <div class="price">${r.features?._project && h.price ? "da " : ""}${eur(h.price)}${pc ? `<span class="old">${eur(pc.first)}</span>` : ""}</div>
+      <div class="price">${r.features?._project && h.price ? "da " : ""}${eur(h.price)}${pc ? `<span class="old">${eur(pc.first)}</span>` : ""}${!h.price && h.stima ? `<small class="est">valore stimato ~${eur(h.stima.v)}</small>` : ""}</div>
       <div class="specs">${esc(TYPE_LABELS[r.type] || "Immobile")}${specs(r) ? " · " + esc(specs(r)) : ""}</div>
       <div class="where">${esc(where(r))}${r.ppm ? ` · ${num(r.ppm)} €/mq` : ""}${zc}</div>
       <div class="title">${esc(r.title || "")}</div>
@@ -382,11 +403,12 @@ function renderMap() {
   }
   S.markers.clearLayers();
   const list = houses(F.removed).filter(matchHouse);
-  let exact = 0, approx = 0;
+  let exact = 0, street = 0, approx = 0;
   for (const h of list) {
-    const r = h.members.find(m => m.lat) || h.rep;
+    const r = h.members.find(m => m.lat && m.geo !== "via") || h.members.find(m => m.lat) || h.rep;
     let ll = r.lat && r.lon ? [r.lat, r.lon] : null;
-    if (ll) exact++;
+    if (ll && r.geo === "via") street++;
+    else if (ll) exact++;
     else {
       const c = (r.town === "Trieste" && ZONE_CENTER[r.zone]) || TOWN_CENTER[r.town];
       if (!c) continue;
@@ -394,12 +416,12 @@ function renderMap() {
       ll = [c[0] + ((seed % 1000) / 1000 - .5) * .012, c[1] + ((Math.floor(seed / 1000) % 1000) / 1000 - .5) * .016];
       approx++;
     }
-    const m = L.circleMarker(ll, { radius: 7, weight: 2, color: r.lat ? "#0f6e7c" : "#8a8277", fillOpacity: .75 });
+    const m = L.circleMarker(ll, { radius: 7, weight: 2, color: !r.lat ? "#8a8277" : r.geo === "via" ? "#6aa9c4" : "#0f6e7c", fillOpacity: .75 });
     const img = h.rep.images?.[0];
     m.bindPopup(`${img ? `<img src="${esc(img)}" referrerpolicy="no-referrer" alt="">` : ""}<b>${eur(h.price)}</b><br>${esc(TYPE_LABELS[h.rep.type] || "")} ${esc(specs(h.rep))}<br>${esc(where(h.rep))}<br><a href="#" data-open="${esc(h.gid)}">Apri scheda</a>`);
     S.markers.addLayer(m);
   }
-  $("#map-note").textContent = `${exact} immobili con posizione esatta (blu), ${approx} posizionati al centro della zona indicata (grigio).`;
+  $("#map-note").textContent = `${exact} immobili con posizione esatta (blu scuro), ${street} al centro della via indicata nell'annuncio (azzurro), ${approx} al centro della zona (grigio).`;
   setTimeout(() => S.map.invalidateSize(), 50);
 }
 
@@ -427,8 +449,10 @@ function openDetail(gid, refresh) {
     ${imgs.length ? `<div class="gallery">${imgs.map(u => `<img loading="lazy" src="${esc(u)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">`).join("")}</div>` : ""}
     <div class="d-body">
       <div class="facts">${facts.map(([v, l]) => `<div class="fact"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join("")}</div>
+      ${stimaHtml(gid)}
       ${zoneTrendHtml(r)}
       ${omiHtml(r, members)}
+      ${similarHtml(gid, r)}
       <div class="story"><h3>Storia della casa</h3><ul>${houseStory(members).map(x => `<li>${x}</li>`).join("")}</ul></div>
       ${mineHtml(gid)}
       ${list.some(m => m.price) && act.length ? calcHtml(Math.min(...list.map(m => m.price || Infinity)), r) : ""}
@@ -616,6 +640,37 @@ function renderPrices() {
     ${omiTableHtml()}`;
 }
 
+// ---- prezzo giusto stimato e case simili
+function stimaHtml(gid) {
+  const h = houses(true).find(x => x.gid === gid), s = h?.stima;
+  if (!s) return "";
+  const err = Math.round(S.stima.mdape * 100);
+  let verdict = "";
+  if (s.pct != null) {
+    const p = Math.round(Math.abs(s.pct));
+    verdict = p < 5 ? "Il prezzo chiesto è <b>in linea</b> con la stima."
+      : s.pct < 0 ? `Il prezzo chiesto è <b>${p}% sotto</b> la stima${s.deal ? ": <b>possibile affare</b>, vale la pena capire perché costa meno (stato, piano, spese, superficie reale)" : ""}.`
+      : `Il prezzo chiesto è <b>${p}% sopra</b> la stima${p >= err ? ": c'è probabilmente margine per trattare" : ""}.`;
+  } else if (!h.price) verdict = "Il prezzo non è pubblicato: la stima dà un'idea di cosa aspettarsi.";
+  return `<div class="zt omi stima"><div><b>Prezzo giusto stimato: ${eur(s.v)}</b> <span class="muted">(di solito tra ${eur(Math.round(s.lo / 1000) * 1000)} e ${eur(Math.round(s.hi / 1000) * 1000)})</span><br>
+    ${verdict}${s.special ? " <span class=\"muted\">Annuncio particolare (es. nuda proprietà o già affittato): il confronto vale poco.</span>" : ""}
+    <span class="muted small">Calcolata da ${num(S.stima.n)} annunci di abitazioni (${s.n} nella stessa zona) in base a superficie, zona, tipologia, stato, piano e ascensore, terrazzo, giardino, box, vista mare, bagni e classe energetica.
+    Sbaglia in media del ${err}%: è un'indicazione, basata sui prezzi chiesti e non su quelli di vendita.</span></div></div>`;
+}
+
+// le case più simili oggi in vendita: stessa zona, stesso genere (appartamento o casa), superficie vicina
+function similarHtml(gid, r) {
+  const flat = t => ["appartamento", "attico"].includes(t);
+  if (!r.mq || !["appartamento", "attico", "villa", "casa"].includes(r.type) || !zoneKey(r)) return "";
+  const list = houses(false).filter(h => h.gid !== gid && h.price && h.rep.mq && zoneKey(h.rep) === zoneKey(r)
+      && flat(h.rep.type) === flat(r.type) && Math.abs(h.rep.mq - r.mq) <= r.mq * 0.25 && !h.rep.features?._project)
+    .sort((a, b) => Math.abs(a.rep.mq - r.mq) - Math.abs(b.rep.mq - r.mq)).slice(0, 5);
+  if (list.length < 2) return "";
+  return `<div><h3 style="font-size:15px;margin-bottom:6px">Case simili in vendita in zona</h3><table class="hist sim">
+    ${list.sort((a, b) => a.price - b.price).map(h => `<tr><td><a href="#" data-open="${esc(h.gid)}">${esc(TYPE_LABELS[h.rep.type] || "")} ${h.rep.mq} mq</a><br><span class="muted small">${esc(COND_LABELS[h.rep.condition] || "stato non indicato")}${h.rep.floor ? " · " + esc(/piano|livell/i.test(h.rep.floor) ? h.rep.floor : "piano " + h.rep.floor) : ""}</span></td>
+      <td class="n"><b>${eur(h.price)}</b><br><span class="muted small">${num(h.price / h.rep.mq)} €/mq</span></td></tr>`).join("")}</table></div>`;
+}
+
 // ---- quotazioni ufficiali OMI (Agenzia delle Entrate), per la zona OMI in cui cade la casa
 const omiTip = (r, z) => ["villa", "casa"].includes(r.type) && z.valori["Ville e Villini"] ? "Ville e Villini" : "Abitazioni civili";
 function omiCompare(r, members) {
@@ -748,6 +803,7 @@ function compareHtml(list) {
     ["Prezzo", h => eur(h.price), h => h.price && h.price === bp],
     ["Superficie", h => h.rep.mq ? h.rep.mq + " mq" : "–", h => h.rep.mq && h.rep.mq === bmq],
     ["€/mq", h => h.rep.ppm ? num(h.rep.ppm) : "–", h => h.rep.ppm && h.rep.ppm === bppm],
+    ["Prezzo stimato", h => h.stima ? eur(h.stima.v) + (h.stima.pct != null ? ` (${pctTxt(h.stima.pct)})` : "") : "–"],
     ["Rispetto alla zona", h => h.rep.zoneCmp ? pctTxt(h.rep.zoneCmp.pct) : "–"],
     ["Quotazione OMI", h => { const c = omiCompare(h.rep, h.members); return c ? `${num(c.lo)}–${num(c.hi)}` + (c.pct ? ` (${Math.round(Math.abs(c.pct))}% ${c.pct > 0 ? "sopra" : "sotto"})` : "") : "–"; }],
     ["Zona", h => esc(where(h.rep))],
@@ -768,9 +824,10 @@ function compareHtml(list) {
 
 // ------------------------------------------------------------------ impostazioni notifiche
 
-const NDEFAULT = { enabled: true, events: ["new", "price_down", "price_up", "removed", "sold"], max_single: 5,
+const NDEFAULT = { enabled: true, events: ["new", "price_down", "price_up", "removed", "sold", "deal"], max_single: 5,
   filters: { types: DEFAULT_TYPES, include_noprice: true } };
-const NEV = { new: "Nuovo annuncio", price_down: "Ribasso di prezzo", price_up: "Rialzo di prezzo", removed: "Non più online (venduto/ritirato)", sold: "Segnato come venduto" };
+const NEV = { new: "Nuovo annuncio", price_down: "Ribasso di prezzo", price_up: "Rialzo di prezzo", removed: "Non più online (venduto/ritirato)", sold: "Segnato come venduto",
+  deal: "💎 Possibile affare (molto sotto il prezzo stimato)" };
 let NDRAFT = null;
 
 function repoInfo() {

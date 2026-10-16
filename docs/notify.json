@@ -2,7 +2,8 @@
  "enabled": true,
  "events": [
   "new",
-  "price_down"
+  "price_down",
+  "deal"
  ],
  "max_single": 5,
  "filters": {

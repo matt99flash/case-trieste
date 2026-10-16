@@ -8,11 +8,22 @@ from .parse_utils import TYPE_LABELS
 
 # Impostazioni modificabili dalla dashboard (sezione "Notifiche"): vedi scraper/settings.py
 CONFIG = os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs", "notify.json")
-DEFAULT = {"enabled": True, "events": ["new", "price_down", "price_up", "removed", "sold"],
+DEFAULT = {"enabled": True, "events": ["new", "price_down", "price_up", "removed", "sold", "deal"],
            "filters": {"types": ["appartamento", "attico", "villa", "casa"]}, "max_single": 5}
 
 LABEL = {"new": ("🆕", "Nuovo"), "price_down": ("📉", "Ribasso"), "price_up": ("📈", "Rialzo"),
-         "removed": ("✅", "Non più online (venduto/ritirato)"), "sold": ("✅", "Venduto / sotto offerta")}
+         "removed": ("✅", "Non più online (venduto/ritirato)"), "sold": ("✅", "Venduto / sotto offerta"),
+         "deal": ("💎", "Possibile affare")}
+# un "possibile affare" non è un evento a sé: è un annuncio nuovo, ribassato o tornato online il cui prezzo è molto
+# sotto la stima (scraper/stima.py). Arriva una notifica sola, con l'etichetta dell'affare.
+DEAL_FROM = ("new", "price_down", "back")
+
+
+def deal_of(rec: dict | None, store) -> float | None:
+    """Scarto dalla stima (es. -0.32) se l'annuncio è un possibile affare, altrimenti None."""
+    from .stima import deal_pct
+    res = getattr(store, "stima", None)
+    return deal_pct(rec.get("_stima"), rec.get("price"), res["deal"]) if rec and res else None
 
 
 def load_config() -> dict:
@@ -72,9 +83,12 @@ def select_events(store) -> list[tuple[dict, dict]]:
         groups.setdefault(r.get("group", r["id"]), []).append(r)
     out, seen_groups = [], set()
     for ev in store.new_events:
-        if ev["type"] not in wanted:
-            continue
         rec = store.listings.get(ev["id"])
+        deal = deal_of(rec, store) if ev["type"] in DEAL_FROM and "deal" in wanted else None
+        if ev["type"] not in wanted and deal is None:
+            continue
+        if deal is not None:
+            ev = {**ev, "deal": deal}
         kind = "privato" if rec and rec.get("private") else store.sources.get(ev["source"], {}).get("kind", "agenzia")
         if not rec or not _matches(rec, flt, kind):
             continue
@@ -84,16 +98,19 @@ def select_events(store) -> list[tuple[dict, dict]]:
             continue  # stessa casa già nota presso un'altra agenzia
         if ev["type"] == "removed" and others_active:
             continue  # ancora in vendita presso un'altra agenzia
-        key = (ev["type"], rec.get("group", rec["id"]))
+        key = ("deal" if deal is not None else ev["type"], rec.get("group", rec["id"]))
         if key in seen_groups:
             continue
         seen_groups.add(key)
         out.append((ev, rec))
-    return out
+    # una casa diventata "affare" non manda anche la notifica normale (nuovo/ribasso) dello stesso giro
+    deal_groups = {rec.get("group", rec["id"]) for ev, rec in out if "deal" in ev}
+    return [(ev, rec) for ev, rec in out
+            if "deal" in ev or ev["type"] not in DEAL_FROM or rec.get("group", rec["id"]) not in deal_groups]
 
 
 def _line(ev, rec, source_names):
-    icon, label = LABEL[ev["type"]]
+    icon, label = LABEL["deal" if "deal" in ev else ev["type"]]
     what = TYPE_LABELS.get(rec.get("type"), "Immobile")
     bits = [what]
     if rec.get("mq"):
@@ -106,6 +123,9 @@ def _line(ev, rec, source_names):
         diff = (ev["price"] - ev["old_price"]) / ev["old_price"] * 100
         price = f"{_eur(ev['old_price'])} → {_eur(ev['price'])} ({diff:+.0f}%)"
     title = f"{icon} {label}: {' · '.join(bits)}" + (f" – {where}" if where else "")
+    if "deal" in ev:
+        what = {"new": "Nuovo annuncio", "price_down": "Ribasso", "back": "Di nuovo online"}[ev["type"]]
+        price += f"\n{what}, {abs(ev['deal']) * 100:.0f}% sotto la stima ({_eur(rec['_stima']['v'])}): da verificare"
     body = f"{price}\n{source_names.get(rec['source'], rec['source'])}"
     return title, body
 
@@ -129,7 +149,8 @@ def send(store, source_names: dict):
         for ev, rec in items:
             title, body = _line(ev, rec, source_names)
             m = {"topic": topic, "title": title, "message": body, "click": rec["url"],
-                 "tags": ["house"], "priority": 4 if ev["type"] in ("new", "price_down") else 3}
+                 "tags": ["gem" if "deal" in ev else "house"],
+                 "priority": 5 if "deal" in ev else 4 if ev["type"] in ("new", "price_down") else 3}
             if rec.get("images"):
                 m["attach"] = rec["images"][0]
             if dashboard:
@@ -138,7 +159,8 @@ def send(store, source_names: dict):
     else:
         counts = {}
         for ev, _ in items:
-            counts[ev["type"]] = counts.get(ev["type"], 0) + 1
+            t = "deal" if "deal" in ev else ev["type"]
+            counts[t] = counts.get(t, 0) + 1
         summary = " · ".join(f"{LABEL[t][0]} {n} {LABEL[t][1].split(' (')[0].lower()}" for t, n in counts.items())
         lines = [_line(ev, rec, source_names)[0] + f" – {_eur(rec.get('price'))}" for ev, rec in items[:12]]
         if len(items) > 12:
@@ -259,6 +281,11 @@ def build_weekly(store, now) -> dict | None:
         lines.append("\nRibassi maggiori:")
         for pct, ev, r in sorted(drops, key=lambda x: x[0])[:3]:
             lines.append(f"• {short(r)}: {_eur(ev['old_price'])} → {_eur(ev['price'])} ({pct * 100:.0f}%)")
+    deals = sorted(((d, r) for r in groups.values() if (d := deal_of(r, store)) is not None), key=lambda x: x[0])
+    if deals:
+        lines.append("\nPrezzi molto sotto la stima (da verificare):")
+        for d, r in deals[:3]:
+            lines.append(f"• {short(r)} – {_eur(r.get('price'))} ({d * 100:.0f}% rispetto alla stima di {_eur(r['_stima']['v'])})")
     if new:
         lines.append("\nNuovi annunci:")
         for r in sorted(new, key=lambda r: r.get("price") or 9e12)[:6]:
