@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T11:35:58+00:00",
+ "updated": "2026-10-16T13:44:19+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -6365,6 +6365,34 @@
    "id": "norbedo-immobiliare:rive-zona-via-belpoggio.html",
    "source": "norbedo-immobiliare",
    "price": 498000
+  },
+  {
+   "ts": "2026-10-16T13:44:19+00:00",
+   "type": "back",
+   "id": "calcara-immobiliare:attico-bi-livello-con-vista-panoramica",
+   "source": "calcara-immobiliare",
+   "price": 450000
+  },
+  {
+   "ts": "2026-10-16T13:44:19+00:00",
+   "type": "back",
+   "id": "calcara-immobiliare:attico-bi-livello-con-terrazza-ente-12",
+   "source": "calcara-immobiliare",
+   "price": 590000
+  },
+  {
+   "ts": "2026-10-16T13:44:19+00:00",
+   "type": "removed",
+   "id": "norbedo-immobiliare:largo-pestalozzi-zona.html",
+   "source": "norbedo-immobiliare",
+   "price": 595000
+  },
+  {
+   "ts": "2026-10-16T13:44:19+00:00",
+   "type": "removed",
+   "id": "e1-hometrieste:21761",
+   "source": "e1-hometrieste",
+   "price": 88000
   }
  ]
 }
