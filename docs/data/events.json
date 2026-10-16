@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T09:36:29+00:00",
+ "updated": "2026-10-16T11:35:58+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -6343,6 +6343,28 @@
    "id": "b1-paradisi:pagnacco-terrenoamodoletto",
    "source": "b1-paradisi",
    "price": 45000
+  },
+  {
+   "ts": "2026-10-16T11:35:58+00:00",
+   "type": "price_down",
+   "id": "gabetti:3321559",
+   "source": "gabetti",
+   "old_price": 184000,
+   "price": 175000
+  },
+  {
+   "ts": "2026-10-16T11:35:58+00:00",
+   "type": "new",
+   "id": "b1-contatti-immobiliari:trieste-ultimo-piano",
+   "source": "b1-contatti-immobiliari",
+   "price": 265000
+  },
+  {
+   "ts": "2026-10-16T11:35:58+00:00",
+   "type": "new",
+   "id": "norbedo-immobiliare:rive-zona-via-belpoggio.html",
+   "source": "norbedo-immobiliare",
+   "price": 498000
   }
  ]
 }
