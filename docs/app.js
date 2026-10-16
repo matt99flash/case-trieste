@@ -137,7 +137,8 @@ function stimaOf(h) {
   // scarti enormi sono quasi sempre dati letti male (superficie del terreno, nuda proprietà...): non mostrarli
   if (pct != null && (pct <= -50 || pct > 100)) pct = null;
   const deal = pct != null && dealable && !special && pct <= -S.stima.deal * 100;
-  return { v, n, pct, deal, special: !!special, lo: v * (1 - S.stima.mdape), hi: v * (1 + S.stima.mdape) };
+  const band = S.stima.band || [1 - S.stima.mdape, 1 + S.stima.mdape];
+  return { v, n, pct, deal, special: !!special, lo: v * band[0], hi: v * band[1] };
 }
 
 // Una "casa" = gruppo di annunci (stesso immobile su più agenzie). Rappresentante: attivo, con più dati, prezzo minore.
@@ -652,7 +653,7 @@ function stimaHtml(gid) {
       : s.pct < 0 ? `Il prezzo chiesto è <b>${p}% sotto</b> la stima${s.deal ? ": <b>possibile affare</b>, vale la pena capire perché costa meno (stato, piano, spese, superficie reale)" : ""}.`
       : `Il prezzo chiesto è <b>${p}% sopra</b> la stima${p >= err ? ": c'è probabilmente margine per trattare" : ""}.`;
   } else if (!h.price) verdict = "Il prezzo non è pubblicato: la stima dà un'idea di cosa aspettarsi.";
-  return `<div class="zt omi stima"><div><b>Prezzo giusto stimato: ${eur(s.v)}</b> <span class="muted">(di solito tra ${eur(Math.round(s.lo / 1000) * 1000)} e ${eur(Math.round(s.hi / 1000) * 1000)})</span><br>
+  return `<div class="zt omi stima"><div><b>Prezzo giusto stimato: ${eur(s.v)}</b> <span class="muted">(8 case su 10 come questa chiedono tra ${eur(Math.round(s.lo / 1000) * 1000)} e ${eur(Math.round(s.hi / 1000) * 1000)})</span><br>
     ${verdict}${s.special ? " <span class=\"muted\">Annuncio particolare (es. nuda proprietà o già affittato): il confronto vale poco.</span>" : ""}
     <span class="muted small">Calcolata da ${num(S.stima.n)} annunci di abitazioni (${s.n} nella stessa zona) in base a superficie, zona, tipologia, stato, piano e ascensore, terrazzo, giardino, box, vista mare, bagni e classe energetica.
     Sbaglia in media del ${err}%: è un'indicazione, basata sui prezzi chiesti e non su quelli di vendita.</span></div></div>`;

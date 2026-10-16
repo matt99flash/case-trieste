@@ -122,8 +122,8 @@ def infer_trieste(title, address, zone, description, *, zone_fallback: bool = Fa
 
 
 # "Via Udine", "Strada del Friuli", "Via del Lazzaretto Vecchio": nomi di vie di Trieste, non luoghi
-_STREET_PHRASE = re.compile(r"(?<![a-z])(?:via|viale|strada|piazza|piazzale|largo|riva|salita|androna|scala|passeggio|corso)"
-                            r"\s+(?:dell'|d'|(?:della|dello|delle|degli|dei|del|di)\s+)?[a-z]+(?:\s+(?:vecchio|nuovo|alto|basso))?")
+_STREET_PHRASE = re.compile(r"(?<![a-z])(?:via|viale|strada|str\.?|piazza|piazzale|largo|riva|salita|androna|scala|passeggio|corso)"
+                            r"\s+(?:(?:vecchia|nuova)\s+)?(?:dell'|d'|(?:della|dello|delle|degli|dei|del|di)\s+)?[a-z]+(?:\s+(?:vecchio|nuovo|alto|basso))?")
 
 
 def without_streets(text: str | None) -> str:
@@ -138,4 +138,4 @@ def title_town(title: str | None) -> str | None:
 def foreign_title(title: str | None) -> bool:
     """Il titolo dice che la casa è fuori provincia ("Appartamento a Monfalcone"), senza citare un comune nostro."""
     t = without_streets(title)
-    return bool(FOREIGN_RX.search(t)) and not detect_town(t)
+    return bool(FOREIGN_RX.search(t)) and not detect_town(t) and "(ts)" not in t

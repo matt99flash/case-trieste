@@ -172,11 +172,11 @@ def compute(listings: dict) -> dict:
     full = fit([(x, y) for _, x, y in train])
     models = [fit([(x, y) for g, x, y in train if fold(g) != k]) for k in range(FOLDS)]
     in_train = {g for g, _, _ in train}
-    errs = []
-    for g, x, y in train:
-        errs.append(abs(math.exp(y) / predict(models[fold(g)], x) - 1))
-    errs.sort()
+    ratios = sorted(math.exp(y) / predict(models[fold(g)], x) for g, x, y in train)
+    errs = sorted(abs(q - 1) for q in ratios)
     mdape = errs[len(errs) // 2]
+    # forbice in cui cade il prezzo chiesto di 8 case su 10 rispetto alla loro stima
+    band = (ratios[len(ratios) // 10], ratios[len(ratios) * 9 // 10])
     area_n = {}
     for g, x, _ in train:
         a = next(k for k in x if k.startswith("area:"))
@@ -189,7 +189,8 @@ def compute(listings: dict) -> dict:
         v = predict(model, x)
         est[gid] = {"v": round(v, -3), "n": area_n.get("area:" + area_of(r), 0), "special": is_special(r),
                     "dealable": r["type"] in DEAL_TYPES and bool(r.get("condition"))}
-    return {"n": len(train), "mdape": round(mdape, 3), "deal": round(max(DEAL_MIN, 1.5 * mdape), 3), "est": est}
+    return {"n": len(train), "mdape": round(mdape, 3), "band": [round(band[0], 3), round(band[1], 3)],
+            "deal": round(max(DEAL_MIN, 1.5 * mdape), 3), "est": est}
 
 
 def deal_pct(e: dict | None, price: int | None, mdape_deal: float) -> float | None:
@@ -204,7 +205,7 @@ def save(result: dict, ts: str | None = None):
     if not result:
         return
     out = {"updated": ts or datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-           "n": result["n"], "mdape": result["mdape"], "deal": result["deal"],
+           "n": result["n"], "mdape": result["mdape"], "band": result["band"], "deal": result["deal"],
            # [valore stimato, annunci della stessa zona nel campione, può essere un affare (0/1), prezzo "speciale"
            # (nuda proprietà, locato...: 0/1)]
            "est": {g: [int(e["v"]), e["n"], int(e["dealable"] and e["n"] >= DEAL_MIN_AREA), int(e["special"])]
