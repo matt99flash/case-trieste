@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T09:32:46+00:00",
+ "updated": "2026-10-17T11:31:30+00:00",
  "weekly_at": "2026-10-12T05:26:52+00:00",
  "weekly_stats": {
   "count": 73,
@@ -6682,6 +6682,13 @@
    "source": "pozzecco-immobiliare",
    "old_price": 495000,
    "price": 215000
+  },
+  {
+   "ts": "2026-10-17T11:31:30+00:00",
+   "type": "new",
+   "id": "il-castello-udine:676",
+   "source": "il-castello-udine",
+   "price": 450000
   }
  ]
 }
