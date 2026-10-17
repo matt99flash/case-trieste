@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16",
+ "updated": "2026-10-17",
  "days": {
   "2026-09-28": {
    "Barriera": [
@@ -1445,6 +1445,84 @@
    "Tutta la provincia": [
     2473,
     952
+   ]
+  },
+  "2026-10-17": {
+   "Barcola / Grignano / Miramare": [
+    2729,
+    22
+   ],
+   "Barriera": [
+    2113,
+    87
+   ],
+   "Borgo Franceschino / Giulia": [
+    2500,
+    81
+   ],
+   "Borgo Giuseppino / Cavana": [
+    3303,
+    53
+   ],
+   "Carso triestino (Opicina e frazioni)": [
+    2233,
+    22
+   ],
+   "Centro / Borgo Teresiano": [
+    3000,
+    101
+   ],
+   "Chiadino / Rozzol": [
+    2516,
+    43
+   ],
+   "Città Vecchia / San Giusto": [
+    4333,
+    41
+   ],
+   "Cologna / Scorcola / Gretta": [
+    2775,
+    53
+   ],
+   "Duino-Aurisina": [
+    2722,
+    35
+   ],
+   "Montebello / Rotonda del Boschetto": [
+    2167,
+    20
+   ],
+   "Muggia": [
+    3056,
+    41
+   ],
+   "Roiano": [
+    2707,
+    50
+   ],
+   "San Dorligo della Valle": [
+    2061,
+    10
+   ],
+   "San Giacomo": [
+    1892,
+    52
+   ],
+   "San Luigi / Guardiella": [
+    2235,
+    39
+   ],
+   "San Vito / Campi Elisi": [
+    2932,
+    52
+   ],
+   "Servola / Valmaura / Borgo San Sergio": [
+    1887,
+    104
+   ],
+   "Tutta la provincia": [
+    2474,
+    953
    ]
   }
  }
